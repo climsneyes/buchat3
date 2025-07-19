@@ -1,6 +1,20 @@
 import flet as ft
 
 def RoomListModernPage(page, lang="ko", on_create=None, on_select=None, on_back=None):
+    # 화면 크기에 따른 반응형 설정
+    is_mobile = page.width < 600
+    is_tablet = 600 <= page.width < 1024
+    
+    # 반응형 크기 계산
+    container_width = min(page.width * 0.95, 600) if not is_mobile else page.width * 0.98
+    title_size = 20 if is_mobile else 22
+    room_title_size = 16 if is_mobile else 18
+    desc_size = 12 if is_mobile else 13
+    count_size = 11 if is_mobile else 12
+    icon_size = 28 if is_mobile else 32
+    padding_size = 12 if is_mobile else 16
+    margin_size = 6 if is_mobile else 8
+    
     texts = {
         "ko": {
             "title": "채팅방 목록",
@@ -89,34 +103,42 @@ def RoomListModernPage(page, lang="ko", on_create=None, on_select=None, on_back=
         controls=[
             ft.Row([
                 ft.IconButton(ft.Icons.ARROW_BACK, on_click=on_back) if on_back else ft.Container(),
-                ft.Text(t["title"], size=22, weight=ft.FontWeight.BOLD),
+                ft.Text(t["title"], size=title_size, weight=ft.FontWeight.BOLD),
             ], alignment=ft.MainAxisAlignment.START),
             ft.Container(
                 content=ft.Column([
                     *[
                         ft.Container(
                             content=ft.Row([
-                                ft.Icon(ft.Icons.GROUP, size=32, color=ft.Colors.BLUE_400),
+                                ft.Icon(ft.Icons.GROUP, size=icon_size, color=ft.Colors.BLUE_400),
                                 ft.Column([
-                                    ft.Text(room["title"], size=18, weight=ft.FontWeight.BOLD),
-                                    ft.Text(room["desc"], size=13, color=ft.Colors.GREY_600),
-                                    ft.Text(f"👥 {room['count']} {t['people']}", size=12, color=ft.Colors.GREY_700),
+                                    ft.Text(room["title"], size=room_title_size, weight=ft.FontWeight.BOLD),
+                                    ft.Text(room["desc"], size=desc_size, color=ft.Colors.GREY_600),
+                                    ft.Text(f"👥 {room['count']} {t['people']}", size=count_size, color=ft.Colors.GREY_700),
                                 ], spacing=2),
-                            ], spacing=16),
-                            padding=16,
-                            margin=8,
+                            ], spacing=12 if is_mobile else 16),
+                            padding=padding_size,
+                            margin=margin_size,
                             bgcolor=ft.Colors.WHITE,
-                            border_radius=20,
-                            shadow=ft.BoxShadow(blur_radius=16, color=ft.Colors.GREY_200),
-                            on_click=(lambda e, idx=i: on_select(idx))
+                            border_radius=16 if is_mobile else 20,
+                            shadow=ft.BoxShadow(blur_radius=12 if is_mobile else 16, color=ft.Colors.GREY_200),
+                            on_click=(lambda e, idx=i: on_select(idx)),
+                            width=container_width if is_mobile else None
                         ) for i, room in enumerate(t["rooms"])
                     ],
-                    ft.ElevatedButton(t["create_btn"], on_click=on_create, style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=16))),
-                ], spacing=12),
-                padding=24,
+                    ft.ElevatedButton(
+                        t["create_btn"], 
+                        on_click=on_create, 
+                        style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=12 if is_mobile else 16)),
+                        width=container_width if is_mobile else None
+                    ),
+                ], spacing=10 if is_mobile else 12),
+                padding=20 if is_mobile else 24,
                 bgcolor=ft.Colors.GREY_100,
-                border_radius=30,
+                border_radius=24 if is_mobile else 30,
+                width=container_width
             )
         ],
-        bgcolor=ft.Colors.GREY_100
+        bgcolor=ft.Colors.GREY_100,
+        horizontal_alignment=ft.CrossAxisAlignment.CENTER
     ) 
