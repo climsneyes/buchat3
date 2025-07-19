@@ -349,12 +349,8 @@ def main(page: ft.Page):
     lang = "ko"
     country = None
     
-    # 웹폰트 적용 (Noto Sans KR, Noto Emoji)
-    page.fonts = {
-        "NotoSansKR": "Noto Sans KR",
-        "NotoEmoji": "Noto Emoji"
-    }
-    page.theme = ft.Theme(font_family="NotoSansKR")
+    # 기본 폰트 사용 (시스템 폰트)
+    page.theme = ft.Theme(font_family="system")
     
     # --- QR 코드 관련 함수 (Container를 직접 오버레이) ---
     def copy_room_id(room_id):

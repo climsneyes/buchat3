@@ -1224,7 +1224,12 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
         "zh-TW": "輸入訊息",
         "id": "Ketik pesan",
     }.get(user_lang, "Type a message")
-    input_box = ft.TextField(hint_text=input_hint, expand=True, height=input_height)
+    input_box = ft.TextField(
+        hint_text=input_hint, 
+        expand=True, 
+        height=input_height,
+        font_family="system"
+    )
     if is_rag_room:
         if is_foreign_worker_rag or room_id == "foreign_worker_rights_rag":
             # 외국인 근로자 RAG 방에서는 언어 선택 드롭다운 표시
@@ -1280,7 +1285,7 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
         bubble_width = int(page.width * 0.5) if is_mobile else 400
         base_size = 16 if is_mobile else 18  # 기존보다 2pt 크게
         is_rag = msg_data.get('nickname', '') == 'RAG'
-        font_family = "Noto Sans KR, Malgun Gothic, Arial, Apple SD Gothic Neo, sans-serif" if is_rag else None
+        font_family = "system" if is_rag else None
         # RAG 답변 특수문자 치환
         if is_rag:
             msg_data['text'] = safe_text(msg_data['text'])
