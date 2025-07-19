@@ -88,6 +88,110 @@ LANG_NAME_MAP = {
     "km": "캄보디아어", "ky": "키르기스스탄어", "ur": "파키스탄어"
 }
 
+# 시스템 메시지 다국어 텍스트
+SYSTEM_MESSAGES = {
+    "ko": {
+        "join": "{nickname}님이 채팅방에 들어왔습니다.",
+        "leave": "{nickname}님이 채팅방을 나가셨습니다.",
+        "generating": "답변을 생성하고 있습니다...",
+        "blocked": "🚫 {nickname}님이 차단되었습니다.",
+        "block_confirm": "사용자 차단",
+        "block_content": "{nickname}님을 차단하시겠습니까?\n차단된 사용자의 메시지는 더 이상 표시되지 않습니다.",
+        "cancel": "취소",
+        "block": "차단"
+    },
+    "en": {
+        "join": "{nickname} has joined the chat room.",
+        "leave": "{nickname} has left the chat room.",
+        "generating": "Generating answer...",
+        "blocked": "🚫 {nickname} has been blocked.",
+        "block_confirm": "Block User",
+        "block_content": "Do you want to block {nickname}?\nBlocked users' messages will no longer be displayed.",
+        "cancel": "Cancel",
+        "block": "Block"
+    },
+    "ja": {
+        "join": "{nickname}さんがチャットルームに参加しました。",
+        "leave": "{nickname}さんがチャットルームを退出しました。",
+        "generating": "回答を生成中...",
+        "blocked": "🚫 {nickname}さんがブロックされました。",
+        "block_confirm": "ユーザーをブロック",
+        "block_content": "{nickname}さんをブロックしますか？\nブロックされたユーザーのメッセージは表示されなくなります。",
+        "cancel": "キャンセル",
+        "block": "ブロック"
+    },
+    "zh": {
+        "join": "{nickname}加入了聊天室。",
+        "leave": "{nickname}离开了聊天室。",
+        "generating": "正在生成答案...",
+        "blocked": "🚫 {nickname}已被屏蔽。",
+        "block_confirm": "屏蔽用户",
+        "block_content": "您要屏蔽{nickname}吗？\n被屏蔽用户的消息将不再显示。",
+        "cancel": "取消",
+        "block": "屏蔽"
+    },
+    "zh-TW": {
+        "join": "{nickname}加入了聊天室。",
+        "leave": "{nickname}離開了聊天室。",
+        "generating": "正在生成答案...",
+        "blocked": "🚫 {nickname}已被屏蔽。",
+        "block_confirm": "屏蔽用戶",
+        "block_content": "您要屏蔽{nickname}嗎？\n被屏蔽用戶的消息將不再顯示。",
+        "cancel": "取消",
+        "block": "屏蔽"
+    },
+    "vi": {
+        "join": "{nickname} đã tham gia phòng chat.",
+        "leave": "{nickname} đã rời khỏi phòng chat.",
+        "generating": "Đang tạo câu trả lời...",
+        "blocked": "🚫 {nickname} đã bị chặn.",
+        "block_confirm": "Chặn người dùng",
+        "block_content": "Bạn có muốn chặn {nickname} không?\nTin nhắn của người dùng bị chặn sẽ không còn hiển thị.",
+        "cancel": "Hủy",
+        "block": "Chặn"
+    },
+    "fr": {
+        "join": "{nickname} a rejoint le salon de discussion.",
+        "leave": "{nickname} a quitté le salon de discussion.",
+        "generating": "Génération de la réponse...",
+        "blocked": "🚫 {nickname} a été bloqué.",
+        "block_confirm": "Bloquer l'utilisateur",
+        "block_content": "Voulez-vous bloquer {nickname} ?\nLes messages des utilisateurs bloqués ne seront plus affichés.",
+        "cancel": "Annuler",
+        "block": "Bloquer"
+    },
+    "de": {
+        "join": "{nickname} ist dem Chatraum beigetreten.",
+        "leave": "{nickname} hat den Chatraum verlassen.",
+        "generating": "Antwort wird generiert...",
+        "blocked": "🚫 {nickname} wurde blockiert.",
+        "block_confirm": "Benutzer blockieren",
+        "block_content": "Möchten Sie {nickname} blockieren?\nNachrichten blockierter Benutzer werden nicht mehr angezeigt.",
+        "cancel": "Abbrechen",
+        "block": "Blockieren"
+    },
+    "th": {
+        "join": "{nickname} ได้เข้าร่วมห้องแชทแล้ว",
+        "leave": "{nickname} ได้ออกจากห้องแชทแล้ว",
+        "generating": "กำลังสร้างคำตอบ...",
+        "blocked": "🚫 {nickname} ถูกบล็อกแล้ว",
+        "block_confirm": "บล็อกผู้ใช้",
+        "block_content": "คุณต้องการบล็อก {nickname} หรือไม่?\nข้อความของผู้ใช้ที่ถูกบล็อกจะไม่แสดงอีกต่อไป",
+        "cancel": "ยกเลิก",
+        "block": "บล็อก"
+    },
+    "id": {
+        "join": "{nickname} telah bergabung dengan ruang obrolan.",
+        "leave": "{nickname} telah meninggalkan ruang obrolan.",
+        "generating": "Membuat jawaban...",
+        "blocked": "🚫 {nickname} telah diblokir.",
+        "block_confirm": "Blokir Pengguna",
+        "block_content": "Apakah Anda ingin memblokir {nickname}?\nPesan pengguna yang diblokir tidak akan ditampilkan lagi.",
+        "cancel": "Batal",
+        "block": "Blokir"
+    }
+}
+
 # RAG 가이드 텍스트 다국어 사전 (상세 구조)
 RAG_GUIDE_TEXTS = {
     "ko": {
@@ -658,11 +762,11 @@ RAG_GUIDE_TEXTS = {
         "examples": [
             "• ប្រាក់ខែរបស់ខ្ញុំត្រូវបានជំពាក់",
             "• ខ្ញុំត្រូវបានដកចេញដោយមិនយុត្តិធម៌",
-            "• ខ្ញុំបានរបួសក្នុងពេលធ្វើការ",
-            "• ខ្ញុំបានជួបការរំលោភផ្លូវភេទនៅកន្លែងធ្វើការ",
-            "• ខ្ញុំបានជួបការវាយប្រហារឬរំលោភផ្លូវភេទ",
+            "• ខ្ញុᆺបានរបួសក្នុងពេលធ្វើការ",
+            "• ខ្ញុᆺបានជួបការរំលោភផ្លូវភេទនៅកន្លែងធ្វើការ",
+            "• ខ្ញុᆺបានជួបការវាយប្រហារឬរំលោភផ្លូវភេទ",
             "• ការធានារ៉ាប់រងអ្វីដែលមានសម្រាប់ជនជាតិផ្សេង?",
-            "• លេខទូរស័ព្ទអ្វីដែលខ្ញុំគួរដឹងនៅកូរ៉េ?"
+            "• លេខទូរស័ព្ទអ្វីដែលខ្ញុᆺគួរដឹងនៅកូរ៉េ?"
         ],
         "input_hint": "សូមសរសេរសំណួរការពារសិទ្ធិរបស់អ្នកខាងក្រោម! 💬"
     },
@@ -1227,8 +1331,7 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
     input_box = ft.TextField(
         hint_text=input_hint, 
         expand=True, 
-        height=input_height,
-        font_family="system"
+        height=input_height
     )
     if is_rag_room:
         if is_foreign_worker_rag or room_id == "foreign_worker_rights_rag":
@@ -1285,7 +1388,7 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
         bubble_width = int(page.width * 0.5) if is_mobile else 400
         base_size = 16 if is_mobile else 18  # 기존보다 2pt 크게
         is_rag = msg_data.get('nickname', '') == 'RAG'
-        font_family = "system" if is_rag else None
+        font_family = None
         # RAG 답변 특수문자 치환
         if is_rag:
             msg_data['text'] = safe_text(msg_data['text'])
@@ -1434,7 +1537,9 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                 # 입장 감지
                 if nickname not in current_users:
                     current_users.add(nickname)
-                    join_text = f"{nickname}님이 채팅방에 들어왔습니다."
+                    # 다국어 시스템 메시지 사용
+                    system_texts = SYSTEM_MESSAGES.get(user_lang, SYSTEM_MESSAGES["ko"])
+                    join_text = system_texts["join"].format(nickname=nickname)
                     join_bubble = create_system_message_bubble(join_text)
                     if join_bubble:  # None이 아닌 경우만 추가
                         chat_messages.controls.append(join_bubble)
@@ -1474,9 +1579,10 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
             except Exception as e:
                 print(f"차단 정보 저장 오류: {e}")
             
-            # 차단 메시지 표시
+                    # 차단 메시지 표시 (다국어)
+            system_texts = SYSTEM_MESSAGES.get(user_lang, SYSTEM_MESSAGES["ko"])
             block_msg_data = {
-                'text': f"🚫 {nickname}님이 차단되었습니다.",
+                'text': system_texts["blocked"].format(nickname=nickname),
                 'nickname': '시스템',
                 'timestamp': time.time(),
                 'translated': ''
@@ -1498,12 +1604,13 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                 page.update()
         
         # 확인 다이얼로그 표시
+        system_texts = SYSTEM_MESSAGES.get(user_lang, SYSTEM_MESSAGES["ko"])
         confirm_dialog = ft.AlertDialog(
-            title=ft.Text("사용자 차단"),
-            content=ft.Text(f"{nickname}님을 차단하시겠습니까?\n차단된 사용자의 메시지는 더 이상 표시되지 않습니다."),
+            title=ft.Text(system_texts["block_confirm"]),
+            content=ft.Text(system_texts["block_content"].format(nickname=nickname)),
             actions=[
-                ft.TextButton("취소", on_click=cancel_block),
-                ft.TextButton("차단", on_click=confirm_block, style=ft.ButtonStyle(color=ft.Colors.RED))
+                ft.TextButton(system_texts["cancel"], on_click=cancel_block),
+                ft.TextButton(system_texts["block"], on_click=confirm_block, style=ft.ButtonStyle(color=ft.Colors.RED))
             ]
         )
         
@@ -1515,7 +1622,8 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
     def on_exit():
         nickname = page.session.get('nickname')
         if nickname and nickname in current_users:
-            leave_text = f"{nickname}님이 채팅방을 나가셨습니다."
+            system_texts = SYSTEM_MESSAGES.get(user_lang, SYSTEM_MESSAGES["ko"])
+            leave_text = system_texts["leave"].format(nickname=nickname)
             chat_messages.controls.append(create_system_message_bubble(leave_text))
             current_users.remove(nickname)
             page.update()
@@ -1562,8 +1670,8 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
             except Exception as e:
                 translated_text = f"[번역 오류: {e}]"
         
-        # Firebase에 메시지 저장 (외국인 근로자 RAG 방이 아닐 때만)
-        if firebase_available and not (is_foreign_worker_rag or room_id == "foreign_worker_rights_rag"):
+        # Firebase에 메시지 저장 (RAG 방이 아닐 때만)
+        if firebase_available and custom_translate_message is None:
             try:
                 message_data = {
                     'text': message_text,
@@ -1593,8 +1701,9 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
             # RAG 답변 추가 (더 안전한 처리)
             try:
                 # 로딩 메시지 먼저 표시 (질문 바로 아래에 위치)
+                system_texts = SYSTEM_MESSAGES.get(user_lang, SYSTEM_MESSAGES["ko"])
                 loading_msg_data = {
-                    'text': "답변을 생성하고 있습니다...",
+                    'text': system_texts["generating"],
                     'nickname': 'RAG',
                     'timestamp': time.time(),
                     'translated': ''
@@ -1651,10 +1760,24 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                 page.update()
         # 일반 RAG 채팅방이면 RAG 답변만 직접 추가
         elif custom_translate_message is not None:
+            # 사용자 메시지를 먼저 추가
+            user_msg_data = {
+                'text': message_text,
+                'nickname': nickname,
+                'timestamp': time.time(),
+                'translated': translated_text
+            }
+            user_bubble = create_message_bubble(user_msg_data, True)
+            if user_bubble:  # None이 아닌 경우만 처리
+                setattr(user_bubble, 'timestamp', user_msg_data['timestamp'])
+                chat_messages.controls.append(user_bubble)
+                page.update()
+            
             try:
-                # 로딩 메시지 먼저 표시
+                # 로딩 메시지를 사용자 메시지 다음에 추가
+                system_texts = SYSTEM_MESSAGES.get(user_lang, SYSTEM_MESSAGES["ko"])
                 loading_msg_data = {
-                    'text': "답변을 생성하고 있습니다...",
+                    'text': system_texts["generating"],
                     'nickname': 'RAG',
                     'timestamp': time.time(),
                     'translated': ''
@@ -1664,11 +1787,14 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                     setattr(loading_bubble, 'timestamp', loading_msg_data['timestamp'])
                     chat_messages.controls.append(loading_bubble)
                 page.update()
+                
                 # RAG 답변 생성 (선택된 언어로)
                 selected_lang = current_target_lang[0] if current_target_lang[0] else user_lang
                 rag_answer = custom_translate_message(message_text, selected_lang)
+                
                 # 로딩 메시지 제거
                 chat_messages.controls.remove(loading_bubble)
+                
                 if rag_answer and rag_answer.strip():  # 답변이 있을 때만 추가
                     rag_msg_data = {
                         'text': rag_answer,
@@ -2127,15 +2253,17 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                 # 일단 최초 입장자만 안내 메시지 push 안 함
                 return
             # 2. 최근 2분 내 같은 닉네임의 시스템 메시지가 이미 있으면 push 안 함
+            system_texts = SYSTEM_MESSAGES.get(user_lang, SYSTEM_MESSAGES["ko"])
+            join_text_pattern = system_texts["join"].format(nickname=nickname)
             for msg in messages.values():
                 if (
                     msg.get('nickname') == '시스템'
-                    and msg.get('text', '').startswith(f'{nickname}님이 채팅방에 들어왔습니다')
+                    and msg.get('text', '').startswith(join_text_pattern)
                     and now - float(msg.get('timestamp', 0)) < 120
                 ):
                     return  # 중복 방지
             # 3. 안내 메시지 push (메시지 1개 이상이면 무조건 push)
-            join_text = f"{nickname}님이 채팅방에 들어왔습니다."
+            join_text = system_texts["join"].format(nickname=nickname)
             system_msg = {
                 'text': join_text,
                 'nickname': '시스템',
