@@ -366,6 +366,9 @@ QR_SHARE_TEXTS = {
 }
 
 def main(page: ft.Page):
+    print("=== BuChat 앱 시작 ===")
+    print(f"현재 시간: {datetime.now()}")
+    
     # 시스템 다크모드 감지(또는 강제 다크/라이트)
     page.theme_mode = ft.ThemeMode.SYSTEM
     page.theme = ft.Theme(
@@ -382,7 +385,7 @@ def main(page: ft.Page):
     </style>
     """
     page.font_family = "Noto Sans KR, Malgun Gothic, Apple SD Gothic Neo, Arial, sans-serif"
-    print("앱 시작(main 함수 진입)")
+    print("페이지 설정 완료")
     lang = "ko"
     country = None
     
@@ -1011,4 +1014,4 @@ def main(page: ft.Page):
     page.go("/")
 
 if __name__ == "__main__":
-    ft.app(target=main, port=8002)
+    ft.app(target=main, port=8000)
