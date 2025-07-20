@@ -1,6 +1,7 @@
 import os
 import pickle
 import shutil
+from datetime import datetime
 
 # 환경변수에서 firebase_key.json 내용을 읽어서 파일로 저장
 firebase_key_json = os.getenv("FIREBASE_KEY_JSON")
