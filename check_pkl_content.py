@@ -71,9 +71,9 @@ def check_pkl_content(file_path):
 def main():
     """모든 벡터DB 파일들을 확인합니다."""
     pkl_files = [
-        "vector_db_merged.pkl",
+        "다문화.pkl",
         "vector_db_multi.pkl", 
-        "vector_db_multi2.pkl",
+        "외국인근로자.pkl",
         "vector_db_64multi.pkl"
     ]
     

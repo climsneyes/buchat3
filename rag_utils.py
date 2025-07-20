@@ -563,7 +563,7 @@ def get_foreign_worker_prompt_template(target_lang):
 
 # 4. Gemini 기반 RAG 답변 생성 함수
 def answer_with_rag(query, vector_db, gemini_api_key, model=None, target_lang=None, conversation_context=None):
-    model = "models/gemini-1.5-flash-latest"
+    model = "models/gemini-1.5-flash"
     print(f"  - Gemini RAG 답변 생성 시작")
     lang = detect_language(query)
     prompt_lang = target_lang if target_lang else lang
@@ -630,7 +630,7 @@ def answer_with_rag(query, vector_db, gemini_api_key, model=None, target_lang=No
                 prompt = multicultural_prompt_template.format(context=context, query=combined_query)
                 
                 genai.configure(api_key=gemini_api_key)
-                model = genai.GenerativeModel("gemini-1.5-flash-latest")
+                model = genai.GenerativeModel("gemini-1.5-flash")
                 response = model.generate_content(prompt, generation_config={"max_output_tokens": 1000, "temperature": 0.1})
                 answer = response.text.strip()
                 return answer
@@ -713,7 +713,7 @@ def answer_with_rag(query, vector_db, gemini_api_key, model=None, target_lang=No
     prompt = multicultural_prompt_template.format(context=context, query=query)
     
     genai.configure(api_key=gemini_api_key)
-    model = genai.GenerativeModel("gemini-1.5-flash-latest")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(prompt, generation_config={"max_output_tokens": 1000, "temperature": 0.1})
     answer = response.text.strip()
     return answer
@@ -802,7 +802,7 @@ def get_district_contact_info(district):
 """)
 
 def answer_with_rag_foreign_worker(query, vector_db, gemini_api_key, model=None, target_lang=None, conversation_context=None):
-    model = "models/gemini-1.5-flash-latest"
+    model = "models/gemini-1.5-flash"
     print(f"  - Gemini 외국인 근로자 RAG 답변 생성 시작")
     lang = detect_language(query)
     prompt_lang = target_lang if target_lang else lang
@@ -869,7 +869,7 @@ def answer_with_rag_foreign_worker(query, vector_db, gemini_api_key, model=None,
                 prompt = foreign_worker_prompt_template.format(context=context, query=combined_query)
                 
                 genai.configure(api_key=gemini_api_key)
-                model = genai.GenerativeModel("gemini-1.5-flash-latest")
+                model = genai.GenerativeModel("gemini-1.5-flash")
                 response = model.generate_content(prompt, generation_config={"max_output_tokens": 1000, "temperature": 0.1})
                 answer = response.text.strip()
                 return answer
@@ -952,7 +952,7 @@ def answer_with_rag_foreign_worker(query, vector_db, gemini_api_key, model=None,
     prompt = foreign_worker_prompt_template.format(context=context, query=query)
     
     genai.configure(api_key=gemini_api_key)
-    model = genai.GenerativeModel("gemini-1.5-flash-latest")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(prompt, generation_config={"max_output_tokens": 1000, "temperature": 0.1})
     answer = response.text.strip()
     return answer

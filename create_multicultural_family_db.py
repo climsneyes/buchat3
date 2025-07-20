@@ -1,27 +1,9 @@
 import chromadb
 import os
-from chromadb.utils import embedding_functions
-import openai
+from rag_utils import GeminiEmbeddings
 from typing import List, Dict
 import json
-
-# OpenAI API 키 설정
-from config import OPENAI_API_KEY
-
-class OpenAIEmbeddingFunction:
-    def __init__(self, api_key: str):
-        openai.api_key = api_key
-        self.name = "openai"
-
-    def __call__(self, texts: List[str]) -> List[List[float]]:
-        embeddings = []
-        for text in texts:
-            response = openai.Embedding.create(
-                model="text-embedding-3-small",
-                input=text
-            )
-            embeddings.append(response["data"][0]["embedding"])
-        return embeddings
+from config import GEMINI_API_KEY
 
 def create_multicultural_family_database():
     """다문화 가족 한국생활 안내 자료를 위한 ChromaDB 생성"""
@@ -34,7 +16,7 @@ def create_multicultural_family_database():
     chroma_client = chromadb.PersistentClient(path=persist_directory)
     
     # OpenAI 임베딩 함수 생성
-    embedding_function = OpenAIEmbeddingFunction(OPENAI_API_KEY)
+    embedding_function = GeminiEmbeddings(GEMINI_API_KEY)
     
     # 컬렉션 생성 또는 가져오기
     collection = chroma_client.get_or_create_collection(
@@ -116,4 +98,4 @@ if __name__ == "__main__":
         print("\n다문화 가족 ChromaDB 생성이 완료되었습니다!")
     except Exception as e:
         print(f"오류 발생: {e}")
-        print("OpenAI API 키가 올바르게 설정되었는지 확인해주세요.") 
+        print("Gemini API 키가 올바르게 설정되었는지 확인해주세요.") 

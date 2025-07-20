@@ -6,71 +6,35 @@ from typing import List, Dict, Any
 import PyPDF2
 import chromadb
 from chromadb.config import Settings
-import openai
-from config import OPENAI_API_KEY
-
-# OpenAI 클라이언트 초기화
-client = openai.OpenAI(api_key=OPENAI_API_KEY)
-
-class OpenAIEmbeddingFunction:
-    """OpenAI 임베딩 함수"""
-    def __init__(self, api_key: str, model: str = "text-embedding-3-small"):
-        self.api_key = api_key
-        self.model = model
-        self.client = openai.OpenAI(api_key=api_key)
-    
-    def __call__(self, input: List[str]) -> List[List[float]]:
-        """텍스트들을 임베딩으로 변환"""
-        try:
-            response = self.client.embeddings.create(
-                input=input,
-                model=self.model
-            )
-            return [embedding.embedding for embedding in response.data]
-        except Exception as e:
-            print(f"❌ 임베딩 생성 오류: {e}")
-            return []
-    
-    def name(self):
-        return "openai"
+from config import GEMINI_API_KEY
+from rag_utils import GeminiEmbeddings
 
 class ChromaDBWrapper:
     def __init__(self, db_name: str, persist_directory: str = "./chroma_db"):
-        """ChromaDB 래퍼 클래스"""
         self.db_name = db_name
         self.persist_directory = persist_directory
         self.client = chromadb.PersistentClient(path=persist_directory)
-        
-        # OpenAI 임베딩 함수 사용
-        embedding_function = OpenAIEmbeddingFunction(OPENAI_API_KEY)
-        
+        embedding_function = GeminiEmbeddings(GEMINI_API_KEY)
         self.collection = self.client.get_or_create_collection(
             name=db_name,
             embedding_function=embedding_function,
             metadata={"hnsw:space": "cosine"}
         )
-    
     def add_documents(self, documents: List[Dict[str, Any]]):
-        """문서들을 ChromaDB에 추가"""
         ids = []
         texts = []
         metadatas = []
-        
         for i, doc in enumerate(documents):
             doc_id = f"doc_{i}_{hashlib.md5(doc['page_content'].encode()).hexdigest()[:8]}"
             ids.append(doc_id)
             texts.append(doc['page_content'])
             metadatas.append(doc['metadata'])
-        
         print(f"📝 ChromaDB에 {len(documents)}개 문서를 추가하는 중...")
-        
-        # 배치 크기로 나누어 처리 (메모리 효율성)
         batch_size = 50
         for i in range(0, len(texts), batch_size):
             batch_texts = texts[i:i + batch_size]
             batch_metadatas = metadatas[i:i + batch_size]
             batch_ids = ids[i:i + batch_size]
-            
             try:
                 self.collection.add(
                     documents=batch_texts,
@@ -80,11 +44,8 @@ class ChromaDBWrapper:
                 print(f"   ✅ 배치 {i//batch_size + 1} 완료 ({len(batch_texts)}개 문서)")
             except Exception as e:
                 print(f"   ❌ 배치 {i//batch_size + 1} 오류: {e}")
-        
         print(f"✅ 총 {len(documents)}개 문서를 ChromaDB '{self.db_name}'에 추가했습니다.")
-    
     def similarity_search(self, query: str, k: int = 3):
-        """유사도 검색"""
         results = self.collection.query(
             query_texts=[query],
             n_results=k

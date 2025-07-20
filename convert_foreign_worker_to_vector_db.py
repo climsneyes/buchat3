@@ -1,65 +1,30 @@
-import chromadb
-import pickle
 import os
-from create_foreign_worker_db import OpenAIEmbeddingFunction
-from rag_utils import OpenAIEmbeddings, SimpleVectorDB
+import pickle
+from rag_utils import GeminiEmbeddings, SimpleVectorDB, chunk_pdf_to_text_chunks
 
-def convert_foreign_worker_chromadb_to_vector_db():
-    """외국인 근로자 ChromaDB를 기존 vector_db 형식으로 변환"""
-    
-    try:
-        # ChromaDB에서 데이터 가져오기
-        db_name = "foreign_worker_rights_guide_openai"
-        persist_directory = "./chroma_db"
-        chroma_client = chromadb.PersistentClient(path=persist_directory)
-        collection = chroma_client.get_collection(name=db_name)
-        
-        # 모든 문서 가져오기
-        results = collection.get()
-        documents = results.get("documents", [])
-        metadatas = results.get("metadatas", [])
-        
-        print(f"ChromaDB에서 {len(documents)}개의 문서를 가져왔습니다.")
-        
-        # vector_db 형식으로 변환
-        vector_db_documents = []
-        for i, (doc, metadata) in enumerate(zip(documents, metadatas)):
-            vector_db_documents.append({
-                'page_content': doc,
-                'metadata': metadata or {},
-                'source': f"foreign_worker_{i}"
-            })
-        
-        # OpenAI 임베딩 생성
-        from config import OPENAI_API_KEY
-        embeddings = OpenAIEmbeddings(
-            openai_api_key=OPENAI_API_KEY,
-            model="text-embedding-3-small"
-        )
-        
-        # 문서 임베딩 생성
-        doc_texts = [doc['page_content'] for doc in vector_db_documents]
-        doc_embeddings = embeddings.embed_documents(doc_texts)
-        
-        # SimpleVectorDB 생성
-        vector_db = SimpleVectorDB(vector_db_documents, embeddings, doc_embeddings)
-        
-        # 파일로 저장
-        with open("vector_db_foreign_worker.pkl", "wb") as f:
-            pickle.dump(vector_db, f)
-        
-        print(f"외국인 근로자 vector_db 저장 완료: vector_db_foreign_worker.pkl")
-        print(f"총 문서 수: {len(vector_db_documents)}")
-        
-        return vector_db
-        
-    except Exception as e:
-        print(f"변환 중 오류 발생: {e}")
+def create_foreign_worker_vector_db(pdf_dir, output_path, gemini_api_key):
+    """지정한 폴더 내 모든 PDF를 임베딩하여 벡터DB로 저장합니다."""
+    pdf_files = [os.path.join(pdf_dir, f) for f in os.listdir(pdf_dir) if f.lower().endswith('.pdf')]
+    all_chunks = []
+    for pdf_path in pdf_files:
+        print(f"PDF 처리: {pdf_path}")
+        chunks = chunk_pdf_to_text_chunks(pdf_path)
+        all_chunks.extend(chunks)
+        print(f"  - {os.path.basename(pdf_path)}: {len(chunks)}개 청크")
+    print(f"총 청크 수: {len(all_chunks)}")
+    if not all_chunks:
+        print("❌ 임베딩할 청크가 없습니다.")
         return None
+    embeddings = GeminiEmbeddings(gemini_api_key)
+    doc_embeddings = embeddings.embed_documents([doc['page_content'] for doc in all_chunks])
+    vector_db = SimpleVectorDB(all_chunks, embeddings, doc_embeddings)
+    with open(output_path, "wb") as f:
+        pickle.dump(vector_db, f)
+    print(f"✅ 벡터DB 저장 완료: {output_path}")
+    return vector_db
 
 if __name__ == "__main__":
-    vector_db = convert_foreign_worker_chromadb_to_vector_db()
-    if vector_db:
-        print("✅ 변환 완료!")
-    else:
-        print("❌ 변환 실패!") 
+    from config import GEMINI_API_KEY
+    pdf_dir = "외국 근로자"
+    output_path = "외국인근로자.pkl"
+    create_foreign_worker_vector_db(pdf_dir, output_path, GEMINI_API_KEY) 

@@ -9,6 +9,7 @@ import threading
 import google.generativeai as genai
 import atexit
 import re
+from datetime import datetime
 
 IS_SERVER = os.environ.get("CLOUDTYPE") == "1"
 
@@ -356,10 +357,10 @@ RAG_GUIDE_TEXTS = {
             "• 我要去哪裡辦理外國人登記？",
             "• 我的停留期限還剩3個月，如何延長？",
             "• 外國人如何使用手機？",
-            "• 什麽是全租房？",
-            "• 什麽是房地產仲介？",
+            "• 什麼是全租房？",
+            "• 什麼是房地產仲介？",
             "• 我該如何寫房屋合約？",
-            "• 取得韓國駕照的流程是什麽？",
+            "• 取得韓國駕照的流程是什麼？",
             "• 我在哪裡買垃圾袋？",
             "• 我該如何丟垃圾？",
             "• 我生病了該怎麽辦？",
@@ -748,7 +749,7 @@ RAG_GUIDE_TEXTS = {
     },
     "km": {
         "title": "មគ្គុទ្ទេសក៍ការការពារសិទ្ធិរបស់កម្មករជាតិផ្សេង",
-        "info": "អ្នកអាចសួរអំពីប្រធានបទការពារសិទ្ធិដូចខាងក្រោម:",
+        "info": "អ្នកអាចសួរអᆆពីប្រធានបទការពារសិទ្ធិដូចខាងក្រោម:",
         "items": [
             "💰 ប្រាក់ខែជំពាក់និងការទូទាត់ប្រាក់ខែ",
             "🚫 ការដកចេញដោយមិនយុត្តិធម៌និងការជូនដំណឹងដកចេញ",
@@ -1078,6 +1079,325 @@ FOREIGN_WORKER_GUIDE_TEXTS = {
     }
 }
 
+# 맛집검색 가이드 텍스트 다국어 사전
+RESTAURANT_GUIDE_TEXTS = {
+    "ko": {
+        "title": "부산 맛집검색",
+        "info": "다음과 같은 정보를 검색할 수 있습니다:",
+        "items": [
+            "• 맛집 이름으로 검색",
+            "• 음식 카테고리별 검색 (한식, 중식, 일식, 양식, 해산물 등)",
+            "• 지역별 검색 (해운대, 서면, 남포동 등)",
+            "• 평점 높은 맛집 추천",
+            "• 맛집 주소 및 연락처 정보"
+        ],
+        "example_title": "검색 예시:",
+        "examples": [
+            "• '해운대 해산물 맛집 추천해줘'",
+            "• '서면 고기집 어디가 좋아?'",
+            "• '부산에서 맛있는 피자집'",
+            "• '평점 높은 한식집 찾아줘'",
+            "• '남포동 맛집 추천'"
+        ],
+        "input_hint": "맛집에 대해 궁금한 것을 자유롭게 질문해보세요! 🍽️",
+        "fixed_message": """📚 **부산 맛집 정보 출처 안내**
+
+**택슐랭(2025) 가이드북**
+제공된 '2025 택슐랭 가이드북' 자료는 2025년 4월/5월을 기준으로 작성되었으며, 각 업소의 운영 사정에 따라 메뉴, 가격, 영업시간 등이 변경될 수 있고, 휴/폐업이 있을 수 있음을 알려드립니다. 또한, 본 책자에 기재된 정보는 평일을 기준으로 작성되었으므로 주말과 차이가 있을 수 있습니다.
+
+이 가이드북은 부산 택시 기사들이 직접 추천하는 맛집을 소개하는 방식으로, 마치 미슐랭 가이드처럼 신뢰할 수 있는 '살아 있는 정보'를 제공하고자 합니다. 택시 기사들은 매일 수십 명의 손님을 태우고 부산 골목골목을 다니며 누구보다 도시에 대한 감각과 길을 익히기 때문에 이러한 정보의 가치가 높습니다.
+
+📥 **다운로드**: 2025 택슐랭 가이드북 다운로드
+
+**부산의 맛(2025) 가이드**
+'부산의 맛(2025)'는 2025년 부산 미식 가이드로, 부산의 풍부한 식문화를 소개합니다. 부산시가 매년 선정하고 발간하는 공식 미식 브랜드로서, 사용자 중심의 엄격한 심사를 통과한 맛집들을 포함하고 있습니다. 
+
+책자는 부산의 농수축산물과 같은 지역 특산물의 우수성을 강조하며, 유명 셰프들이 부산 식재료를 활용해 개발한 레시피를 선보입니다. 또한, 동래 파전, 돼지국밥, 밀면 등 부산의 13가지 향토 음식의 역사와 맛집 정보를 상세히 제공하고, 강서구, 금정구, 동래구 등 각 지역별 추천 식당들을 안내하여 방문객들이 다양한 미식 경험을 할 수 있도록 돕습니다.
+
+📥 **다운로드**: 2025 부산의 맛 가이드 다운로드"""
+    },
+    "en": {
+        "title": "Busan Restaurant Search",
+        "info": "You can search for the following information:",
+        "items": [
+            "• Search by restaurant name",
+            "• Search by food category (Korean, Chinese, Japanese, Western, Seafood, etc.)",
+            "• Search by area (Haeundae, Seomyeon, Nampo-dong, etc.)",
+            "• Recommend highly rated restaurants",
+            "• Restaurant address and contact information"
+        ],
+        "example_title": "Search examples:",
+        "examples": [
+            "• 'Recommend seafood restaurants in Haeundae'",
+            "• 'Where are good BBQ places in Seomyeon?'",
+            "• 'Delicious pizza places in Busan'",
+            "• 'Find highly rated Korean restaurants'",
+            "• 'Restaurant recommendations in Nampo-dong'"
+        ],
+        "input_hint": "Feel free to ask anything about restaurants! 🍽️",
+        "fixed_message": """📚 **Busan Restaurant Information Sources**
+
+**Taxi Ranking (2025) Guidebook**
+The provided '2025 Taxi Ranking Guidebook' data was compiled based on April/May 2025, and menu items, prices, business hours, etc. may change depending on each establishment's operational circumstances, and there may be temporary closures or permanent shutdowns. Also, the information in this guidebook is based on weekdays, so there may be differences on weekends.
+
+This guidebook introduces restaurants directly recommended by Busan taxi drivers, providing reliable 'living information' like a Michelin guide. Taxi drivers carry dozens of passengers daily and travel through every corner of Busan, making them more familiar with the city's sense and roads than anyone else, which gives high value to this information.
+
+�� **다운로드**: [2025 택슐랭 가이드북 다운로드](https://www.busan.go.kr/board/download.do?boardId=BBS_0000007&dataSid=4277&fileSid=7886)
+
+**Busan's Taste (2025) Guide**
+'Busan's Taste (2025)' is a 2025 Busan culinary guide that introduces Busan's rich food culture. As an official culinary brand selected and published annually by Busan City, it includes restaurants that have passed strict user-centered evaluations.
+
+The guidebook emphasizes the excellence of local specialties such as Busan's agricultural, marine, and livestock products, and showcases recipes developed by famous chefs using Busan ingredients. It also provides detailed information on the history and restaurant information of 13 traditional Busan foods including Dongnae pajeon, dwaeji gukbap, and milmyeon, and guides visitors to recommended restaurants by region such as Gangseo-gu, Geumjeong-gu, and Dongnae-gu to help them have diverse culinary experiences.
+
+📥 **Download**: 2025 Busan's Taste Guide Download"""
+    },
+    "ja": {
+        "title": "釜山レストラン検索",
+        "info": "以下の情報を検索できます:",
+        "items": [
+            "• レストラン名で検索",
+            "• 料理カテゴリ別検索（韓国料理、中華料理、日本料理、洋食、海鮮料理など）",
+            "• エリア別検索（海雲台、西面、南浦洞など）",
+            "• 高評価レストラン推薦",
+            "• レストランの住所・連絡先情報"
+        ],
+        "example_title": "検索例:",
+        "examples": [
+            "• '海雲台の海鮮料理店を推薦して'",
+            "• '西面の良い焼肉店はどこ？'",
+            "• '釜山で美味しいピザ店'",
+            "• '高評価の韓国料理店を探して'",
+            "• '南浦洞のレストラン推薦'"
+        ],
+        "input_hint": "レストランについて気になることを自由に質問してください！🍽️",
+        "fixed_message": """📚 **釜山レストラン情報ソース案内**
+
+**タクシーランキング(2025)ガイドブック**
+提供された「2025タクシーランキングガイドブック」資料は2025年4月/5月を基準に作成されており、各店舗の運営事情によりメニュー、価格、営業時間などが変更される可能性があり、休業・廃業があることをお知らせします。また、本書に記載された情報は平日を基準に作成されているため、週末と違いがある可能性があります。
+
+このガイドブックは釜山のタクシー運転手が直接推薦するレストランを紹介する方式で、ミシュランガイドのように信頼できる「生きている情報」を提供しようとしています。タクシー運転手は毎日数十人のお客様を乗せて釜山の路地裏を走り回り、誰よりも都市に対する感覚と道を熟知しているため、このような情報の価値が高いです。
+
+�� **다운로드**: [2025 택슐랭 가이드북 다운로드](https://www.busan.go.kr/board/download.do?boardId=BBS_0000007&dataSid=4277&fileSid=7886)
+
+**釜山の味(2025)ガイド**
+「釜山の味(2025)」は2025年釜山グルメガイドで、釜山の豊富な食文化を紹介します。釜山市が毎年選定・発行する公式グルメブランドとして、ユーザー中心の厳格な審査を通過したレストランを含んでいます。
+
+本書は釜山の農水畜産物などの地域特産物の優秀性を強調し、有名シェフが釜山食材を活用して開発したレシピを紹介します。また、東莱パジョン、トェジグッパプ、ミルミョンなど釜山の13種類の郷土料理の歴史とレストラン情報を詳細に提供し、江西区、金井区、東莱区など各地域別推薦店舗を案内して、訪問客が多様なグルメ体験ができるよう支援します。
+
+📥 **ダウンロード**: 2025 釜山の味ガイドダウンロード"""
+    },
+    "zh": {
+        "title": "釜山餐厅搜索",
+        "info": "您可以搜索以下信息：",
+        "items": [
+            "• 按餐厅名称搜索",
+            "• 按食物类别搜索（韩餐、中餐、日餐、西餐、海鲜等）",
+            "• 按地区搜索（海云台、西面、南浦洞等）",
+            "• 推荐高评分餐厅",
+            "• 餐厅地址和联系信息"
+        ],
+        "example_title": "搜索示例：",
+        "examples": [
+            "• '推荐海云台的海鲜餐厅'",
+            "• '西面哪里有好吃的烤肉店？'",
+            "• '釜山好吃的披萨店'",
+            "• '找高评分的韩餐厅'",
+            "• '南浦洞餐厅推荐'"
+        ],
+        "input_hint": "请随意询问有关餐厅的任何问题！🍽️",
+        "fixed_message": """📚 **釜山餐厅信息来源说明**
+
+**出租车排名(2025)指南**
+提供的"2025出租车排名指南"资料基于2025年4月/5月编写，各店铺的经营情况可能导致菜单、价格、营业时间等发生变化，也可能存在停业或倒闭的情况。另外，本指南中记载的信息以平日为基准编写，因此周末可能存在差异。
+
+本指南以釜山出租车司机直接推荐的餐厅介绍方式，像米其林指南一样提供可信的"活信息"。出租车司机每天载送数十名乘客，穿梭于釜山的大街小巷，比任何人都更熟悉城市的感觉和道路，因此这些信息的价值很高。
+
+📥 **下载**: 2025 出租车排名指南下载
+
+**釜山味道(2025)指南**
+"釜山味道(2025)"是2025年釜山美食指南，介绍釜山丰富的饮食文化。作为釜山市每年选定和发行的官方美食品牌，包含通过以用户为中心的严格评审的餐厅。
+
+本指南强调釜山农水畜产品等地方特产的优秀性，展示名厨利用釜山食材开发的食谱。另外，详细提供东莱煎饼、猪肉汤饭、冷面等釜山13种乡土美食的历史和餐厅信息，并介绍江西区、金井区、东莱区等各地区的推荐餐厅，帮助游客获得多样的美食体验。
+
+📥 **下载**: 2025 釜山味道指南下载"""
+    },
+    "vi": {
+        "title": "Tìm kiếm nhà hàng Busan",
+        "info": "Bạn có thể tìm kiếm thông tin sau:",
+        "items": [
+            "• Tìm kiếm theo tên nhà hàng",
+            "• Tìm kiếm theo danh mục món ăn (Hàn Quốc, Trung Quốc, Nhật Bản, Tây, Hải sản, v.v.)",
+            "• Tìm kiếm theo khu vực (Haeundae, Seomyeon, Nampo-dong, v.v.)",
+            "• Đề xuất nhà hàng có đánh giá cao",
+            "• Địa chỉ và thông tin liên hệ nhà hàng"
+        ],
+        "example_title": "Ví dụ tìm kiếm:",
+        "examples": [
+            "• 'Đề xuất nhà hàng hải sản ở Haeundae'",
+            "• 'Nhà hàng BBQ tốt ở Seomyeon ở đâu?'",
+            "• 'Nhà hàng pizza ngon ở Busan'",
+            "• 'Tìm nhà hàng Hàn Quốc có đánh giá cao'",
+            "• 'Đề xuất nhà hàng ở Nampo-dong'"
+        ],
+        "input_hint": "Hãy tự do hỏi bất cứ điều gì về nhà hàng! 🍽️",
+        "fixed_message": """📚 **Hướng dẫn nguồn thông tin nhà hàng Busan**
+
+**Sách hướng dẫn Taxi Ranking (2025)**
+Dữ liệu 'Sách hướng dẫn Taxi Ranking 2025' được cung cấp dựa trên tháng 4/5 năm 2025, và thực đơn, giá cả, giờ kinh doanh, v.v. có thể thay đổi tùy theo tình hình hoạt động của từng cơ sở, và có thể có tạm ngưng hoặc đóng cửa vĩnh viễn. Ngoài ra, thông tin trong sách hướng dẫn này dựa trên các ngày trong tuần, vì vậy có thể có sự khác biệt vào cuối tuần.
+
+Sách hướng dẫn này giới thiệu các nhà hàng được các tài xế taxi Busan trực tiếp đề xuất, cung cấp thông tin 'sống động' đáng tin cậy như một hướng dẫn Michelin. Các tài xế taxi chở hàng chục hành khách hàng ngày và đi khắp mọi ngóc ngách của Busan, khiến họ quen thuộc với cảm giác và đường phố của thành phố hơn bất kỳ ai khác, điều này mang lại giá trị cao cho thông tin này.
+
+📥 **Tải xuống**: 2025 Taxi Ranking Guidebook Download
+
+**Hương vị Busan (2025)**
+'Hương vị Busan (2025)' là hướng dẫn ẩm thực Busan năm 2025 giới thiệu văn hóa ẩm thực phong phú của Busan. Là thương hiệu ẩm thực chính thức được thành phố Busan lựa chọn và xuất bản hàng năm, nó bao gồm các nhà hàng đã vượt qua các đánh giá nghiêm ngặt tập trung vào người dùng.
+
+Sách hướng dẫn nhấn mạnh sự xuất sắc của các đặc sản địa phương như sản phẩm nông nghiệp, thủy sản và chăn nuôi của Busan, và giới thiệu các công thức nấu ăn được các đầu bếp nổi tiếng phát triển sử dụng nguyên liệu Busan. Nó cũng cung cấp thông tin chi tiết về lịch sử và thông tin nhà hàng của 13 món ăn truyền thống Busan bao gồm bánh xèo Dongnae, canh thịt lợn, và mì lạnh, và hướng dẫn du khách đến các nhà hàng được đề xuất theo khu vực như Gangseo-gu, Geumjeong-gu, và Dongnae-gu để giúp họ có những trải nghiệm ẩm thực đa dạng.
+
+📥 **Tải xuống**: 2025 Busan's Taste Guide Download"""
+    },
+    "fr": {
+        "title": "Recherche de restaurants à Busan",
+        "info": "Vous pouvez rechercher les informations suivantes :",
+        "items": [
+            "• Recherche par nom de restaurant",
+            "• Recherche par catégorie de cuisine (coréenne, chinoise, japonaise, occidentale, fruits de mer, etc.)",
+            "• Recherche par zone (Haeundae, Seomyeon, Nampo-dong, etc.)",
+            "• Recommandation de restaurants bien notés",
+            "• Adresse et informations de contact du restaurant"
+        ],
+        "example_title": "Exemples de recherche :",
+        "examples": [
+            "• 'Recommander des restaurants de fruits de mer à Haeundae'",
+            "• 'Où sont les bons restaurants BBQ à Seomyeon ?'",
+            "• 'Restaurants de pizza délicieux à Busan'",
+            "• 'Trouver des restaurants coréens bien notés'",
+            "• 'Recommandations de restaurants à Nampo-dong'"
+        ],
+        "input_hint": "N'hésitez pas à poser des questions sur les restaurants ! 🍽️",
+        "fixed_message": """📚 **Guide des sources d'information sur les restaurants de Busan**
+
+**Guide Taxi Ranking (2025)**
+Les données du 'Guide Taxi Ranking 2025' fournies ont été compilées sur la base d'avril/mai 2025, et les menus, prix, heures d'ouverture, etc. peuvent changer selon les circonstances opérationnelles de chaque établissement, et il peut y avoir des fermetures temporaires ou permanentes. De plus, les informations dans ce guide sont basées sur les jours de semaine, il peut donc y avoir des différences le week-end.
+
+Ce guide présente les restaurants directement recommandés par les chauffeurs de taxi de Busan, fournissant des informations 'vivantes' fiables comme un guide Michelin. Les chauffeurs de taxi transportent des dizaines de passagers quotidiennement et parcourent tous les coins de Busan, ce qui les rend plus familiers avec le sens et les routes de la ville que quiconque, ce qui donne une valeur élevée à ces informations.
+
+📥 **Télécharger**: Guide Taxi Ranking 2025
+
+**Guide Le Goût de Busan (2025)**
+'Le Goût de Busan (2025)' est un guide culinaire de Busan 2025 qui présente la riche culture culinaire de Busan. En tant que marque culinaire officielle sélectionnée et publiée annuellement par la ville de Busan, elle comprend des restaurants qui ont passé des évaluations strictes centrées sur l'utilisateur.
+
+Le guide met l'accent sur l'excellence des spécialités locales telles que les produits agricoles, marins et d'élevage de Busan, et présente des recettes développées par des chefs célèbres utilisant des ingrédients de Busan. Il fournit également des informations détaillées sur l'histoire et les informations des restaurants de 13 aliments traditionnels de Busan, y compris le pajeon Dongnae, le dwaeji gukbap et le milmyeon, et guide les visiteurs vers les restaurants recommandés par région comme Gangseo-gu, Geumjeong-gu et Dongnae-gu pour les aider à avoir des expériences culinaires diverses.
+
+📥 **Télécharger**: Guide Le Goût de Busan 2025"""
+    },
+    "de": {
+        "title": "Busan Restaurant-Suche",
+        "info": "Sie können nach folgenden Informationen suchen:",
+        "items": [
+            "• Suche nach Restaurantname",
+            "• Suche nach Küchenkategorie (koreanisch, chinesisch, japanisch, westlich, Meeresfrüchte, etc.)",
+            "• Suche nach Gebiet (Haeundae, Seomyeon, Nampo-dong, etc.)",
+            "• Empfehlung hochbewerteter Restaurants",
+            "• Restaurantadresse und Kontaktinformationen"
+        ],
+        "example_title": "Suchbeispiele:",
+        "examples": [
+            "• 'Meeresfrüchte-Restaurants in Haeundae empfehlen'",
+            "• 'Wo sind gute BBQ-Restaurants in Seomyeon?'",
+            "• 'Leckere Pizzerien in Busan'",
+            "• 'Hochbewertete koreanische Restaurants finden'",
+            "• 'Restaurant-Empfehlungen in Nampo-dong'"
+        ],
+        "input_hint": "Fragen Sie gerne alles über Restaurants! 🍽️",
+        "fixed_message": """📚 **Busan Restaurant-Informationsquellen**
+
+**Taxi-Ranking (2025) Reiseführer**
+Die bereitgestellten '2025 Taxi-Ranking Reiseführer'-Daten wurden basierend auf April/Mai 2025 erstellt, und Menüs, Preise, Öffnungszeiten usw. können sich je nach den betrieblichen Umständen jedes Unternehmens ändern, und es kann zu vorübergehenden oder dauerhaften Schließungen kommen. Außerdem basieren die Informationen in diesem Reiseführer auf Wochentagen, daher kann es am Wochenende Unterschiede geben.
+
+Dieser Reiseführer stellt Restaurants vor, die direkt von Busaner Taxifahrern empfohlen werden, und bietet zuverlässige 'lebendige Informationen' wie ein Michelin-Führer. Taxifahrer transportieren täglich Dutzende von Passagieren und durchqueren jeden Winkel von Busan, was sie vertrauter mit dem Sinn und den Straßen der Stadt macht als jeder andere, was diesen Informationen einen hohen Wert verleiht.
+
+📥 **Herunterladen**: Taxi Ranking Guide 2025
+
+**Busan's Geschmack (2025) Führer**
+'Busan's Geschmack (2025)' ist ein 2025 Busan-Kulinarikführer, der Busans reiche Esskultur vorstellt. Als offizielle Kulinarikmarke, die jährlich von der Stadt Busan ausgewählt und veröffentlicht wird, umfasst sie Restaurants, die strenge benutzerzentrierte Bewertungen bestanden haben.
+
+Der Führer betont die Exzellenz lokaler Spezialitäten wie Busans landwirtschaftliche, marine und tierische Produkte und präsentiert Rezepte, die von berühmten Köchen mit Busan-Zutaten entwickelt wurden. Er bietet auch detaillierte Informationen über die Geschichte und Restaurantinformationen von 13 traditionellen Busan-Lebensmitteln, einschließlich Dongnae Pajeon, Dwaeji Gukbap und Milmyeon, und führt Besucher zu empfohlenen Restaurants nach Regionen wie Gangseo-gu, Geumjeong-gu und Dongnae-gu, um ihnen zu helfen, vielfältige kulinarische Erfahrungen zu machen.
+
+📥 **Herunterladen**: Busan's Geschmack Guide 2025"""
+    },
+    "th": {
+        "title": "ค้นหาร้านอาหารปูซาน",
+        "info": "คุณสามารถค้นหาข้อมูลต่อไปนี้:",
+        "items": [
+            "• ค้นหาตามชื่อร้านอาหาร",
+            "• ค้นหาตามหมวดหมู่อาหาร (เกาหลี, จีน, ญี่ปุ่น, ตะวันตก, อาหารทะเล, ฯลฯ)",
+            "• ค้นหาตามพื้นที่ (แฮอุนแด, ซอเมียน, นัมโปดง, ฯลฯ)",
+            "• แนะนำร้านอาหารที่มีคะแนนสูง",
+            "• ที่อยู่และข้อมูลติดต่อร้านอาหาร"
+        ],
+        "example_title": "ตัวอย่างการค้นหา:",
+        "examples": [
+            "• 'แนะนำร้านอาหารทะเลในแฮอุนแด'",
+            "• 'ร้านบาร์บีคิวที่ดีในซอเมียนอยู่ที่ไหน?'",
+            "• 'ร้านพิซซ่าอร่อยในปูซาน'",
+            "• 'หาร้านอาหารเกาหลีที่มีคะแนนสูง'",
+            "• 'แนะนำร้านอาหารในนัมโปดง'"
+        ],
+        "input_hint": "อย่าลังเลที่จะถามอะไรก็ได้เกี่ยวกับร้านอาหาร! 🍽️",
+        "fixed_message": """📚 **คู่มือแหล่งข้อมูลร้านอาหารปูซาน**
+
+**คู่มือแท็กซี่เรียงลำดับ (2025)**
+ข้อมูล 'คู่มือแท็กซี่เรียงลำดับ 2025' ที่ให้มาได้รับการรวบรวมจากเดือนเมษายน/พฤษภาคม 2025 และเมนู ราคา เวลาทำการ ฯลฯ อาจเปลี่ยนแปลงได้ตามสถานการณ์การดำเนินงานของแต่ละสถานประกอบการ และอาจมีการปิดชั่วคราวหรือปิดถาวรได้ นอกจากนี้ ข้อมูลในคู่มือนี้ยังอิงตามวันธรรมดา ดังนั้นอาจมีความแตกต่างในวันหยุดสุดสัปดาห์
+
+คู่มือนี้แนะนำร้านอาหารที่ได้รับการแนะนำโดยตรงจากคนขับแท็กซี่ปูซาน ให้ข้อมูล 'ที่มีชีวิต' ที่น่าเชื่อถือเหมือนคู่มือมิชลิน คนขับแท็กซี่รับส่งผู้โดยสารหลายสิบคนทุกวันและเดินทางไปทั่วทุกซอกมุมของปูซาน ทำให้พวกเขาคุ้นเคยกับความรู้สึกและถนนของเมืองมากกว่าใครๆ ซึ่งให้คุณค่าสูงกับข้อมูลนี้
+
+📥 **ดาวน์โหลด**: 2025 Taxi Ranking Guidebook Download
+
+**คู่มือรสชาติปูซาน (2025)**
+'รสชาติปูซาน (2025)' เป็นคู่มืออาหารปูซานปี 2025 ที่แนะนำวัฒนธรรมอาหารที่อุดมสมบูรณ์ของปูซาน ในฐานะแบรนด์อาหารอย่างเป็นทางการที่เมืองปูซานคัดเลือกและเผยแพร่ทุกปี ประกอบด้วยร้านอาหารที่ผ่านการประเมินที่เข้มงวดที่เน้นผู้ใช้
+
+คู่มือเน้นความเป็นเลิศของผลิตภัณฑ์ท้องถิ่น เช่น ผลิตภัณฑ์เกษตรกรรม ทะเล และปศุสัตว์ของปูซาน และนำเสนอสูตรอาหารที่พัฒนาโดยเชฟชื่อดังโดยใช้วัตถุดิบปูซาน นอกจากนี้ยังให้ข้อมูลรายละเอียดเกี่ยวกับประวัติศาสตร์และข้อมูลร้านอาหารของอาหารดั้งเดิมปูซาน 13 ชนิด รวมถึงปาเจอนดงแน ทเวจิกูบับ และมิลมยอน และแนะนำผู้เยี่ยมชมไปยังร้านอาหารที่แนะนำตามภูมิภาค เช่น คังซอ-กู คึมจอง-กู และดงแน-กู เพื่อช่วยให้พวกเขามีประสบการณ์อาหารที่หลากหลาย
+
+📥 **ดาวน์โหลด**: 2025 Busan's Taste Guide Download"""
+    },
+    "id": {
+        "title": "Pencarian Restoran Busan",
+        "info": "Anda dapat mencari informasi berikut:",
+        "items": [
+            "• Cari berdasarkan nama restoran",
+            "• Cari berdasarkan kategori makanan (Korea, Cina, Jepang, Barat, Seafood, dll.)",
+            "• Cari berdasarkan area (Haeundae, Seomyeon, Nampo-dong, dll.)",
+            "• Rekomendasi restoran dengan rating tinggi",
+            "• Alamat dan informasi kontak restoran"
+        ],
+        "example_title": "Contoh pencarian:",
+        "examples": [
+            "• 'Rekomendasikan restoran seafood di Haeundae'",
+            "• 'Di mana restoran BBQ yang bagus di Seomyeon?'",
+            "• 'Restoran pizza enak di Busan'",
+            "• 'Temukan restoran Korea dengan rating tinggi'",
+            "• 'Rekomendasi restoran di Nampo-dong'"
+        ],
+        "input_hint": "Jangan ragu untuk bertanya apa saja tentang restoran! 🍽️",
+        "fixed_message": """📚 **Panduan Sumber Informasi Restoran Busan**
+
+**Panduan Taxi Ranking (2025)**
+Data 'Panduan Taxi Ranking 2025' yang disediakan disusun berdasarkan April/Mei 2025, dan menu, harga, jam operasional, dll. dapat berubah tergantung pada keadaan operasional setiap usaha, dan mungkin ada penutupan sementara atau permanen. Juga, informasi dalam panduan ini didasarkan pada hari kerja, jadi mungkin ada perbedaan di akhir pekan.
+
+Panduan ini memperkenalkan restoran yang direkomendasikan langsung oleh sopir taksi Busan, menyediakan informasi 'hidup' yang dapat dipercaya seperti panduan Michelin. Sopir taksi mengangkut puluhan penumpang setiap hari dan berkeliling setiap sudut Busan, membuat mereka lebih akrab dengan rasa dan jalan kota daripada siapa pun, yang memberikan nilai tinggi pada informasi ini.
+
+📥 **Unduh**: 2025 Taxi Ranking Guidebook Download
+
+**Rasa Busan (2025)**
+'Rasa Busan (2025)' adalah panduan kuliner Busan 2025 yang memperkenalkan budaya kuliner Busan yang kaya. Sebagai merek kuliner resmi yang dipilih dan diterbitkan setiap tahun oleh Kota Busan, ini mencakup restoran yang telah lulus evaluasi ketat yang berpusat pada pengguna.
+
+Panduan ini menekankan keunggulan produk lokal seperti produk pertanian, laut, dan peternakan Busan, dan menampilkan resep yang dikembangkan oleh koki terkenal menggunakan bahan Busan. Ini juga menyediakan informasi rinci tentang sejarah dan informasi restoran dari 13 makanan tradisional Busan termasuk pajeon Dongnae, dwaeji gukbap, dan milmyeon, dan memandu pengunjung ke restoran yang direkomendasikan berdasarkan wilayah seperti Gangseo-gu, Geumjeong-gu, dan Dongnae-gu untuk membantu mereka memiliki pengalaman kuliner yang beragam.
+
+📥 **Unduh**: 2025 Busan's Taste Guide Download"""
+    }
+}
+
 def transcribe_from_mic(input_box: ft.TextField, page: ft.Page, mic_button: ft.IconButton):
     if IS_SERVER:
         input_box.hint_text = "서버에서는 음성 입력이 지원되지 않습니다."
@@ -1279,7 +1599,7 @@ def safe_text(text):
     t = t.replace('㏾', '㎛')
     return t
 
-def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None, on_share=None, custom_translate_message=None, firebase_available=True, is_foreign_worker_rag=False):
+def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None, on_share=None, custom_translate_message=None, firebase_available=True, is_foreign_worker_rag=False, is_restaurant_search_rag=False):
     # 화면 크기에 따른 반응형 설정
     is_mobile = page.width < 600
     is_tablet = 600 <= page.width < 1024
@@ -1850,11 +2170,15 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
     # --- UI 구성 ---
     # RAG 채팅방이면 예시/가이드 메시지를 항상 맨 위에 추가 (중복 방지)
     def get_rag_guide_message():
+        # 맛집검색 RAG 방인지 확인
+        if is_restaurant_search_rag or room_id == "restaurant_search_rag":
+            guide_texts = RESTAURANT_GUIDE_TEXTS.get(user_lang, RESTAURANT_GUIDE_TEXTS["ko"])
         # 외국인 근로자 권리구제 RAG 방인지 확인 (방 ID와 파라미터 모두 확인)
-        if is_foreign_worker_rag or room_id == "foreign_worker_rights_rag":
+        elif is_foreign_worker_rag or room_id == "foreign_worker_rights_rag":
             guide_texts = FOREIGN_WORKER_GUIDE_TEXTS.get(user_lang, FOREIGN_WORKER_GUIDE_TEXTS["ko"])
         else:
             guide_texts = RAG_GUIDE_TEXTS.get(user_lang, RAG_GUIDE_TEXTS["ko"])
+        
         guide_items = []
         for item in guide_texts["items"]:
             guide_items.append(ft.Text(item, size=14 if is_mobile else 16, color=ft.Colors.GREY_700, selectable=True))
@@ -1862,27 +2186,108 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
         for example in guide_texts["examples"]:
             example_items.append(ft.Text(example, size=13 if is_mobile else 14, color=ft.Colors.GREY_600, selectable=True))
         bubble_width = int(page.width * 0.9) if is_mobile else 400
-        return ft.Container(
-            content=ft.Column([
-                ft.Text(guide_texts["title"], size=18 if is_mobile else 20, weight=ft.FontWeight.BOLD, color=ft.Colors.BLUE_600, selectable=True),
-                ft.Container(height=8),
-                ft.Text(guide_texts["info"], size=15 if is_mobile else 16, color=ft.Colors.GREY_700, selectable=True),
-                ft.Container(height=8),
-                *guide_items,
-                ft.Container(height=12),
-                ft.Text(guide_texts["example_title"], size=15 if is_mobile else 16, weight=ft.FontWeight.BOLD, color=ft.Colors.GREY_700, selectable=True),
-                ft.Container(height=6),
-                *example_items,
-                ft.Container(height=12),
-                ft.Text(guide_texts["input_hint"], size=15 if is_mobile else 16, weight=ft.FontWeight.BOLD, color=ft.Colors.BLUE_600, text_align=ft.TextAlign.CENTER, selectable=True),
-            ], spacing=4),
-            padding=16 if is_mobile else 20,
-            bgcolor=ft.LinearGradient(["#E3F2FD", "#BBDEFB"], begin=ft.alignment.top_left, end=ft.alignment.bottom_right),
-            border_radius=12,
-            margin=ft.margin.only(bottom=16),
-            border=ft.border.all(1, "#2196F3"),
-            width=bubble_width,
-        )
+        
+        # 맛집검색 방인 경우 고정 메시지 추가
+        if is_restaurant_search_rag or room_id == "restaurant_search_rag":
+            # 고정 메시지를 여러 부분으로 나누기
+            message_parts = guide_texts["fixed_message"].split("📥 **다운로드**:")
+            
+            fixed_message_parts = []
+            
+            # 첫 번째 부분 (택슐랭 설명)
+            if len(message_parts) > 1:
+                taxi_part = message_parts[0].strip()
+                fixed_message_parts.append(ft.Text(
+                    taxi_part, 
+                    size=12 if is_mobile else 13, 
+                    color=ft.Colors.GREY_600, 
+                    selectable=True,
+                    text_align=ft.TextAlign.START
+                ))
+                
+                # 택슐랭 다운로드 버튼
+                fixed_message_parts.append(ft.ElevatedButton(
+                    "📥 2025 택슐랭 가이드북 다운로드",
+                    url="https://www.visitbusan.net/board/download.do?boardId=BBS_0000007&dataSid=4277&fileSid=7886",
+                    style=ft.ButtonStyle(
+                        bgcolor=ft.Colors.BLUE_50,
+                        color=ft.Colors.BLUE_700,
+                        padding=ft.padding.all(8)
+                    ),
+                    width=300 if is_mobile else 350
+                ))
+            
+            # 두 번째 부분 (부산의 맛 설명)
+            if len(message_parts) > 2:
+                busan_part = message_parts[1].split("📥 **다운로드**:")[0].strip()
+                fixed_message_parts.append(ft.Container(height=8))
+                fixed_message_parts.append(ft.Text(
+                    busan_part, 
+                    size=12 if is_mobile else 13, 
+                    color=ft.Colors.GREY_600, 
+                    selectable=True,
+                    text_align=ft.TextAlign.START
+                ))
+                
+                # 부산의 맛 다운로드 버튼
+                fixed_message_parts.append(ft.ElevatedButton(
+                    "📥 2025 부산의 맛 가이드 다운로드",
+                    url="https://www.visitbusan.net/board/download.do?boardId=BBS_0000007&dataSid=4208&fileSid=7458",
+                    style=ft.ButtonStyle(
+                        bgcolor=ft.Colors.GREEN_50,
+                        color=ft.Colors.GREEN_700,
+                        padding=ft.padding.all(8)
+                    ),
+                    width=300 if is_mobile else 350
+                ))
+            
+            return ft.Container(
+                content=ft.Column([
+                    ft.Text(guide_texts["title"], size=18 if is_mobile else 20, weight=ft.FontWeight.BOLD, color=ft.Colors.BLUE_600, selectable=True),
+                    ft.Container(height=8),
+                    ft.Text(guide_texts["info"], size=15 if is_mobile else 16, color=ft.Colors.GREY_700, selectable=True),
+                    ft.Container(height=8),
+                    *guide_items,
+                    ft.Container(height=12),
+                    ft.Text(guide_texts["example_title"], size=15 if is_mobile else 16, weight=ft.FontWeight.BOLD, color=ft.Colors.GREY_700, selectable=True),
+                    ft.Container(height=6),
+                    *example_items,
+                    ft.Container(height=12),
+                    ft.Text(guide_texts["input_hint"], size=15 if is_mobile else 16, weight=ft.FontWeight.BOLD, color=ft.Colors.BLUE_600, text_align=ft.TextAlign.CENTER, selectable=True),
+                    ft.Container(height=16),
+                    ft.Divider(color=ft.Colors.GREY_300),
+                    ft.Container(height=8),
+                    *fixed_message_parts,
+                ], spacing=4),
+                padding=16 if is_mobile else 20,
+                bgcolor=ft.LinearGradient(["#E3F2FD", "#BBDEFB"], begin=ft.alignment.top_left, end=ft.alignment.bottom_right),
+                border_radius=12,
+                margin=ft.margin.only(bottom=16),
+                border=ft.border.all(1, "#2196F3"),
+                width=bubble_width,
+            )
+        else:
+            return ft.Container(
+                content=ft.Column([
+                    ft.Text(guide_texts["title"], size=18 if is_mobile else 20, weight=ft.FontWeight.BOLD, color=ft.Colors.BLUE_600, selectable=True),
+                    ft.Container(height=8),
+                    ft.Text(guide_texts["info"], size=15 if is_mobile else 16, color=ft.Colors.GREY_700, selectable=True),
+                    ft.Container(height=8),
+                    *guide_items,
+                    ft.Container(height=12),
+                    ft.Text(guide_texts["example_title"], size=15 if is_mobile else 16, weight=ft.FontWeight.BOLD, color=ft.Colors.GREY_700, selectable=True),
+                    ft.Container(height=6),
+                    *example_items,
+                    ft.Container(height=12),
+                    ft.Text(guide_texts["input_hint"], size=15 if is_mobile else 16, weight=ft.FontWeight.BOLD, color=ft.Colors.BLUE_600, text_align=ft.TextAlign.CENTER, selectable=True),
+                ], spacing=4),
+                padding=16 if is_mobile else 20,
+                bgcolor=ft.LinearGradient(["#E3F2FD", "#BBDEFB"], begin=ft.alignment.top_left, end=ft.alignment.bottom_right),
+                border_radius=12,
+                margin=ft.margin.only(bottom=16),
+                border=ft.border.all(1, "#2196F3"),
+                width=bubble_width,
+            )
 
     # 다국어 '빠른 채팅방' 타이틀 사전
     QUICK_ROOM_TITLES = {
@@ -1901,7 +2306,9 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
     is_rag_room = custom_translate_message is not None
     rag_title = None
     if is_rag_room:
-        if is_foreign_worker_rag or room_id == "foreign_worker_rights_rag":
+        if is_restaurant_search_rag or room_id == "restaurant_search_rag":
+            rag_title = RESTAURANT_GUIDE_TEXTS.get(user_lang, RESTAURANT_GUIDE_TEXTS["ko"])['title']
+        elif is_foreign_worker_rag or room_id == "foreign_worker_rights_rag":
             rag_title = FOREIGN_WORKER_GUIDE_TEXTS.get(user_lang, FOREIGN_WORKER_GUIDE_TEXTS["ko"])['title']
         else:
             rag_title = RAG_GUIDE_TEXTS.get(user_lang, RAG_GUIDE_TEXTS["en"])['title']
@@ -2277,6 +2684,121 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
     # --- 최초 진입 시 시스템 메시지 push ---
     push_join_system_message()
 
+    # --- 이미지 뷰어 다이얼로그 ---
+    image_viewer_dialog = ft.AlertDialog(
+        title=ft.Text("이미지 뷰어"),
+        content=ft.Column([
+            ft.Image(
+                src="",
+                width=400,
+                height=300,
+                fit=ft.ImageFit.CONTAIN,
+                border_radius=8
+            ),
+            ft.Text("", size=12, color=ft.Colors.GREY_600)
+        ], spacing=10),
+        actions=[
+            ft.TextButton("닫기", on_click=lambda e: close_image_viewer())
+        ]
+    )
+
+    def show_image_viewer(image_url):
+        """이미지 뷰어 다이얼로그 표시"""
+        try:
+            image_viewer_dialog.content.controls[0].src = image_url
+            image_viewer_dialog.content.controls[1].value = image_url
+            page.dialog = image_viewer_dialog
+            image_viewer_dialog.open = True
+            page.update()
+        except Exception as e:
+            print(f"이미지 뷰어 오류: {e}")
+
+    def close_image_viewer():
+        """이미지 뷰어 다이얼로그 닫기"""
+        if page.dialog:
+            page.dialog.open = False
+            page.update()
+
+    def create_message_bubble(msg_data, is_me):
+        # 닉네임이 '익명'이고 본문/번역문이 모두 비어있으면 말풍선 생성하지 않음
+        if msg_data.get('nickname', '') == '익명' and not msg_data.get('text', '').strip() and not msg_data.get('translated', '').strip():
+            return None
+        bubble_width = int(page.width * 0.5) if is_mobile else 400
+        base_size = 16 if is_mobile else 18  # 기존보다 2pt 크게
+        is_rag = msg_data.get('nickname', '') == 'RAG'
+        font_family = None
+        # RAG 답변 특수문자 치환
+        if is_rag:
+            msg_data['text'] = safe_text(msg_data['text'])
+            msg_data['translated'] = safe_text(msg_data.get('translated', ''))
+        # 질문예시(가이드 메시지)라면 글자 크기 한 단계 키움
+        nickname = msg_data.get('nickname', '')
+        is_guide = is_rag and msg_data.get('is_guide', False)
+        nickname_color = ft.Colors.WHITE if is_me else ft.Colors.BLACK87
+        
+        # 차단 버튼 (방장이고, 자신의 메시지가 아니고, 시스템/RAG 메시지가 아닐 때만 표시)
+        block_button = None
+        if not is_me and nickname not in ['시스템', 'RAG', '익명']:
+            # 방장 권한 확인
+            current_nickname = page.session.get('nickname') or ''
+            current_user_id = page.session.get('user_id')
+            if is_room_owner(room_id, current_nickname, current_user_id):
+                block_button = ft.IconButton(
+                    icon=ft.Icons.BLOCK,
+                    icon_color=ft.Colors.RED_400,
+                    icon_size=16,
+                    tooltip="사용자 차단 (방장 전용)",
+                    on_click=lambda e, nickname=nickname: block_user_from_message(nickname)
+                )
+        
+        # 메시지 텍스트를 클릭 가능한 링크로 변환
+        message_text_parts = create_clickable_text(
+            msg_data.get('text', ''), 
+            on_image_click=show_image_viewer
+        )
+        
+        controls = [
+            ft.Row([
+            ft.Text(
+                    nickname,
+                    size=(base_size - 2) + (2 if is_guide else 0),
+                    color=nickname_color,
+                    italic=True,
+                    font_family=font_family,
+                    selectable=True,
+                ),
+                block_button if block_button else ft.Container()
+            ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN) if block_button else ft.Text(
+                nickname,
+                size=(base_size - 2) + (2 if is_guide else 0),
+                color=nickname_color,
+                italic=True,
+                font_family=font_family,
+                selectable=True,
+            ),
+            ft.Row(message_text_parts, wrap=True),
+        ]
+        if msg_data.get('translated', ''):
+            translated_parts = create_clickable_text(
+                msg_data.get('translated', ''), 
+                on_image_click=show_image_viewer
+            )
+            controls.append(
+                ft.Row(translated_parts, wrap=True)
+            )
+        # Row로 감싸서 좌/우 정렬
+        return ft.Row([
+            ft.Container(
+                content=ft.Column(controls, spacing=2),
+            padding=12,
+                bgcolor="#2563EB" if is_me else ft.Colors.GREY_200,
+                border_radius=16,
+                margin=ft.margin.only(top=6, left=8, right=8),
+                width=bubble_width,
+                alignment=ft.alignment.top_right if is_me else ft.alignment.top_left,
+            )
+        ], alignment=ft.MainAxisAlignment.END if is_me else ft.MainAxisAlignment.START)
+
     # 전체 레이아웃
     return ft.View(
         f"/chat/{room_id}",
@@ -2342,3 +2864,63 @@ def is_room_owner(room_id, nickname, user_id=None):
     except Exception as e:
         print(f"방장 권한 확인 오류: {e}")
         return False
+
+# URL 감지 정규식
+URL_PATTERN = re.compile(r'https?://[^\s]+')
+IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp']
+
+def is_image_url(url):
+    """URL이 이미지 링크인지 확인"""
+    url_lower = url.lower()
+    return any(ext in url_lower for ext in IMAGE_EXTENSIONS)
+
+def extract_urls(text):
+    """텍스트에서 URL들을 추출"""
+    return URL_PATTERN.findall(text)
+
+def create_clickable_text(text, on_image_click=None):
+    """텍스트에서 이미지 URL을 클릭 가능한 링크로 변환"""
+    if not text:
+        return [ft.Text(text, selectable=True)]
+    
+    urls = extract_urls(text)
+    if not urls:
+        return [ft.Text(text, selectable=True)]
+    
+    parts = []
+    last_end = 0
+    
+    for url in urls:
+        start = text.find(url, last_end)
+        if start == -1:
+            break
+            
+        # URL 앞의 텍스트
+        if start > last_end:
+            parts.append(ft.Text(text[last_end:start], selectable=True))
+        
+        # URL 부분
+        if is_image_url(url):
+            # 이미지 URL은 클릭 가능한 버튼으로
+            parts.append(
+                ft.TextButton(
+                    text=f"🖼️ {url[:50]}{'...' if len(url) > 50 else ''}",
+                    url=url,
+                    on_click=lambda e, url=url: on_image_click(url) if on_image_click else None,
+                    style=ft.ButtonStyle(
+                        color=ft.Colors.BLUE,
+                        text_style=ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE)
+                    )
+                )
+            )
+        else:
+            # 일반 URL은 그냥 텍스트로
+            parts.append(ft.Text(url, color=ft.Colors.BLUE, selectable=True))
+        
+        last_end = start + len(url)
+    
+    # 마지막 URL 뒤의 텍스트
+    if last_end < len(text):
+        parts.append(ft.Text(text[last_end:], selectable=True))
+    
+    return parts if parts else [ft.Text(text, selectable=True)]

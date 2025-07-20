@@ -1,0 +1,2736 @@
+{
+    "부산의 맛 2025": {
+      "강서구": [
+        {
+          "식당이름": {
+            "한글": "만호갈미샤브샤브",
+            "영어": "Manho Galmi Shabu-shabu"
+          },
+          "개요": {
+            "한글": "샤브샤브, 수육, 구이 등 다양한 방식으로 갈미조개를 요리하는 갈미조개 전문 식당입니다. 국물이 맛있기로 유명하며, 갈미샤브샤브와 갈미수육이 대표메뉴입니다.",
+            "영어": "The restaurant specializes in hen clams and offers a variety of dishes-shabu-shabu, steamed, and grilled. Also famous for their hearty soup, hen clam shabu shabu and steamed clams are the top picks."
+          },
+          "메뉴": {
+            "한글": "갈미샤브샤브 ￦50,000-80,000, 갈미조개삼겹살 ￦50,000-80,000",
+            "영어": "Hen Clam Shabu Shabu ￦50,000-80,000, Hen Clam Samgyeopsal ￦50,000-80,000"
+          },
+          "영업시간": "11:00–15:30 / 17:00-21:30",
+          "주소": "강서구 르노삼성대로 602",
+          "전화번호": "051-271-4389",
+          "휴무일": "2, 4주 월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "방코",
+            "영어": "BANCO"
+          },
+          "개요": {
+            "한글": "특이한 외관의 건물에 위치하며, 화덕에 구운 피자와 파스타를 만드는 곳입니다. 신선한 재료와 새로운 조리법을 사용하여 풍부하고 담백한 맛을 내는 것이 특징이며, 트러플 피자와 블루치즈 피자가 대표메뉴입니다.",
+            "영어": "This restaurant with an eccentric exterior is home to pizzas and pasta baked in the oven. They use fresh ingredients and new recipes to create rich and light flavors. Truffle-flavored pizza and blue cheese pizza are the most popular dishes."
+          },
+          "메뉴": {
+            "한글": "풍기 트러플 피자 ￦22,000, 무화과 블루치즈 피자 ￦20,000",
+            "영어": "Fungi Truffle Pizza ￦22,000, Fig and Blue Cheese Pizza ￦20,000"
+          },
+          "영업시간": "11:30-14:30 / 17:00-20:30",
+          "주소": "강서구 새진목길 51",
+          "전화번호": "051-271-2068",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "토북베이커리",
+            "영어": "TOBUK BAKERY"
+          },
+          "개요": {
+            "한글": "넓은 한옥 인테리어의 카페로 대한민국 제과제빵 명장 ‘김덕규 베이커리’를 함께 즐길 수 있습니다. 한옥과 어우러진 마당을 바라보며 사계절을 아름답게 감상할 수 있는 매력적인 장소입니다.",
+            "영어": "The cafe has a spacious hanok interior and serves Korean pastry master Kim Deok-gyu’s baked goods. It’s a charming spot where you can look out over the courtyard that blends in with the hanok and enjoy the beauty of the four seasons."
+          },
+          "메뉴": {
+            "한글": "시그니처 토끼거북이 커피(브루잉 아메리카노) ￦5,000, 소금빵 2개 ￦4,000",
+            "영어": "Signature Rabbit Turtle Coffee (Brewed Americano) ￦5,000, Salt Bread ￦4,000/2"
+          },
+          "영업시간": "10:00-22:00",
+          "주소": "강서구 낙동남로 526-1 토북베이커리카페",
+          "전화번호": "0507-1371-0250",
+          "휴무일": "설날 당일"
+        }
+      ],
+      "금정구": [
+        {
+          "식당이름": {
+            "한글": "구포촌국수",
+            "영어": "Gupo Chonguksu"
+          },
+          "개요": {
+            "한글": "메뉴는 오직 국수 한 가지이며, 남해안 최고급 멸치 4~5종을 섞어 12시간 이상 끓인 육수를 사용합니다. 2대에 걸쳐 30여 년을 운영 중인 유명한 국수전문점입니다.",
+            "영어": "The menu features only one noodle dish, using broth simmered for more than 12 hours with four or five of the South Coast’s finest anchovies. This renowned noodle shop has been in business for more than 30 years, spanning two generations, and can be recommended to anyone."
+          },
+          "메뉴": {
+            "한글": "국수 ￦6,000 / 7,000 / 8,000",
+            "영어": "Noodles ￦6,000 / 7,000 / 8,000"
+          },
+          "영업시간": "10:30-15:00",
+          "주소": "금정구 금샘로 490",
+          "전화번호": "051-515-1751",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "마파람 해물찜 해물탕 구서본점",
+            "영어": "Maparam Haemuljjim Haemultang Guseo Main Branch"
+          },
+          "개요": {
+            "한글": "깔끔한 외관과 인테리어를 가진 큰 규모의 매장으로 2005년에 개업하여 오랜 시간 사랑받아 온 해산물요리전문점입니다. 싱싱한 해산물과 누구나 좋아할 만한 맛의 양념이 인기 높습니다.",
+            "영어": "The spacious hall, with stylish external and internal decor, is always full of customers. Opened in 2005, it has been a longtime local favorite for its fresh seafood and delicious marinade that anyone would enjoy."
+          },
+          "메뉴": {
+            "한글": "해물찜 ￦60,000-90,000, 해물탕 ￦60,000-90,000",
+            "영어": "Steamed seafood ￦60,000-90,000, Seafood soup ￦60,000-90,000"
+          },
+          "영업시간": "11:00-15:00 / 17:00-22:30",
+          "주소": "금정구 금강로 418 2층",
+          "전화번호": "051-557-5577",
+          "휴무일": "2, 4주 월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "모모스커피",
+            "영어": "Momos Coffee"
+          },
+          "개요": {
+            "한글": "2019 월드 바리스타 챔피언십(WBC) 우승자가 있는 곳으로 부산에서도 가장 유명한 카페 중 하나입니다. 고급 원두를 직접 로스팅하여 커피를 준비하며, 커피에 대한 애정이 가득한 공간입니다.",
+            "영어": "The winner of the 2019 World Barista Championship (WBC) is from this cafe, Momos Coffee, one of the most famous cafes in Busan, the city of cafes. It is a space full of love for coffee, offering high-quality beans that they roast themselves."
+          },
+          "메뉴": {
+            "한글": "오늘의 핸드드립 ￦6,500, 아메리카노 쇼콜라 ￦6,000",
+            "영어": "Today’s drip coffee ￦6,500, Americano chocolat ￦6,000"
+          },
+          "영업시간": "08:00-18:00",
+          "주소": "금정구 오시게로 20",
+          "전화번호": "051-512-7034",
+          "휴무일": "명절, 근로자의 날"
+        },
+        {
+          "식당이름": {
+            "한글": "부산대 포맨티코",
+            "영어": "Phomantico PNU Branch"
+          },
+          "개요": {
+            "한글": "제대로 된 맛이 나게 사골 뼈를 24시간 이상 끓이고, 매일 아침 정성껏 재료를 준비합니다. 베트남 음식에 좋은 기억이 없던 사람들에게도 추천하고 싶은 곳입니다.",
+            "영어": "To make proper broth, this restaurant boils beef leg bones for over 24 hours and carefully prepares the ingredients every morning. No matter which cuisine it is, dedication is what makes great food. It’s highly recommended to people who have been unfamiliar with Vietnamese food."
+          },
+          "메뉴": {
+            "한글": "A set(2인) ￦29,000, B set(2인) ￦37,000",
+            "영어": "A set(2 persons) ￦29,000, B set(2 persons) ￦37,000"
+          },
+          "영업시간": "11:00-15:00 / 16:30-21:00",
+          "주소": "금정구 장전로 12번길 16",
+          "전화번호": "051-583-2682",
+          "휴무일": "수요일"
+        },
+        {
+          "식당이름": {
+            "한글": "이흥용과자점 부산대점",
+            "영어": "Lee Heung-yong Bakery PNU Branch"
+          },
+          "개요": {
+            "한글": "유명한 대한민국 제과명장의 베이커리로 4년간 간수 뺀 신안천일염, 제철 우리 농산물 등 좋은 재료를 사용하여 100여종의 빵과 디저트를 매일 직접 구워 제공합니다.",
+            "영어": "Owned by one of the most famous Korean confectionery masters, it uses quality ingredients such as sun-dried salt from Sinan that removed salt water for four years and seasonal domestic produce. Over 100 kinds of bread and desserts are prepared and served every day."
+          },
+          "메뉴": {
+            "한글": "소금빵(2) ￦3,800, 명장전병 ￦13,000 / 23,000",
+            "영어": "Salt bread(2) ￦3,800, Myeongjang jeonbyeong ￦13,000 / 23,000"
+          },
+          "영업시간": "08:30-21:00",
+          "주소": "금정구 부산대학로 63번길 30",
+          "전화번호": "051-711-4454",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "톤쇼우 부산대점",
+            "영어": "Tonshou PNU Branch"
+          },
+          "개요": {
+            "한글": "유명 돈카츠 전문점 톤쇼우의 본점으로, 좋은 재료를 선별해 저온, 고온, 레스팅, 숯불구이의 네 단계 조리를 거쳐 놀라운 맛의 돈카츠를 제공합니다.",
+            "영어": "This is the main branch of the famous tonkatsu specialty store Tonshou. The restaurant selects quality ingredients and makes amazing tonkatsu through four stages: low-temperature frying, high-temperature frying, resting, and charcoal grilling."
+          },
+          "메뉴": {
+            "한글": "버크셔K 특 로스카츠 ￦16,500, 히레카츠 ￦11,500",
+            "영어": "Berkshire K Special Roast Katsu ￦16,500, Hirekatsu ￦11,500"
+          },
+          "영업시간": "11:00-21:00",
+          "주소": "금정구 금강로 247-10",
+          "전화번호": "010-5685-5482",
+          "휴무일": "명절"
+        }
+      ],
+      "기장군": [
+        {
+          "식당이름": {
+            "한글": "고향연화",
+            "영어": "Gohyangyeonhwa"
+          },
+          "개요": {
+            "한글": "따뜻하고 밝은 분위기의 식당으로 휴양지 같은 건물 외관이 인상적입니다. 국내산 특등급 돈원육으로 만든 돈까스와 당일 배송된 완도 전복으로 만든 전복리조또로 유명합니다.",
+            "영어": "It’s a warm and bright restaurant with an exterior that looks like something you’d find at a vacation spot. The restaurant is known for its pork cutlet made with premium domestic pork and abalone risotto made with abalones from Wando Island delivered the same day."
+          },
+          "메뉴": {
+            "한글": "B SET ￦51,000, C SET ￦50,000",
+            "영어": "B SET ￦51,000, C SET ￦50,000"
+          },
+          "영업시간": "11:30-20:30",
+          "주소": "기장군 기장읍 연화길 33-8",
+          "전화번호": "051-724-9005",
+          "휴무일": "수요일"
+        },
+        {
+          "식당이름": {
+            "한글": "대성갈치찌개구이",
+            "영어": "Daeseong Galchi Jjigaegui"
+          },
+          "개요": {
+            "한글": "갈치찌개와 구이, 멸치회와 찌개가 맛있는 대변항 인근 식당으로 로컬 단골고객이 많습니다. 신선한 생멸치와 제주산 생갈치를 사용하여 볼륨감 있고 부드러운 맛이 특징입니다.",
+            "영어": "A Daebyeon Port restaurant with many local regulars that serves stewed and grilled galchi (cutlassfish), anchovy sliced raw fish, and jjigae (stew). The dishes are made of fresh raw anchovies and raw cutlass fish from Jeju Island, with chunky volume and tender flavor."
+          },
+          "메뉴": {
+            "한글": "갈치찌개 1인분 ￦43,000, 갈치구이 1인분 ￦43,000",
+            "영어": "Galchi Jjigae(cutlassfish stew) for 1 ￦43,000, Galchi Gui(grilled cutlassfish) for 1 ￦43,000"
+          },
+          "영업시간": "11:00-20:30",
+          "주소": "기장군 기장읍 대변2길 9",
+          "전화번호": "051-721-2289",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "무진장횟집 기장점",
+            "영어": "Mujinjang Hoetjip Gijang Branch"
+          },
+          "개요": {
+            "한글": "365일 직접 붕장어의 상태를 체크하여 제공하고, 손질부터 조리까지 주방장이 책임지는 붕장어전문점입니다. 비법인 초장부터 김치까지 손님상에 올라가는 모든 것을 직접 만들어 사용합니다.",
+            "영어": "At this conger eel restaurant, the chef carefully checks the condition of the eel 365 days a year and takes charge of cleaning and cooking. It makes everything on the menu, from the secret sauce to the kimchi."
+          },
+          "메뉴": {
+            "한글": "붕장어 한접시(2인분) ￦60,000, 돌돔 한접시(2인분) 시가",
+            "영어": "Conger eel platter(2 servings) ￦60,000, Rock bream platter(2 servings) (market price)"
+          },
+          "영업시간": "11:00-21:00",
+          "주소": "기장군 기장읍 연화1길 137",
+          "전화번호": "051-721-2956",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "올바릇 본점",
+            "영어": "Olbareut Main Branch"
+          },
+          "개요": {
+            "한글": "하루 1,000여명이 방문하는 인기 높은 식당으로 국내산 재료만을 사용한 특제소스로 만든 꼬막비빔밥, 육전 등을 이색적인 플레이팅으로 담아냅니다. 방문 시 웨이팅은 필수입니다.",
+            "영어": "Olbareut is a popular restaurant with more than 1,000 visitors per day. It offers kkomak bibimbap with special sauce, yukjeon, and other dishes using only domestic ingredients that are served in a unique style. Expect a queue when you are there."
+          },
+          "메뉴": {
+            "한글": "꼬막대판 ￦38,000, 꼬막육전대판 ￦37,000",
+            "영어": "Kkomak platter ￦38,000, Kkomak and yukjeon platter ￦37,000"
+          },
+          "영업시간": "11:00-16:00 / 17:00-20:00",
+          "주소": "기장군 일광읍 문오성길61",
+          "전화번호": "070-8845-7277",
+          "휴무일": "명절, 노동절"
+        },
+        {
+          "식당이름": {
+            "한글": "일미아구찜",
+            "영어": "Ilmi Agujjim"
+          },
+          "개요": {
+            "한글": "일광에 위치한 아귀찜전문점으로, 어디서 구해오는지 궁금할 정도로 커다란 아귀를 사용하여 아귀찜을 만듭니다. 매운 정도를 선택할 수 있으며, 많은 사람들이 찾는 유명한 가게입니다.",
+            "영어": "Located in Ilgwang Beach, this is an agujjim (braised monkfish) specialty restaurant. They use extra-large monkfish for the braise and allow customers to choose the level of spiciness at the time of order. It is very famous and filled with guests all the time."
+          },
+          "메뉴": {
+            "한글": "아귀찜 ￦40,000-60,000, 아귀수육 ￦60,000-80,000",
+            "영어": "Agujjim(braised monkfish) ￦40,000-60,000, Agu suyuk(steamed monkfish) ￦60,000-80,000"
+          },
+          "영업시간": "10:30-20:00",
+          "주소": "기장군 일광읍 학리등대로 102",
+          "전화번호": "051-724-3318",
+          "휴무일": "화요일, 명절"
+        },
+        {
+          "식당이름": {
+            "한글": "칠암사계",
+            "영어": "Chiramsagye"
+          },
+          "개요": {
+            "한글": "기장의 바다를 바라보면서 다양한 빵과 음료를 즐길 수 있는 유명한 카페입니다. 모든 곳이 예쁘고, 모든 빵이 맛있으며, 소금빵과 칠암돌만주가 특히 유명합니다.",
+            "영어": "This place attracts so many people that the huge hall feels small. At this famous cafe, customers can enjoy a variety of bread and drinks as they view the sea of Gijang. All the places are pretty, all the bread is delicious, and salt bread and Chiramdol Manju are especially famous."
+          },
+          "메뉴": {
+            "한글": "소금빵(2) ￦4,000, 칠암돌만주 ￦2,300",
+            "영어": "Salt bread(2) ￦4,000, Chiramdol Manju ￦2,300"
+          },
+          "영업시간": "10:00-21:00",
+          "주소": "기장군 일광읍 칠암1길 7-10",
+          "전화번호": "0507-1318-4900",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "탐복",
+            "영어": "Tambok"
+          },
+          "개요": {
+            "한글": "예쁜 플레이팅에 담긴 국내산 전복요리, 시그니처인 전복 내장 소스 등 전복요리를 전문으로 하는 캐주얼 한식당입니다. 오래된 가옥을 활용한 한국식+캐주얼 인테리어가 돋보입니다.",
+            "영어": "This casual Korean restaurant specializes in abalone dishes, such as Korean abalone served on beautiful plates and the signature abalone guts sauce. The architecture features a blend of traditional Korean and casual interiors in an old Hanok building."
+          },
+          "메뉴": {
+            "한글": "탐복죽, 탐복밥 ￦17,000, 탐복구이 ￦38,000",
+            "영어": "Tambok Porridge, Tambok Rice ￦17,000, Tambok Gui(grilled abalone) ￦38,000"
+          },
+          "영업시간": "10:30-16:00",
+          "주소": "기장군 일광읍 문오성길 31",
+          "전화번호": "051-727-4213",
+          "휴무일": "월, 화요일"
+        }
+      ],
+      "남구": [
+        {
+          "식당이름": {
+            "한글": "광명집",
+            "영어": "Gwangmyeongjip"
+          },
+          "개요": {
+            "한글": "충무식당이란 이름으로도 많이 기억되는 대구뽈찜전문점으로, 양파가 가득 들어간 빨간 양념이 특징입니다. 막걸리와 잘 어울리며, 감자면 사리를 추가하면 완벽한 식사를 즐길 수 있습니다.",
+            "영어": "Also remembered by its old name, Chungmu Restaurant, this restaurant specializes in braised codfish cheek, characterized by the spicy marinade and a heap of onion slices. The unique presentation of braised codfish cheeks, which are topped with bean sprouts and spicy marinade, pairs well with makgeolli and is perfect when eaten with potato noodles."
+          },
+          "메뉴": {
+            "한글": "대구뽈찜 ￦31,000 / 43,000 / 50,000",
+            "영어": "Braised codfish cheeks ￦31,000 / 43,000 / 50,000"
+          },
+          "영업시간": "11:30-21:00",
+          "주소": "남구 진남로 15",
+          "전화번호": "051-627-4319",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "김유순대구뽈찜",
+            "영어": "Kim Yu-sun Daegu Ppoljjim"
+          },
+          "개요": {
+            "한글": "20년 넘게 대를 이어 운영 중인 아귀찜/대구뽈찜 전문점으로 신선하고 품질 좋은 재료들로 찜 요리를 만듭니다. 대구뽈찜은 양파가 가득 올려진 독특한 조리법이 사용되며, 두 가지 찜 요리가 모두 인기 있습니다.",
+            "영어": "For over twenty years, this restaurant has been operated by generations of family members. They specialize in braised monkfish and codfish dishes made with fresh and quality ingredients. For braised codfish heads, their unique cooking style adds heaps of onions on top. Both braised fish dishes are popular."
+          },
+          "메뉴": {
+            "한글": "아귀찜 ￦40,000-60,000, 대구찜 ￦40,000-60,000",
+            "영어": "Agujjim(Braised Monkfish) ￦40,000-60,000, Daegujjim(Braised Codfish) ￦40,000-60,000"
+          },
+          "영업시간": "11:00-22:00",
+          "주소": "남구 신선로 458",
+          "전화번호": "051-621-4376",
+          "휴무일": "월요일, 명절"
+        },
+        {
+          "식당이름": {
+            "한글": "백가백반",
+            "영어": "Baekgabaekban"
+          },
+          "개요": {
+            "한글": "한식을 기본으로 한 집밥 스타일의 백반집으로 정갈한 상차림을 선보입니다. 잘 구워진 생선구이가 인기 있으며, 모든 반찬을 직접 만들고 메인메뉴는 주문 후 바로 조리됩니다.",
+            "영어": "It is a Korean-style home-cooked meal restaurant that serves carefully arranged dishes. Grilled fish is popular here, where all the side dishes are made from scratch, and the main dishes are cooked immediately after the orders are placed."
+          },
+          "메뉴": {
+            "한글": "생선구이정식 ￦10,900, 해물뚝배기 ￦12,000",
+            "영어": "Grilled fish set menu ￦10,900, Seafood ttukbaegi ￦12,000"
+          },
+          "영업시간": "10:30-15:30 / 16:30-21:00",
+          "주소": "남구 분포로 145, W스퀘어 상가동 2층 2097호",
+          "전화번호": "051-711-0211",
+          "휴무일": "화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "부산약콩밀면",
+            "영어": "Busan Yakkong Milmyeon"
+          },
+          "개요": {
+            "한글": "밀면에 맛과 건강을 더하기 위해 40년간 쌓인 노하우를 바탕으로 약콩, 함초, 톳으로 만든 천연 간수와 기장 다시마로 직접 만든 식초를 사용하여 깊은 맛을 가진 특색 있는 밀면을 개발했습니다.",
+            "영어": "To make milmyeon more flavorful and healthy, they applied 40 years of know-how to create a unique recipe using natural brine from yak-kong soybeans, hamcho (glasswort), and tot (hijiki) and vinegar made of kelp produced in Gijang."
+          },
+          "메뉴": {
+            "한글": "물밀면 ￦8,000, 물비빔밀면 ￦9,000",
+            "영어": "Mul milmyeon ￦8,000, Mulbibim milmyeon ￦9,000"
+          },
+          "영업시간": "11:00-15:30 / 17:00-19:30",
+          "주소": "남구 동명로145번길 80 1층",
+          "전화번호": "051-611-1231",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "쌍둥이돼지국밥 본점",
+            "영어": "Ssangdungi Dwaejigukbap Main Store"
+          },
+          "개요": {
+            "한글": "식사 시간에는 길게 줄을 선 모습을 볼 수 있는 유명한 식당으로, 부산의 수많은 돼지국밥전문점 중에서도 손에 꼽히는 곳입니다. 항정살 수육으로 유명합니다.",
+            "영어": "It is a famous restaurant where you can see a long line during mealtime. Ssangdungi is one of the most popular dwaejigukbap (pork soup) restaurants in Busan, home of this local dish. They are famous for the tenderness of their pork meat."
+          },
+          "메뉴": {
+            "한글": "돼지국밥 ￦9,000, 수육백반 ￦11,000",
+            "영어": "Pork Soup ￦9,000, Steamed Pork Set ￦11,000"
+          },
+          "영업시간": "09:00-22:00",
+          "주소": "남구 유엔평화로 35-1",
+          "전화번호": "051-628-7021",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "알천순대곱창전골 전문점",
+            "영어": "Alcheon Sundae Gopchang Jeongeol Jeonmunjeom"
+          },
+          "개요": {
+            "한글": "직접 공수한 재료들로 순대와 곱창 등 모든 과정을 정성스럽게 준비합니다. 진한 육수와 부드러운 맛으로 대학생부터 중장년층까지 다양한 손님들이 찾습니다.",
+            "영어": "From the handmade sundae with ingredients sourced directly from the farm to the hand-cut gopchang, everything here is done with care. With the rich broth and mild flavor of the hot pot, the restaurant attracts a wide range of customers, from college students to the middle-aged."
+          },
+          "메뉴": {
+            "한글": "순대곱창전골(1인분) - 2인이상 주문 ￦15,000",
+            "영어": "Sundae Gopchang Hot Pot for 1 (minimum 2 servings) ￦15,000"
+          },
+          "영업시간": "11:00-15:00 / 16:00-21:20",
+          "주소": "남구 용소로 7번길 88",
+          "전화번호": "051-612-5952",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "초원복국",
+            "영어": "Chowonbokguk"
+          },
+          "개요": {
+            "한글": "50년 경력의 일식요리사인 아버지와 부산 최초의 특수조리사 복어자격증 소지자인 아들이 2대째 경영하는 복어요리 전문점입니다. 언제나 많은 손님들로 북적입니다.",
+            "영어": "Chowonbokguk is a well-known restaurant specializing in pufferfish cuisine. Started by a father with 50 years of experience as a Japanese restaurant chef, it is now managed by his son, who was the first to obtain the special cooking license for pufferfish in Busan. The place is always packed with customers who want to taste their top-notch pufferfish dishes."
+          },
+          "메뉴": {
+            "한글": "복국 ￦16,000, 복수육 ￦40,000",
+            "영어": "Bokguk(pufferfish soup) ￦16,000, Bok suyuk(steamed pufferfish meat) ￦40,000"
+          },
+          "영업시간": "09:00-15:00 / 17:00-21:00",
+          "주소": "남구 황령대로 492번길 30",
+          "전화번호": "051-628-3935",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "태화반점",
+            "영어": "Taehwa Banjeom"
+          },
+          "개요": {
+            "한글": "한국 중화요리와 일본 중화요리를 접목시킨 또 다른 스타일의 중화요리 전문점입니다. 케첩 소스를 베이스로 한 광동식 탕수육과 일본식 사천식 마파두부가 유명합니다.",
+            "영어": "A different style of Chinese cuisine that combines Korean and Japanese styles of Chinese cuisine. It is known for the Cantonese hot and sour pork with ketchup sauce and Japanese-style Sichuan mapo tofu."
+          },
+          "메뉴": {
+            "한글": "광동식탕수육 ￦22,000, 사천식 마파두부 ￦13,000",
+            "영어": "Guangdong-style Sweet and Sour Pork ￦22,000, Sichuan-style Mapo Tofu ￦13,000"
+          },
+          "영업시간": "17:00-24:00",
+          "주소": "남구 분포로 115 힐탑탑플레이스 B동 109호",
+          "전화번호": "051-611-6799",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "합천국밥집",
+            "영어": "Hapcheon Gukbapjip"
+          },
+          "개요": {
+            "한글": "부산의 돼지국밥을 이야기할 때 빠지지 않는 곳 중 한 곳으로, 다른 유명 돼지국밥집과는 다르게 맑고 깔끔한 국물이 특징입니다. 국산 돼지고기만 사용하며, 큼직한 고기가 아낌없이 들어 있습니다.",
+            "영어": "This restaurant is indispensable when discussing dwaejigukbap in Busan. It’s differentiated from other gukbap joints by the clear and lean broth. Large chunks of domestic pork are generously served in the soup."
+          },
+          "메뉴": {
+            "한글": "돼지국밥 ￦12,000, 수육 ￦40,000 / 45,000",
+            "영어": "Dwaejigukbap(pork soup with rice) ￦12,000, Steamed pork ￦40,000 / 45,000"
+          },
+          "영업시간": "09:30-14:00 / 14:30-20:00",
+          "주소": "남구 용호로 235",
+          "전화번호": "051-628-4898",
+          "휴무일": "명절"
+        }
+      ],
+      "동구": [
+        {
+          "식당이름": {
+            "한글": "60년 전통 할매국밥",
+            "영어": "Halmae Gukbap"
+          },
+          "개요": {
+            "한글": "60년 전통의 돼지국밥 전문점으로, 식사 시간에는 30분 이상 기다려야 하는 유명한 식당입니다. 대부분의 돼지국밥과는 다른 맑은 국물이 특징이며, 대충 썬 것 같은 돼지 수육은 예상외로 부드럽습니다. 돼지국물과 고기가 따로 나오는 수육백반이 특히 인기 있습니다.",
+            "영어": "This is a restaurant specializing in pork soup with 60 years of tradition. It’s so famous that you have to wait longer than 30 minutes during meal times. Unlike most other pork soup, their dwaejigukbap has clear broth, and the roughly sliced pork meat is incredibly tender. The steamed meat set, which serves the pork broth and meat separately, is especially popular."
+          },
+          "메뉴": {
+            "한글": "따로 국밥 ￦7,000, 수육백반 ￦9,000",
+            "영어": "Ddaro gukbap ￦7,000, Steamed meat set ￦9,000"
+          },
+          "영업시간": "10:00-19:00",
+          "주소": "동구 중앙대로533번길 4",
+          "전화번호": "051-646-6295",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "88돼지갈비",
+            "영어": "88 Dwaejigalbi"
+          },
+          "개요": {
+            "한글": "숙련된 솜씨로 구워주는 고기의 맛을 표현할 방법이 없을 정도로 훌륭한 곳입니다. 입구부터 투박하고 오래된 흔적을 풍기며, 40여 년을 운영해 온 양념구이전문점으로 현지인의 단골가게입니다.",
+            "영어": "The taste of the masterfully grilled meat is indescribably good. This 40-year-old restaurant with a rustic and quaint entrance is a local favorite that specializes in marinaded barbecue."
+          },
+          "메뉴": {
+            "한글": "양념돼지목살 ￦10,000",
+            "영어": "Marinaded pork shoulder ￦10,000"
+          },
+          "영업시간": "12:00-22:30",
+          "주소": "동구 고관로 101-1",
+          "전화번호": "051-468-3065",
+          "휴무일": "둘째주 일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "밀양갈비",
+            "영어": "Miryang Galbi"
+          },
+          "개요": {
+            "한글": "초량돼지갈비골목에서도 손꼽히는 식당으로 국내산 암퇘지만 사용합니다. 양념갈비와 생갈비가 모두 준비되어 있으며, 제공되는 모든 음식은 가게에서 직접 만듭니다.",
+            "영어": "It is one of the best restaurants in Choryang Pork Ribs Alley and only uses domestic sows. Both seasoned and unseasoned ribs are available, and all the food served is made from scratch."
+          },
+          "메뉴": {
+            "한글": "돼지갈비 ￦11,000, 생갈비 ￦11,000",
+            "영어": "Pork ribs ￦11,000, Unseasoned rib ￦11,000"
+          },
+          "영업시간": "11:30-21:30",
+          "주소": "동구 초량로 17-5",
+          "전화번호": "051-466-4546",
+          "휴무일": "둘째주 화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "백산키친",
+            "영어": "Baeksan Kitchen"
+          },
+          "개요": {
+            "한글": "계절 재료를 사용해 회, 구이, 탕 등 다양한 요리를 만들어내는 일식 주점입니다. 술을 즐기러 찾았다가 배부르게 식사하게 되는 곳으로, 숙련된 셰프가 정성껏 준비하는 친절하고 기분 좋은 곳입니다.",
+            "영어": "This Japanese-style izakaya restaurant uses seasonal ingredients to create a variety of dishes such as sliced raw fish, grilled dishes, and soup. People come here for drinks but end up very full. The service is friendly and pleasant, and the food is carefully prepared by experienced chefs."
+          },
+          "메뉴": {
+            "한글": "모듬숙성회 ￦60,000-120,000, 수비드 스테이크 ￦35,000",
+            "영어": "Assorted aged sliced raw fish ￦60,000-120,000, Sous vide steak ￦35,000"
+          },
+          "영업시간": "17:30-01:00",
+          "주소": "동구 조방로14 동일타워 225호",
+          "전화번호": "051-635-8219",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "범일빈대떡",
+            "영어": "Beomil Bindaetteok"
+          },
+          "개요": {
+            "한글": "‘백종원의 3대천왕’에 출연했던 곳으로, 지금은 흔치 않은 빈대떡 전문점입니다. 오래된 감성을 가지고 있으며, 대표메뉴 빈대떡은 100% 녹두를 사용하여 담백하면서도 고소한 매력적인 맛을 냅니다.",
+            "영어": "It appeared on the famous cooking variety show called, “Baek Jong-won’s Top 3 Chef King.” It’s a bindaeddeok (pancake) shop, rare to find these days. Their classic dish is bindaeddeok with quaint sensibilities, made with 100% mung beans. It has a light yet savory taste."
+          },
+          "메뉴": {
+            "한글": "빈대떡 ￦10,000, 파전 ￦12,000",
+            "영어": "Bindaeddeok ￦10,000, Pajeon(green onion pancake) ￦12,000"
+          },
+          "영업시간": "15:00-24:00",
+          "주소": "동구 중앙대로 519",
+          "전화번호": "051-646-0081",
+          "휴무일": "1, 3주 일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "신발원",
+            "영어": "Sinbarwon"
+          },
+          "개요": {
+            "한글": "부산차이나타운의 양대 만두전문점 중 하나로, 시간과 관계없이 길게 줄이 서있는 곳입니다. 중국빵과 만두를 전문으로 하며, 두께감이 느껴지는 푹신한 만두피와 풍부한 육즙의 고기만두가 대표 음식입니다.",
+            "영어": "This famous restaurant is one of the two major dumpling shops in Busan Chinatown. You will find long lines of people regardless of the time. Specializing in Chinese bread and dumplings, this shop’s thick and fluffy dumplings, mainly the juicy meat dumplings, are popular."
+          },
+          "메뉴": {
+            "한글": "고기만두 ￦4,500, 군만두 ￦5,300",
+            "영어": "Meat Dumplings ￦4,500, Grilled Dumplings ￦5,300"
+          },
+          "영업시간": "11:00-21:00",
+          "주소": "동구 대영로243번길 62",
+          "전화번호": "051-467-0177",
+          "휴무일": "화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "초량온당",
+            "영어": "Choryang Ondang"
+          },
+          "개요": {
+            "한글": "오픈 시간부터 원하는 빵을 사기 위해 긴 줄이 생기는 유명 베이커리로, 부산에서도 보기 힘든 색다른 조합과 레시피의 다양한 빵들을 만날 수 있습니다. 황 치즈를 사용한 빵들이 제일 인기 있다고 합니다.",
+            "영어": "At this famous bakery, a long queue is formed to buy the bread around the opening hour. You can find a variety of combinations and recipes that are rare even in Busan, the city of bread. The most popular items are bread made with yellow cheese."
+          },
+          "메뉴": {
+            "한글": "맘모스 ￦6,700-7,700, 크럼블 ￦5,700-6,500",
+            "영어": "Mammoth ￦6,700-7,700, Crumble ￦5,700-6,500"
+          },
+          "영업시간": "12:00-19:00",
+          "주소": "동구 초량중로 135, 1층",
+          "전화번호": "0507-1318-1271",
+          "휴무일": "일, 월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "홍성방",
+            "영어": "Hongseongbang"
+          },
+          "개요": {
+            "한글": "3대에 걸쳐 50년이 넘게 운영해오고 있는 부산차이나타운에서 가장 유명한 식당 중 한 곳입니다. 오래전부터 영주동 물만두집으로 불릴 만큼 물만두가 인기 있으며, 주말에는 지방에서도 찾아오는 단골손님들이 많습니다.",
+            "영어": "This restaurant, which has been operated for over 50 years by three generations, is one of the most famous restaurants in Busan’s Chinatown. Water dumplings are so popular that they have long been called “Yeongju-dong water dumplings,” and there are many regulars coming from other provinces on weekends as well."
+          },
+          "메뉴": {
+            "한글": "물만두 ￦8,000 / 10,000, 오향장육 ￦30,000 / 40,000",
+            "영어": "Water Dumplings ￦8,000 / 10,000, Ohyangjangyuk(Five-Spice Sliced Steamed Pork) ￦30,000 / 40,000"
+          },
+          "영업시간": "11:00-15:00 / 17:00-21:30",
+          "주소": "동구 중앙대로 179번길 16",
+          "전화번호": "051-467-5398",
+          "휴무일": "명절"
+        }
+      ],
+      "동래구": [
+        {
+          "식당이름": {
+            "한글": "동래할매파전",
+            "영어": "Dongnae Halmae Pajeon"
+          },
+          "개요": {
+            "한글": "4대를 이어오고 있는 유명한 식당으로 부산의 대표적 향토음식인 동래파전의 전통을 이어가고 있습니다. 사진으로는 담을 수 없는 식재료의 푸짐함을 느낄 수 있습니다.",
+            "영어": "Dongnae Halmae Pajeon is a famous restaurant that has been in business for four generations. It continues the tradition of Dongnae pajeon, Busan’s signature local food. The green onion pancakes, with more presence in the material than in the photos,will keep exceeding your expectations with each bite."
+          },
+          "메뉴": {
+            "한글": "동래할매파전 ￦28,000 / 40,000, 동래고동찜 ￦30,000",
+            "영어": "Dongnae halmae pajeon ￦28,000 / 40,000, Dongnae steam conch ￦30,000"
+          },
+          "영업시간": "11:30-15:00 / 17:00-21:30",
+          "주소": "동래구 명륜로 94번길 43-10",
+          "전화번호": "051-552-0792",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "미미루",
+            "영어": "Mimiru"
+          },
+          "개요": {
+            "한글": "스타일리시한 중화요리로 인기 높은 곳으로, 보통의 중식전문점에서 쉽게 만날 수 없는 다양한 중화요리를 만날 수 있습니다. 식사 시간은 웨이팅이 필수입니다.",
+            "영어": "Popular for its stylish Chinese cuisine, you’ll find a wide variety of dishes that you won’t find at your average Chinese restaurant. At mealtime, there is always a queue here."
+          },
+          "메뉴": {
+            "한글": "짜장면 ￦7,000, 탕수육 ￦23,000",
+            "영어": "Jjajangmyeon ￦7,000, Sweet and Sour Pork ￦23,000"
+          },
+          "영업시간": "11:30-15:00 / 17:00-21:30",
+          "주소": "동래구 온천장로 91-1",
+          "전화번호": "051-555-6609",
+          "휴무일": "명절 당일"
+        },
+        {
+          "식당이름": {
+            "한글": "배종관동래삼계탕",
+            "영어": "Bae Jong-gwan Dongnae Samgyetang"
+          },
+          "개요": {
+            "한글": "파채가 듬뿍 올라간 것이 특징인 삼계탕으로, 30년 전통의 비법 사골 육수를 사용하여 냄새 없이 담백한 맛을 자랑합니다. 많은 사람들이 찾아 웨이팅이 필수입니다.",
+            "영어": "This restaurant serves samgyetang with a heap of sliced green onions on top. It uses secret beef bone broth with a 30-year old tradition that boasts deeply nourishing flavors. Expect a long queue here as the place is very popular among the locals."
+          },
+          "메뉴": {
+            "한글": "동래삼계탕 ￦18,000, 궁중약계탕 ￦20,000",
+            "영어": "Dongnae Samgyetang ￦18,000, Gungjung Yakgyetang ￦20,000"
+          },
+          "영업시간": "11:00-15:00 / 17:00-20:30",
+          "주소": "동래구 동래로 116번길 39",
+          "전화번호": "051-555-2464",
+          "휴무일": "월, 화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "봉식당",
+            "영어": "Bong Sikdang"
+          },
+          "개요": {
+            "한글": "한식당을 운영했던 어머니와 프렌치 셰프인 아들이 함께 운영하는 곳으로, 계절 재료를 살린 코스와 마무리인 보쌈 한상이 특징입니다. 각종 행사장으로도 많이 찾습니다. 대중성을 추구하며, 연세가 있으신 단골 손님들이 많습니다.",
+            "영어": "Run by a mother who formerly owned a Korean restaurant and a son who is a French chef, this restaurant features courses that utilize seasonal ingredients and a finishing meal of bossam hansang. It is also a popular venue for various events. Bong Sikdang is a place that seeks to be popular. We have many regular elderly customers, and Mother’s final dish, a set of bossam in a basket, is very satisfying."
+          },
+          "메뉴": {
+            "한글": "S코스 ￦59,000, A코스 ￦47,000",
+            "영어": "S Course ￦59,000, A Course ￦47,000"
+          },
+          "영업시간": "12:00-15:00 / 17:00-22:00",
+          "주소": "동래구 온천장로 119번길 26",
+          "전화번호": "051-556-9911",
+          "휴무일": "명절 전날, 당일"
+        },
+        {
+          "식당이름": {
+            "한글": "신가네 호떡 김밥 떡볶이",
+            "영어": "Singane Hotteok Gimbap Tteokbokki"
+          },
+          "개요": {
+            "한글": "동래시장에서 26여 년을 영업 중인 분식점으로, 남녀노소, 내외국인 구분 없이 많은 사람들이 찾습니다. 우엉 등의 김밥 재료는 국내산만 사용한다고 합니다.",
+            "영어": "This 26-year bunsik joint in Dongnae Market is beloved by people of all ages, genders, and even foreign tourists. Ingredients in gimbap, including burdock, are all domestically sourced."
+          },
+          "메뉴": {
+            "한글": "찹쌀호떡 ￦1,000, 김밥 ￦3,000",
+            "영어": "Sweet rice Hotteok ￦1,000, Gimbap ￦3,000"
+          },
+          "영업시간": "06:00-22:00",
+          "주소": "동래구 충렬대로 249번길 61",
+          "전화번호": "051-552-2644",
+          "휴무일": "두 번째, 네 번째 화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "원조꼬리곰집",
+            "영어": "Wonjo Kkorigomjip"
+          },
+          "개요": {
+            "한글": "1980년에 개업하여 오랜 시간 사랑받고 있는 곳으로, 껍데기를 보존하여 요리하는 특별한 방식으로 더 부드러운 육질을 자랑합니다. 많은 양의 고기를 오랜 시간 삶는 것이 비법이라고 합니다.",
+            "영어": "Opened in 1980, it is a longtime local favorite. The skin is preserved using a special method for a softer texture. The secret is to boil a large amount of meat for a long time, which is staying true to the basics."
+          },
+          "메뉴": {
+            "한글": "한우 꼬리수육 ￦90,000, 꼬리탕 ￦25,000",
+            "영어": "Steamed Hanwoo tail Slices ￦90,000, Oxtail soup ￦25,000"
+          },
+          "영업시간": "08:30-21:30",
+          "주소": "동래구 온천장로 52",
+          "전화번호": "051-552-1106",
+          "휴무일": "월요일, 명절"
+        },
+        {
+          "식당이름": {
+            "한글": "조광심민속왕순대",
+            "영어": "Cho Gwangsim Minsok Wangsundae"
+          },
+          "개요": {
+            "한글": "선지와 막창으로 만든 피순대는 냉동을 할 수 없어 즉석에서 수작업으로 만듭니다. 모든 메뉴는 국산 재료를 사용합니다. 월요일 휴무에는 자비로 무료 급식을 운영하는 따뜻한 식당으로 단골들이 많습니다.",
+            "영어": "Pisundae, made of pork blood curds and entrails, are made and served freshly because they cannot be frozen. All menu items use domestic ingredients. The restaurant doesn’t open for business on Mondays but opens a free kitchen for the underprivileged. The kindness of the owners always attracts local regulars."
+          },
+          "메뉴": {
+            "한글": "막창 피순대 ￦25,000 / 35,000, 술국 ￦12,000",
+            "영어": "Makchang pisundae ￦25,000 / 35,000, Sulguk ￦12,000"
+          },
+          "영업시간": "04:00-21:00",
+          "주소": "동래구 반송로 223",
+          "전화번호": "051-527-3927",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "칙투칙",
+            "영어": "Cheek to Cheek"
+          },
+          "개요": {
+            "한글": "영국에서 공부하고 활동한 파티시에 동생과 플로리스트 언니가 오픈한 공간입니다. 좋은 재료로 계절의 맛을 담아 디저트를 준비하며, 사랑하는 사람들과 함께하고 싶은 공간을 가꾸고 있습니다.",
+            "영어": "The space was opened by a pastry chef who studied and was active in the UK with her sister, a florist. It prepares desserts with the flavors of the season, using the best ingredients, and aims to create a place that people want to visit with their loved ones."
+          },
+          "메뉴": {
+            "한글": "헤이즐넛 뉴 오페라 ￦8,800, 스트로베리 마스카포네 ￦9,300",
+            "영어": "Hazelnut new opera ￦8,800, Strawberry mascarpone ￦9,300"
+          },
+          "영업시간": "12:00-19:00",
+          "주소": "동래구 온천천로 441번길 17",
+          "전화번호": "051-531-1005",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "타이빈",
+            "영어": "Thai Bin"
+          },
+          "개요": {
+            "한글": "태국 정부로부터 Thai select 최고등급인 signature 인증을 받은 태국음식전문점으로, 태국인 요리사가 준비하는 정통 태국 음식이 있습니다. 태국으로 여행 온 기분을 느끼게 해주는 인테리어가 인상적입니다.",
+            "영어": "This Thai restaurant has received the signature certification, the highest grade of Thai select, by the Thai government. They serve authentic Thai food prepared by a Thai chef. The decor of this place makes you feel like you are in Thailand."
+          },
+          "메뉴": {
+            "한글": "크랩 팟 퐁 커리 ￦38,000-65,000, 뿌님 팟 퐁 커리 ￦30,000-55,000",
+            "영어": "Crab Pat Phong Curry ￦38,000-65,000, Punim Pat Phong Curry ￦30,000-55,000"
+          },
+          "영업시간": "11:00-15:00 / 17:00-22:00",
+          "주소": "동래구 금강로73번길 12",
+          "전화번호": "051-558-8885",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "프랑스 과자점 브리앙",
+            "영어": "Biscuiterie Française Brillant"
+          },
+          "개요": {
+            "한글": "봉식당 1층에 자리한 전통 프랑스 과자점으로, 유명 파티시에의 가게입니다. 특별한 플레이버를 지닌 전통 프랑스 과자들을 만날 수 있는 곳입니다.",
+            "영어": "Located on the first floor of Bongsikdang, this authentic French patisserie is the shop of a renowned pastry chef. You can find original French sweets with special flavors."
+          },
+          "메뉴": {
+            "한글": "브리앙컬렉션 ￦20,000",
+            "영어": "Brillant Collection ￦20,000"
+          },
+          "영업시간": "12:00-재료소진 시",
+          "주소": "동래구 온천장로 119번길 26 1층",
+          "전화번호": "0507-1342-5709",
+          "휴무일": "월, 화요일"
+        }
+      ],
+      "부산진구": [
+        {
+          "식당이름": {
+            "한글": "가야포차선지국밥 본점",
+            "영어": "Gayapocha Seonjigukbap Main Branch"
+          },
+          "개요": {
+            "한글": "24시간 영업으로 30여 년을 운영해오고 있는 곳으로 수구레국밥 등 쉽게 찾기 힘든 수구레 요리를 만날 수 있습니다. 16시 이후로는 술과 곁들일 수 있는 요리를 주문할 수 있는 편안한 가게입니다.",
+            "영어": "This restaurant, which has remained open 24 hours for over 30 years, serves sugure gukbap and other sugure dishes that are hard to find elsewhere. It is a comfortable spot where you can order dishes to go with alcohol after 4 PM."
+          },
+          "메뉴": {
+            "한글": "수구레국밥 ￦9,000, 선지국밥 ￦8,000",
+            "영어": "Sugure(beef skin lining) gukbap ￦9,000, Seonji(beef blood curd) gukbap ￦8,000"
+          },
+          "영업시간": "00:00-24:00",
+          "주소": "부산진구 가야공원로 58",
+          "전화번호": "051-894-6921",
+          "휴무일": "명절 2일"
+        },
+        {
+          "식당이름": {
+            "한글": "두번째 늘해랑",
+            "영어": "Dubeonjjae Neulhaerang"
+          },
+          "개요": {
+            "한글": "수육백반으로 유명한 늘해랑의 두 번째 가게로, 매일 수제로 찹쌀순대를 만들고 국내산 고기, 야채, 김치를 사용합니다. 수육과 함께 제공되는 식해가 특징입니다.",
+            "영어": "Famous for its suyukbaekban (steamed pork meal), this second branch of Neulhaerang makes glutinous rice sundae from scratch every day and serves domestic meats, vegetables, and kimchi. It serves sikhae dishes that accompany the meat."
+          },
+          "메뉴": {
+            "한글": "수육백반 ￦12,000, 돼지국밥 ￦9,000",
+            "영어": "Steamed pork meal ￦12,000, Pork rice soup ￦9,000"
+          },
+          "영업시간": "10:00-21:00",
+          "주소": "부산진구 양지로 5번길 24",
+          "전화번호": "051-867-5382",
+          "휴무일": "월요일, 명절"
+        },
+        {
+          "식당이름": {
+            "한글": "란아한",
+            "영어": "RAN A HAN"
+          },
+          "개요": {
+            "한글": "태국 거리의 가게를 그대로 옮겨온 듯한 이곳은 태국의 호텔 셰프 출신 셰프가 정통 태국 요리를 만드는 곳으로, 일체의 타협 없는 현지의 맛을 구현하고 있습니다.",
+            "영어": "This place feels like a direct transplant of a shop from the streets of Thailand. Run by a chef with experience in Thai hotels, it offers authentic Thai cuisine with no compromises, staying true to the bold and vibrant flavors of the region."
+          },
+          "메뉴": {
+            "한글": "램쎕 ￦34,000, 꿍팟풍커리 ￦25,000",
+            "영어": "Leng Saeb ￦34,000, Kkung Patpong Curry ￦25,000"
+          },
+          "영업시간": "14:30-24:00",
+          "주소": "부산진구 서전로37번길 14-1",
+          "전화번호": "0507-1412-9983",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "바오하우스",
+            "영어": "BAOHAUS"
+          },
+          "개요": {
+            "한글": "대만식 요리를 바오하우스만의 방식으로 해석하여 제공하는 캐주얼 식당으로, 바오, 우육면 등 대만의 대표 음식을 만날 수 있습니다. 음식이 신속하게 제공되는 것으로도 유명합니다.",
+            "영어": "This is a casual restaurant that offers Taiwanese cuisine interpreted in a unique way. You can enjoy Taiwan’s representative dishes, such as bao and beef noodle soup. It is also famous for its fast food service."
+          },
+          "메뉴": {
+            "한글": "클래식바오 ￦5,000, 어향가지튀김 ￦9,000-14,000",
+            "영어": "Classic bao ￦5,000, Stir-fried flavored eggplant ￦9,000-14,000"
+          },
+          "영업시간": "11:30-15:00 / 17:00-21:00",
+          "주소": "부산진구 서전로 38번길 62-9",
+          "전화번호": "0507-1324-1031",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "베르크로스터스",
+            "영어": "Werk Roasters"
+          },
+          "개요": {
+            "한글": "베르크로스터스의 스페셜티 로스터리 쇼룸으로, 다양한 원두를 에스프레소에서 필터 커피까지 만나볼 수 있는 곳입니다. 원두 정보 및 안내, 구매, 브랜드 굿즈까지 만나볼 수 있습니다.",
+            "영어": "At Werk Roasters, one can explore a specialty roastery showroom featuring a variety of beans, from espresso to filter coffee, with information and guidance on beans, purchasing, and branded merchandise."
+          },
+          "메뉴": {
+            "한글": "에스프레소 ￦5,000, 테이스팅세트 ￦7,000",
+            "영어": "Espresso ￦5,000, Tasting set ￦7,000"
+          },
+          "영업시간": "10:00-18:30",
+          "주소": "부산진구 서전로58번길 115 1층-2층",
+          "전화번호": "051-817-2111",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "롯데호텔 부산 블루헤이븐",
+            "영어": "Blue Haven"
+          },
+          "개요": {
+            "한글": "낮에는 휴양지의 편안하고 여유로운 분위기를, 밤에는 도심 속 야경과 함께 은은한 조명의 정원이 로맨틱한 분위기를 연출합니다. 캐주얼 다이닝 메뉴와 칵테일, 와인 등 다양한 음료가 준비되어 있습니다.",
+            "영어": "With the comfortable and laid-back atmosphere of a resort by day and the romantic atmosphere of a garden with soft lighting along with the night view of the city by night, Blue Haven offers a casual dining menu and a variety of drinks, including cocktails and wine."
+          },
+          "메뉴": {
+            "한글": "Lunch Course ￦67,000, Dinner Course ￦85,000-135,000 (식재료에 따라 메뉴 변동)",
+            "영어": "Lunch Course ￦67,000, Dinner Course ￦85,000-135,000 (Provided as a course menu; the menu may vary depending on the ingredients)"
+          },
+          "영업시간": "12:00-22:00",
+          "주소": "부산진구 가야대로 772 롯데호텔 부산 7층",
+          "전화번호": "051-810-6300",
+          "휴무일": "연중 무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "삼성밀면",
+            "영어": "Samseong Milmyeon"
+          },
+          "개요": {
+            "한글": "60여 년째 밀면의 맛을 이어가고 있는 밀면전문점으로, 유일하게 1세대 영업주가 운영하는 식당입니다. 부연 설명이 필요 없는 식당입니다.",
+            "영어": "This milmyeon specialty restaurant has maintained its original taste for 60 years. It is also the only remaining milmyeon restaurant run by the first-generation owner. What more is there to say?"
+          },
+          "메뉴": {
+            "한글": "밀면 ￦7,500, 주물럭 ￦8,500",
+            "영어": "Milmyeon ￦7,500, Jumulleok milmyeon ￦8,500"
+          },
+          "영업시간": "10:30-18:00",
+          "주소": "부산진구 월드컵대로449번길 47",
+          "전화번호": "051-806-1256",
+          "휴무일": "화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "소수인",
+            "영어": "Sosuin"
+          },
+          "개요": {
+            "한글": "일식을 모티브로 한 새로운 스타일의 요리를 만들고 있는 일본식 주점으로, 영업을 시작한 지 얼마 되지 않아 항상 사람들이 가득합니다. 개성 강한 요리들은 술안주로도 식사로도 잘 어울립니다.",
+            "영어": "Sosuin is a Japanese-style bar that offers new Japanese-inspired dishes. Shortly after its opening, it started becoming packed with customers. Their distinct dishes make great meals and also pair well with drinks."
+          },
+          "메뉴": {
+            "한글": "시메사바 이소베마키 ￦18,000",
+            "영어": "Shime Saba Isobemaki ￦18,000"
+          },
+          "영업시간": "17:00-24:00",
+          "주소": "부산진구 가야대로750번길 17",
+          "전화번호": "051-808-4036",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "손내향미",
+            "영어": "Sonnae hyangmi"
+          },
+          "개요": {
+            "한글": "눈앞에서는 솥밥을 짓는 모습이 보이고 화로에서 굽히는 목포식 갈비의 향이 공간을 채웁니다. 오롯이 식사에 집중할 수 있는 공간에서 20여 분간 기다린 목포식 갈비솥밥이 차려집니다.",
+            "영어": "Here, guests can watch as their rice is cooked in a stone pot and smell the aroma of Mokpo-style grilled ribs from the hearth that fills the space. After waiting for about 20 minutes, the Mokpo-style galbi sotbap (stone pot rice) is served in an atmosphere where one can focus solely on their meal."
+          },
+          "메뉴": {
+            "한글": "갈비솥밥 ￦30,000, 여포하이볼 ￦12,000",
+            "영어": "Galbi sotbap ￦30,000, Yeopo highball ￦12,000"
+          },
+          "영업시간": "12:00-16:00 / 17:30-20:00",
+          "주소": "부산진구 동성로 30번길 4",
+          "전화번호": "051-715-4648",
+          "휴무일": "수요일"
+        },
+        {
+          "식당이름": {
+            "한글": "야스마루 닌니쿠",
+            "영어": "Yasumaru Ninniku"
+          },
+          "개요": {
+            "한글": "입맛 없는 여름에 맛있게 먹을 수 있는 음식을 만들려 했다지만 계절에 관계없이 항상 긴 줄이 서 있는 곳으로, 독특한 모습의 파랑국수가 대표메뉴입니다. 간판 없는 인기 식당으로도 유명합니다.",
+            "영어": "The restaurant started out to present good food when people lose their appetite in the summer. But it’s known for the long queue regardless of the season. It’s known for parang guksu noodles with a unique appearance and not having a signboard."
+          },
+          "메뉴": {
+            "한글": "파랑국수 ￦11,000, 고등어김말이 ￦12,000",
+            "영어": "Parang guksu ￦11,000, Mackerel seaweed roll ￦12,000"
+          },
+          "영업시간": "12:00-14:50 / 17:30-21:00",
+          "주소": "부산진구 서전로38번길 35-14",
+          "전화번호": "010-9238-0508",
+          "휴무일": "일요일, 2, 4주 월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "연화제과",
+            "영어": "Yeonhwa bakery"
+          },
+          "개요": {
+            "한글": "조용하고 정갈한 공간에서 건강하고 좋은 재료를 사용하여 만드는 디저트를 만날 수 있는 곳입니다. 제철 과일과 채소를 이용한 케이크와 구움과자를 만듭니다.",
+            "영어": "At Yeonhwa Bakery, you can find desserts made with healthy and wholesome ingredients in a quiet and clean space. They make cakes and baked goods using seasonal fruits and vegetables."
+          },
+          "메뉴": {
+            "한글": "케이크(가격변동), 구움과자(가격변동)",
+            "영어": "Cake(price may vary) - Seasonal flavors, Baked goods(price may vary) - Monthly flavors"
+          },
+          "영업시간": "11:00-18:00",
+          "주소": "부산진구 새싹로 265번길 12",
+          "전화번호": "0507-1415-4191",
+          "휴무일": "화, 수요일"
+        },
+        {
+          "식당이름": {
+            "한글": "원조할매집",
+            "영어": "Wonjo Halmaejip"
+          },
+          "개요": {
+            "한글": "1968년부터 운영 중인 이곳은 부산의 향토음식인 ‘조방낙지’가 시작된 곳입니다. 더 이상 무슨 설명이 필요 없는 곳입니다.",
+            "영어": "One word is enough to introduce this place, which was established in 1968. This is where Busan’s local food, “jobang nakji,” was born. There’s nothing more to add."
+          },
+          "메뉴": {
+            "한글": "낙곱새(낙지/곱창/새우볶음) ￦10,000, 각종 사리 ￦1,000",
+            "영어": "Nakgopsae(small octopus/pork intestines/shrimp) ￦10,000, Various toppings ￦1,000"
+          },
+          "영업시간": "10:00-20:50",
+          "주소": "부산진구 골드테마길 10",
+          "전화번호": "051-643-5037",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "음주양식당 오스테리아 어부",
+            "영어": "Osteria Aboo"
+          },
+          "개요": {
+            "한글": "한국인에게는 다소 생소한 맛일지라도 이탈리아의 맛을 좋아하는 사람들을 위해 이탈리아 현지의 맛을 기준으로 조리합니다. 이곳은 부산이지만 이 공간만큼은 분명히 이탈리아입니다.",
+            "영어": "Instead of catering to the Korean palate, this restaurant presents the flavors of Italy as closely as possible for those who love authentic taste. While it is located in Busan, the restaurant’s food will take you to Italy."
+          },
+          "메뉴": {
+            "한글": "시그니처 테이스팅 코스(1인) ￦148,000, 로마식 까르보나라 ￦33,000",
+            "영어": "Signature Tasting Course(1 person) ￦148,000, La carbonara ￦33,000"
+          },
+          "영업시간": "17:00-22:30",
+          "주소": "부산진구 동천로58",
+          "전화번호": "051-802-8858",
+          "휴무일": "화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "지즈",
+            "영어": "Jeez"
+          },
+          "개요": {
+            "한글": "작은 골목 안에 자리한 이곳은 양식적인 요소를 적용한 일본식 돈카츠를 만드는 곳입니다. 지저스의 줄임말인 '지즈'라는 가게명처럼 첫 입에 감탄을 할 수 있는 음식을 목표로 합니다.",
+            "영어": "This restaurant, located in a small alley, serves Japanese-style tonkatsu with Western elements. As the name of the restaurant, Jeez (short for Jesus), suggests, it aims to serve food that will impress you the first time you taste it."
+          },
+          "메뉴": {
+            "한글": "로스카츠정식 ￦12,000, 히레카츠정식 ￦13,000",
+            "영어": "Sirloin katsu set meal ￦12,000, Tenderloin katsu set meal ￦13,000"
+          },
+          "영업시간": "11:30-15:00 / 17:00-21:00",
+          "주소": "부산진구 서전로 58번길 34-1, 1층",
+          "전화번호": "0507-1485-1331",
+          "휴무일": "연중 무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "코르 파스타 바",
+            "영어": "Cor pasta bar"
+          },
+          "개요": {
+            "한글": "1인 셰프가 운영하는 생면 파스타 전문점으로 직접 만든 면과 빵 등 요리에 정성을 다하는 곳입니다. 바 형태의 공간과 와인과 어울리는 음식 구성이 특징입니다.",
+            "영어": "This fresh pasta restaurant is run by one chef who puts his heart and soul into his dishes, including handmade pasta and bread. It is characterized by a bar-like space and a food menu that matches the wine."
+          },
+          "메뉴": {
+            "한글": "보타르가 ￦28,000, 뇨끼 ￦25,000",
+            "영어": "Bottarga ￦28,000, gnocchi ￦25,000"
+          },
+          "영업시간": "12:00-14:30 / 17:00-21:00",
+          "주소": "부산진구 동성로 25번길13 2F",
+          "전화번호": "0507-1474-4570",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "히떼로스터리 전포점",
+            "영어": "Hytte roastery Jeonpo Branch"
+          },
+          "개요": {
+            "한글": "공간도 커피도 마지막까지 편안하고 부드러운 것을 지향하며, 밸런스 좋고 여운이 깔끔한 커피를 완성하는 데 가장 많은 시간과 노력을 기울입니다.",
+            "영어": "Both the space and the coffee are meant to be relaxing and smooth to the last drop, and it puts the most time and effort into making sure the coffee is balanced and has a clean aftertaste."
+          },
+          "메뉴": {
+            "한글": "필터커피 ￦6,000, 카페라떼 ￦5,500",
+            "영어": "Filtered coffee ￦6,000, Cafe latte ￦5,500"
+          },
+          "영업시간": "10:00-20:00",
+          "주소": "부산진구 동성로 59 2층",
+          "전화번호": "070-7607-7060",
+          "휴무일": "연중무휴"
+        }
+      ],
+      "북구": [
+        {
+          "식당이름": {
+            "한글": "금용 만두",
+            "영어": "Geumyong Dumpling"
+          },
+          "개요": {
+            "한글": "1960년부터 운영해온 중국 만두 전문점으로, 찐 돼지 껍질과 사태, 소꼬리 살로 소를 만드는 산둥식 만두를 만듭니다. 준비해둔 재료가 언제나 당일 소진될 정도로 인기가 높습니다.",
+            "영어": "This Chinese dumpling restaurant has been operating since 1960, making Shandong-style dumplings with braised pork skin and oxtail meat. It is so popular that the prepared ingredients are always sold out on the same day."
+          },
+          "메뉴": {
+            "한글": "찐만두 ￦8,000, 군만두 ￦8,000",
+            "영어": "Steamed Dumplings ￦8,000, Pan-fried Dumplings ￦8,000"
+          },
+          "영업시간": "10:30-20:30",
+          "주소": "북구 구포만세길 75",
+          "전화번호": "051-332-1261",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "슌사이쿠보",
+            "영어": "Shunsai Kubo"
+          },
+          "개요": {
+            "한글": "나고야식 장어덮밥인 히츠마부시 전문점으로 최고급 생물 풍천장어만 사용합니다. 특제 소스를 발라가며 전통 방식으로 정성껏 구운 장어와 함께 아이가 즐길 수 있는 메뉴도 준비되어 있습니다.",
+            "영어": "Shunsai Kubo is a restaurant specializing in hitsumabushi, a Nagoya-style eel rice bowl that uses only the finest Pungcheon eels. It offers traditionally prepared eel, grilled with care by brushing special sauce, as well as dishes for children to enjoy."
+          },
+          "메뉴": {
+            "한글": "히츠마부시 ￦39,000, 생연어덮밥 ￦17,500",
+            "영어": "Hitsumabushi ￦39,000, Salmon rice bowl ￦17,500"
+          },
+          "영업시간": "12:00-15:00 / 17:30-20:20",
+          "주소": "북구 양달로 4번길 17",
+          "전화번호": "051-365-2959",
+          "휴무일": "월요일"
+        }
+      ],
+      "사상구": [
+        {
+          "식당이름": {
+            "한글": "곰보식당",
+            "영어": "Gombo Sikdang"
+          },
+          "개요": {
+            "한글": "1975년 개업하여 50여 년을 운영해온 한우 전문점으로, 오랜 노하우로 항상 선별된 최상의 한우 암소만을 취급합니다. 부드러운 맛보다는 한우 본연의 고소한 맛을 살리는 것에 집중하고 있습니다.",
+            "영어": "Established in 1975 and operating for more than 50 years, this Korean beef specialty restaurant has been handling only the best Korean beef cows, which are always selected with experienced expertise. The focus is on bringing out the savory flavor of Korean beef beyond its tenderness."
+          },
+          "메뉴": {
+            "한글": "짝갈비살 ￦29,000, 육회비빔밥 ￦15,000",
+            "영어": "Meat from whole ribs ￦29,000, Yukhoe bibimbap ￦15,000"
+          },
+          "영업시간": "10:00-22:00",
+          "주소": "사상구 낙동대로 1564",
+          "전화번호": "051-304-7733",
+          "휴무일": "명절 전, 당일"
+        },
+        {
+          "식당이름": {
+            "한글": "삼락하동재첩국",
+            "영어": "Samnak Hadong Jaecheopguk"
+          },
+          "개요": {
+            "한글": "재첩국 전문 식당이 모여 있는 이 지역에서도 인기 있는 재첩국 전문점으로, 섬진강의 국산 재첩만을 사용하며 간과 위의 건강에 도움이 된다고 합니다. 재첩을 회와 찜으로 새롭게 연구하여 재첩 요리를 정착시킨 곳입니다.",
+            "영어": "This is an especially popular freshwater clam soup restaurant in the area populated by similar restaurants. They only use domestic freshwater clams from Seomjingang River and boil them after washing several times after soaking it in saltwater. Freshwater clam soup is said to help liver and stomach health. The restaurant also researched how to serve freshwater clam as raw fish and steamed, and helped establish."
+          },
+          "메뉴": {
+            "한글": "재첩국 정식 ￦8,000, 재첩회 ￦10,000",
+            "영어": "Jaecheopguk set meal ￦8,000, Jaecheop hoe ￦10,000"
+          },
+          "영업시간": "05:00-21:30",
+          "주소": "사상구 낙동대로1518번길 33",
+          "전화번호": "051-301-7200",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "할매재첩국",
+            "영어": "Halmae Jaecheopguk"
+          },
+          "개요": {
+            "한글": "낙동강변 재첩요리 먹거리 타운에서 30여 년을 운영하고 있는 재첩국 전문점입니다. 비빔그릇에 함께 나온 된장과 재첩을 넣고 비빔밥을 만들어 재첩국과 함께 먹는 방법이 인기 있습니다.",
+            "영어": "It is a jaecheopguk (freshwater clam soup) specialty restaurant that has been in business for 30 years at the corbicula specialty town located alongside the Nakdong River. The popular way of enjoying the shellfish is making bibimbap with soybean paste and freshwater clam. and eating it with the soup."
+          },
+          "메뉴": {
+            "한글": "재첩국 ￦8,000, 재첩회 ￦10,000",
+            "영어": "Shellfish Soup ￦8,000, Jaecheop hoe(freshwater clam served raw) ￦10,000"
+          },
+          "영업시간": "07:00-21:00",
+          "주소": "사상구 낙동대로1530번길 20-15",
+          "전화번호": "051-301-7069",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "해물왕창칼국수",
+            "영어": "Haemul Wangchang Kalguksu"
+          },
+          "개요": {
+            "한글": "칼국수의 맛을 내는 조개류는 전라도 고흥에서 매일 공수하며, 해물탕에 넣어먹는 자가제면 칼국수는 매일 직접 반죽하여 숙성 시킵니다. 신선한 재료와 정성이 듬뿍 들어간 칼국수는 오늘도 인기 있습니다.",
+            "영어": "Clams for the broth are supplied every day from Goheung, Jeolla Province. The dough for the kalguksu(knife-cut noodles) that goes into the seafood soup is made freshly and rested each morning. The noodle soup, made with fresh ingredients and tender loving care, is never going to be unpopular."
+          },
+          "메뉴": {
+            "한글": "해물왕창칼국수(2인부터 주문) ￦12,000, 육전물밀면 ￦8,000",
+            "영어": "Haemul Wangchang Kalguksu (hand-cut noodles with seafood for two) ￦12,000, Mul milmyeon with yukjeon ￦8,000"
+          },
+          "영업시간": "11:00-21:00",
+          "주소": "사상구 사상로 316",
+          "전화번호": "0507-1357-2579",
+          "휴무일": "월요일, 명절"
+        }
+      ],
+      "사하구": [
+        {
+          "식당이름": {
+            "한글": "대티물꽁",
+            "영어": "Daetimulkkong"
+          },
+          "개요": {
+            "한글": "주택을 개조한 포근한 공간은 중장년층의 향수를 자극할 만한 소품들로 인테리어 되어 있습니다. 비교적 저렴한 가격으로 푸짐한 음식을 만날 수 있어 이 지역 주민들에게 오랜 시간 사랑받아온 아귀찜 전문점입니다.",
+            "영어": "The renovated house has a cozy decor, filled with props that bring out the nostalgia of the older generation. It is a beloved neighborhood hole-in-the-wall that specializes in braised monkfish, and serves generous portions at affordable prices."
+          },
+          "메뉴": {
+            "한글": "아귀찜 ￦28,000-45,000, 코다리찜 ￦28,000-45,000",
+            "영어": "Agujjim(braised monkfish) ￦28,000-45,000, Kodarijjim(Braised Dried Pollack) ￦28,000-45,000"
+          },
+          "영업시간": "11:30-15:00 / 17:00-21:30",
+          "주소": "사하구 낙동대로 135번안길 15",
+          "전화번호": "051-203-4425",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "영진돼지국밥 본점",
+            "영어": "Yeongjin Dwaeji Gukbap Main Branch"
+          },
+          "개요": {
+            "한글": "부산의 향토음식인 돼지국밥을 대표하는 식당 중 한 곳으로, 항상 많은 사람들이 찾아옵니다. 돼지 특유의 냄새를 제거하여 깔끔하고 담백한 맛을 자랑하며, 수육과 두부, 볶음김치가 함께 나오는 수육백반이 무척 인기 있습니다.",
+            "영어": "It is one of the leading restaurants of Busan’s local food, dwaejigukbap, and is always crowded with customers. The distinct meat odor is removed for a refreshing taste, and their Suyuk Baekban with steamed pork, tofu, and stir-fried kimchi is very popular."
+          },
+          "메뉴": {
+            "한글": "수육백반 ￦12,000, 돼지국밥 ￦9,000",
+            "영어": "Suyuk Baekban(Steamed Pork Set Menu) ￦12,000, Dwaejigukbap(Pork Soup with Rice) ￦9,000"
+          },
+          "영업시간": "09:30-15:00 / 17:00-21:30",
+          "주소": "사하구 하신번영로157번길 39",
+          "전화번호": "051-206-3820",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "하기연진주냉면",
+            "영어": "Ha Gi-yeon Jinju Naengmyeon"
+          },
+          "개요": {
+            "한글": "멸치, 바지락, 다시마가 들어간 해물 육수를 사용하고 고명으로 육전이 올라가는 진주냉면은 보기 힘든 음식 중 하나로, 전수받은 사람이 드물다고 합니다. 제주도산 흑메밀만 사용하여 면을 만드는 것이 특징입니다.",
+            "영어": "Jinju naengmyeon is made of seafood broth with anchovies, clams, and kelp and garnished with yukjeon (meat pancakes). It’s a rare delicacy, and only a few masters have been professionally trained to make it. This restaurant is characterized by using only black buckwheat from Jeju Island to make noodles."
+          },
+          "메뉴": {
+            "한글": "물비빔냉면 ￦12,000, 소육전 ￦24,000",
+            "영어": "Mulbibim naengmyeon ￦12,000, Beef yukjeon ￦24,000"
+          },
+          "영업시간": "10:30-19:30",
+          "주소": "사하구 괴정로 32",
+          "전화번호": "051-207-6555",
+          "휴무일": "일요일"
+        }
+      ],
+      "서구": [
+        {
+          "식당이름": {
+            "한글": "몽실종가돼지국밥",
+            "영어": "Mongsil Jongga Dwaejigukbap"
+          },
+          "개요": {
+            "한글": "감천문화마을 근처에 있는 돼지국밥 전문점으로, 청결한 실내와 친절한 점원들이 인상적입니다. 사골 뼈를 24시간 이상 푹 고아 만든 국물이 유명하며, 국밥에 들어가는 고기 양과 종류를 선택할 수 있습니다.",
+            "영어": "The restaurant is located near Gamcheon Culture Village. The interior is neat and friendly staff provide memorable service. It is famous for the soup made from boiling beef broth for more than 24 hours. You can choose the amount and the cut of meat to eat with the soup."
+          },
+          "메뉴": {
+            "한글": "돼지국밥 ￦9,000, 수육 ￦24,000",
+            "영어": "Pork Soup ￦9,000, Steamed pork ￦24,000"
+          },
+          "영업시간": "09:00-20:00",
+          "주소": "서구 까치고개로 197번길 3, 1층",
+          "전화번호": "051-256-0133",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "신창국밥",
+            "영어": "Sinchang Gukbap"
+          },
+          "개요": {
+            "한글": "1969년에 국제시장 신창동에서 시작하여 '신창국밥'이라 이름 지어진 식당으로, 맑은 국물의 돼지국밥이 시작된 곳입니다. 신선한 재료와 전통 방식인 토렴을 고수하고, 직접 만드는 이북식 순대도 인기 있습니다.",
+            "영어": "The famous restaurant was named Sinchang Gukbap, as it was established in 1969 at the Gukje Market in Sinchang-dong. This is the origin of clear-broth dwaejigukbap. They insist on fresh ingredients and the traditional toryeom method, and their North Korean-style sundae made from scratch is also very popular."
+          },
+          "메뉴": {
+            "한글": "왕순대국밥 ￦9,000, 수육 ￦30,000 / 45,000",
+            "영어": "Wangsundae Gukbap ￦9,000, Steamed pork ￦30,000 / 45,000"
+          },
+          "영업시간": "09:00-21:00",
+          "주소": "서구 보수대로 53",
+          "전화번호": "051-244-1112",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "옛날오막집",
+            "영어": "Yennal Omakjip"
+          },
+          "개요": {
+            "한글": "1958년부터 운영하고 있는 유명한 내장구이 전문점으로 오랜 세월 사랑받고 있습니다. 내장구이는 전통만큼이나 각별한 맛을 자랑하며, 함께 제공되는 장아찌와 나물들을 곁들여 먹으면 또 다른 맛을 즐길 수 있습니다.",
+            "영어": "Established in 1958, Yetnal Omakjip is a long-time local favorite for grilled beef innards. Their amazing grilled meats prove their history and taste even better with pickles and tossed vegetables offered on the side."
+          },
+          "메뉴": {
+            "한글": "특양 170g ￦38,000, 대창 180g ￦37,000",
+            "영어": "Tripe 170g ￦38,000, Large Intestines 180g ￦37,000"
+          },
+          "영업시간": "12:00-21:30",
+          "주소": "서구 구덕로274번길 14",
+          "전화번호": "051-243-6973",
+          "휴무일": "2, 4주 월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "원조 18번 완당",
+            "영어": "Wonjo 18beon Wandang"
+          },
+          "개요": {
+            "한글": "1947년부터 3대를 이어 운영 중인 유명한 식당으로, 1대 창업주가 일본에서 배워온 완당을 한국인의 입맛에 맞게 발전시켰습니다. 부산 음식문화의 한 부분을 장식한 유서 깊은 식당입니다.",
+            "영어": "Since 1947, this famous restaurant has been operating for three generations. The founder learned how to make wontons in Japan and developed it to accommodate the Korean palate. This is a historic restaurant that played an important part in establishing the food culture in Busan."
+          },
+          "메뉴": {
+            "한글": "발국수 ￦8,500, 완당 ￦8,500",
+            "영어": "Balguksuk ￦8,500, Wandang(Wontons) ￦8,500"
+          },
+          "영업시간": "10:30-19:30",
+          "주소": "서구 구덕로 238번길 6",
+          "전화번호": "051-256-3391",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "편의방",
+            "영어": "Pyeonuibang"
+          },
+          "개요": {
+            "한글": "빨간 간판이 눈에 띄는 이곳은 3대째 이어오는 중국 만두 전문점으로, 하루에 40인분 한정으로 30분 전에 미리 전화 주문해야 하는 삼선만두가 유명합니다. 주문과 동시에 만드는 삼선만두는 각종 야채와 새우가 가득 차 육즙이 흘러넘칩니다.",
+            "영어": "Flashing a striking red signboard, Pyeon-uibang is a Chinese dumpling shop operated by the third generation of owners. It is famous for samseon dumplings, which are limited to 40 servings per day, and must be ordered by phone 30 minutes in advance. Made at the time of order, juicy samseon dumplings are filled with various vegetables and prawns."
+          },
+          "메뉴": {
+            "한글": "삼선만두 ￦10,500, 군만두 ￦8,000",
+            "영어": "Samseon dumplings ￦10,500, Grilled dumplings ￦8,000"
+          },
+          "영업시간": "11:00-15:30 / 16:30-21:00",
+          "주소": "서구 대신공원로 13-5",
+          "전화번호": "051-256-2121",
+          "휴무일": "월요일"
+        }
+      ],
+      "수영구": [
+        {
+          "식당이름": {
+            "한글": "611WoodFire",
+            "영어": "611WoodFire"
+          },
+          "개요": {
+            "한글": "오너 셰프의 스타일과 부산의 색을 녹여낸 우드파이어 레스토랑으로, 특색있지만 편안한 분위기를 연출합니다. 나무를 이용해 조리하여 훈연 향이 음식의 풍미를 더해줍니다.",
+            "영어": "This wood-fired restaurant combines the owner’s style with the colors of Busan, creating a unique yet comfortable atmosphere. The smoky aroma from cooking with wood adds to the flavor of the food."
+          },
+          "메뉴": {
+            "한글": "런치 ￦42,000, 디너 ￦75,000",
+            "영어": "Lunch ￦42,000, Dinner ￦75,000"
+          },
+          "영업시간": "12:00-14:45 / 18:00-22:00",
+          "주소": "수영구 황령산로14-1 2층",
+          "전화번호": "010-6549-0611",
+          "휴무일": "일, 월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "고기형",
+            "영어": "GOGIHYUNG"
+          },
+          "개요": {
+            "한글": "고기에 진심인 주인이 신경 써서 선별한 한우를 잘 숙성하여 당일 추천으로 먹을 수 있는 프리미엄 한우집입니다. 경험하기 힘든 한우 우설과 한우 생차돌박이가 준비되어 있습니다.",
+            "영어": "At this premium Korean beef restaurant, the owner, who is serious about meat, carefully ages selected Hanwoo beef and makes daily recommendations for guests. They offer Hanwoo tongue and fresh fatty brisket, which are hard to come by."
+          },
+          "메뉴": {
+            "한글": "육식주의세트(2인) ￦125,000, 한우우설(100g) ￦25,000",
+            "영어": "Meat-eaters set(for 2) ￦125,000, Hanwoo beef tongue(100g) ￦25,000"
+          },
+          "영업시간": "17:00-02:00",
+          "주소": "수영구 수영로679번길 22",
+          "전화번호": "0507-1445-9312",
+          "휴무일": "연중 무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "고옥",
+            "영어": "Go-ok"
+          },
+          "개요": {
+            "한글": "부산에서 히츠마부시를 유행시킨 유명한 곳으로, 장어는 숯불을 사용하여 굽고, 그날 사용할 장어가 떨어지면 조기 마감합니다. 예약을 받지 않고 입장 순서대로 식사를 제공합니다.",
+            "영어": "It is a famous restaurant in Busan known for making hitsumabushi popular. They use coal to grill eels and close early when the prepared ingredients are sold out. It is first come, first served without reservations."
+          },
+          "메뉴": {
+            "한글": "히츠마부시 ￦38,000, 아나고 히츠마부시 ￦28,000",
+            "영어": "Hitsumabushi ￦38,000, Anago Hitsumabushi ￦28,000"
+          },
+          "영업시간": "11:30-15:00 / 17:00-21:00",
+          "주소": "수영구 광남로 6",
+          "전화번호": "0507-1360-1638",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "광안리 언양불고기부산집",
+            "영어": "Gwangalli Eonyang Bulgogi Busanjip"
+          },
+          "개요": {
+            "한글": "30여 년 전통의 광안리 언양불고기집으로, 엄선된 100% 한우 암소와 직접 재배한 유기농 농작물을 사용합니다. 큰 설명이 필요치 않은 식당 중 한 곳입니다.",
+            "영어": "This 30-year-old Gwangalli Eonyang Bulgogi restaurant uses carefully selected 100% Korean beef cows and home-grown organic produce. This is one of those restaurants that doesn’t need much introduction."
+          },
+          "메뉴": {
+            "한글": "언양불고기(200g) ￦35,000",
+            "영어": "Eonyang Bulgogi(200g) ￦35,000"
+          },
+          "영업시간": "11:00-21:30",
+          "주소": "수영구 남천바다로 32",
+          "전화번호": "051-754-1004",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "남천면가",
+            "영어": "Namcheonmeonga"
+          },
+          "개요": {
+            "한글": "국내산 메밀을 사용하여 매일 직접 반죽하고 뽑는 메밀면을 제공합니다. 건강한 음식을 대접하고 싶은 마음으로 음식 한 그릇마다 많은 정성과 시간을 담아냅니다.",
+            "영어": "This restaurant serves buckwheat noodles that are made from scratch daily from domestic buckwheat. They put a lot of effort and time into each bowl of food to serve healthy food to customers."
+          },
+          "메뉴": {
+            "한글": "들기름메밀면 ￦9,500, 남천소바 ￦10,000",
+            "영어": "Perilla oil buckwheat noodles ￦9,500, Namcheon soba ￦10,000"
+          },
+          "영업시간": "11:00-20:00",
+          "주소": "수영구 황령대로473번길 14-2",
+          "전화번호": "0507-1349-1631",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "다이도코로",
+            "영어": "DAIDOKORO"
+          },
+          "개요": {
+            "한글": "일본 가정식을 만드는 인기 있는 식당으로 흔히 보기 힘든 일본 현지의 메뉴들을 선보입니다. 인기에 그치지 않고 메뉴 개발에도 힘쓰고 있습니다.",
+            "영어": "This popular Japanese home-style restaurant offers a variety of local Japanese dishes that are hard to find. It continues to work on the menu despite its popularity."
+          },
+          "메뉴": {
+            "한글": "치킨가라아게세트 ￦13,900, 카레세트 ￦13,900",
+            "영어": "Chicken karaage set ￦13,900, Curry set ￦13,900"
+          },
+          "영업시간": "11:00-15:00 / 17:00-21:00",
+          "주소": "수영구 남천동로 108번길 27 2층",
+          "전화번호": "070-8631-8402",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "닭발의 지존",
+            "영어": "Dakbaljizon"
+          },
+          "개요": {
+            "한글": "40여 년을 닭발과 조개탕만 만들어 온 전통 있는 닭발 전문점으로, 매콤한 수제 양념의 닭발과 시원한 국물의 조개탕이 무척 잘 어울리는 조합입니다. 오랜 시간 많은 사람들에게 사랑받아온 가게입니다.",
+            "영어": "This is a restaurant with a heritage that has been only serving chicken feet and clam soup for over 40 years. The spicy seasoning of the chicken feet made from scratch goes fantastically well with the nourishing broth of the clam soup. It has been beloved by many people in the area for a long time."
+          },
+          "메뉴": {
+            "한글": "닭발 ￦15,000-21,000, 조개탕 ￦15,000-21,000",
+            "영어": "Seasoned chicken feet ￦15,000-21,000, Clam soup ￦15,000-21,000"
+          },
+          "영업시간": "16:00-24:00",
+          "주소": "수영구 연수로 374",
+          "전화번호": "051-865-8449",
+          "휴무일": "1, 3주 일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "데일리럭키",
+            "영어": "Daily Lucky"
+          },
+          "개요": {
+            "한글": "유기농 밀과 토종 밀로 사워도우 식사 빵을 만들고 있는 곳으로, 이 포근하고 기분 좋은 공간은 매일 아침 7시부터 사워도우 빵과 샌드위치 그리고 따뜻한 수프와 함께 문을 엽니다.",
+            "영어": "This cozy and pleasant bakery opens every morning at 7:00 with sourdough bread, sandwiches, and hot soup. The sourdough bread is made of organic domestic wheat."
+          },
+          "메뉴": {
+            "한글": "이탈리안햄치즈샌드 ￦9,200, 당근라페 샌드위치 ￦8,700",
+            "영어": "Italian ham and cheese sandwich ￦9,200, Carottes Râpées Sandwich ￦8,700"
+          },
+          "영업시간": "07:00-20:00",
+          "주소": "수영구 수영로 540번길 7",
+          "전화번호": "0507-1330-1707",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "동경밥상",
+            "영어": "Donggyeongbapsang"
+          },
+          "개요": {
+            "한글": "240여 년의 긴 역사를 가진 일본의 장어 요리 전문점 쥬바코에서 오랜 수련을 거친 오너 셰프가 쥬바코 스타일의 정통 방식으로 만든 장어구이를 선보입니다. 외관부터 내부까지 일본에 온 듯한 분위기를 가지고 있습니다.",
+            "영어": "The owner-chef, who trained for a long time at Jyubako, a 240-year-old eel specialty restaurant in Japan, presents the authentic Jyubako-style grilled eel. The exterior and interior decor will also make you feel like you are in Japan."
+          },
+          "메뉴": {
+            "한글": "우나쥬 ￦43,000, 히츠마부시 ￦38,000",
+            "영어": "Unajyu ￦43,000, Hitsumabushi ￦38,000"
+          },
+          "영업시간": "11:30-15:00 / 17:30-21:00",
+          "주소": "수영구 남천바다로 34-6",
+          "전화번호": "0507-1320-1428",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "램지",
+            "영어": "Ramsey"
+          },
+          "개요": {
+            "한글": "클래식 프렌치를 추구하는 다이닝으로 부산의 식재료를 사용하여 계절마다 다른 코스를 선보입니다. 다양한 와인잔과 함께 전문 소믈리에가 상주하고 있습니다.",
+            "영어": "The restaurant pursues classic French cuisine and offers different courses for each season using local ingredients from Busan. They also have a professional sommelier on staff with a wide selection of wine glasses."
+          },
+          "메뉴": {
+            "한글": "런치 ￦83,000, 디너 ￦179,000",
+            "영어": "Lunch ￦83,000, Dinner ￦179,000"
+          },
+          "영업시간": "12:00-15:00 / 18:00-22:30",
+          "주소": "수영구 광안해변로 284번길 38, 해링턴타워 광안 304호",
+          "전화번호": "010-9406-3135",
+          "휴무일": "월, 화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "백일평냉",
+            "영어": "100.1.pyeongnaeng"
+          },
+          "개요": {
+            "한글": "전통의 맛과 냉면 기술자들의 고집으로, 오직 고깃국물과 소금으로만 만들어진 육수와 80% 함량의 메밀면으로 제대로 된 평양냉면을 완성했습니다. 수제 이북 만둣국, 한우 불고기 등의 메뉴도 준비되어 있습니다.",
+            "영어": "With the traditional flavors and the principle of the cold noodle technicians, the restaurant has completed the art of making authentic Pyongyang naengmyeon, consisting of beef broth, salt, and 80% buckwheat noodles. The menu also includes homemade North Korean manduguk (dumpling soup) and Hanwoo bulgogi."
+          },
+          "메뉴": {
+            "한글": "평양냉면 ￦13,000, 비빔냉면 ￦13,000",
+            "영어": "Pyeongyang naengmyeon ￦13,000, Bibim naengmyeon ￦13,000"
+          },
+          "영업시간": "11:30-15:30 / 17:00-19:00",
+          "주소": "수영구 남천바다로10번길 29, 1층",
+          "전화번호": "051-625-5515",
+          "휴무일": "연중 무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "아웃트로 바이 비토",
+            "영어": "Outro by Vito"
+          },
+          "개요": {
+            "한글": "이탈리아 ICIF를 졸업한 셰프 비토의 비스트로로, 부산에서 최초로 생면 파스타를 시작한 곳입니다. 22년 경력 셰프의 경험이 담긴 요리들과 내추럴 와인을 만날 수 있습니다.",
+            "영어": "This bistro by Chef Vito, who graduated from ICIF in Italy, is the first place in Busan to serve fresh pasta. It offers dishes prepared by a chef with 22 years of experience and natural wines."
+          },
+          "메뉴": {
+            "한글": "단새우, 부라타치즈, 비시슈아즈, 유자간장젤리 ￦16,000, 오리지널 라구, 생면탈리아텔레 ￦27,000",
+            "영어": "Sweet shrimp, burrata cheese, vichyssoise, yuja soy jelly ￦16,000, Original ragu, fresh tagliatelle ￦27,000"
+          },
+          "영업시간": "17:00-24:00",
+          "주소": "수영구 민락본동로 19번길 18 1층",
+          "전화번호": "051-758-7123",
+          "휴무일": "월, 화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "아펙트",
+            "영어": "Afekt"
+          },
+          "개요": {
+            "한글": "커다란 U자 형태의 테이블이 인상적인 프렌치 베이스의 다이닝 레스토랑으로, 제철 재료를 이용하여 만든 요리와 와인 페어링이 좋습니다.",
+            "영어": "This impressive restaurant with a large U-shaped table is a French-based dining restaurant that uses seasonal ingredients and offers a menu that pairs great with wine."
+          },
+          "메뉴": {
+            "한글": "오징어세비체 ￦28,000, 시금치 쉬림프 오일 소스 타야린 ￦25,000",
+            "영어": "Squid ceviche ￦28,000, Spinach shrimp oil sauce tajarin ￦25,000"
+          },
+          "영업시간": "18:00-21:00",
+          "주소": "수영구 무학로 64번길 31, 1층",
+          "전화번호": "0507-1307-7822",
+          "휴무일": "일, 월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "야키토리 백탄",
+            "영어": "Yakitori BAEKTAN"
+          },
+          "개요": {
+            "한글": "모든 꼬치는 매일 아침 들어온 생닭을 직접 발골하여 당일 생산, 당일 판매 원칙으로 제공합니다. 코스 주문 후 단품을 주문하는 방식이며, 잘 구워진 꼬치를 다양한 방법으로 즐길 수 있습니다.",
+            "영어": "All the skewers are served on the same day as they are made using chicken that has been deboned by hand every morning. This yakitori specialty restaurant follows the principle of serving what is cooked on the same day. To order, choose a course first, then add individual items. You can enjoy well-grilled skewers in various ways."
+          },
+          "메뉴": {
+            "한글": "백코스 ￦35,000, 탄코스 ￦19,000",
+            "영어": "Baek Course ￦35,000, Tan Course ￦19,000"
+          },
+          "영업시간": "17:30-23:30",
+          "주소": "수영구 민락로13번길 21, 2층",
+          "전화번호": "0507-1332-6043",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "야키토리 해공",
+            "영어": "Yakitori HAEGONG"
+          },
+          "개요": {
+            "한글": "고급 일식집 같은 분위기의 이곳은 토종닭을 직접 발골하여 정성스레 구운 야키토리를 제공합니다. 당일에 잡아서 숯불에 구운 곰장어도 인기 있는 유니크한 곳입니다.",
+            "영어": "This place, which has an atmosphere like that of a high-end Japanese restaurant, serves yakitori, which is made by boning and carefully grilling Korean native chickens. It is also a unique place where kkomjangeo (hagfish), which are caught on the same day and grilled over charcoal, are also popular."
+          },
+          "메뉴": {
+            "한글": "토종닭 야키토리 오마카세 ￦59,000",
+            "영어": "Korean native chicken yakitori omakase ￦59,000"
+          },
+          "영업시간": "17:30-23:30",
+          "주소": "수영구 민락본동로 19번길 30-5, 1층",
+          "전화번호": "051-758-8333",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "우리포차",
+            "영어": "Wooripocha"
+          },
+          "개요": {
+            "한글": "강원도와 제주도에서 잡히는 10kg 이상의 자연산 특방어만 사용하여 방어회를 제공합니다. 오픈과 동시에 손님이 가득 차는 곳으로, 방어회와 함께 머리구이도 꼭 주문해야 할 메뉴입니다.",
+            "영어": "This restaurant, which serves yellowtail sashimi(sliced raw fish) made with only wild yellowtail weighing 10 kg or more caught in Gangwon-do and Jeju-do, is always full of customers from the moment it opens. Must-order items include grilled yellowtail heads and yellowtail sashimi."
+          },
+          "메뉴": {
+            "한글": "대방어 소 ￦65,000 / 중 ￦90,000 / 대 ￦115,000",
+            "영어": "Yellowtail Small ￦65,000 / medium ￦90,000 / large ￦115,000"
+          },
+          "영업시간": "16:00-23:00",
+          "주소": "수영구 광일로29번길 9, 1층",
+          "전화번호": "010-8033-6342",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "우토피아",
+            "영어": "Wootopia"
+          },
+          "개요": {
+            "한글": "광안리 바다 뷰와 함께 2++등급 한우를 사용한 오마카세 구이를 즐길 수 있는 곳으로, 준비되는 모습도 먹는 방식도 독특합니다. 연인과 함께 하는 것을 추천하고 싶은 식당입니다.",
+            "영어": "At Wootopia, you can enjoy 2++ Grade Hanwoo chosen and grilled by the chef, with the view of Gwangalli Beach. From preparation to eating, the whole experience is one-of-a-kind. It’s a great place for a romantic night out."
+          },
+          "메뉴": {
+            "한글": "2인 set ￦146,000, 뼈밥 ￦29,000",
+            "영어": "2-person set ￦146,000, Bone rice ￦29,000"
+          },
+          "영업시간": "17:00-23:00",
+          "주소": "수영구 광안해변로 249 3층",
+          "전화번호": "0507-1388-3199",
+          "휴무일": "화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "으뜸이로리바타",
+            "영어": "EUTTEUM Iroribata"
+          },
+          "개요": {
+            "한글": "일본식 화로 ‘이로리’에서 굽히고 있는 생선이 이국적인 분위기를 더해줍니다. 화로를 이용한 숯불구이를 중심으로 한 다양한 일식 코스 요리를 만날 수 있으며, 예약제로 운영됩니다.",
+            "영어": "The fish being grilled in the Japanese-style hearth “irori” adds an exotic atmosphere to this restaurant, which serves a variety of Japanese course meals centered on charcoal-grilled dishes using the hearth. It operates on a reservation basis."
+          },
+          "메뉴": {
+            "한글": "오마카세 코스 ￦100,000",
+            "영어": "Omakase course ￦100,000"
+          },
+          "영업시간": "월-목 19:00-22:00(1부제), 금-토 17:30-22:00(2부제)",
+          "주소": "수영구 수영로408번길 20, 1층",
+          "전화번호": "0507-1460-4790",
+          "휴무일": "일요일, 매달 2, 4번째 월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "자매국밥",
+            "영어": "Jamae Gukbap"
+          },
+          "개요": {
+            "한글": "30여 년을 운영해온 곳으로 매일 새 머릿고기로 우려낸 육수를 사용하여 지역민들에게 사랑받아온 골목식당입니다. 된장 베이스의 양념으로 진하고 강한 맛이 특징입니다.",
+            "영어": "This is a hole-in-the-wall that has been loved by the locals for over 30 years, serving broth made from fresh pork head meat every day. The soup is rich and strong, flavored with doenjang-based seasoning."
+          },
+          "메뉴": {
+            "한글": "수육한접시 ￦10,000, 돼지국밥 ￦9,000",
+            "영어": "Steamed pork slices ￦10,000, Dwaeji gukbap(pork soup with rice) ￦9,000"
+          },
+          "영업시간": "10:00-21:00",
+          "주소": "수영구 민락본동로27번길 56",
+          "전화번호": "051-752-1912",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "제로베이스",
+            "영어": "Zerobase"
+          },
+          "개요": {
+            "한글": "제철 재료를 이용한 오마카세 코스를 선보이는 감각적인 일식당으로, 매월 변화되는 코스를 선보입니다. 당일 수산시장의 엄선된 재료와 부산의 식재료를 사용하여 요리합니다.",
+            "영어": "This stylish Japanese restaurant offers omakase courses featuring seasonal ingredients, with courses changing monthly. The dishes are prepared using carefully selected ingredients from the fish market and local ingredients from Busan."
+          },
+          "메뉴": {
+            "한글": "1인 오마카세 ￦130,000",
+            "영어": "Omakase for 1 ￦130,000"
+          },
+          "영업시간": "18:30-21:00",
+          "주소": "수영구 민락로33번길 17 202호",
+          "전화번호": "070-8803-0318",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "조이풀조이풀 (골드핀치by조이풀조이풀)",
+            "영어": "Goldfinch by joyful joyful"
+          },
+          "개요": {
+            "한글": "10명 정도가 앉을 수 있는 일본식 다찌바에는 계절을 담은 제철 생선 요리들과 잘 보기 힘든 일본풍 마치츄카 요리가 올려집니다. 분위기와 음식 모두 즐거운 좋은 주점입니다.",
+            "영어": "The Japanese-style bar, which can seat about 10 people, serves seasonal fish dishes and Japanese-style street Chinese food that are hard to find in Korea. It is a good pub where both the atmosphere and the food are enjoyable."
+          },
+          "메뉴": {
+            "한글": "한판모둠스시 ￦35,000, 마보도후 ￦17,000",
+            "영어": "Assorted sushi set ￦35,000, Mapo tofu ￦17,000"
+          },
+          "영업시간": "18:00-23:00",
+          "주소": "수영구 민락본동로11번길 21, 1층",
+          "전화번호": "0507-1342-3814",
+          "휴무일": "일요일, 격주 월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "청산1954",
+            "영어": "Cheongsan1954"
+          },
+          "개요": {
+            "한글": "12가지 한약재로 삶은 후 편백나무에 쪄낸 한방 보쌈을 576시간 수경재배로 직접 키운 새싹쌈과 함께 제공합니다. 1968년 지어진 목조 건물이 재생 건축을 통해 재탄생한 곳입니다.",
+            "영어": "This restaurant serves a pork belly dish first boiled with 12 Korean medicinal herbs and steamed in cypress wood, along with a side of fresh leafy greens grown in a hydroponic system for 576 hours. The space was created by renovating a wooden building established in 1968."
+          },
+          "메뉴": {
+            "한글": "편백낙지보쌈(1人) ￦23,000, 오독낙지볶음(1人) ￦14,500",
+            "영어": "Pork belly bossam with small octopus in cypress steamer(1 person) ￦23,000, Stir-fried octopus(1 person) ￦14,500"
+          },
+          "영업시간": "11:00-15:30 / 17:00-20:50",
+          "주소": "수영구 황령산로 29",
+          "전화번호": "051-622-1954",
+          "휴무일": "매달 마지막 주 수요일 (명절 혹은 공휴일 있는 달 변동)"
+        }
+      ],
+      "연제구": [
+        {
+          "식당이름": {
+            "한글": "고등어다찌 연산본점",
+            "영어": "Godeungeodajji Yeonsan Main Branch"
+          },
+          "개요": {
+            "한글": "부산 최초의 활고등어 전문점으로 살아있는 고등어회를 맛볼 수 있는 곳입니다. 통영의 어장에서 직접 살아있는 고등어를 공수하여 싱싱한 고등어회를 제공합니다.",
+            "영어": "This is Busan’s first restaurant specializing in live mackerel sliced raw fish. It serves fresh mackerel sliced raw fish by sourcing live mackerel directly from the fishing grounds in Tongyeong."
+          },
+          "메뉴": {
+            "한글": "활고등어회 ￦45,000-, 모듬회 ￦55,000-",
+            "영어": "Live mackerel hoe ￦45,000-, Assorted sliced raw fish ￦55,000-"
+          },
+          "영업시간": "16:00-01:00",
+          "주소": "연제구 고분로31번길 42",
+          "전화번호": "051-853-9374",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "국제밀면본점",
+            "영어": "Gukje Milmyeon Main Branch"
+          },
+          "개요": {
+            "한글": "밀면 전문점 중에서도 특히 맛으로 소문난 곳으로, 소 사골만을 사용한 육수 등 독창적인 방식의 밀면을 만듭니다. 보통 기계로 잘려진 편육이 고명으로 올려지는데, 이곳은 손으로 일일이 얇게 찢은 양지머리 고기가 올려지는 것이 특징입니다.",
+            "영어": "This place is widely recognized as one of the best spots for milmyeon, mainly for its exceptional taste. It is one of the most famous restaurants among Busan’s many wheat noodle restaurants. They present a distinct type of wheat noodles in beef bone broth. Elsewhere, the meat topping is usually cut by machines, but they are known for hand-pulled thin pieces of brisket."
+          },
+          "메뉴": {
+            "한글": "물밀면 ￦9,000, 비빔밀면 ￦9,000",
+            "영어": "Mul Milmyeon ￦9,000, Bibim Milmyeon ￦9,000"
+          },
+          "영업시간": "10:00-20:00",
+          "주소": "연제구 중앙대로1235번길 23-6",
+          "전화번호": "051-501-5507",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "델리봉",
+            "영어": "DELI BONG"
+          },
+          "개요": {
+            "한글": "샤퀴테리를 활용한 프랑스 코스 요리 전문점으로 셰프가 혼자 운영하고 있습니다. 간판이 없어 잠시 당황스러울 수 있으나, 그 안에서는 분명 만찬이 벌어지고 있습니다.",
+            "영어": "DELI BONG, run by a single-owner chef, offers French course dining using charcuterie. Upon the first visit, guests may be a little confused because there is no signboard, but there is definitely a feast going on inside."
+          },
+          "메뉴": {
+            "한글": "디너코스 ￦75,000",
+            "영어": "Dinner course ￦75,000"
+          },
+          "영업시간": "19:00-21:00",
+          "주소": "연제구 신금로 25, 노블레스스퀘어 110호",
+          "전화번호": "051-868-6848",
+          "휴무일": "일, 월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "디저트시네마",
+            "영어": "DESSERT CINEMA"
+          },
+          "개요": {
+            "한글": "크로아상, 뺑 오 쇼콜라 등 페스츄리류를 기반으로 빵을 만들며, 당일 생산 당일 판매를 원칙으로 합니다. 크루아상이 특히 인기 있으며, 늦게 찾아가면 모든 빵이 매진되는 인기 베이커리입니다.",
+            "영어": "Dessert Cinema bakes pastries such as croissants and pain au chocolat and sells them on the same day. The most popular item is the croissant, and if you arrive late, many items may be sold out."
+          },
+          "메뉴": {
+            "한글": "오리지널 크로아상 ￦4,000, 뺑 오 쇼콜라 ￦4,300",
+            "영어": "Original croissant ￦4,000, Pain au chocolat ￦4,300"
+          },
+          "영업시간": "12:00-재료소진",
+          "주소": "연제구 쌍미천로 32-1",
+          "전화번호": "051-867-5757",
+          "휴무일": "토, 일요일 운영 (주중 휴무)"
+        },
+        {
+          "식당이름": {
+            "한글": "보느파티쓰리",
+            "영어": "Bonheur Patisserie"
+          },
+          "개요": {
+            "한글": "프랑스 르 꼬르동 블루를 졸업하고 호텔 샹그릴라 파리, 호텔리츠 파리 등 14년간 파리에서 활동한 김지연 파티시에의 디저트 가게로, 프랑스 제과가 기초가 된 프랑스 디저트 전문점입니다.",
+            "영어": "This is a French dessert shop run by pastry chef Kim Ji-yeon, who graduated from Le Cordon Bleu in France and worked at Hotel Shangri-La Paris and Hotel Ritz Paris for 14 years."
+          },
+          "메뉴": {
+            "한글": "계절디저트 ￦9,500-12,000, 까늘레 ￦2,900",
+            "영어": "Seasonal dessert ￦9,500-12,000, Canelé ￦2,900"
+          },
+          "영업시간": "11:30-19:00",
+          "주소": "연제구 교대로 7, 2층",
+          "전화번호": "051-502-2451",
+          "휴무일": "월요일"
+        }
+      ],
+      "영도구": [
+        {
+          "식당이름": {
+            "한글": "도날드즉석떡볶이",
+            "영어": "Donald Tteokbokki"
+          },
+          "개요": {
+            "한글": "지역민들에게 추억의 장소인 이곳은 35년간 운영해온 유명한 즉석 떡볶이 전문점으로 해물 육수와 고추장 소스를 사용하여 독특한 맛을 자랑합니다. 후식으로 판매하는 뻥크림을 먹기 위해 찾아오는 사람들도 많습니다.",
+            "영어": "A famous nostalgic joint for the locals, Donald Tteobokki is a made-to-order tteobokki shop that has been in operation for 35 years. They are known for their original flavors with seafood broth and gochujang sauce. Many also come here for Ppeong Cream, an ice cream sandwich with ppeongtwigi (rice puff) sold as dessert."
+          },
+          "메뉴": {
+            "한글": "2인 Set ￦10,400, 3인 Set ￦14,100",
+            "영어": "Set for 2 ￦10,400, Set for 3 ￦14,100"
+          },
+          "영업시간": "11:00-19:30",
+          "주소": "영도구 꿈나무길 267(1층)",
+          "전화번호": "051-413-9990",
+          "휴무일": "수, 목, 일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "부흥식당",
+            "영어": "Buheung Sikdang"
+          },
+          "개요": {
+            "한글": "영도의 유명한 제주 자리돔 전문점으로 싱싱한 자리돔과 직접 만든 양념장의 맛이 무척 잘 어울립니다. 당일 판매할 수 있는 한정된 양만 판매하며, 제주 갈치 요리로도 유명합니다.",
+            "영어": "This is a popular pearl-spot chromis specialty shop in Yeongdo. The fresh fish goes nicely with their original sauce. Also famous for their Jeju cutlassfish dishes, the restaurant only sells a limited number of dishes every day."
+          },
+          "메뉴": {
+            "한글": "자리돔회 ￦30,000, 자리돔물회 ￦12,000",
+            "영어": "Jaridomhoe(Raw Slices of Pearl Chromis) ￦30,000, Jaridommulhoe(Raw Slices of Pearl Chromis with Cold Soup) ￦12,000"
+          },
+          "영업시간": "11:00-19:00",
+          "주소": "영도구 절영로 104",
+          "전화번호": "051-417-0227",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "재기돼지국밥",
+            "영어": "Jaegi Dwaejigukbap"
+          },
+          "개요": {
+            "한글": "55년을 운영해온 영도 남항시장의 유명한 돼지국밥 전문점으로, 전통적인 토렴 방식으로 뜨겁게 나오는 돼지국밥에는 고기 이외에 여러 부위를 취향에 맞게 주문할 수 있습니다.",
+            "영어": "A famous pork soup restaurant in Yeongdo’s Namhang Market that has been operating for 55 years, the pork soup is served hot in the traditional toryeom style. Customers can customize the meat and other parts to their liking."
+          },
+          "메뉴": {
+            "한글": "돼지국밥 ￦10,000, 모듬수육 ￦25,000-35,000",
+            "영어": "Dwaeji gukbap ￦10,000, Assorted steamed meats ￦25,000-35,000"
+          },
+          "영업시간": "08:00-21:00",
+          "주소": "영도구 절영로 49번길 25",
+          "전화번호": "051-418-0526",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "제주복국",
+            "영어": "Jeju Bokguk"
+          },
+          "개요": {
+            "한글": "뚝배기로 나오는 대부분의 복국집과 다르게 인원 수만큼 끓인 복국을 그 자리에서 그릇에 담아줍니다. 부산에서 최고의 복국집을 거론할 때 항상 빠지지 않는 곳 중 한 곳으로, 클래식한 분위기의 넓은 공간이 인상적입니다.",
+            "영어": "Unlike most bokguk (pufferfish soup) places that serve in earthen pots, this restaurant divides the soup on the spot by the number of people and serves them directly in the bowl. It is one of the best bokguk spots in Busan that always makes the list. The spacious hall is notable for its classic atmosphere."
+          },
+          "메뉴": {
+            "한글": "까치복 지리/매운탕 ￦18,000, 참복 지리/매운탕 ￦22,000",
+            "영어": "Striped puffer soup(spicy or mild) ￦18,000, Tiger puffer soup(spicy or mild) ￦22,000"
+          },
+          "영업시간": "10:00-15:00 / 17:00-20:30",
+          "주소": "영도구 절영로 481",
+          "전화번호": "051-405-5050",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "피아크 카페 & 베이커리",
+            "영어": "P. Ark Cafe & Bakery"
+          },
+          "개요": {
+            "한글": "하버 뷰를 자랑하는 거대한 베이커리 카페로 주말이면 유원지라도 온 듯 많은 인파가 몰리지만, 넓은 공간으로 웨이팅은 생각보다 짧습니다. 약 80여 종의 다양한 베이커리와 음료, 아이스크림이 준비되어 있고 볼거리가 많습니다.",
+            "영어": "This huge bakery cafe boasts its harbor view. During weekends, crowds gather here like an amusement park, but the wait is short thanks to the spacious hall. It serves over 80 different pastries, drinks, and ice cream and has various things to see."
+          },
+          "메뉴": {
+            "한글": "마일드블루돌체라떼 ￦8,000, 피아크 몽블랑 ￦7,500",
+            "영어": "Mild blue dolce latte ￦8,000, P.ARK mont blanc ￦7,500"
+          },
+          "영업시간": "10:00-23:00",
+          "주소": "영도구 해양로 195번길 180 4층",
+          "전화번호": "051-404-9204",
+          "휴무일": "연중무휴"
+        }
+      ],
+      "중구": [
+        {
+          "식당이름": {
+            "한글": "1969부원동칼국수 부산본점",
+            "영어": "1969 Buwondong Kalguksu Busan Main Branch"
+          },
+          "개요": {
+            "한글": "신선도를 유지하기 위해 매일 아침 경매된 식재료를 공수하여 재료 소진 시까지 한정 판매합니다. 신선한 굴과 가리비가 듬뿍 올려진 칼국수를 만날 수 있습니다. 주로 18시쯤 재료가 소진됩니다.",
+            "영어": "To maintain freshness, the restaurant receives the ingredients auctioned off every morning and operates in limited quantities until noodles are sold out. Here, you can enjoy noodles topped with plenty of fresh oysters and scallops. Typically, the ingredients are exhausted around 6 PM."
+          },
+          "메뉴": {
+            "한글": "부원칼국수 ￦9,000, 비빔칼국수 ￦9,000",
+            "영어": "Buwon kalguksu ￦9,000, Bibim kalguksu ￦9,000"
+          },
+          "영업시간": "11:00-19:30",
+          "주소": "중구 구덕로22번길3 1층",
+          "전화번호": "0507-1477-9925",
+          "휴무일": "연중 무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "고등어연구소 본점",
+            "영어": "Mackerel Research Institute Main Branch"
+          },
+          "개요": {
+            "한글": "다양한 연구를 통하여 고등어의 비린 맛을 완벽하게 제거한 곳으로 일식 베이스의 고등어 요리를 제공합니다. 고태솥밥, 고등어온소바, 고등어봉초밥 등 다채로운 고등어 요리가 준비되어 있습니다.",
+            "영어": "This restaurant perfected the art of serving mackerel dishes in the freshest way possible through various research. It offers a wide array of Japanese-cuisine-based dishes, including stone pot rice with mackerel, warm soba with mackerel, and mackerel sushi."
+          },
+          "메뉴": {
+            "한글": "고태솥밥 + 오차즈케 ￦10,900, 고등어온소바 ￦10,900",
+            "영어": "Stone pot rice with mackerel with ochazuke ￦10,900, Warm soba with mackerel ￦10,900"
+          },
+          "영업시간": "11:00-15:00 / 17:00-21:30",
+          "주소": "중구 중앙대로 79-1",
+          "전화번호": "0507-1428-0048",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "그리다부부",
+            "영어": "bubu coffee"
+          },
+          "개요": {
+            "한글": "행복한 공간을 추구하는 부부의 취향이 온전히 담긴 감성적인 카페로 직접 로스팅한 ‘강배전 스페셜티 커피’와 함께 행복한 기분을 느낄 수 있도록 세심하게 구성된 공간입니다.",
+            "영어": "It is a cozy cafe decorated by a couple who pursue a happy space. It is carefully organized to make guests feel joy with the in-house dark-roasted specialty coffee."
+          },
+          "메뉴": {
+            "한글": "RI 드립커피 ￦6,500, 시나몬 아일랜드 라떼 ￦7,000",
+            "영어": "RI drip coffee ￦6,500, Cinnamon island latte ￦7,000"
+          },
+          "영업시간": "11:00-22:00",
+          "주소": "중구 광복중앙로 35-1 1층",
+          "전화번호": "010-7516-0484",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "동삼정",
+            "영어": "DONGSAMJUNG"
+          },
+          "개요": {
+            "한글": "깔끔한 공간에서 서양식 조리법으로 만든 독특한 한식 창작 요리를 만날 수 있는 곳입니다. 계절마다 제철 음식을 사용하여 다양한 술과 어울리는 음식이 기다리고 있는 한식 주점입니다.",
+            "영어": "This is a Korean bar where you can enjoy unique Korean fusion dishes made with Western cooking methods in a clean space. It serves seasonal dishes that go well with various types of alcoholic drinks."
+          },
+          "메뉴": {
+            "한글": "한우육회 타르타르 ￦25,000, 동삼정김밥 ￦10,000",
+            "영어": "Yukhoe(Korean beef tartare) ￦25,000, Dongsamjung gimbap ￦10,000"
+          },
+          "영업시간": "18:00-23:50",
+          "주소": "중구 광복중앙로 14-62 1층",
+          "전화번호": "051-912-8343",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "동화반점",
+            "영어": "Donghwa banjeom"
+          },
+          "개요": {
+            "한글": "1950년 창업한 부산 최초의 중식 전문점으로, 1987년 보수동으로 이전했으며 남구 남천동에도 매장을 가지고 있습니다. 오랜 시간 꾸준히 사랑받아온 만큼 충분히 보증된 맛을 가지고 있습니다.",
+            "영어": "This is the first Chinese restaurant in Busan, founded in 1950. It moved to Bosu-dong in 1987 and also has a store in Namcheon-dong, Nam-gu. It’s been around for a long time, and the quality of food is guaranteed."
+          },
+          "메뉴": {
+            "한글": "유니짜장 ￦8,500, 난자완스 ￦28,000",
+            "영어": "Yuni jjajang ￦8,500, Nanja wans(Korean Chinese meatballs) ￦28,000"
+          },
+          "영업시간": "11:30-15:00 / 17:00-21:00",
+          "주소": "중구 흑교로 75번길 3",
+          "전화번호": "051-253-6661",
+          "휴무일": "화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "물꽁식당",
+            "영어": "Mulkkong Sikdang"
+          },
+          "개요": {
+            "한글": "60년째 3대를 이어 운영해온 전통 있는 아귀 요리 전문점으로 신선한 아귀를 사용하여 아귀찜, 수육, 탕을 만듭니다. 자극적이지 않은 담백한 맛의 아귀찜이 대표 메뉴이며, 오래되었지만 청결한 가게가 인상적입니다.",
+            "영어": "Handed down to the third generation, this 60-year specialty restaurant uses fresh monkfish to steam, braise, and make soup. The mild-tasting monkfish is their signature dish. Despite the old history, the restaurant is very clean."
+          },
+          "메뉴": {
+            "한글": "아귀찜 ￦15,000-70,000, 아귀수육 ￦40,000-70,000",
+            "영어": "Braised Monkfish ￦15,000-70,000, Steamed Monkfish ￦40,000-70,000"
+          },
+          "영업시간": "10:00-21:00",
+          "주소": "중구 흑교로59번길 3",
+          "전화번호": "051-257-3230",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "본참치",
+            "영어": "Bonchamchi"
+          },
+          "개요": {
+            "한글": "전국의 참치 매니아들이 찾아오는 유명한 참치 전문점으로, 조리 명인인 오너 셰프가 운영하고 있습니다. 당일 재료는 당일 소진하며, 노인들을 위한 행사를 개최하는 등 지역사회에 기여하는 식당입니다.",
+            "영어": "This is a famous tuna restaurant that attracts tuna lovers from all over the country. It is run by an owner-chef who is a master cook. All the ingredients are used up within the day. They also contribute to the local community by holding events for the elderly."
+          },
+          "메뉴": {
+            "한글": "특정식 ￦34,000, 특초밥 ￦18,000",
+            "영어": "Special Set ￦34,000, Special Sushi ￦18,000"
+          },
+          "영업시간": "11:30-14:30 / 17:00-22:30",
+          "주소": "중구 해관로73",
+          "전화번호": "051-463-3737",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "부광돼지국밥",
+            "영어": "Bugwang Dwaejigukbap"
+          },
+          "개요": {
+            "한글": "3대에 걸쳐 40여 년을 영업 중인 곳으로 전통적인 방식으로 돼지국밥을 만듭니다. 김치와 깍두기는 직접 담그며, 오래도록 인기 있는 가게답게 신선하고 좋은 재료를 고집합니다.",
+            "영어": "This authentic dwaejigukbap restaurant has been in business for more than 40 years for three generations. Kimchi and kkakdugi are made from scratch, and their insistence on fresh quality ingredients shows why they have been popular for so long."
+          },
+          "메뉴": {
+            "한글": "돼지국밥 ￦10,000, 수육 ￦30,000 / 35,000",
+            "영어": "Dwaejigukbap(pork soup with rice) ￦10,000, Steamed pork ￦30,000 / 35,000"
+          },
+          "영업시간": "09:30-19:30",
+          "주소": "중구 대청로 141번길 15-1",
+          "전화번호": "051-466-1708",
+          "휴무일": "일요일, 명절"
+        },
+        {
+          "식당이름": {
+            "한글": "부산명물횟집",
+            "영어": "Busan Myeongmul Hoetjip"
+          },
+          "개요": {
+            "한글": "1946년부터 운영해온 유명한 횟집으로 여러 유명인사들의 단골집이기도 합니다. 광어회 한 접시에 고기 뼈를 푹 고아서 만든 진하고 담백한 맑은 국과 여섯 가지 밑반찬이 나오는 회 정식이 인기 메뉴입니다.",
+            "영어": "This is a very well-known restaurant specializing in sliced raw fish since 1946, frequented by numerous celebrities. Their popular dish is a hoe set menu with a plate of sliced halibut, rich and nourishing meat and bone broth, and six side dishes."
+          },
+          "메뉴": {
+            "한글": "회백밥 1인분 ￦40,000, 생선회 ￦110,000",
+            "영어": "Hoe Set Menu for 1 ￦40,000, Hoe(sliced raw fish) ￦110,000"
+          },
+          "영업시간": "10:30-15:00 / 16:00-22:00",
+          "주소": "중구 자갈치해안로 55",
+          "전화번호": "051-245-4995",
+          "휴무일": "1, 3주 월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "삼송초밥",
+            "영어": "Samsong Chobap"
+          },
+          "개요": {
+            "한글": "부산에서 가장 유명한 일식 전문점 중 한 곳으로 65년 이상의 역사를 가지고 있으며, 대를 이어 오는 손님들이 이곳의 변치 않는 맛을 보증합니다. 특히 김초밥으로 많이 알려져 있습니다.",
+            "영어": "As one of the most well-known Japanese restaurants in Busan, it has a history of more than 65 years. Generations of customers guarantee its consistent taste. Their futomaki is especially popular."
+          },
+          "메뉴": {
+            "한글": "김초밥(후토마끼) ￦17,000, 초밥 정식 특선 ￦32,000-52,000",
+            "영어": "Futomaki ￦17,000, Sushi Special ￦32,000-52,000"
+          },
+          "영업시간": "11:00-14:30 / 16:30-21:00",
+          "주소": "중구 광복로55번길 13",
+          "전화번호": "051-245-7870",
+          "휴무일": "일요일, 명절"
+        },
+        {
+          "식당이름": {
+            "한글": "석기시대",
+            "영어": "Seokgisidae"
+          },
+          "개요": {
+            "한글": "1987년에 개업한 중국 만두 전문점으로, 맛과 품질에 비해 저렴한 가격의 만두와 오향장육을 만날 수 있습니다. 가볍게 술 마시기 좋은 곳으로 많은 단골손님이 찾아옵니다.",
+            "영어": "Opened in 1987, this restaurant specializes in Chinese dumplings. It is known for affordable and tasty dumplings and five-spice steamed pork. It is frequented by local regulars for casual dining and drinks."
+          },
+          "메뉴": {
+            "한글": "오향장육 ￦19,000 / 25,000, 군만두 ￦6,000",
+            "영어": "Ohyangjangyuk(five-spice steamed pork) ￦19,000 / 25,000, Fried dumplings ￦6,000"
+          },
+          "영업시간": "15:00-21:00",
+          "주소": "중구 동광길 75-1",
+          "전화번호": "010-2334-0358",
+          "휴무일": "일요일, 명절, 공휴일"
+        },
+        {
+          "식당이름": {
+            "한글": "연경재",
+            "영어": "Yeongyeongjae"
+          },
+          "개요": {
+            "한글": "창립자가 직접 디자인한 건물과 시간과 공간, 문화의 어우러짐을 표현한 철학이 느껴지는 공간이 특색 있습니다. 카페 음료뿐 아니라 국내 각지의 좋은 차와 음료 재료를 발굴 개발하고 있습니다.",
+            "영어": "Yeongyeongjae operates in a building designed by the founder with a philosophy that expresses the convergence of time, space, and culture. It continues to create and develop coffee drinks, tea, and beverage ingredients from all over the country."
+          },
+          "메뉴": {
+            "한글": "7:01 AM Blend(시그니처 블렌드) 아메리카노 ￦5,500, 달항아리(Dal Hangari) ￦8,000",
+            "영어": "7:01 AM Blend(signature blend) Americano ￦5,500, Dal Hangari ￦8,000"
+          },
+          "영업시간": "08:30-21:30",
+          "주소": "중구 중앙대로 29번길 6",
+          "전화번호": "0507-1412-5753",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "원산면옥 1953",
+            "영어": "Wonsanmyeonok 1953"
+          },
+          "개요": {
+            "한글": "60여 년의 전통을 가진 냉면 전문점으로 3대째 운영하고 있습니다. 한우와 국내산 생돼지고기, 생닭을 사용하고 10여 가지 재료가 들어간 육수로 만든 냉면은 변하지 않는 맛을 자랑합니다.",
+            "영어": "Wonsanmyeonok is a longstanding naengmyeon(cold noodle soup) establishment with 60 years of history, run by third-generation family members. They use Hanwoo, domestic pork, and fresh chicken, and the naengmyeon broth made of over 10 ingredients boasts the same flavor every time."
+          },
+          "메뉴": {
+            "한글": "평양냉면 ￦14,000, 함흥냉면 ￦14,000",
+            "영어": "Pyeongyang Naengmyeon ￦14,000, Hamheung Naengmyeon ￦14,000"
+          },
+          "영업시간": "11:00-21:30",
+          "주소": "중구 광복로 56-8",
+          "전화번호": "051-245-2310",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "원조 바다집",
+            "영어": "Wonjo Badajip"
+          },
+          "개요": {
+            "한글": "대를 이어 50여 년을 운영 중인 유명한 식당으로 다수의 TV 프로그램에서도 많이 알려져 있습니다. 손질된 해산물이 가득 들어간 수중전골이 이곳을 유명하게 만든 메뉴이며 지역민들의 추억이 담긴 음식이기도 합니다.",
+            "영어": "The famous restaurant, which has been in business for more than 50 years, has also been introduced on several TV shows. Sujung jeongol, full of seafood ingredients, is the dish that made the place famous. It also evokes nostalgia to the locals."
+          },
+          "메뉴": {
+            "한글": "수중전골 ￦12,000, 낙지볶음 ￦11,000",
+            "영어": "Sujung jeongol(Seafood hot pot) ￦12,000, Nakjibokkeum(Stir-fried small octopus) ￦11,000"
+          },
+          "영업시간": "11:00-21:00",
+          "주소": "중구 광복로 43번길 18-5",
+          "전화번호": "051-245-1924",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "유원",
+            "영어": "Yuwon"
+          },
+          "개요": {
+            "한글": "번화가에서 조금 떨어진 곳 '코모도호텔' 인근에 자리한 곳으로, 50여 년간 주방을 지켜온 화교 출신의 오너 셰프가 직접 요리하는 중식당입니다.",
+            "영어": "Located a little away from the downtown area near the Komodo Hotel, it doesn’t seem to have any outstanding features at first glance, but it is a Chinese restaurant where the owner-chef, who is of Chinese descent and has been in charge of the kitchen for more than 50 years, cooks the food himself."
+          },
+          "메뉴": {
+            "한글": "오향장육 ￦38,000, 깐소새우 ￦35,000, 광동면 ￦11,000",
+            "영어": "Five-spice braised pork ￦38,000, Chili shrimp ￦35,000, Guangdong noodles ￦11,000"
+          },
+          "영업시간": "12:00-15:00 / 17:00-20:30",
+          "주소": "중구 충장대로9번길 29 보전빌딩 지하1층",
+          "전화번호": "0507-1492-5659",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "이재모피자",
+            "영어": "Lee Jae-mo Pizza"
+          },
+          "개요": {
+            "한글": "30여 년을 운영 중인 피자 전문점으로 부산에서 피자가 대중화된 시기를 생각하면 상당한 전통을 자랑하는 유명한 곳입니다. 국내산 임실치즈를 사용한 푸짐한 토핑의 피자가 특징이며, 변함없는 맛을 지키고 있습니다.",
+            "영어": "This is a 30-year-old pizzeria, which has a very long tradition considering when pizza actually became popular in Busan. Characterized by generous toppings and Imsil cheese, the pizza is as tasty as ever."
+          },
+          "메뉴": {
+            "한글": "치즈크러스트피자 ￦25,000 / 29,000, 오븐스파게티 ￦8,500",
+            "영어": "Cheese Crust Pizza ￦25,000 / 29,000, Oven-baked Spaghetti ￦8,500"
+          },
+          "영업시간": "10:00-21:00",
+          "주소": "중구 광복중앙로 31",
+          "전화번호": "051-255-9494",
+          "휴무일": "일요일"
+        }
+      ],
+      "해운대구": [
+        {
+          "식당이름": {
+            "한글": "30년전통가마솥석쇠돼지갈비",
+            "영어": "Gamasot"
+          },
+          "개요": {
+            "한글": "국내산 돼지를 사용하여 초벌구이된 양념 돼지갈비 단일 메뉴로 30여 년을 운영해온 돼지갈비 전문점입니다. 모든 음식을 직접 만듭니다. 식사를 주문하면 제공되는 찌개와 게 조림이 기대 이상의 맛을 보여줍니다.",
+            "영어": "This pork ribs specialty restaurant has been operating for over 30 years with a single menu of seasoned domestic pork rib barbecue. All the food is made in-house. The jjigae and praised crab served at each order are delightful beyond expectations."
+          },
+          "메뉴": {
+            "한글": "돼지갈비(200g) ￦14,000, 식사(1人) ￦2,000",
+            "영어": "Pork ribs(200g) ￦14,000, Meal(1 person) ￦2,000"
+          },
+          "영업시간": "12:00-22:00",
+          "주소": "해운대구 좌동로14번길 60",
+          "전화번호": "0507-1305-6175",
+          "휴무일": "연중 무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "거대갈비",
+            "영어": "Geodae Galbi"
+          },
+          "개요": {
+            "한글": "최상 등급의 고기와 최고의 원재료만을 사용하는 한우 숯불구이 전문점입니다. 깔끔한 실내와 친절한 점원들이 인상적이며, 직원이 고기를 구워주는 등 만족도가 높은 식당입니다.",
+            "영어": "This Korean charcoal barbecue restaurant uses only the highest-grade meat and the best raw ingredients. The interior is clean, and the service is nice. The price is high as they serve the highest-grade Korean beef, but with the staff’s grilling service, it’s quite satisfactory."
+          },
+          "메뉴": {
+            "한글": "등심(100g) ￦79,000, 생갈비(100g) ￦79,000",
+            "영어": "Sirloin(100g) ￦79,000, Beef ribs(100g) ￦79,000"
+          },
+          "영업시간": "11:30-15:00 / 17:00-22:00",
+          "주소": "해운대구 달맞이길 22",
+          "전화번호": "051-746-0037",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "금수복국",
+            "영어": "Geumsubokguk"
+          },
+          "개요": {
+            "한글": "복국의 원조라 할 수 있는 50년 전통의 복 요리집으로, 신선한 원재료와 정확한 물류 시스템, 모든 장류는 직접 담아 사용하는 것이 맛의 비결이라고 합니다. 24시간 영업하는 곳입니다.",
+            "영어": "This 50-year-old bokguk (pufferfish soup) restaurant is said to be the original bokguk restaurant. The secret to its flavor is its fresh ingredients, precise logistics system, and the fact that all the sauces are made from scratch. It is open 24 hours a day."
+          },
+          "메뉴": {
+            "한글": "은복국(지리 / 탕) ￦15,000 / 16,000, 밀복국(지리 / 탕) ￦20,000 / 21,000",
+            "영어": "Eunbokguk(brown-backed toadfish soup) clear / spicy broth ￦15,000 / 16,000, Milbokguk(green toadfish soup) clear / spicy broth ￦20,000 / 21,000"
+          },
+          "영업시간": "24시간",
+          "주소": "해운대구 중동1로43번길 23",
+          "전화번호": "051-742-3600",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "김정영분식 면옥향천",
+            "영어": "Myeonok hyangcheon"
+          },
+          "개요": {
+            "한글": "우2동 재래시장 입구에 자리한 이곳은 좋은 메밀을 사용하여, 맷돌과 제분기에 곱게 말아 만든 면을 바로 내놓습니다. 소스도 직접 만들며, 곁들일 수 있는 고로케 등도 유명합니다.",
+            "영어": "Located at the entrance to the traditional market in U2-dong, this place uses good buckwheat and serves up noodles made with freshly ground flour using millstones and a milling machine. They make their own sauces and are known for croquettes on the side."
+          },
+          "메뉴": {
+            "한글": "모리소바(순메밀로 선택시) ￦9,000-14,000, 막국수(순메밀로 선택시) ￦9,000-14,000",
+            "영어": "Morisoba(when selecting 100% buckwheat) ￦9,000-14,000, Makguksu(when selecting 100% buckwheat) ￦9,000-14,000"
+          },
+          "영업시간": "11:00-15:30",
+          "주소": "해운대구 해운대로 383번길 26",
+          "전화번호": "051-747-4601",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "나가하마 만게츠",
+            "영어": "Nagahama Mangetsu"
+          },
+          "개요": {
+            "한글": "해리단길의 유명한 일본 라멘 전문점으로 후쿠오카의 유명한 라멘 전문점의 유일한 한국 분점입니다. 최근에는 해운대로 관광 온 젊은 층의 필수 코스가 되어가고 있어 오픈과 동시에 웨이팅이 시작됩니다.",
+            "영어": "It is a famous Japanese ramen restaurant in Haeridan-gil and is the only Korean branch of Fukuoka’s famous ramen restaurant. In recent years, it has become a mandatory stop for young people who visit the Haeundae area. The waiting begins at the time of its opening."
+          },
+          "메뉴": {
+            "한글": "나가하마 라멘 ￦10,000, 나가하마 라멘 교자셋트 ￦16,000",
+            "영어": "Nagahama Ramen ￦10,000, Nagahama Ramen Gyoza Set ￦16,000"
+          },
+          "영업시간": "11:00-15:30 / 16:30-20:30",
+          "주소": "해운대구 우동1로 57 대영빌딩 1층",
+          "전화번호": "051-731-0886",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "달타이",
+            "영어": "DALTHAI"
+          },
+          "개요": {
+            "한글": "10여 년을 운영해오며 달맞이길의 한 풍경이 되어가는 태국 음식점으로, 전원 태국인 셰프로 구성된 주방에서 현지 공수 또는 전용 농장 계약 재배한 식재료를 사용하여 음식을 만듭니다.",
+            "영어": "This Thai restaurant has been a fixture on Dalmaji-gil for over a decade. The kitchen is staffed by a team of Thai chefs who use ingredients sourced from Thailand or from contracted local farms."
+          },
+          "메뉴": {
+            "한글": "뿌님팟퐁커리 ￦33,000, 똠얌꿍 ￦23,000",
+            "영어": "Pu nim pad pong kari ￦33,000, Tom yum goong ￦23,000"
+          },
+          "영업시간": "11:00-20:00",
+          "주소": "해운대구 달맞이길 193 1층",
+          "전화번호": "051-741-1122",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "동백섬횟집",
+            "영어": "Dongbaekseom Hoetjip"
+          },
+          "개요": {
+            "한글": "자연산 활어회 전문 횟집으로, 생선회를 주문하면 문어숙회, 멍게, 전복, 가자미구이, 새우튀김 등의 다양한 밑반찬과 식사 후 매운탕 등의 요리가 함께 제공됩니다. 대부분의 생선은 시가에 따라 가격이 변동됩니다.",
+            "영어": "At this wild-caught raw fish (hwareohoe) restaurant, every order of hoe comes with a table full of side dishes such as steamed octopus, sea urchin, abalone, grilled flounder, fried prawns, and spicy fish stew. The cost of most fish fluctuates according to market prices."
+          },
+          "메뉴": {
+            "한글": "줄가자미(이시가리) (시가)",
+            "영어": "Roughscale sole (market price)"
+          },
+          "영업시간": "12:00-14:00 / 16:00-22:00",
+          "주소": "해운대구 해운대해변로209번나길 17",
+          "전화번호": "051-741-3888",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "랩24 바이 쿠무다",
+            "영어": "LAB XXIV by Kumuda"
+          },
+          "개요": {
+            "한글": "셰프 에드워드 권의 프렌치 파인다이닝으로 2023년 세계 1000대 레스토랑 'La Liste 1000'에 등재된 부산 유일의 레스토랑입니다.",
+            "영어": "Chef Edward Kwon offers his style of French fine dining using Busan ingredients. It is the only restaurant in Busan to be listed in the world’s top 1000 restaurants, “La Liste 1000,” in 2023."
+          },
+          "메뉴": {
+            "한글": "lunch course ￦70,000-130,000, dinner course ￦125,000-155,000",
+            "영어": "lunch course ￦70,000-130,000, dinner course ￦125,000-155,000"
+          },
+          "영업시간": "11:30-15:00 / 17:30-22:00",
+          "주소": "해운대구 송정광어골로 41",
+          "전화번호": "051-701-1301",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "르도헤",
+            "영어": "Le DORER"
+          },
+          "개요": {
+            "한글": "부산의 식재료를 기반으로 한 현대적이고 창의적인 한식 컨템포러리 다이닝으로, 부산의 멋과 맛을 담아낸 코스를 통해 특별한 식사 경험을 제공합니다.",
+            "영어": "It is a modern and creative Korean contemporary restaurant focusing on the ingredients of Busan, offering a unique dining experience with courses that capture the local style and flavors."
+          },
+          "메뉴": {
+            "한글": "Dinner course ￦210,000, Lunch course ￦120,000",
+            "영어": "Dinner course ￦210,000, Lunch course ￦120,000"
+          },
+          "영업시간": "12:30-14:30 / 17:00-22:00",
+          "주소": "해운대구 마린시티3로 37 213, 214호",
+          "전화번호": "051-747-8522",
+          "휴무일": "화, 수요일"
+        },
+        {
+          "식당이름": {
+            "한글": "모리",
+            "영어": "Mori"
+          },
+          "개요": {
+            "한글": "들어서는 순간 배려와 환대를 느낄 수 있는 곳으로, 매일 수산시장에서 직접 공수한 신선한 식자재로 준비한 제철 음식을 가이세키 코스 요리로 만날 수 있습니다.",
+            "영어": "The moment you step inside, you’ll feel the warmth of thoughtful hospitality. This restaurant offers kaiseki-style course meals prepared with the freshest seasonal ingredients, carefully selected daily from the local fish market."
+          },
+          "메뉴": {
+            "한글": "가이세키(코스) ￦210,000",
+            "영어": "Kaiseki course ￦210,000"
+          },
+          "영업시간": "19:00-23:00",
+          "주소": "해운대구 해운대해변로 298번길 24 팔레드시즈 2층2-4호",
+          "전화번호": "051-731-9889",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "못난이식당 해운대점",
+            "영어": "Monnani Sikdang Haeundae Branch"
+          },
+          "개요": {
+            "한글": "큼직한 제주산 갈치를 사용하는 갈치 요리 전문점으로, 신선도가 중요한 갈치회무침을 만날 수 있습니다. 늙은 호박을 사용해서 단맛을 내는 건강한 음식을 만듭니다.",
+            "영어": "This restaurant specializes in cutlassfish dishes using large cutlassfish from Jeju, and you can enjoy fresh tossed cutlassfish. They make healthy food using sweetness from squash."
+          },
+          "메뉴": {
+            "한글": "갈치구이 ￦43,000, 갈치찌개 ￦43,000",
+            "영어": "Grilled cutlassfish ￦43,000, Galchi jjigae(cutlassfish stew) ￦43,000"
+          },
+          "영업시간": "11:00-15:00 / 17:00-19:30",
+          "주소": "해운대구 마린시티1로 91, 101동 201호",
+          "전화번호": "0507-1418-2528",
+          "휴무일": "일, 월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "부다면옥",
+            "영어": "Budamyeonok"
+          },
+          "개요": {
+            "한글": "평양냉면을 전문으로 하는 곳으로, 깔끔하고 시원한 목넘김을 위해 한우 사태 및 여러 야채들을 주재료로 하여 모든 육수 통을 따로 끓이고 식히는 전통 방식으로 육수를 만듭니다. 사진으로는 표현되지 않는 깊은 맛을 가진 곳입니다.",
+            "영어": "For a clean and refreshing taste, this Pyong-yang naengmyeon specialty restaurant uses the shank from Hanwoo beef and various vegetables to make the broth. Each of the ingredients is boiled in different pots and cooled in the traditional way. The depth of their flavors is indescribable through photos."
+          },
+          "메뉴": {
+            "한글": "순 메밀 냉면 ￦12,000, 맛보기 한우 수육 ￦20,000",
+            "영어": "Pure buckwheat naengmyeon ￦12,000, Steamed Hanwoo sampler ￦20,000"
+          },
+          "영업시간": "11:00-20:00",
+          "주소": "해운대구 중동1로 36 2층",
+          "전화번호": "051-746-8872",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "비비비당",
+            "영어": "bibibidang"
+          },
+          "개요": {
+            "한글": "고려청자, 조선 백자와 같은 골동 다기들을 사용하여 오래전 감성을 느낄 수 있는 한국 전통 찻집입니다. 차와 함께하는 시간을 통해 일상에서의 작은 여유를 선물하는 곳입니다.",
+            "영어": "It is a traditional Korean teahouse that uses antique Goryeo celadon and Joseon white porcelain teapots, giving visitors a sense of the past. Through tea time, it presents one with the little leisures in life."
+          },
+          "메뉴": {
+            "한글": "말차 ￦15,000, 단호박빙수 ￦13,000",
+            "영어": "Matcha ￦15,000, Pumpkin Shaved Ice ￦13,000"
+          },
+          "영업시간": "10:30-21:30",
+          "주소": "해운대구 달맞이길 239-16, 4층",
+          "전화번호": "051-746-0705",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "선창횟집",
+            "영어": "Seonchang Hoetjip"
+          },
+          "개요": {
+            "한글": "40여 년을 운영해온 곳으로 매일 아침 직접 가져온 횟감을 준비하고 당일 수급된 채소와 직접 담근 김치 등을 준비하며 요리는 매일 새로 만들어 제공합니다. 조금 특별한 날에도 어울리는 횟집입니다.",
+            "영어": "In operation for more than 40 years, Seonchang Hoetjip prepares its own seafood every morning and serves dishes made fresh daily with vegetables delivered that day and handmade kimchi. This is a Korean-style sliced raw fish restaurant that is suitable for a special occasion."
+          },
+          "메뉴": {
+            "한글": "선창 코스 ￦50,000-150,000",
+            "영어": "Seonchang course ￦50,000-150,000"
+          },
+          "영업시간": "10:00-22:30",
+          "주소": "해운대구 달맞이길62번길 67",
+          "전화번호": "051-747-7470",
+          "휴무일": "명절 연휴 2일"
+        },
+        {
+          "식당이름": {
+            "한글": "소공간",
+            "영어": "Sogonggan"
+          },
+          "개요": {
+            "한글": "작은 공간(小空間)과 소(牛)를 다루는 솜씨라는 의미의 소공간은 한우(1++)를 메인으로 당일 공수한 지역색 가득한 제철 식재료의 조화로운 구성이 돋보이는 한식 다이닝입니다.",
+            "영어": "Sogonggan, which means both small space and being skilled at cooking beef, is a Korean restaurant that serves 1++-rated beef and features a harmonious composition of local, colorful, and seasonal ingredients sourced on the same day."
+          },
+          "메뉴": {
+            "한글": "Dinner(11 course) ￦182,000, Lunch(8 course) ￦92,000",
+            "영어": "Dinner(11 course) ￦182,000, Lunch(8 course) ￦92,000"
+          },
+          "영업시간": "12:00-15:00 / 18:00-21:30",
+          "주소": "해운대구 해운대해변로 298번길 47, 4층",
+          "전화번호": "010-5191-9002",
+          "휴무일": "화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "쇼진",
+            "영어": "SHOJIN"
+          },
+          "개요": {
+            "한글": "계절 식재료를 이용한 오마카세 코스를 선보이는 곳으로 콜키지 가능하며 룸이 있어 더 프라이빗한 식사가 가능합니다. 고급스러운 가이세키를 경험할 수 있는 곳입니다.",
+            "영어": "Serving omakase courses featuring seasonal ingredients, the restaurant allows for corkage and has rooms for more private dining. It’s a place to experience upscale kaiseki."
+          },
+          "메뉴": {
+            "한글": "오마카세 ￦160,000",
+            "영어": "Omakase ￦160,000"
+          },
+          "영업시간": "18:00-22:00",
+          "주소": "해운대구 구남로 9, 라마다앙코르호텔 214호",
+          "전화번호": "0507-1354-8060",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "수블",
+            "영어": "Sooble"
+          },
+          "개요": {
+            "한글": "자신이 먹고 싶은 것을 메뉴로 하고, 마시고 싶은 것들을 파는 곳이라고 합니다. 아름다운 풍경과 함께 수준 높은 요리로 인기 높은 요리 주점입니다. 청결하게 관리되는 오픈 키친이 인상적입니다.",
+            "영어": "Sooble vows to serve what the chef wants to eat and drink. This popular restaurant-bar offers a view of beautiful scenery and delectable cuisine. The open kitchen, maintained without a spot, makes a great impression."
+          },
+          "메뉴": {
+            "한글": "차돌떡볶이 ￦15,000, 생참치김밥 ￦29,000",
+            "영어": "Chadol tteokbokki ￦15,000, Tuna gimbap ￦29,000"
+          },
+          "영업시간": "17:00-23:00",
+          "주소": "해운대구 달맞이길 62번길 19, 2층",
+          "전화번호": "0507-1411-0178",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "쉐프리",
+            "영어": "Chef Lee"
+          },
+          "개요": {
+            "한글": "화려한 경력의 오너 셰프가 운영하는 이탈리안 레스토랑으로 와인과도 잘 어울리는 요리들을 만날 수 있습니다. 예쁜 모습의 음식들이 유행하고 있지만, 음식의 본질은 맛이라고 강조합니다.",
+            "영어": "This Italian restaurant, run by an owner-chef with an acclaimed career, presents delicious dishes that also pair well with wine. While fancy decorations seem to be popular these days, when it comes down to food, it has to taste good."
+          },
+          "메뉴": {
+            "한글": "5개월미만 프렌치렉 양갈비(200g) ￦69,000, 오소부코 ￦65,000",
+            "영어": "French Rack Lamb(under 5 months, 200g) ￦69,000, Osso Buco ￦65,000"
+          },
+          "영업시간": "12:00-15:00 / 17:30-22:00",
+          "주소": "해운대구 해운대해변로209번길 13 바게트호텔 3층",
+          "전화번호": "051-757-6127",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "스시시안",
+            "영어": "Sushi sian"
+          },
+          "개요": {
+            "한글": "붉은 식초를 이용한 샤리로 기름진 생선이나 등푸른 생선과 궁합이 좋은 스시집입니다. 오마카세 수준의 스시를 비교적 저렴한 가격으로 만날 수 있으며, 예약제로만 운영합니다.",
+            "영어": "This sushi restaurant uses red vinegar to prepare shari (vinegared rice), which goes well with fatty fish or blue-backed fish. You can enjoy omakase-level sushi at a relatively affordable price, and the restaurant operates by reservation only."
+          },
+          "메뉴": {
+            "한글": "코스(10피스) ￦35,000",
+            "영어": "Course(10 pieces) ￦35,000"
+          },
+          "영업시간": "18:00-20:30",
+          "주소": "해운대구 센텀1로 9 E동상가 2층 210호",
+          "전화번호": "051-611-2684",
+          "휴무일": "일요일"
+        },
+        {
+          "식당이름": {
+            "한글": "예이제",
+            "영어": "Yeije"
+          },
+          "개요": {
+            "한글": "해운대 해변 인근에 위치한 한정식 전문점으로, 가족 모임이나 손님 대접 등으로 많이 찾습니다. 주인이 직접 고른 제철 식재료와 지인이 운영하는 농장에서 키운 채소를 사용하여 먹는 것이 고민스러울 정도로 예쁜 음식이 특징입니다.",
+            "영어": "Located near Haeundae Beach, this Hanjeongsik restaurant is a favorite for family gatherings and treating guests. Using seasonal ingredients selected by the owner and vegetables grown in a farm run by an acquaintance, this restaurant presents beautiful plates that you can’t help but admire before eating."
+          },
+          "메뉴": {
+            "한글": "런치 ￦39,000 / 49,000, 예이제 코스 ￦69,000-150,000",
+            "영어": "Lunch ￦39,000 / 49,000, Yeije Course ￦69,000-150,000"
+          },
+          "영업시간": "12:00-15:00 / 17:30-21:20",
+          "주소": "해운대구 해운대해변로298번길 29 해운대푸르지오시티 2층",
+          "전화번호": "051-731-1100",
+          "휴무일": "명절"
+        },
+        {
+          "식당이름": {
+            "한글": "우봉샤브",
+            "영어": "Woobong Shabu"
+          },
+          "개요": {
+            "한글": "최상급(1++) 한우만 사용하여 만든 프리미엄 샤브샤브로, 특이하게도 종이 냄비를 사용하여 조리합니다. 나오는 음식과 눈에 보이는 모든 것이 정갈하고 깔끔한 곳입니다.",
+            "영어": "This premium shabu shabu is made with only the finest 1++-rated beef and is cooked in a paper pot. Everything in sight, including the food served, is neat and carefully organized."
+          },
+          "메뉴": {
+            "한글": "한우 차돌박이 샤브샤브(1인) ￦19,000, 2인 세트메뉴 ￦58,000",
+            "영어": "Korean beef brisket shabu shabu (1 person) ￦19,000, Set for 2 ￦58,000"
+          },
+          "영업시간": "11:00-15:00 / 17:00-21:00",
+          "주소": "해운대구 청사포로 127",
+          "전화번호": "0507-1349-9256",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "육화목",
+            "영어": "Yukhwamok"
+          },
+          "개요": {
+            "한글": "10년 이상 경력의 주인이 주문과 동시에 고기를 준비하여 제공하는 곳으로 한우와 한돈을 모두 주문할 수 있습니다. 조금 특별하게 고기를 즐기고 싶은 날 추천할 만한 숯불구이 전문점입니다.",
+            "영어": "The owner of more than 10 years of experience prepares and serves meat at the time of order. Both Hanwoo beef and Handon pork are available. It’s a coal barbecue restaurant recommended for special occasions."
+          },
+          "메뉴": {
+            "한글": "대패삼겹 120g ￦11,000, 꽃등심 100g ￦33,000",
+            "영어": "Thinly sliced pork belly 120g ￦11,000, Ribeye 100g ￦33,000"
+          },
+          "영업시간": "16:00-23:00",
+          "주소": "해운대구 좌동순환로8번길 78",
+          "전화번호": "051-743-5747",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "젠스시",
+            "영어": "Zen Sushi"
+          },
+          "개요": {
+            "한글": "해운대의 유명 일식 전문점으로, 명인 인증서를 받은 오너 셰프가 운영하며 주방 분위기가 엄격하고 위생에 신경을 쓰는 것으로도 유명합니다. 열 가지의 초밥과 함께 미소시루, 달걀 찜, 튀김 등으로 구성된 코스 요리가 대표 메뉴입니다.",
+            "영어": "It is a famous Japanese restaurant in Haeundae, operated by the owner-chef who received a certificate of Master Chef. Zen Sushi is known for its strict kitchen atmosphere and attention to hygiene. A course meal consisting of 10 kinds of sushi, miso soup, egg custard, tempura, and more, is the top menu item."
+          },
+          "메뉴": {
+            "한글": "디너 1인 ￦150,000, 콜키지 병당 ￦50,000",
+            "영어": "Dinner for one ￦150,000, Corkage per bottle ￦50,000"
+          },
+          "영업시간": "18:00-22:00",
+          "주소": "해운대구 대천로42번길 28-5",
+          "전화번호": "051-746-7456",
+          "휴무일": "월, 화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "쥬가",
+            "영어": "JYUGA"
+          },
+          "개요": {
+            "한글": "다년간 일본 교토에서 가이세키 요리를 수련한 오너와 오사카 출신 일본인 요리사 부부가 누구나 편하게 즐길 수 있는 오사카의 대중 음식을 만들고 있는 해리단길의 인기 가게입니다.",
+            "영어": "This crowd favorite on Haeridan-gil is run by an owner who trained for many years in kaiseki cuisine in Kyoto, Japan, and his wife, a Japanese chef from Osaka. Together, they make tasty Osaka-based cuisine anyone can enjoy."
+          },
+          "메뉴": {
+            "한글": "쿠시카츠 10개세트 ￦19,000, 오뎅 모리아와세(모듬) ￦20,000",
+            "영어": "10-piece kushikatsu set ￦19,000, Oden moriawase(assortment) ￦20,000"
+          },
+          "영업시간": "17:00-23:00",
+          "주소": "해운대구 우동1로20번길 53, 2층",
+          "전화번호": "0507-1364-3516",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "초필살돼지구이",
+            "영어": "Chopilsal Dwaejigui"
+          },
+          "개요": {
+            "한글": "친절한 직원들이 고기를 직접 구워줍니다. 유명한 맛집으로 언제나 웨이팅이 있으며, 캐치테이블로 예약이 가능합니다. 다양한 소스로 취향에 맞게 즐길 수 있습니다.",
+            "영어": "The friendly staff grills the meat for customers. It’s a famous restaurant, and there’s always a wait. Guests can reserve a spot on the Catch Table app. You can customize it with a variety of sauces."
+          },
+          "메뉴": {
+            "한글": "필살껍데기 ￦9,500, 뒷고기 ￦9,500",
+            "영어": "Pilsal rind ￦9,500, Various cuts ￦9,500"
+          },
+          "영업시간": "17:00-24:00",
+          "주소": "해운대구 마린시티3로 23 벽산E오렌지프라자 A동 107호",
+          "전화번호": "0507-1417-5516",
+          "휴무일": "연중무휴"
+        },
+        {
+          "식당이름": {
+            "한글": "쿠지라멘",
+            "영어": "Kuziramen"
+          },
+          "개요": {
+            "한글": "라멘 하면 진한 국물의 돈코츠라멘을 떠올리지만, 이곳은 맑은 국물의 시오라멘과 쇼유라멘 그리고 아부라소바를 만날 수 있는 곳입니다. 칼국수처럼 다소 두툼한 면이 매력적인 마니아층이 단단한 가게입니다.",
+            "영어": "When it comes to Japanese ramen, most people think of tonkotsu ramen with a thick broth, but this is a place where you can find shio ramen and shoyu ramen with a clear broth, as well as abura soba. The ramen shop with a dedicated fanbase presents slightly thicker noodles, similar to those used in kalguksu, that have a unique appeal."
+          },
+          "메뉴": {
+            "한글": "쇼유라멘 ￦10,000, 아부라소바 ￦10,000",
+            "영어": "Shoyu ramen ￦10,000, Abura soba ￦10,000"
+          },
+          "영업시간": "11:00-14:30",
+          "주소": "해운대구 우동2로 17",
+          "전화번호": "070-4795-7214",
+          "휴무일": "월요일"
+        },
+        {
+          "식당이름": {
+            "한글": "팔레트",
+            "영어": "Palate"
+          },
+          "개요": {
+            "한글": "프렌치 쿠킹 테크닉과 다양한 재료의 조합을 바탕으로 하는 김재훈 셰프의 창의적이고 감각적인 다이닝 레스토랑입니다.",
+            "영어": "A refined dining experience curated by Chef Kim Jae-hoon, where French cooking techniques meet a harmonious blend of diverse ingredients, resulting in creative and sophisticated cuisine."
+          },
+          "메뉴": {
+            "한글": "디너 코스 ￦200,000, 런치 코스 ￦88,000",
+            "영어": "Course Dinner ￦200,000, Course Lunch ￦88,000"
+          },
+          "영업시간": "12:00-15:00 / 18:00-22:00",
+          "주소": "해운대구 달맞이길65번길 154, 3층",
+          "전화번호": "051-626-2364",
+          "휴무일": "월, 화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "하레마",
+            "영어": "HAREMA"
+          },
+          "개요": {
+            "한글": "프라이빗한 분위기에서 오마카세 코스를 즐길 수 있는 곳으로 디너는 두 시간으로 나누어져 100% 예약제로 운영됩니다. 고급스럽고 깔끔한 분위기의 식당입니다.",
+            "영어": "At Harema, the omakase course is served in a private setting. The dinner service is divided into two times, and reservations are 100% required. It is a restaurant with a classy, clean atmosphere."
+          },
+          "메뉴": {
+            "한글": "런치 오마카세 ￦100,000, 디너 오마카세 ￦180,000-200,000",
+            "영어": "Omakase Lunch ￦100,000, Omakase Dinner ￦180,000-200,000"
+          },
+          "영업시간": "12:00-14:00 / 17:00-22:00",
+          "주소": "해운대구 마린시티2로 33 두산 위브더제니스 지하 1층 106호",
+          "전화번호": "0507-1354-6558",
+          "휴무일": "월, 화요일"
+        },
+        {
+          "식당이름": {
+            "한글": "해운대암소갈비집",
+            "영어": "Haeundae Rib Barbecue Restaurant"
+          },
+          "개요": {
+            "한글": "1964년 창업하여 2대째 운영 중인 암소 갈비 전문점으로, 독특한 양념으로 방문해보지 않은 사람들도 이름 정도는 알고 있는 유명한 식당입니다.",
+            "영어": "Established in 1964, this family-owned beef rib barbecue restaurant has been in business for two generations."
+          },
+          "메뉴": {
+            "한글": "생갈비 ￦58,000, 양념갈비 ￦54,000",
+            "영어": "Fresh beef ribs ￦58,000, Spicy beef ribs ￦54,000"
+          },
+          "영업시간": "11:30-15:00 / 17:00-22:00",
+          "주소": "해운대구 해운대해변로 333",
+          "전화번호": "051-746-3333",
+          "휴무일": "연중무휴"
+        }
+      ]
+    }
+  }

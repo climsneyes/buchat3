@@ -39,6 +39,7 @@ import firebase_admin
 from firebase_admin import credentials, db
 from rag_utils import get_or_create_vector_db, answer_with_rag, answer_with_rag_foreign_worker
 from rag_utils import SimpleVectorDB, GeminiEmbeddings
+from restaurant_search_system import search_restaurants
 
 
 IS_SERVER = os.environ.get("CLOUDTYPE") == "1"  # Cloudtype 환경변수 등으로 구분
@@ -132,70 +133,90 @@ FIND_ROOM_TEXTS = {
         "id": "ID로 찾기",
         "id_desc": "채팅방 ID를 입력하여 참여",
         "rag": "다문화가족 한국생활안내",
-        "rag_desc": "다누리 포털 기반 한국생활 안내 챗봇"
+        "rag_desc": "다누리 포털 기반 한국생활 안내 챗봇",
+        "restaurant": "부산 맛집검색",
+        "restaurant_desc": "부산의맛 & 택슐랭 기반 맛집 검색 챗봇"
     },
     "en": {
         "title": "Select a way to find a chat room",
         "id": "Find by ID",
         "id_desc": "Join by entering chat room ID",
         "rag": "Korean Life Guide for Multicultural Families",
-        "rag_desc": "Chatbot based on Danuri - Korean Life Guide for Multicultural Families Portal materials"
+        "rag_desc": "Chatbot based on Danuri - Korean Life Guide for Multicultural Families Portal materials",
+        "restaurant": "Busan Restaurant Search",
+        "restaurant_desc": "Restaurant search chatbot based on Busan Food Guide & Taxi Ranking"
     },
     "vi": {
         "title": "Chọn cách tìm phòng chat",
         "id": "Tìm bằng ID",
         "id_desc": "Tham gia bằng cách nhập ID phòng chat",
         "rag": "Hướng dẫn cuộc sống Hàn Quốc cho gia đình đa văn hóa",
-        "rag_desc": "Chatbot dựa trên tài liệu Hướng dẫn cuộc sống Hàn Quốc của cổng thông tin Danuri cho gia đình đa văn hóa"
+        "rag_desc": "Chatbot dựa trên tài liệu Hướng dẫn cuộc sống Hàn Quốc của cổng thông tin Danuri cho gia đình đa văn hóa",
+        "restaurant": "Tìm kiếm nhà hàng Busan",
+        "restaurant_desc": "Chatbot tìm kiếm nhà hàng dựa trên Hướng dẫn ẩm thực Busan & Xếp hạng Taxi"
     },
     "ja": {
         "title": "チャットルームの探し方を選択してください",
         "id": "IDで探す",
         "id_desc": "IDでチャットルームに参加",
         "rag": "多文化家族のための韓国生活ガイド",
-        "rag_desc": "多文化家族支援ポータル「ダヌリ」- 韓国生活案内資料に基づくチャットボット"
+        "rag_desc": "多文化家族支援ポータル「ダヌリ」- 韓国生活案内資料に基づくチャットボット",
+        "restaurant": "釜山レストラン検索",
+        "restaurant_desc": "釜山グルメガイド＆タクシーランキングに基づくレストラン検索チャットボット"
     },
     "zh": {
         "title": "请选择查找聊天室的方法",
         "id": "通过ID查找",
         "id_desc": "通过输入聊天室ID加入",
         "rag": "多文化家庭韩国生活指南",
-        "rag_desc": "基于多文化家庭支援门户Danuri-韩国生活指南资料的聊天机器人"
+        "rag_desc": "基于多文化家庭支援门户Danuri-韩国生活指南资料的聊天机器人",
+        "restaurant": "釜山餐厅搜索",
+        "restaurant_desc": "基于釜山美食指南和出租车排名的餐厅搜索聊天机器人"
     },
     "fr": {
         "title": "Sélectionnez une méthode pour trouver un salon de discussion",
         "id": "Rechercher par ID",
         "id_desc": "Rejoindre en entrant l'ID de la salle de discussion",
         "rag": "Guide de la vie en Corée pour les familles multiculturelles",
-        "rag_desc": "Chatbot basé sur le portail Danuri - Guide de la vie en Corée pour les familles multiculturelles"
+        "rag_desc": "Chatbot basé sur le portail Danuri - Guide de la vie en Corée pour les familles multiculturelles",
+        "restaurant": "Recherche de restaurants à Busan",
+        "restaurant_desc": "Chatbot de recherche de restaurants basé sur le Guide gastronomique de Busan et le Classement des taxis"
     },
     "de": {
         "title": "Wählen Sie eine Methode, um einen Chatraum zu finden",
         "id": "Nach ID suchen",
         "id_desc": "Beitreten, indem Sie die Chatraum-ID eingeben",
         "rag": "Koreanischer Lebensratgeber für multikulturelle Familien",
-        "rag_desc": "Chatbot basierend auf dem Danuri-Portal - Koreanischer Lebensratgeber für multikulturelle Familien"
+        "rag_desc": "Chatbot basierend auf dem Danuri-Portal - Koreanischer Lebensratgeber für multikulturelle Familien",
+        "restaurant": "Busan Restaurant-Suche",
+        "restaurant_desc": "Restaurant-Such-Chatbot basierend auf Busan Food Guide & Taxi-Ranking"
     },
     "th": {
         "title": "เลือกวิธีค้นหาห้องแชท",
         "id": "ค้นหาด้วย ID",
         "id_desc": "เข้าร่วมโดยการป้อน IDห้องแชท",
         "rag": "คู่มือการใช้ชีวิตในเกาหลีสำหรับครอบครัวพหุวัฒนธรรม",
-        "rag_desc": "แชทบอทอ้างอิงจากข้อมูลคู่มือการใช้ชีวิตในเกาหลีของพอร์ทัล Danuri สำหรับครอบครัวพหุวัฒนธรรม"
+        "rag_desc": "แชทบอทอ้างอิงจากข้อมูลคู่มือการใช้ชีวิตในเกาหลีของพอร์ทัล Danuri สำหรับครอบครัวพหุวัฒนธรรม",
+        "restaurant": "ค้นหาร้านอาหารปูซาน",
+        "restaurant_desc": "แชทบอทค้นหาร้านอาหารอ้างอิงจากคู่มืออาหารปูซานและอันดับแท็กซี่"
     },
     "zh-TW": {
         "title": "請選擇查找聊天室的方法",
         "id": "通過ID查找",
         "id_desc": "輸入聊天室ID參加",
         "rag": "多元文化家庭韓國生活指南",
-        "rag_desc": "基於多元文化家庭支援門戶Danuri-韓國生活指南資料的聊天機器人"
+        "rag_desc": "基於多元文化家庭支援門戶Danuri-韓國生活指南資料的聊天機器人",
+        "restaurant": "釜山餐廳搜尋",
+        "restaurant_desc": "基於釜山美食指南和計程車排名的餐廳搜尋聊天機器人"
     },
     "id": {
         "title": "Pilih cara menemukan ruang obrolan",
         "id": "Cari dengan ID",
         "id_desc": "Gabung dengan memasukkan ID ruang obrolan",
         "rag": "Panduan Hidup di Korea untuk Keluarga Multikultural",
-        "rag_desc": "Chatbot berdasarkan portal Danuri - Panduan Hidup di Korea untuk Keluarga Multikultural"
+        "rag_desc": "Chatbot berdasarkan portal Danuri - Panduan Hidup di Korea untuk Keluarga Multikultural",
+        "restaurant": "Pencarian Restoran Busan",
+        "restaurant_desc": "Chatbot pencarian restoran berdasarkan Panduan Kuliner Busan & Peringkat Taksi"
     },
 }
 
@@ -349,8 +370,8 @@ def main(page: ft.Page):
     lang = "ko"
     country = None
     
-    # 기본 폰트 사용 (시스템 폰트)
-    page.theme = ft.Theme(font_family="system")
+    # 폰트 설정 제거 (기본값 사용)
+    pass
     
     # --- QR 코드 관련 함수 (Container를 직접 오버레이) ---
     def copy_room_id(room_id):
@@ -619,7 +640,7 @@ def main(page: ft.Page):
                                 shadow=ft.BoxShadow(blur_radius=8, color="#B0BEC544"),
                                 padding=16,
                                 margin=ft.margin.only(bottom=16),
-                                on_click=lambda e: go_chat(lang, lang, user_rag_room_id, RAG_ROOM_TITLE, is_rag=True)
+                                on_click=lambda e: (print(f"다문화가족 RAG 방 클릭됨 - lang: {lang}, room_id: {user_rag_room_id}"), go_chat(lang, lang, user_rag_room_id, RAG_ROOM_TITLE, is_rag=True))
                             ),
                             # --- 외국인 근로자 권리구제 버튼 추가 ---
                             ft.Container(
@@ -638,7 +659,26 @@ def main(page: ft.Page):
                                 shadow=ft.BoxShadow(blur_radius=8, color="#B0BEC544"),
                                 padding=16,
                                 margin=ft.margin.only(bottom=16),
-                                on_click=lambda e: go_foreign_worker_rag_chat(lang)
+                                on_click=lambda e: (print(f"외국인 근로자 권리구제 방 클릭됨 - lang: {lang}"), go_foreign_worker_rag_chat(lang))
+                            ),
+                            # --- 맛집검색 버튼 추가 ---
+                            ft.Container(
+                                content=ft.Row([
+                                    ft.Container(
+                                        content=ft.Icon(name=ft.Icons.FOOD_BANK, color="#FF6B6B", size=28),
+                                        bgcolor="#FFE0E0", border_radius=12, padding=10, margin=ft.margin.only(right=12)
+                                    ),
+                                    ft.Column([
+                                        ft.Text(texts["restaurant"], size=16, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
+                                        ft.Text(texts["restaurant_desc"], size=12, color=get_sub_text_color(page), text_align=ft.TextAlign.START, max_lines=3)
+                                    ], spacing=2, expand=True)
+                                ], vertical_alignment=ft.CrossAxisAlignment.CENTER),
+                                bgcolor=get_card_bg_color(page),
+                                border_radius=12,
+                                shadow=ft.BoxShadow(blur_radius=8, color="#B0BEC544"),
+                                padding=16,
+                                margin=ft.margin.only(bottom=16),
+                                on_click=lambda e: (print(f"맛집검색 방 클릭됨 - lang: {lang}"), go_restaurant_search_chat(lang))
                             ),
                         ], alignment=ft.MainAxisAlignment.CENTER, horizontal_alignment=ft.CrossAxisAlignment.CENTER),
                         padding=ft.padding.only(top=32),
@@ -714,13 +754,46 @@ def main(page: ft.Page):
         except Exception as e:
             print(f"Firebase에서 방 정보 가져오기 실패: {e}")
 
-    def go_chat(user_lang, target_lang, room_id, room_title="채팅방", is_rag=False, is_foreign_worker_rag=False):
+    def go_chat(user_lang, target_lang, room_id, room_title="채팅방", is_rag=False, is_foreign_worker_rag=False, is_restaurant_search_rag=False):
         def after_nickname(nickname):
             page.session.set("nickname", nickname)
             page.views.clear()
             
+            # 맛집검색 RAG 채팅방인지 확인
+            if is_restaurant_search_rag:
+                def restaurant_search_answer(query, target_lang):
+                    try:
+                        print(f"맛집검색 질문: {query}")
+                        print(f"타겟 언어: {target_lang}")
+                        
+                        # 맛집검색 시스템 사용
+                        result = search_restaurants(query)
+                        print(f"맛집검색 답변 생성 완료: {len(result)} 문자")
+                        # 한국어가 아니면 번역 적용
+                        if target_lang != "ko":
+                            from pages.chat_room import translate_message
+                            result = translate_message(result, target_lang)
+                        return result
+                    except Exception as e:
+                        print(f"맛집검색 오류: {e}")
+                        import traceback
+                        traceback.print_exc()
+                        return "죄송합니다. 맛집 정보를 찾을 수 없습니다."
+                
+                page.views.append(ChatRoomPage(
+                    page,
+                    room_id=room_id,
+                    room_title=room_title,
+                    user_lang=user_lang,
+                    target_lang=target_lang,
+                    on_back=lambda e: go_room_list(lang),
+                    on_share=on_share_clicked,
+                    custom_translate_message=restaurant_search_answer,
+                    firebase_available=FIREBASE_AVAILABLE,
+                    is_restaurant_search_rag=True
+                ))
             # 외국인 근로자 RAG 채팅방인지 확인
-            if is_foreign_worker_rag:
+            elif is_foreign_worker_rag:
                 # 대화 컨텍스트를 저장할 변수
                 conversation_context = {}
                 
@@ -887,8 +960,18 @@ def main(page: ft.Page):
         # 고유 방 ID 및 타이틀
         room_id = "foreign_worker_rights_rag"
         room_title = "외국인 근로자 권리구제"
+        print(f"외국인 근로자 권리구제 방 진입 - lang: {lang}, room_id: {room_id}")
         # 채팅방 진입 (is_foreign_worker_rag=True로 설정)
         go_chat(lang, lang, room_id, room_title, is_rag=False, is_foreign_worker_rag=True)
+
+    # --- 맛집검색 RAG 채팅방 진입 함수 ---
+    def go_restaurant_search_chat(lang):
+        # 고유 방 ID 및 타이틀
+        room_id = "restaurant_search_rag"
+        room_title = "맛집검색"
+        print(f"맛집검색 방 진입 - lang: {lang}, room_id: {room_id}")
+        # 채팅방 진입 (is_restaurant_search_rag=True로 설정)
+        go_chat(lang, lang, room_id, room_title, is_rag=False, is_restaurant_search_rag=True)
 
     # --- 라우팅 처리 ---
     def route_change(route):
@@ -909,7 +992,7 @@ def main(page: ft.Page):
         page.update()
 
     page.on_route_change = route_change
-    page.go(page.route)
+    page.go("/")
 
 if __name__ == "__main__":
-    ft.app(target=main, port=8000, view=ft.WEB_BROWSER)
+    ft.app(target=main, port=8002)
