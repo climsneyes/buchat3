@@ -83,6 +83,7 @@ except Exception as e:
 print("RAG 벡터DB 준비 중...")
 VECTOR_DB_MERGED_PATH = "다문화.pkl"
 VECTOR_DB_FOREIGN_WORKER_PATH = "외국인근로자.pkl"
+VECTOR_DB_RESTAURANT_PATH = "부산의맛.pkl"
 vector_db_multicultural = None
 vector_db_foreign_worker = None
 
@@ -121,6 +122,21 @@ try:
 except Exception as e:
     print(f"외국인 권리구제 벡터DB 로드 중 오류 발생: {e}")
     vector_db_foreign_worker = None
+
+# 부산맛집 벡터DB 로드
+try:
+    if os.path.exists(VECTOR_DB_RESTAURANT_PATH):
+        print("부산맛집 벡터DB 파일을 로드합니다...")
+        print(f"벡터DB 파일 크기: {os.path.getsize(VECTOR_DB_RESTAURANT_PATH)} bytes")
+        with open(VECTOR_DB_RESTAURANT_PATH, "rb") as f:
+            restaurant_vector_db = pickle.load(f)
+        print(f"부산맛집 벡터DB 로드 완료. 문서 수: {len(restaurant_vector_db['chunks']) if isinstance(restaurant_vector_db, dict) and 'chunks' in restaurant_vector_db else '알 수 없음'}")
+        print("부산맛집 벡터DB 로드 완료!")
+    else:
+        print("부산맛집 벡터DB 파일이 없습니다.")
+except Exception as e:
+    print(f"부산맛집 벡터DB 로드 중 오류 발생: {e}")
+    restaurant_vector_db = None
 
 # RAG 기능 사용 가능 여부 설정 (vector_db 정의 후)
 RAG_AVAILABLE = vector_db_multicultural is not None and vector_db_foreign_worker is not None
