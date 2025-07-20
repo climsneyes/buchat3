@@ -971,7 +971,7 @@ def main(page: ft.Page):
         room_title = "맛집검색"
         print(f"맛집검색 방 진입 - lang: {lang}, room_id: {room_id}")
         # 채팅방 진입 (is_restaurant_search_rag=True로 설정)
-        go_chat(lang, lang, room_id, room_title, is_rag=False, is_restaurant_search_rag=True)
+        go_chat(lang, lang, room_id, room_title, is_rag=False, is_foreign_worker_rag=False, is_restaurant_search_rag=True)
 
     # --- 라우팅 처리 ---
     def route_change(route):
