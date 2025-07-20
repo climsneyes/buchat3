@@ -1,16 +1,16 @@
 import json
 import pickle
 import numpy as np
-from sentence_transformers import SentenceTransformer
+from rag_utils import GeminiEmbeddings
 from typing import List, Dict, Any, Tuple
 import re
 from datetime import datetime
 
 class HybridRestaurantSearch:
-    def __init__(self):
+    def __init__(self, gemini_api_key):
         self.restaurant_data = {}
         self.vector_db = None
-        self.model = None
+        self.embeddings = GeminiEmbeddings(gemini_api_key)
         self.load_data()
     
     def load_data(self):
@@ -37,19 +37,14 @@ class HybridRestaurantSearch:
         try:
             with open('부산의맛.pkl', 'rb') as f:
                 self.vector_db = pickle.load(f)
-            
-            # 모델 로드
-            self.model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
             print("벡터DB 로드 완료")
             
         except FileNotFoundError:
             print("벡터DB 파일이 없습니다. JSON 검색만 사용합니다.")
             self.vector_db = None
-            self.model = None
         except Exception as e:
             print(f"벡터DB 로드 오류: {e}")
             self.vector_db = None
-            self.model = None
     
     def normalize_restaurant_data(self, busan_food: Dict, taxi_ranking: Dict) -> List[Dict]:
         """맛집 데이터 정규화"""
@@ -291,12 +286,12 @@ class HybridRestaurantSearch:
     
     def search_by_semantic(self, query: str) -> List[Dict]:
         """의미적 검색 (벡터DB)"""
-        if not self.vector_db or not self.model:
+        if not self.vector_db:
             return []
         
         try:
             # 쿼리 임베딩
-            query_embedding = self.model.encode([query])
+            query_embedding = self.embeddings.embed_query(query)
             
             # 유사도 계산
             similarities = np.dot(self.vector_db['embeddings'], query_embedding.T).flatten()
@@ -457,16 +452,16 @@ class HybridRestaurantSearch:
 # 전역 인스턴스
 restaurant_search = None
 
-def get_restaurant_search():
+def get_restaurant_search(gemini_api_key):
     """맛집 검색 시스템 인스턴스 반환"""
     global restaurant_search
     if restaurant_search is None:
-        restaurant_search = HybridRestaurantSearch()
+        restaurant_search = HybridRestaurantSearch(gemini_api_key)
     return restaurant_search
 
-def search_restaurants(query: str) -> str:
+def search_restaurants(query: str, gemini_api_key: str) -> str:
     """맛집 검색 함수 (RAG 시스템에서 사용)"""
-    search_system = get_restaurant_search()
+    search_system = get_restaurant_search(gemini_api_key)
     
     # 지역명 분석 및 구 정보 추가
     enhanced_query = query

@@ -767,7 +767,7 @@ def main(page: ft.Page):
                         print(f"타겟 언어: {target_lang}")
                         
                         # 맛집검색 시스템 사용
-                        result = search_restaurants(query)
+                        result = search_restaurants(query, GEMINI_API_KEY)
                         print(f"맛집검색 답변 생성 완료: {len(result)} 문자")
                         # 한국어가 아니면 번역 적용
                         if target_lang != "ko":
