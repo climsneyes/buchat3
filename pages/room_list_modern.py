@@ -103,7 +103,7 @@ def RoomListModernPage(page, lang="ko", on_create=None, on_select=None, on_back=
         controls=[
             ft.Row([
                 ft.IconButton(ft.Icons.ARROW_BACK, on_click=on_back) if on_back else ft.Container(),
-                ft.Text(t["title"], size=title_size, weight=ft.FontWeight.BOLD),
+                ft.Text(t["title"], size=title_size, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
             ], alignment=ft.MainAxisAlignment.START),
             ft.Container(
                 content=ft.Column([
@@ -112,7 +112,7 @@ def RoomListModernPage(page, lang="ko", on_create=None, on_select=None, on_back=
                             content=ft.Row([
                                 ft.Icon(ft.Icons.GROUP, size=icon_size, color=ft.Colors.BLUE_400),
                                 ft.Column([
-                                    ft.Text(room["title"], size=room_title_size, weight=ft.FontWeight.BOLD),
+                                    ft.Text(room["title"], size=room_title_size, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
                                     ft.Text(room["desc"], size=desc_size, color=ft.Colors.GREY_600),
                                     ft.Text(f"👥 {room['count']} {t['people']}", size=count_size, color=ft.Colors.GREY_700),
                                 ], spacing=2),

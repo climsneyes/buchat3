@@ -1,5 +1,8 @@
 import flet as ft
 
+def get_text_color(page):
+    return ft.Colors.WHITE if page.theme_mode == ft.ThemeMode.DARK else ft.Colors.BLACK
+
 def NationalitySelectPage(page, on_select, on_foreign_select, on_back=None):
     # 화면 크기에 따른 반응형 설정
     is_mobile = page.width < 600
@@ -33,7 +36,7 @@ def NationalitySelectPage(page, on_select, on_foreign_select, on_back=None):
             # 국적 선택 카드
             ft.Container(
                 content=ft.Column([
-                    ft.Text("Where are you from?", size=16 if is_mobile else 18, weight=ft.FontWeight.BOLD, text_align="center"),
+                    ft.Text("Where are you from?", size=16 if is_mobile else 18, weight=ft.FontWeight.BOLD, text_align="center", color=get_text_color(page)),
                     ft.ElevatedButton(
                         content=ft.Row([
                             ft.Icon(name=ft.Icons.FLAG, color="#7B61FF", size=20 if is_mobile else 24),

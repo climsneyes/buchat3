@@ -459,7 +459,7 @@ def main(page: ft.Page):
         
         popup_content = ft.Container(
             content=ft.Column([
-                ft.Text(texts["title"].format(room=room_title), size=20, weight=ft.FontWeight.BOLD),
+                ft.Text(texts["title"].format(room=room_title), size=20, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
                 ft.Text(texts["desc"], text_align="center"),
                 qr_code_image,
                 # ID 부분을 드래그 가능하고 복사 버튼이 있는 형태로 수정
@@ -736,7 +736,7 @@ def main(page: ft.Page):
             ft.View(
                 "/find_by_id",
                 controls=[
-                    ft.Text(t["title"], size=20, weight=ft.FontWeight.BOLD),
+                    ft.Text(t["title"], size=20, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
                     id_field,
                     ft.ElevatedButton(t["enter"], on_click=on_submit, width=300),
                     ft.ElevatedButton(t["back"], on_click=lambda e: go_room_list(lang), width=300)

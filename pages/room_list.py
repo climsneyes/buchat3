@@ -279,7 +279,7 @@ def RoomListPage(page, lang="ko", on_select=None, on_back=None):
             # 헤더
             ft.Row([
                 ft.IconButton(ft.Icons.ARROW_BACK, on_click=on_back) if on_back else ft.Container(),
-                ft.Text(t["title"], size=title_size, weight=ft.FontWeight.BOLD),
+                ft.Text(t["title"], size=title_size, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
             ], alignment=ft.MainAxisAlignment.START, spacing=8),
 
             # 채팅방 목록
