@@ -705,11 +705,12 @@ def answer_with_rag(query, vector_db, gemini_api_key, model=None, target_lang=No
     else:
         # 일반 질문 처리 (쓰레기 처리 관련이 아닌 경우)
         print(f"  - 일반 질문 처리 (쓰레기 처리 관련 아님)")
+    
     relevant_chunks = retrieve_relevant_chunks(query, vector_db)
     if not relevant_chunks:
         return "참고 정보에서 관련 내용을 찾을 수 없습니다."
     context = "\n\n".join([doc['page_content'] if isinstance(doc, dict) and 'page_content' in doc else str(doc) for doc in relevant_chunks])
-        multicultural_prompt_template = get_multicultural_prompt_template(prompt_lang)
+    multicultural_prompt_template = get_multicultural_prompt_template(prompt_lang)
     prompt = multicultural_prompt_template.format(context=context, query=query)
     
     genai.configure(api_key=gemini_api_key)
@@ -944,11 +945,12 @@ def answer_with_rag_foreign_worker(query, vector_db, gemini_api_key, model=None,
     else:
         # 일반 질문 처리 (쓰레기 처리 관련이 아닌 경우)
         print(f"  - 일반 질문 처리 (쓰레기 처리 관련 아님)")
-        foreign_worker_prompt_template = get_foreign_worker_prompt_template(prompt_lang)
+    
     relevant_chunks = retrieve_relevant_chunks(query, vector_db)
     if not relevant_chunks:
         return "참고 정보에서 관련 내용을 찾을 수 없습니다."
     context = "\n\n".join([doc['page_content'] if isinstance(doc, dict) and 'page_content' in doc else str(doc) for doc in relevant_chunks])
+    foreign_worker_prompt_template = get_foreign_worker_prompt_template(prompt_lang)
     prompt = foreign_worker_prompt_template.format(context=context, query=query)
     
     genai.configure(api_key=gemini_api_key)
