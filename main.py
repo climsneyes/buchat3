@@ -291,8 +291,21 @@ FOREIGN_WORKER_ROOM_CARD_TEXTS = {
 }
 
 def get_text_color(page):
-    import flet as ft
-    return ft.Colors.WHITE if page.theme_mode == ft.ThemeMode.DARK else ft.Colors.BLACK
+    # 다크모드에서 더 명확한 대비를 위해 완전한 흰색 사용
+    if page.theme_mode == ft.ThemeMode.DARK:
+        return "#FFFFFF"
+    elif page.theme_mode == ft.ThemeMode.LIGHT:
+        return "#000000"
+    else:  # SYSTEM 모드인 경우
+        # 브라우저의 다크모드 감지를 위한 fallback
+        return "#FFFFFF" if hasattr(page, '_dark_mode_detected') and page._dark_mode_detected else "#000000"
+
+def get_header_text_color(page):
+    # 헤더용 더 강한 대비 색상
+    if page.theme_mode == ft.ThemeMode.DARK:
+        return "#FFFFFF"
+    else:
+        return "#1F2937"  # 더 진한 검은색
 
 def get_sub_text_color(page):
     return ft.Colors.GREY_300 if page.theme_mode == ft.ThemeMode.DARK else ft.Colors.GREY_600
@@ -377,6 +390,9 @@ def main(page: ft.Page):
         color_scheme_seed="deepPurple",
         use_material3=True,
     )
+    
+    # 다크모드 감지 플래그 설정 (향후 JavaScript 연동 가능)
+    page._dark_mode_detected = False
     # 구글 폰트 링크 및 CSS 추가 (웹 환경에서 특수문자 깨짐 방지)
     page.html = """
     <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap' rel='stylesheet'>
@@ -459,7 +475,7 @@ def main(page: ft.Page):
         
         popup_content = ft.Container(
             content=ft.Column([
-                ft.Text(texts["title"].format(room=room_title), size=20, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
+                ft.Text(texts["title"].format(room=room_title), size=20, weight=ft.FontWeight.BOLD, color=get_header_text_color(page)),
                 ft.Text(texts["desc"], text_align="center"),
                 qr_code_image,
                 # ID 부분을 드래그 가능하고 복사 버튼이 있는 형태로 수정
@@ -622,7 +638,7 @@ def main(page: ft.Page):
                     # 헤더 (뒤로가기 + 타이틀)
                     ft.Row([
                         ft.IconButton(ft.Icons.ARROW_BACK, on_click=lambda e: go_home(lang)),
-                        ft.Text(texts["title"], size=24, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
+                        ft.Text(texts["title"], size=24, weight=ft.FontWeight.BOLD, color=get_header_text_color(page)),
                     ], alignment=ft.MainAxisAlignment.START, spacing=8, vertical_alignment=ft.CrossAxisAlignment.CENTER),
 
                     # 카드형 버튼들
@@ -736,7 +752,7 @@ def main(page: ft.Page):
             ft.View(
                 "/find_by_id",
                 controls=[
-                    ft.Text(t["title"], size=20, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
+                    ft.Text(t["title"], size=20, weight=ft.FontWeight.BOLD, color=get_header_text_color(page)),
                     id_field,
                     ft.ElevatedButton(t["enter"], on_click=on_submit, width=300),
                     ft.ElevatedButton(t["back"], on_click=lambda e: go_room_list(lang), width=300)
@@ -939,7 +955,7 @@ def main(page: ft.Page):
                                         content=ft.Icon(name=ft.Icons.PERSON, color="#22C55E", size=28),
                                         bgcolor="#22C55E22", border_radius=12, padding=8, margin=ft.margin.only(right=8)
                                     ),
-                                    ft.Text(texts["title"], size=22, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
+                                    ft.Text(texts["title"], size=22, weight=ft.FontWeight.BOLD, color=get_header_text_color(page)),
                                 ], vertical_alignment=ft.CrossAxisAlignment.CENTER),
                             ),
                         ], alignment=ft.MainAxisAlignment.START, spacing=8, vertical_alignment=ft.CrossAxisAlignment.CENTER),

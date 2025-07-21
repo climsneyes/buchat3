@@ -2547,7 +2547,7 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
     header = ft.Container(
         content=ft.Row([
             ft.IconButton(ft.Icons.ARROW_BACK, on_click=go_back),
-            ft.Text(title_with_owner, size=title_size, weight=ft.FontWeight.BOLD, color=get_text_color(page), expand=True, selectable=True),
+            ft.Text(title_with_owner, size=title_size, weight=ft.FontWeight.BOLD, color=get_header_text_color(page), expand=True, selectable=True),
             ft.IconButton(ft.Icons.SETTINGS, on_click=show_room_settings, tooltip="채팅방 관리"),
             ft.IconButton(ft.Icons.SHARE, on_click=on_share) if on_share else ft.Container(),
         ], alignment=ft.MainAxisAlignment.START, vertical_alignment=ft.CrossAxisAlignment.CENTER),
@@ -2926,4 +2926,16 @@ def create_clickable_text(text, on_image_click=None):
     return parts if parts else [ft.Text(text, selectable=True)]
 
 def get_text_color(page):
-    return ft.Colors.WHITE if page.theme_mode == ft.ThemeMode.DARK else ft.Colors.BLACK
+    if page.theme_mode == ft.ThemeMode.DARK:
+        return "#FFFFFF"
+    elif page.theme_mode == ft.ThemeMode.LIGHT:
+        return "#000000"
+    else:  # SYSTEM 모드인 경우
+        return "#FFFFFF" if hasattr(page, '_dark_mode_detected') and page._dark_mode_detected else "#000000"
+
+def get_header_text_color(page):
+    # 헤더용 더 강한 대비 색상
+    if page.theme_mode == ft.ThemeMode.DARK:
+        return "#FFFFFF"
+    else:
+        return "#1F2937"  # 더 진한 검은색

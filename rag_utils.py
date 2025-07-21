@@ -709,7 +709,7 @@ def answer_with_rag(query, vector_db, gemini_api_key, model=None, target_lang=No
     if not relevant_chunks:
         return "참고 정보에서 관련 내용을 찾을 수 없습니다."
     context = "\n\n".join([doc['page_content'] if isinstance(doc, dict) and 'page_content' in doc else str(doc) for doc in relevant_chunks])
-    multicultural_prompt_template = get_multicultural_prompt_template(prompt_lang)
+        multicultural_prompt_template = get_multicultural_prompt_template(prompt_lang)
     prompt = multicultural_prompt_template.format(context=context, query=query)
     
     genai.configure(api_key=gemini_api_key)

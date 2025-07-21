@@ -1,7 +1,19 @@
 import flet as ft
 
 def get_text_color(page):
-    return ft.Colors.WHITE if page.theme_mode == ft.ThemeMode.DARK else ft.Colors.BLACK
+    if page.theme_mode == ft.ThemeMode.DARK:
+        return "#FFFFFF"
+    elif page.theme_mode == ft.ThemeMode.LIGHT:
+        return "#000000"
+    else:  # SYSTEM 모드인 경우
+        return "#FFFFFF" if hasattr(page, '_dark_mode_detected') and page._dark_mode_detected else "#000000"
+
+def get_header_text_color(page):
+    # 헤더용 더 강한 대비 색상
+    if page.theme_mode == ft.ThemeMode.DARK:
+        return "#FFFFFF"
+    else:
+        return "#1F2937"  # 더 진한 검은색
 
 def NationalitySelectPage(page, on_select, on_foreign_select, on_back=None):
     # 화면 크기에 따른 반응형 설정
@@ -36,7 +48,7 @@ def NationalitySelectPage(page, on_select, on_foreign_select, on_back=None):
             # 국적 선택 카드
             ft.Container(
                 content=ft.Column([
-                    ft.Text("Where are you from?", size=16 if is_mobile else 18, weight=ft.FontWeight.BOLD, text_align="center", color=get_text_color(page)),
+                    ft.Text("Where are you from?", size=16 if is_mobile else 18, weight=ft.FontWeight.BOLD, text_align="center", color=get_header_text_color(page)),
                     ft.ElevatedButton(
                         content=ft.Row([
                             ft.Icon(name=ft.Icons.FLAG, color="#7B61FF", size=20 if is_mobile else 24),

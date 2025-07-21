@@ -1,7 +1,19 @@
 import flet as ft
 
 def get_text_color(page):
-    return ft.Colors.WHITE if page.theme_mode == ft.ThemeMode.DARK else ft.Colors.BLACK
+    if page.theme_mode == ft.ThemeMode.DARK:
+        return "#FFFFFF"
+    elif page.theme_mode == ft.ThemeMode.LIGHT:
+        return "#000000"
+    else:  # SYSTEM 모드인 경우
+        return "#FFFFFF" if hasattr(page, '_dark_mode_detected') and page._dark_mode_detected else "#000000"
+
+def get_header_text_color(page):
+    # 헤더용 더 강한 대비 색상
+    if page.theme_mode == ft.ThemeMode.DARK:
+        return "#FFFFFF"
+    else:
+        return "#1F2937"  # 더 진한 검은색
 
 def HomePage(page, lang="ko", on_create=None, on_find=None, on_quick=None, on_change_lang=None, on_back=None):
     # 화면 크기에 따른 반응형 설정
@@ -123,7 +135,7 @@ def HomePage(page, lang="ko", on_create=None, on_find=None, on_quick=None, on_ch
                     padding=6 if is_mobile else 8,
                     margin=ft.margin.only(right=6 if is_mobile else 8)
                 ),
-                ft.Text(t["title"], size=title_size, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
+                ft.Text(t["title"], size=title_size, weight=ft.FontWeight.BOLD, color=get_header_text_color(page)),
             ], alignment=ft.MainAxisAlignment.START, spacing=6 if is_mobile else 8, vertical_alignment=ft.CrossAxisAlignment.CENTER),
 
             # 중앙 카드 (웰컴 메시지)

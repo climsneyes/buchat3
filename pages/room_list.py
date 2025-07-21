@@ -230,6 +230,21 @@ def RoomListPage(page, lang="ko", on_select=None, on_back=None):
             width=card_width
         )
 
+    def get_text_color(page):
+        if page.theme_mode == ft.ThemeMode.DARK:
+            return "#FFFFFF"
+        elif page.theme_mode == ft.ThemeMode.LIGHT:
+            return "#000000"
+        else:  # SYSTEM 모드인 경우
+            return "#FFFFFF" if hasattr(page, '_dark_mode_detected') and page._dark_mode_detected else "#000000"
+
+    def get_header_text_color(page):
+        # 헤더용 더 강한 대비 색상
+        if page.theme_mode == ft.ThemeMode.DARK:
+            return "#FFFFFF"
+        else:
+            return "#1F2937"  # 더 진한 검은색
+
     # 초기 채팅방 목록 로드
     persistent_rooms, temporary_rooms = load_rooms()
     
@@ -279,7 +294,7 @@ def RoomListPage(page, lang="ko", on_select=None, on_back=None):
             # 헤더
             ft.Row([
                 ft.IconButton(ft.Icons.ARROW_BACK, on_click=on_back) if on_back else ft.Container(),
-                ft.Text(t["title"], size=title_size, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
+                ft.Text(t["title"], size=title_size, weight=ft.FontWeight.BOLD, color=get_header_text_color(page)),
             ], alignment=ft.MainAxisAlignment.START, spacing=8),
 
             # 채팅방 목록

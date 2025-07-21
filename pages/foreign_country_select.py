@@ -1,7 +1,19 @@
 import flet as ft
 
 def get_text_color(page):
-    return ft.Colors.WHITE if page.theme_mode == ft.ThemeMode.DARK else ft.Colors.BLACK
+    if page.theme_mode == ft.ThemeMode.DARK:
+        return "#FFFFFF"
+    elif page.theme_mode == ft.ThemeMode.LIGHT:
+        return "#000000"
+    else:  # SYSTEM 모드인 경우
+        return "#FFFFFF" if hasattr(page, '_dark_mode_detected') and page._dark_mode_detected else "#000000"
+
+def get_header_text_color(page):
+    # 헤더용 더 강한 대비 색상
+    if page.theme_mode == ft.ThemeMode.DARK:
+        return "#FFFFFF"
+    else:
+        return "#1F2937"  # 더 진한 검은색
 
 def ForeignCountrySelectPage(page, on_select, on_back=None):
     # 화면 크기에 따른 반응형 설정
@@ -73,7 +85,7 @@ def ForeignCountrySelectPage(page, on_select, on_back=None):
                             margin=ft.margin.only(right=12 if is_mobile else 16)
                         ),
                         ft.Column([
-                            ft.Text("select your language", size=title_size, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
+                            ft.Text("select your language", size=title_size, weight=ft.FontWeight.BOLD, color=get_header_text_color(page)),
                         ], spacing=4)
                     ], alignment=ft.MainAxisAlignment.START),
                 ),
