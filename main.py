@@ -291,6 +291,7 @@ FOREIGN_WORKER_ROOM_CARD_TEXTS = {
 }
 
 def get_text_color(page):
+    import flet as ft
     return ft.Colors.WHITE if page.theme_mode == ft.ThemeMode.DARK else ft.Colors.BLACK
 
 def get_sub_text_color(page):
