@@ -1145,7 +1145,7 @@ This guidebook introduces restaurants directly recommended by Busan taxi drivers
 �� **다운로드**: [2025 택슐랭 가이드북 다운로드](https://www.busan.go.kr/board/download.do?boardId=BBS_0000007&dataSid=4277&fileSid=7886)
 
 **Busan's Taste (2025) Guide**
-'Busan's Taste (2025)' is a 2025 Busan culinary guide that introduces Busan's rich food culture. As an official culinary brand selected and published annually by Busan City, it includes restaurants that have passed strict user-centered evaluations.
+'Busan's Taste (2025)' is a 2025 Busan culinary guide that introduces Busan's rich food culture. As an official culinary brand selected and published annually by Busan City, it includes restaurants that have passed strict user-centered evaluations. 
 
 The guidebook emphasizes the excellence of local specialties such as Busan's agricultural, marine, and livestock products, and showcases recipes developed by famous chefs using Busan ingredients. It also provides detailed information on the history and restaurant information of 13 traditional Busan foods including Dongnae pajeon, dwaeji gukbap, and milmyeon, and guides visitors to recommended restaurants by region such as Gangseo-gu, Geumjeong-gu, and Dongnae-gu to help them have diverse culinary experiences.
 
@@ -2547,7 +2547,7 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
     header = ft.Container(
         content=ft.Row([
             ft.IconButton(ft.Icons.ARROW_BACK, on_click=go_back),
-            ft.Text(title_with_owner, size=title_size, weight=ft.FontWeight.BOLD, color=ft.Colors.BLACK87, expand=True, selectable=True),
+            ft.Text(title_with_owner, size=title_size, weight=ft.FontWeight.BOLD, color=get_text_color(page), expand=True, selectable=True),
             ft.IconButton(ft.Icons.SETTINGS, on_click=show_room_settings, tooltip="채팅방 관리"),
             ft.IconButton(ft.Icons.SHARE, on_click=on_share) if on_share else ft.Container(),
         ], alignment=ft.MainAxisAlignment.START, vertical_alignment=ft.CrossAxisAlignment.CENTER),
@@ -2924,3 +2924,6 @@ def create_clickable_text(text, on_image_click=None):
         parts.append(ft.Text(text[last_end:], selectable=True))
     
     return parts if parts else [ft.Text(text, selectable=True)]
+
+def get_text_color(page):
+    return ft.Colors.WHITE if page.theme_mode == ft.ThemeMode.DARK else ft.Colors.BLACK

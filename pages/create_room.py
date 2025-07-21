@@ -1,5 +1,8 @@
 import flet as ft
 
+def get_text_color(page):
+    return ft.Colors.WHITE if page.theme_mode == ft.ThemeMode.DARK else ft.Colors.BLACK
+
 def CreateRoomPage(page, lang="ko", on_create=None, on_back=None):
     # 화면 크기에 따른 반응형 설정
     is_mobile = page.width < 600
@@ -264,7 +267,7 @@ def CreateRoomPage(page, lang="ko", on_create=None, on_back=None):
             # 중앙 카드 (설정 폼)
             ft.Container(
                 content=ft.Column([
-                    ft.Text(t["subtitle"], size=subtitle_size, weight=ft.FontWeight.BOLD, color=ft.Colors.BLACK87, text_align="center"),
+                    ft.Text(t["subtitle"], size=subtitle_size, weight=ft.FontWeight.BOLD, color=get_text_color(page), text_align="center"),
                     ft.Container(
                         content=ft.Text(t["room_title_label"], size=label_size, weight=ft.FontWeight.W_500),
                         margin=ft.margin.only(top=16 if is_mobile else 20)

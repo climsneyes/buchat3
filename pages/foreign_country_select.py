@@ -1,5 +1,8 @@
 import flet as ft
 
+def get_text_color(page):
+    return ft.Colors.WHITE if page.theme_mode == ft.ThemeMode.DARK else ft.Colors.BLACK
+
 def ForeignCountrySelectPage(page, on_select, on_back=None):
     # 화면 크기에 따른 반응형 설정
     is_mobile = page.width < 600
@@ -35,7 +38,7 @@ def ForeignCountrySelectPage(page, on_select, on_back=None):
             button = ft.Container(
                 content=ft.Row([
                     ft.Text(flag, size=24 if is_mobile else 28),
-                    ft.Text(name, size=14 if is_mobile else 16, weight=ft.FontWeight.W_500, color=ft.Colors.BLACK87),
+                    ft.Text(name, size=14 if is_mobile else 16, weight=ft.FontWeight.W_500, color=get_text_color(page)),
                 ], alignment=ft.MainAxisAlignment.CENTER, spacing=8),
                 bgcolor=ft.LinearGradient(["#7B61FF", "#6C47FF"], begin=ft.alignment.top_left, end=ft.alignment.bottom_right),
                 border_radius=12,

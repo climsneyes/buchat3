@@ -1,5 +1,8 @@
 import flet as ft
 
+def get_text_color(page):
+    return ft.Colors.WHITE if page.theme_mode == ft.ThemeMode.DARK else ft.Colors.BLACK
+
 def HomePage(page, lang="ko", on_create=None, on_find=None, on_quick=None, on_change_lang=None, on_back=None):
     # 화면 크기에 따른 반응형 설정
     is_mobile = page.width < 600
@@ -120,7 +123,7 @@ def HomePage(page, lang="ko", on_create=None, on_find=None, on_quick=None, on_ch
                     padding=6 if is_mobile else 8,
                     margin=ft.margin.only(right=6 if is_mobile else 8)
                 ),
-                ft.Text(t["title"], size=title_size, weight=ft.FontWeight.BOLD, color=ft.Colors.BLACK87),
+                ft.Text(t["title"], size=title_size, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
             ], alignment=ft.MainAxisAlignment.START, spacing=6 if is_mobile else 8, vertical_alignment=ft.CrossAxisAlignment.CENTER),
 
             # 중앙 카드 (웰컴 메시지)
@@ -128,9 +131,9 @@ def HomePage(page, lang="ko", on_create=None, on_find=None, on_quick=None, on_ch
                 content=ft.Column([
                     ft.Container(
                         content=ft.Column([
-                            ft.Text(t["desc"], size=desc_size, weight=ft.FontWeight.BOLD, color=ft.Colors.BLACK87),
+                            ft.Text(t["desc"], size=desc_size, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
                             ft.Container(
-                                content=ft.Text(t["desc2"], size=desc2_size, color=ft.Colors.BLACK87, weight=ft.FontWeight.W_500),
+                                content=ft.Text(t["desc2"], size=desc2_size, color=get_text_color(page), weight=ft.FontWeight.W_500),
                                 margin=ft.margin.only(top=4)
                             ),
                         ], spacing=2, horizontal_alignment=ft.CrossAxisAlignment.CENTER),
@@ -154,7 +157,7 @@ def HomePage(page, lang="ko", on_create=None, on_find=None, on_quick=None, on_ch
                             content=ft.Icon(name=ft.Icons.ADD, color="#22C55E", size=icon_size),
                             bgcolor="#DCFCE7", border_radius=10 if is_mobile else 12, padding=8 if is_mobile else 10, margin=ft.margin.only(right=10 if is_mobile else 12)
                         ),
-                        ft.Text(t["create"], size=button_text_size, weight=ft.FontWeight.BOLD, color=ft.Colors.BLACK87),
+                        ft.Text(t["create"], size=button_text_size, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
                     ], vertical_alignment=ft.CrossAxisAlignment.CENTER),
                     bgcolor=ft.Colors.WHITE,
                     border_radius=10 if is_mobile else 12,
@@ -170,7 +173,7 @@ def HomePage(page, lang="ko", on_create=None, on_find=None, on_quick=None, on_ch
                             content=ft.Icon(name=ft.Icons.SEARCH, color="#2563EB", size=icon_size),
                             bgcolor="#DBEAFE", border_radius=10 if is_mobile else 12, padding=8 if is_mobile else 10, margin=ft.margin.only(right=10 if is_mobile else 12)
                         ),
-                        ft.Text(t["find"], size=button_text_size, weight=ft.FontWeight.BOLD, color=ft.Colors.BLACK87),
+                        ft.Text(t["find"], size=button_text_size, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
                     ], vertical_alignment=ft.CrossAxisAlignment.CENTER),
                     bgcolor=ft.Colors.WHITE,
                     border_radius=10 if is_mobile else 12,
@@ -186,7 +189,7 @@ def HomePage(page, lang="ko", on_create=None, on_find=None, on_quick=None, on_ch
                             content=ft.Icon(name=ft.Icons.FLASH_ON, color="#FB923C", size=icon_size),
                             bgcolor="#FFEDD5", border_radius=10 if is_mobile else 12, padding=8 if is_mobile else 10, margin=ft.margin.only(right=10 if is_mobile else 12)
                         ),
-                        ft.Text(t["quick"], size=button_text_size, weight=ft.FontWeight.BOLD, color=ft.Colors.BLACK87),
+                        ft.Text(t["quick"], size=button_text_size, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
                     ], vertical_alignment=ft.CrossAxisAlignment.CENTER),
                 bgcolor=ft.Colors.WHITE,
                     border_radius=10 if is_mobile else 12,
