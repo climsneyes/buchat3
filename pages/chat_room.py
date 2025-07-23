@@ -2797,7 +2797,7 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
         message_text_parts = create_clickable_text(
             msg_data.get('text', ''), 
             on_image_click=show_image_viewer,
-            text_color=ft.Colors.WHITE if is_me else None
+            text_color=ft.Colors.WHITE if is_me else (ft.Colors.BLACK if is_rag else None)
         )
         
         controls = [
@@ -2825,7 +2825,7 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
             translated_parts = create_clickable_text(
                 msg_data.get('translated', ''), 
                 on_image_click=show_image_viewer,
-                text_color=ft.Colors.WHITE if is_me else None
+                text_color=ft.Colors.WHITE if is_me else (ft.Colors.BLACK if is_rag else None)
             )
             controls.append(
                 ft.Row(translated_parts, wrap=True)
