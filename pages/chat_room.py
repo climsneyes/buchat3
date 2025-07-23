@@ -1659,11 +1659,13 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
         # 모바일에서 더 부드러운 입력을 위한 설정
         border_color=ft.Colors.GREY_300,
         focused_border_color=ft.Colors.BLUE_400,
-        # 입력 필드 최적화
+        # 입력 필드 최적화 - 모바일에서 더 많은 공간 확보
         min_lines=1,
-        max_lines=4,
+        max_lines=6 if is_mobile else 4,
         # 자동 포커스 방지
         autofocus=False,
+        # 모바일에서 패딩 조정
+        content_padding=12 if is_mobile else 8,
     )
     if is_rag_room:
         if is_foreign_worker_rag or room_id == "foreign_worker_rights_rag":
@@ -2641,7 +2643,7 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                 padding=8,
             )
         ),
-    ], alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER, spacing=4)
+    ], alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.START, spacing=4)
 
     # 입력창 위에 드롭다운 항상 표시 (성능 최적화)
     input_area = ft.Column([
@@ -2655,7 +2657,10 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
             # 컨테이너 성능 최적화
             bgcolor=ft.Colors.TRANSPARENT,
         ),
-        input_row
+        ft.Container(
+            content=input_row,
+            padding=ft.padding.only(left=8, right=8, top=4, bottom=8) if is_mobile else ft.padding.all(8),
+        )
     ], spacing=4, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
 
     # chat_column을 스크롤 가능하게 만듦
