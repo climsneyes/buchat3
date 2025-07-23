@@ -34,6 +34,29 @@ def detect_language(text):
     
     text_lower = text.lower()
     
+    # 우즈벡어 패턴 (키릴 문자)
+    uzbek_pattern = re.compile(r'[а-яА-ЯёЁ]')
+    # 네팔어 패턴 (데바나가리 문자)
+    nepali_pattern = re.compile(r'[\u0900-\u097F]')
+    # 동티모르어 패턴 (라틴 문자 기반)
+    tetum_pattern = re.compile(r'[àáâãäåæçèéêëìíîïñòóôõöùúûüýÿ]')
+    # 라오스어 패턴 (라오 문자)
+    lao_pattern = re.compile(r'[\u0E80-\u0EFF]')
+    # 몽골어 패턴 (키릴 문자)
+    mongolian_pattern = re.compile(r'[а-яА-ЯёЁ]')
+    # 미얀마어 패턴 (버마 문자)
+    burmese_pattern = re.compile(r'[\u1000-\u109F]')
+    # 벵골어 패턴 (벵골 문자)
+    bengali_pattern = re.compile(r'[\u0980-\u09FF]')
+    # 스리랑카어 패턴 (싱할라 문자)
+    sinhala_pattern = re.compile(r'[\u0D80-\u0DFF]')
+    # 캄보디아어 패턴 (크메르 문자)
+    khmer_pattern = re.compile(r'[\u1780-\u17FF]')
+    # 키르기스어 패턴 (키릴 문자)
+    kyrgyz_pattern = re.compile(r'[а-яА-ЯёЁ]')
+    # 우르두어 패턴 (아랍 문자)
+    urdu_pattern = re.compile(r'[\u0600-\u06FF]')
+    
     # 각 언어별 점수 계산
     scores = {
         'ko': len(korean_pattern.findall(text)),
@@ -43,7 +66,18 @@ def detect_language(text):
         'vi': len(vietnamese_pattern.findall(text)),
         'fr': len(french_pattern.findall(text)),
         'de': len(german_pattern.findall(text)),
-        'th': len(thai_pattern.findall(text))
+        'th': len(thai_pattern.findall(text)),
+        'uz': len(uzbek_pattern.findall(text)),
+        'ne': len(nepali_pattern.findall(text)),
+        'tet': len(tetum_pattern.findall(text)),
+        'lo': len(lao_pattern.findall(text)),
+        'mn': len(mongolian_pattern.findall(text)),
+        'my': len(burmese_pattern.findall(text)),
+        'bn': len(bengali_pattern.findall(text)),
+        'si': len(sinhala_pattern.findall(text)),
+        'km': len(khmer_pattern.findall(text)),
+        'ky': len(kyrgyz_pattern.findall(text)),
+        'ur': len(urdu_pattern.findall(text))
     }
     
     # 가장 높은 점수의 언어 반환
@@ -106,7 +140,18 @@ def get_district_selection_prompt(target_lang):
         "id": "Distrik mana di Kota Metropolitan Busan yang ingin Anda ketahui informasi pengelolaan sampahnya?\n\n16 distrik di Busan: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nSilakan beri tahu saya nama distrik dan saya akan memberikan informasi detail pengelolaan sampah untuk distrik tersebut.",
         "th": "คุณต้องการทราบข้อมูลการจัดการขยะในเขตใดของเมืองปูซาน?\n\n16 เขตในปูซาน: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nกรุณาบอกชื่อเขตและฉันจะให้ข้อมูลรายละเอียดการจัดการขยะสำหรับเขตนั้น",
         "fr": "Dans quel district de la ville métropolitaine de Busan souhaitez-vous connaître les informations sur l'élimination des déchets ?\n\n16 districts à Busan : Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nVeuillez me dire le nom du district et je vous fournirai des informations détaillées sur l'élimination des déchets pour ce district.",
-        "de": "In welchem Bezirk der Stadt Busan möchten Sie Informationen über die Abfallentsorgung erfahren?\n\n16 Bezirke in Busan: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nBitte teilen Sie mir den Namen des Bezirks mit und ich werde Ihnen detaillierte Informationen zur Abfallentsorgung für diesen Bezirk zur Verfügung stellen."
+        "de": "In welchem Bezirk der Stadt Busan möchten Sie Informationen über die Abfallentsorgung erfahren?\n\n16 Bezirke in Busan: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nBitte teilen Sie mir den Namen des Bezirks mit und ich werde Ihnen detaillierte Informationen zur Abfallentsorgung für diesen Bezirk zur Verfügung stellen.",
+        "uz": "Pusan Metropolitan shahridagi qaysi tuman haqida chiqindilarni yo'qotish ma'lumotlarini bilmoqchisiz?\n\nPusan shahridagi 16 tuman: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nIltimos, tuman nomini ayting va men sizga shu tuman uchun chiqindilarni yo'qotish bo'yicha batafsil ma'lumot beraman.",
+        "ne": "पुसान महानगरीय शहरको कुन जिल्लामा कचरा निस्तारण जानकारी जान्न चाहनुहुन्छ?\n\nपुसानका 16 जिल्ला: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nकृपया जिल्लाको नाम भन्नुहोस् र म तपाईंलाई त्यो जिल्लाको विस्तृत कचरा निस्तारण जानकारी प्रदान गर्नेछु।",
+        "tet": "Distritu ne'ebé iha Kota Metropolitan Pusan ne'ebé ita hakarak hatene informasaun kona-ba lixu?\n\n16 distritu iha Pusan: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nFavor ida fó naran distritu no ha'u sei fó informasaun detalhada kona-ba lixu ba distritu ne'e.",
+        "lo": "ທ່ານຕ້ອງການຮູ້ຂໍ້ມູນການຈັດການຂີ້ເຫຼົ້າໃນເຂດໃດຂອງເມືອງປູຊັນ?\n\n16 ເຂດໃນປູຊັນ: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nກະລຸນາບອກຊື່ເຂດແລະຂ້ອຍຈະໃຫ້ຂໍ້ມູນລະອຽດການຈັດການຂີ້ເຫຼົ້າສຳລັບເຂດນັ້ນ.",
+        "mn": "Пусан хотын аль дүүрэгт хог хаягдал боловсруулах мэдээллийг мэдэхийг хүсэж байна вэ?\n\nПусан дахь 16 дүүрэг: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nДүүргийн нэрийг хэлнэ үү, би танд тухайн дүүргийн дэлгэрэнгүй хог хаягдал боловсруулах мэдээллийг өгөх болно.",
+        "my": "ပုဆန်မြို့တော်ကြီးရှိ ဘယ်ခရိုင်တွင် အမှိုက်စွန့်ပစ်ခြင်းဆိုင်ရာ အချက်အလက်များကို သိလိုပါသလဲ။\n\nပုဆန်ရှိ ခရိုင် ၁၆ ခု: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nကျေးဇူးပြု၍ ခရိုင်အမည်ကို ပြောပြပါ၊ ထိုခရိုင်အတွက် အသေးစိတ် အမှိုက်စွန့်ပစ်ခြင်းဆိုင်ရာ အချက်အလက်များကို ပေးပါမယ်။",
+        "bn": "বুসান মহানগরীর কোন জেলায় বর্জ্য নিষ্পত্তি সম্পর্কিত তথ্য জানতে চান?\n\nবুসানের ১৬টি জেলা: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nঅনুগ্রহ করে জেলার নাম বলুন এবং আমি আপনাকে সেই জেলার বিস্তারিত বর্জ্য নিষ্পত্তি তথ্য প্রদান করব।",
+        "si": "පුසාන් මහා නගරයේ කුමන දිස්ත්‍රික්කයේ අපද්‍රව්‍ය බැහැර කිරීම පිළිබඳ තොරතුරු දැනගැනීමට අවශ්‍යද?\n\nපුසාන්හි දිස්ත්‍රික්ක 16ක්: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nකරුණාකර දිස්ත්‍රික්කයේ නම කියන්න, මම ඔබට එම දිස්ත්‍රික්කය සඳහා විස්තරාත්මක අපද්‍රව්‍ය බැහැර කිරීමේ තොරතුරු ලබා දෙන්නම්.",
+        "km": "អ្នកចង់ដឹងព័ត៌មានអំពីការបោះចោលសំរាមនៅក្នុងស្រុកណានៃទីក្រុងពូសាន?\n\nស្រុក ១៦ នៅពូសាន: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nសូមប្រាប់ឈ្មោះស្រុក ហើយខ្ញុំនឹងផ្តល់ព័ត៌មានលម្អិតអំពីការបោះចោលសំរាមសម្រាប់ស្រុកនោះ។",
+        "ky": "Пусан шаарынын кайсы районунда таштанды таштауу жөнүндөгү маалыматты билгиңиз келет?\n\nПусандагы 16 район: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nСураныч, райондун атын айтыңыз, мен сизге ошол район үчүн таштанды таштауу жөнүндөгү толук маалыматты берем.",
+        "ur": "آپ بوسان میٹروپولیٹن سٹی کے کس ضلع میں فضلہ ٹھکانے لگانے کی معلومات جاننا چاہتے ہیں؟\n\nبوسان کے 16 اضلاع: Jung-gu, Seo-gu, Dong-gu, Yeongdo-gu, Busanjin-gu, Dongrae-gu, Nam-gu, Buk-gu, Haeundae-gu, Saha-gu, Geumjeong-gu, Gangseo-gu, Yeonje-gu, Suyeong-gu, Sasang-gu, Gijang-gun\n\nبراہ کرم ضلع کا نام بتائیں اور میں آپ کو اس ضلع کے لیے تفصیلی فضلہ ٹھکانے لگانے کی معلومات فراہم کروں گا۔"
     }
     return templates.get(target_lang, templates["ko"])
 
@@ -189,7 +234,84 @@ Antwort:''',
 {context}
 
 คำถาม: {query}
-คำตอบ:'''
+คำตอบ:''',
+    'uz': '''Iltimos, quyidagi ma'lumotlardan tegishli ma'lumotlarni tabiiy va takrorlanishsiz tarzda kiritib javob bering. Agar ma'lumot ma'lumotlarda yo'q bo'lsa, 'Ma'lumotlarda topilmadi' deb javob bering.
+
+[Ma'lumotlar]
+{context}
+
+Savol: {query}
+Javob:''',
+    'ne': '''कृपया निम्न सन्दर्भ से सम्बन्धित जानकारी को स्वाभाविक रूप से शामिल करके उत्तर दें, बिना दोहराव के। यदि जानकारी सन्दर्भ में नहीं है, तो 'सन्दर्भ में जानकारी नहीं मिली' उत्तर दें।
+
+[सन्दर्भ जानकारी]
+{context}
+
+प्रश्न: {query}
+उत्तर:''',
+    'tet': '''Favor ida responde liu husi informasaun relevante husi referénsia iha okos, la halo repetisaun. Se informasaun la iha referénsia, favor ida responde 'Informasaun la hetan iha referénsia.'
+
+[Informasaun Referénsia]
+{context}
+
+Pergunta: {query}
+Resposta:''',
+    'lo': '''ກະລຸນາຕອບໂດຍການລວມເອົາຂໍ້ມູນທີ່ກ່ຽວຂ້ອງຈາກການອ້າງອີງຂ້າງລຸ່ມນີ້ຢ່າງທໍາມະຊາດ ແລະ ບໍ່ຊ້ຳກັນ. ຖ້າຂໍ້ມູນບໍ່ມີໃນການອ້າງອີງ, ກະລຸນາຕອບ 'ບໍ່ພົບຂໍ້ມູນໃນການອ້າງອີງ'
+
+[ຂໍ້ມູນອ້າງອີງ]
+{context}
+
+ຄຳຖາມ: {query}
+ຄຳຕອບ:''',
+    'mn': '''Та дараах лавлагааны мэдээллээс холбогдох мэдээллийг байгалийн байдлаар нэгтгэж, давталтгүйгээр хариулна уу. Хэрэв мэдээлэл лавлагаанд байхгүй бол 'Лавлагаанд мэдээлэл олдсонгүй' гэж хариулна уу.
+
+[Лавлах мэдээлэл]
+{context}
+
+Асуулт: {query}
+Хариулт:''',
+    'my': '''ကျေးဇူးပြု၍ အောက်ပါ ကိုးကားချက်မှ သက်ဆိုင်ရာ အချက်အလက်များကို သဘာဝကျကျ ပေါင်းစပ်ပြီး ထပ်နေခြင်းမရှိဘဲ ဖြေဆိုပါ။ အကယ်၍ အချက်အလက်သည် ကိုးကားချက်တွင် မရှိပါက 'ကိုးကားချက်တွင် အချက်အလက် မတွေ့ရပါ' ဟု ဖြေဆိုပါ။
+
+[ကိုးကားချက် အချက်အလက်များ]
+{context}
+
+မေးခွန်း: {query}
+အဖြေ:''',
+    'bn': '''অনুগ্রহ করে নীচের রেফারেন্স থেকে প্রাসঙ্গিক তথ্য স্বাভাবিকভাবে অন্তর্ভুক্ত করে উত্তর দিন, পুনরাবৃত্তি ছাড়া। যদি তথ্য রেফারেন্সে না থাকে, তাহলে 'রেফারেন্সে তথ্য পাওয়া যায়নি' উত্তর দিন।
+
+[রেফারেন্স তথ্য]
+{context}
+
+প্রশ্ন: {query}
+উত্তর:''',
+    'si': '''කරුණාකර පහත යොමු තොරතුරු වලින් අදාළ තොරතුරු ස්වාභාවිකව ඇතුළත් කරමින්, පුනරාවර්තන නොකර පිළිතුරු දෙන්න. තොරතුරු යොමුවේ නොමැති නම්, 'යොමුවේ තොරතුරු හමු නොවීය' යනුවෙන් පිළිතුරු දෙන්න.
+
+[යොමු තොරතුරු]
+{context}
+
+ප්‍රශ්නය: {query}
+පිළිතුර:''',
+    'km': '''សូមឆ្លើយតបដោយការរួមបញ្ចូលព័ត៌មានពាក់ព័ន្ធពីការយោបល់ខាងក្រោមយ៉ាងធម្មជាតិ ដោយគ្មានការធ្វើម្តងទៀត។ ប្រសិនបើព័ត៌មានមិនមាននៅក្នុងការយោបល់ទេ សូមឆ្លើយតបថា 'ព័ត៌មានរកមិនឃើញនៅក្នុងការយោបល់'។
+
+[ព័ត៌មានយោបល់]
+{context}
+
+សំណួរ: {query}
+ចម្លើយ:''',
+    'ky': '''Сураныч, төмөнкү маалыматтардан тиешелүү маалыматтарды табигый түрдө киргизип, кайталоосуз жооп бериңиз. Эгер маалымат маалыматтарда жок болсо, 'Маалыматтарда табылган жок' деп жооп бериңиз.
+
+[Маалыматтар]
+{context}
+
+Суроо: {query}
+Жооп:''',
+    'ur': '''براہ کرم نیچے دی گئی حوالہ سے متعلقہ معلومات کو قدرتی طور پر شامل کرتے ہوئے جواب دیں، بغیر تکرار کے۔ اگر معلومات حوالہ میں نہیں ہے تو 'حوالہ میں معلومات نہیں ملی' جواب دیں۔
+
+[حوالہ معلومات]
+{context}
+
+سوال: {query}
+جواب:'''
 }
 
 # 부산광역시 구군 목록
@@ -543,6 +665,17 @@ def get_multicultural_prompt_template(target_lang):
         "th": """ต่อไปนี้เป็นข้อมูลคู่มือการใช้ชีวิตในเกาหลีสำหรับครอบครัวพหุวัฒนธรรม กรุณาตอบเป็นภาษาไทยอย่างถูกต้องและเป็นประโยชน์\n\n[ข้อมูลอ้างอิง]\n{context}\n\nคำถาม: {query}\n\nคำตอบ: กรุณาตอบจากมุมมองของคู่มือการใช้ชีวิตในเกาหลีสำหรับครอบครัวพหุวัฒนธรรมเป็นภาษาไทย""",
         "fr": """Voici des informations sur la vie en Corée pour les familles multiculturelles. Veuillez répondre en français de manière précise et utile.\n\n[Informations de référence]\n{context}\n\nQuestion : {query}\n\nRéponse : Veuillez répondre du point de vue du guide de la vie en Corée pour les familles multiculturelles en français.""",
         "de": """Nachfolgend finden Sie Informationen zum Leben in Korea für multikulturelle Familien. Bitte antworten Sie auf Deutsch genau und hilfreich.\n\n[Referenzinformationen]\n{context}\n\nFrage: {query}\n\nAntwort: Bitte antworten Sie aus der Sicht des koreanischen Lebensratgebers für multikulturelle Familien auf Deutsch.""",
+        "uz": """Quyida ko'p millatli oilalar uchun Koreya hayoti bo'yicha ma'lumotlar keltirilgan. Iltimos, o'zbek tilida aniq va foydali javob bering.\n\n[Ma'lumotlar]\n{context}\n\nSavol: {query}\n\nJavob: Iltimos, ko'p millatli oilalar uchun Koreya hayoti bo'yicha ko'rsatmalar nuqtai nazaridan o'zbek tilida javob bering.""",
+        "ne": """यहाँ बहुसांस्कृतिक परिवारों के लिए कोरियाई जीवन के बारे में जानकारी दी गई है। कृपया नेपाली में सटीक और सहायक उत्तर दें।\n\n[संदर्भ जानकारी]\n{context}\n\nप्रश्न: {query}\n\nउत्तर: कृपया बहुसांस्कृतिक परिवारों के लिए कोरियाई जीवन गाइड के दृष्टिकोण से नेपाली में उत्तर दें।""",
+        "tet": """Iha maklumat kona-ba moris Korea ba família multikultural. Favor ida responde ho loloos no ajuda iha lian Tetun.\n\n[Informasaun Referénsia]\n{context}\n\nPergunta: {query}\n\nResposta: Favor ida responde husi perspetiva guia moris Korea ba família multikultural iha lian Tetun.""",
+        "lo": """ຂໍ້ມູນກ່ຽວກັບຊີວິດໃນເກົາຫຼີສຳລັບຄອບຄົວຫຼາຍວັດທະນະທຳມານີ້. ກະລຸນາຕອບດ້ວຍພາສາລາວຢ່າງຖືກຕ້ອງແລະເປັນປະໂຫຍດ.\n\n[ຂໍ້ມູນອ້າງອີງ]\n{context}\n\nຄຳຖາມ: {query}\n\nຄຳຕອບ: ກະລຸນາຕອບຈາກມຸມມອງຂອງຄູ່ມືຊີວິດໃນເກົາຫຼີສຳລັບຄອບຄົວຫຼາຍວັດທະນະທຳເປັນພາສາລາວ.""",
+        "mn": """Эндээс олон соёл иргэншлийн гэр бүлүүдэд зориулсан Солонгосын амьдралын талаарх мэдээлэл байна. Монгол хэлээр үнэн зөв, тустай хариулт өгнө үү.\n\n[Лавлах мэдээлэл]\n{context}\n\nАсуулт: {query}\n\nХариулт: Олон соёл иргэншлийн гэр бүлүүдэд зориулсан Солонгосын амьдралын зааварчилгааны үүднээс монгол хэлээр хариулна уу.""",
+        "my": """ဤတွင် ယဉ်ကျေးမှုများစုံသော မိသားစုများအတွက် ကိုရီးယားဘဝအကြောင်း အချက်အလက်များ ပါဝင်ပါသည်။ မြန်မာဘာသာဖြင့် တိကျပြီး အကူအညီဖြစ်စေမည့် အဖြေကို ပေးပါ။\n\n[ကိုးကားချက်အချက်အလက်များ]\n{context}\n\nမေးခွန်း: {query}\n\nအဖြေ: ယဉ်ကျေးမှုများစုံသော မိသားစုများအတွက် ကိုရီးယားဘဝလမ်းညွှန်ချက်မှ ရှုထောင့်ဖြင့် မြန်မာဘာသာဖြင့် ဖြေဆိုပါ။""",
+        "bn": """এখানে বহুসংস্কৃতিক পরিবারের জন্য কোরিয়ান জীবনের তথ্য দেওয়া আছে। অনুগ্রহ করে বাংলায় সঠিক এবং সহায়ক উত্তর দিন।\n\n[তথ্যসূত্র]\n{context}\n\nপ্রশ্ন: {query}\n\nউত্তর: অনুগ্রহ করে বহুসংস্কৃতিক পরিবারের জন্য কোরিয়ান জীবন গাইডের দৃষ্টিকোণ থেকে বাংলায় উত্তর দিন।""",
+        "si": """මෙහි බහුසංස්කෘත පවුල් සඳහා කොරියානු ජීවිතය පිළිබඳ තොරතුරු ඇතුළත් වේ. කරුණාකර සිංහලෙන් නිවැරදි සහ ප්‍රයෝජනවත් පිළිතුරු ලබා දෙන්න.\n\n[යොමු තොරතුරු]\n{context}\n\nප්‍රශ්නය: {query}\n\nපිළිතුර: කරුණාකර බහුසංස්කෘත පවුල් සඳහා කොරියානු ජීවිත මාර්ගෝපදේශයේ දෘෂ්ටිකෝණයෙන් සිංහලෙන් පිළිතුරු දෙන්න.""",
+        "km": """នេះគឺជាព័ត៌មានអំពីជីវិតកូរ៉េសម្រាប់គ្រួសារពហុវប្បធម៌។ សូមឆ្លើយតបជាភាសាខ្មែរយ៉ាងត្រឹមត្រូវនិងមានប្រយោជន៍។\n\n[ព័ត៌មានយោបល់]\n{context}\n\nសំណួរ: {query}\n\nចម្លើយ: សូមឆ្លើយតបពីទិដ្ឋភាពនៃមគ្គុទ្ទេសក៍ជីវិតកូរ៉េសម្រាប់គ្រួសារពហុវប្បធម៌ជាភាសាខ្មែរ។""",
+        "ky": """Бул жерде көп маданияттуу үй-бүлөлөр үчүн Корея жашоосу жөнүндөгү маалыматтар бар. Сураныч, кыргыз тилинде так жана пайдалуу жооп бериңиз.\n\n[Маалыматтар]\n{context}\n\nСуроо: {query}\n\nЖооп: Сураныч, көп маданияттуу үй-бүлөлөр үчүн Корея жашоосу боюнча көрсөтмөнүн көз карашынан кыргыз тилинде жооп бериңиз.""",
+        "ur": """یہاں کثیرالثقافتی خاندانوں کے لیے کوریائی زندگی کے بارے میں معلومات ہیں۔ براہ کرم اردو میں درست اور مددگار جواب دیں۔\n\n[حوالہ معلومات]\n{context}\n\nسوال: {query}\n\nجواب: براہ کرم کثیرالثقافتی خاندانوں کے لیے کوریائی زندگی گائیڈ کے نقطہ نظر سے اردو میں جواب دیں۔""",
     }
     return templates.get(target_lang, templates["ko"])
 
@@ -558,6 +691,17 @@ def get_foreign_worker_prompt_template(target_lang):
         "th": """ต่อไปนี้เป็นข้อมูลเกี่ยวกับการคุ้มครองสิทธิแรงงานต่างชาติ กรุณาตอบเป็นภาษาไทยอย่างถูกต้องและเป็นประโยชน์\n\n[ข้อมูลอ้างอิง]\n{context}\n\nคำถาม: {query}\n\nคำตอบ: กรุณาตอบจากมุมมองของการคุ้มครองสิทธิแรงงานต่างชาติเป็นภาษาไทย""",
         "fr": """Voici des informations sur la protection des droits des travailleurs étrangers. Veuillez répondre en français de manière précise et utile.\n\n[Informations de référence]\n{context}\n\nQuestion : {query}\n\nRéponse : Veuillez répondre du point de vue de la protection des droits des travailleurs étrangers en français.""",
         "de": """Nachfolgend finden Sie Informationen zum Schutz der Rechte ausländischer Arbeitnehmer. Bitte antworten Sie auf Deutsch genau und hilfreich.\n\n[Referenzinformationen]\n{context}\n\nFrage: {query}\n\nAntwort: Bitte antworten Sie aus der Sicht des Schutzes der Rechte ausländischer Arbeitnehmer auf Deutsch.""",
+        "uz": """Quyida chet ellik ishchilar huquqlarini himoya qilish bo'yicha ma'lumotlar keltirilgan. Iltimos, o'zbek tilida aniq va foydali javob bering.\n\n[Ma'lumotlar]\n{context}\n\nSavol: {query}\n\nJavob: Iltimos, chet ellik ishchilar huquqlarini himoya qilish nuqtai nazaridan o'zbek tilida javob bering.""",
+        "ne": """यहाँ विदेशी श्रमिक अधिकार संरक्षण के बारे में जानकारी दी गई है। कृपया नेपाली में सटीक और सहायक उत्तर दें।\n\n[संदर्भ जानकारी]\n{context}\n\nप्रश्न: {query}\n\nउत्तर: कृपया विदेशी श्रमिक अधिकार संरक्षण के दृष्टिकोण से नेपाली में उत्तर दें।""",
+        "tet": """Iha maklumat kona-ba proteksaun direitu trabalhador estranjeiru. Favor ida responde ho loloos no ajuda iha lian Tetun.\n\n[Informasaun Referénsia]\n{context}\n\nPergunta: {query}\n\nResposta: Favor ida responde husi perspetiva proteksaun direitu trabalhador estranjeiru iha lian Tetun.""",
+        "lo": """ຂໍ້ມູນກ່ຽວກັບການປົກປ້ອງສິດຄົນງານຕ່າງປະເທດມານີ້. ກະລຸນາຕອບດ້ວຍພາສາລາວຢ່າງຖືກຕ້ອງແລະເປັນປະໂຫຍດ.\n\n[ຂໍ້ມູນອ້າງອີງ]\n{context}\n\nຄຳຖາມ: {query}\n\nຄຳຕອບ: ກະລຸນາຕອບຈາກມຸມມອງຂອງການປົກປ້ອງສິດຄົນງານຕ່າງປະເທດເປັນພາສາລາວ.""",
+        "mn": """Эндээс гадаад хөдөлмөрчдийн эрхийн хамгаалалтын талаарх мэдээлэл байна. Монгол хэлээр үнэн зөв, тустай хариулт өгнө үү.\n\n[Лавлах мэдээлэл]\n{context}\n\nАсуулт: {query}\n\nХариулт: Гадаад хөдөлмөрчдийн эрхийн хамгаалалтын үүднээс монгол хэлээр хариулна уу.""",
+        "my": """ဤတွင် နိုင်ငံခြားလုပ်သား အခွင့်အရေး ကာကွယ်မှုအကြောင်း အချက်အလက်များ ပါဝင်ပါသည်။ မြန်မာဘာသာဖြင့် တိကျပြီး အကူအညီဖြစ်စေမည့် အဖြေကို ပေးပါ။\n\n[ကိုးကားချက်အချက်အလက်များ]\n{context}\n\nမေးခွန်း: {query}\n\nအဖြေ: နိုင်ငံခြားလုပ်သား အခွင့်အရေး ကာကွယ်မှုမှ ရှုထောင့်ဖြင့် မြန်မာဘာသာဖြင့် ဖြေဆိုပါ။""",
+        "bn": """এখানে বিদেশি শ্রমিক অধিকার সুরক্ষা সম্পর্কে তথ্য দেওয়া আছে। অনুগ্রহ করে বাংলায় সঠিক এবং সহায়ক উত্তর দিন।\n\n[তথ্যসূত্র]\n{context}\n\nপ্রশ্ন: {query}\n\nউত্তর: অনুগ্রহ করে বিদেশি শ্রমিক অধিকার সুরক্ষার দৃষ্টিকোণ থেকে বাংলায় উত্তর দিন।""",
+        "si": """මෙහි විදේශීය කම්කරුවන්ගේ අයිතිවාසිකම් ආරක්ෂාව පිළිබඳ තොරතුරු ඇතුළත් වේ. කරුණාකර සිංහලෙන් නිවැරදි සහ ප්‍රයෝජනවත් පිළිතුරු ලබා දෙන්න.\n\n[යොමු තොරතුරු]\n{context}\n\nප්‍රශ්නය: {query}\n\nපිළිතුර: කරුණාකර විදේශීය කම්කරුවන්ගේ අයිතිවාසිකම් ආරක්ෂාවේ දෘෂ්ටිකෝණයෙන් සිංහලෙන් පිළිතුරු දෙන්න.""",
+        "km": """នេះគឺជាព័ត៌មានអំពីការការពារសិទ្ធិកម្មករជាតិផ្សេង។ សូមឆ្លើយតបជាភាសាខ្មែរយ៉ាងត្រឹមត្រូវនិងមានប្រយោជន៍។\n\n[ព័ត៌មានយោបល់]\n{context}\n\nសំណួរ: {query}\n\nចម្លើយ: សូមឆ្លើយតបពីទិដ្ឋភាពនៃការការពារសិទ្ធិកម្មករជាតិផ្សេងជាភាសាខ្មែរ។""",
+        "ky": """Бул жерде чет эл жумушчуларынын укуктарын коргоо жөнүндөгү маалыматтар бар. Сураныч, кыргыз тилинде так жана пайдалуу жооп бериңиз.\n\n[Маалыматтар]\n{context}\n\nСуроо: {query}\n\nЖооп: Сураныч, чет эл жумушчуларынын укуктарын коргоонун көз карашынан кыргыз тилинде жооп бериңиз.""",
+        "ur": """یہاں غیر ملکی مزدوروں کے حقوق کے تحفظ کے بارے میں معلومات ہیں۔ براہ کرم اردو میں درست اور مددگار جواب دیں۔\n\n[حوالہ معلومات]\n{context}\n\nسوال: {query}\n\nجواب: براہ کرم غیر ملکی مزدوروں کے حقوق کے تحفظ کے نقطہ نظر سے اردو میں جواب دیں۔""",
     }
     return templates.get(target_lang, templates["ko"])
 
@@ -565,8 +709,10 @@ def get_foreign_worker_prompt_template(target_lang):
 def answer_with_rag(query, vector_db, gemini_api_key, model=None, target_lang=None, conversation_context=None):
     model = "models/gemini-1.5-flash"
     print(f"  - Gemini RAG 답변 생성 시작")
+    print(f"  - 전달받은 target_lang: {target_lang}")
     lang = detect_language(query)
     prompt_lang = target_lang if target_lang else lang
+    print(f"  - 사용할 prompt_lang: {prompt_lang}")
     
     # 대화 컨텍스트에서 이전에 언급된 구군명과 질문 확인
     previous_district = None
@@ -805,8 +951,10 @@ def get_district_contact_info(district):
 def answer_with_rag_foreign_worker(query, vector_db, gemini_api_key, model=None, target_lang=None, conversation_context=None):
     model = "models/gemini-1.5-flash"
     print(f"  - Gemini 외국인 근로자 RAG 답변 생성 시작")
+    print(f"  - 전달받은 target_lang: {target_lang}")
     lang = detect_language(query)
     prompt_lang = target_lang if target_lang else lang
+    print(f"  - 사용할 prompt_lang: {prompt_lang}")
     
     # 대화 컨텍스트에서 이전에 언급된 구군명과 질문 확인
     previous_district = None

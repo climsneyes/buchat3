@@ -82,8 +82,7 @@ def translate_message(text, target_lang):
 LANG_NAME_MAP = {
     "ko": "한국어", "en": "영어", "ja": "일본어", "zh": "중국어",
     "fr": "프랑스어", "de": "독일어", "th": "태국어", "vi": "베트남어",
-    "zh-TW": "대만어", "zh-HK": "홍콩어", "id": "인도네시아어",
-    "zh-SG": "싱가포르 중국어", "en-SG": "싱가포르 영어", "ms-SG": "싱가포르 말레이어", "ta-SG": "싱가포르 타밀어",
+    "zh-TW": "대만어", "id": "인도네시아어",
     "uz": "우즈베키스탄어", "ne": "네팔어", "tet": "동티모르어", "lo": "라오스어",
     "mn": "몽골어", "my": "미얀마어", "bn": "방글라데시어", "si": "스리랑카어",
     "km": "캄보디아어", "ky": "키르기스스탄어", "ur": "파키스탄어"
@@ -1651,7 +1650,20 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
     input_box = ft.TextField(
         hint_text=input_hint, 
         expand=True, 
-        height=input_height
+        height=input_height,
+        # 입력 지연 최소화
+        text_style=ft.TextStyle(
+            size=16 if is_mobile else 18,
+            weight=ft.FontWeight.NORMAL,
+        ),
+        # 모바일에서 더 부드러운 입력을 위한 설정
+        border_color=ft.Colors.GREY_300,
+        focused_border_color=ft.Colors.BLUE_400,
+        # 입력 필드 최적화
+        min_lines=1,
+        max_lines=4,
+        # 자동 포커스 방지
+        autofocus=False,
     )
     if is_rag_room:
         if is_foreign_worker_rag or room_id == "foreign_worker_rights_rag":
@@ -1666,6 +1678,8 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
 
     def on_target_lang_change(e):
         current_target_lang[0] = e.control.value
+        # 불필요한 페이지 업데이트 방지
+        # page.update() 제거
 
     # 번역 대상 언어 드롭다운 옵션 (국기+영어 국가명)
     target_lang_options = [
@@ -1675,8 +1689,6 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
         ("zh", "🇨🇳 Chinese"),
         ("zh-TW", "🇹🇼 Taiwanese"),
         ("id", "🇮🇩 Indonesian"),
-        ("ms", "🇲🇾 Malay"),
-        ("ta", "🇮🇳 Tamil"),
         ("fr", "🇫🇷 French"),
         ("de", "🇩🇪 German"),
         ("th", "🇹🇭 Thai"),
@@ -1693,12 +1705,16 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
         ("ky", "🇰🇬 Kyrgyz"),
         ("ur", "🇵🇰 Urdu"),
     ]
-    # 드롭다운 항상 생성
+    # 드롭다운 항상 생성 (성능 최적화)
     target_lang_dropdown = ft.Dropdown(
         value=current_target_lang[0],
         options=[ft.dropdown.Option(key, text) for key, text in target_lang_options],
         width=180 if is_mobile else 220,
-        on_change=on_target_lang_change
+        on_change=on_target_lang_change,
+        # 드롭다운 성능 최적화
+        text_style=ft.TextStyle(size=14 if is_mobile else 16),
+        border_color=ft.Colors.GREY_300,
+        focused_border_color=ft.Colors.BLUE_400,
     )
 
     def create_message_bubble(msg_data, is_me):
@@ -1716,7 +1732,8 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
         # 질문예시(가이드 메시지)라면 글자 크기 한 단계 키움
         nickname = msg_data.get('nickname', '')
         is_guide = is_rag and msg_data.get('is_guide', False)
-        nickname_color = ft.Colors.WHITE if is_me else ft.Colors.BLACK87
+        # RAG 답변인 경우 다크모드에서도 검정색 닉네임 사용
+        nickname_color = ft.Colors.WHITE if is_me else (ft.Colors.BLACK if is_rag else ft.Colors.BLACK87)
         
         # 차단 버튼 (방장이고, 자신의 메시지가 아니고, 시스템/RAG 메시지가 아닐 때만 표시)
         block_button = None
@@ -1732,6 +1749,9 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                     tooltip="사용자 차단 (방장 전용)",
                     on_click=lambda e, nickname=nickname: block_user_from_message(nickname)
                 )
+        
+        # RAG 답변인 경우 다크모드에서도 검정색 텍스트 사용
+        text_color = ft.Colors.WHITE if is_me else (ft.Colors.BLACK if is_rag else ft.Colors.BLACK87)
         
         controls = [
             ft.Row([
@@ -1755,7 +1775,7 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
             ft.Text(
                 msg_data.get('text', ''),
                 size=base_size + (2 if is_guide else 0),
-                color=ft.Colors.WHITE if is_me else ft.Colors.BLACK87,
+                color=text_color,
                 font_family=font_family,
                 selectable=True,
             ),
@@ -1765,18 +1785,21 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                 ft.Text(
                     msg_data.get('translated', ''),
                     size=(base_size - 2) + (2 if is_guide else 0),
-                    color=ft.Colors.WHITE if is_me else ft.Colors.BLACK87,
+                    color=text_color,
                     italic=True,
                     font_family=font_family,
                     selectable=True,
                 )
             )
+        # RAG 답변인 경우 다크모드에서도 밝은 배경 사용
+        bg_color = "#2563EB" if is_me else (ft.Colors.WHITE if is_rag else ft.Colors.GREY_200)
+        
         # Row로 감싸서 좌/우 정렬
         return ft.Row([
             ft.Container(
                 content=ft.Column(controls, spacing=2),
             padding=12,
-                bgcolor="#2563EB" if is_me else ft.Colors.GREY_200,
+                bgcolor=bg_color,
                 border_radius=16,
                 margin=ft.margin.only(top=6, left=8, right=8),
                 width=bubble_width,
@@ -1978,9 +2001,10 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
         if filtered_message != message_text:
             message_text = filtered_message
         
-        # 입력창 초기화 (먼저 초기화하여 UI 반응성 향상)
+        # 입력창 초기화 (성능 최적화)
         input_box.value = ""
-        page.update()
+        # 즉시 업데이트하여 입력 필드 반응성 향상
+        input_box.update()
         
         # 번역 처리
         translated_text = ""
@@ -2016,7 +2040,8 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
             if user_bubble:  # None이 아닌 경우만 처리
                 setattr(user_bubble, 'timestamp', user_msg_data['timestamp'])
                 chat_messages.controls.append(user_bubble)
-                page.update()
+                # 성능 최적화: 개별 컨트롤 업데이트
+                chat_messages.update()
             
             # RAG 답변 추가 (더 안전한 처리)
             try:
@@ -2033,15 +2058,12 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                     setattr(loading_bubble, 'timestamp', loading_msg_data['timestamp'])
                     # 질문 바로 아래에 insert
                     chat_messages.controls.insert(len(chat_messages.controls), loading_bubble)
-                page.update()
+                # 성능 최적화: 개별 컨트롤 업데이트
+                chat_messages.update()
                 
-                # 외국인 근로자 RAG 방에서는 선택된 언어로 답변 생성
-                if is_foreign_worker_rag or room_id == "foreign_worker_rights_rag":
-                    selected_lang = current_target_lang[0] if current_target_lang[0] else user_lang
-                    rag_answer = custom_translate_message(message_text, selected_lang)
-                else:
-                    # 일반 RAG 방에서는 기존 방식 사용
-                    rag_answer = custom_translate_message(message_text, user_lang)
+                # 모든 RAG 방에서 선택된 언어로 답변 생성
+                selected_lang = current_target_lang[0] if current_target_lang[0] else user_lang
+                rag_answer = custom_translate_message(message_text, selected_lang)
                 
                 # 로딩 메시지 위치에 답변을 insert (replace)
                 idx = chat_messages.controls.index(loading_bubble)
@@ -2057,9 +2079,11 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                     if rag_bubble:  # None이 아닌 경우만 처리
                         setattr(rag_bubble, 'timestamp', rag_msg_data['timestamp'])
                         chat_messages.controls.insert(idx, rag_bubble)
-                    page.update()
+                    # 성능 최적화: 개별 컨트롤 업데이트
+                    chat_messages.update()
                 else:
-                    page.update()
+                    # 성능 최적화: 개별 컨트롤 업데이트
+                    chat_messages.update()
             except Exception as e:
                 print(f'RAG 답변 오류: {e}')
                 try:
@@ -2067,7 +2091,8 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                         chat_messages.controls.remove(loading_bubble)
                 except:
                     pass
-                page.update()
+                # 성능 최적화: 개별 컨트롤 업데이트
+                chat_messages.update()
                 error_msg_data = {
                     'text': f"죄송합니다. 답변을 생성하는 중 오류가 발생했습니다: {str(e)}",
                     'nickname': '시스템',
@@ -2077,7 +2102,8 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                 error_bubble = create_message_bubble(error_msg_data, False)
                 setattr(error_bubble, 'timestamp', error_msg_data['timestamp'])
                 chat_messages.controls.append(error_bubble)
-                page.update()
+                # 성능 최적화: 개별 컨트롤 업데이트
+                chat_messages.update()
         # 일반 RAG 채팅방이면 RAG 답변만 직접 추가
         elif custom_translate_message is not None:
             # 사용자 메시지를 먼저 추가
@@ -2091,7 +2117,8 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
             if user_bubble:  # None이 아닌 경우만 처리
                 setattr(user_bubble, 'timestamp', user_msg_data['timestamp'])
                 chat_messages.controls.append(user_bubble)
-                page.update()
+                # 성능 최적화: 개별 컨트롤 업데이트
+                chat_messages.update()
             
             try:
                 # 로딩 메시지를 사용자 메시지 다음에 추가
@@ -2106,7 +2133,8 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
                 if loading_bubble:  # None이 아닌 경우만 처리
                     setattr(loading_bubble, 'timestamp', loading_msg_data['timestamp'])
                     chat_messages.controls.append(loading_bubble)
-                page.update()
+                # 성능 최적화: 개별 컨트롤 업데이트
+                chat_messages.update()
                 
                 # RAG 답변 생성 (선택된 언어로)
                 selected_lang = current_target_lang[0] if current_target_lang[0] else user_lang
@@ -2588,33 +2616,47 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
             page.update()
         threading.Thread(target=close_dialog, daemon=True).start()
 
-    # 입력 영역
+    # 입력 영역 (성능 최적화)
     input_row = ft.Row([
         input_box,
         ft.IconButton(
             ft.Icons.MIC,
             on_click=focus_input_box,
-            tooltip="음성 입력(키보드 마이크 버튼 사용)"
+            tooltip="음성 입력(키보드 마이크 버튼 사용)",
+            # 아이콘 버튼 성능 최적화
+            icon_size=20 if is_mobile else 24,
+            style=ft.ButtonStyle(
+                color=ft.Colors.GREY_600,
+                padding=8,
+            )
         ) if not IS_SERVER else ft.Container(),
         ft.IconButton(
             ft.Icons.SEND,
             on_click=send_message,
-            tooltip="전송"
+            tooltip="전송",
+            # 전송 버튼 성능 최적화
+            icon_size=20 if is_mobile else 24,
+            style=ft.ButtonStyle(
+                color=ft.Colors.BLUE_600,
+                padding=8,
+            )
         ),
-    ], alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER)
+    ], alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER, spacing=4)
 
-    # 입력창 위에 드롭다운 항상 표시
+    # 입력창 위에 드롭다운 항상 표시 (성능 최적화)
     input_area = ft.Column([
         ft.Container(
             content=ft.Row([
-                ft.Text("답변 언어:", size=14, weight=ft.FontWeight.BOLD),
+                ft.Text("답변 언어:", size=14, weight=ft.FontWeight.BOLD, color=get_text_color(page)),
                 target_lang_dropdown
             ], alignment=ft.MainAxisAlignment.START, spacing=12),
             padding=8 if is_mobile else 12,
-            margin=ft.margin.only(bottom=4)
+            margin=ft.margin.only(bottom=4),
+            # 컨테이너 성능 최적화
+            bgcolor=ft.Colors.TRANSPARENT,
         ),
         input_row
-    ], spacing=4)
+    ], spacing=4, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
 
     # chat_column을 스크롤 가능하게 만듦
     if is_rag_room:
@@ -2754,7 +2796,8 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
         # 메시지 텍스트를 클릭 가능한 링크로 변환
         message_text_parts = create_clickable_text(
             msg_data.get('text', ''), 
-            on_image_click=show_image_viewer
+            on_image_click=show_image_viewer,
+            text_color=ft.Colors.WHITE if is_me else None
         )
         
         controls = [
@@ -2781,7 +2824,8 @@ def ChatRoomPage(page, room_id, room_title, user_lang, target_lang, on_back=None
         if msg_data.get('translated', ''):
             translated_parts = create_clickable_text(
                 msg_data.get('translated', ''), 
-                on_image_click=show_image_viewer
+                on_image_click=show_image_viewer,
+                text_color=ft.Colors.WHITE if is_me else None
             )
             controls.append(
                 ft.Row(translated_parts, wrap=True)
@@ -2878,14 +2922,14 @@ def extract_urls(text):
     """텍스트에서 URL들을 추출"""
     return URL_PATTERN.findall(text)
 
-def create_clickable_text(text, on_image_click=None):
+def create_clickable_text(text, on_image_click=None, text_color=None):
     """텍스트에서 이미지 URL을 클릭 가능한 링크로 변환"""
     if not text:
-        return [ft.Text(text, selectable=True)]
+        return [ft.Text(text, selectable=True, color=text_color)]
     
     urls = extract_urls(text)
     if not urls:
-        return [ft.Text(text, selectable=True)]
+        return [ft.Text(text, selectable=True, color=text_color)]
     
     parts = []
     last_end = 0
@@ -2897,7 +2941,7 @@ def create_clickable_text(text, on_image_click=None):
             
         # URL 앞의 텍스트
         if start > last_end:
-            parts.append(ft.Text(text[last_end:start], selectable=True))
+            parts.append(ft.Text(text[last_end:start], selectable=True, color=text_color))
         
         # URL 부분
         if is_image_url(url):
@@ -2921,9 +2965,9 @@ def create_clickable_text(text, on_image_click=None):
     
     # 마지막 URL 뒤의 텍스트
     if last_end < len(text):
-        parts.append(ft.Text(text[last_end:], selectable=True))
+        parts.append(ft.Text(text[last_end:], selectable=True, color=text_color))
     
-    return parts if parts else [ft.Text(text, selectable=True)]
+    return parts if parts else [ft.Text(text, selectable=True, color=text_color)]
 
 def get_text_color(page):
     if page.theme_mode == ft.ThemeMode.DARK:

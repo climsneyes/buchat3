@@ -401,7 +401,32 @@ class HybridRestaurantSearch:
     def generate_answer(self, query: str, results: List[Dict]) -> str:
         """검색 결과를 바탕으로 답변 생성"""
         if not results:
-            return "죄송합니다. 해당 조건에 맞는 맛집을 찾을 수 없습니다. 다른 키워드로 검색해보세요."
+            # DB에 없는 경우 Gemini 검색을 통해 답변 생성
+            try:
+                import google.generativeai as genai
+                genai.configure(api_key=self.gemini_api_key)
+                model = genai.GenerativeModel("gemini-1.5-flash")
+                
+                prompt = f"""부산 맛집에 대한 질문에 대해 100자 이내로 간단하고 친근하게 답변해주세요.
+
+질문: {query}
+
+답변은 다음 조건을 만족해야 합니다:
+1. 100자 이내로 간단하게
+2. 친근하고 도움이 되는 톤
+3. 부산 맛집 관련 정보 제공
+4. 구체적인 추천이나 조언 포함
+
+예시 답변 스타일:
+- "부산에서 {query} 맛집을 찾고 계시는군요! 해운대구의 해산물 맛집이나 서면의 분식집을 추천해드려요."
+- "부산 {query} 맛집은 광안리나 남포동에 많이 있어요. 특히 해운대구의 해산물 맛집들이 유명합니다."
+"""
+                
+                response = model.generate_content(prompt, generation_config={"max_output_tokens": 200, "temperature": 0.7})
+                return response.text.strip()
+            except Exception as e:
+                print(f"Gemini 검색 오류: {e}")
+                return "죄송합니다. 해당 조건에 맞는 맛집을 찾을 수 없습니다. 다른 키워드로 검색해보세요."
         
         answer_parts = []
         

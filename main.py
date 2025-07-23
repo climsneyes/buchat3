@@ -15,7 +15,7 @@ if not os.path.exists("config.py"):
         f.write(f'''
 import os
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-MODEL_NAME = os.getenv("MODEL_NAME", "gemini-pro")
+MODEL_NAME = os.getenv("MODEL_NAME", "gemini-1.5-flash")
 FIREBASE_DB_URL = os.getenv("FIREBASE_DB_URL", "https://pychat-25c45-default-rtdb.asia-southeast1.firebasedatabase.app/")
 FIREBASE_KEY_PATH = os.getenv("FIREBASE_KEY_PATH", "firebase_key.json")
 ''')
@@ -399,6 +399,52 @@ def main(page: ft.Page):
     <style>
       body, * {
         font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', Arial, sans-serif !important;
+      }
+      /* 모바일 입력 필드 최적화 */
+      input, textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 8px;
+        font-size: 16px !important; /* iOS에서 확대 방지 */
+        /* 자동완성 및 제안 비활성화 */
+        -webkit-autocomplete: off;
+        -moz-autocomplete: off;
+        autocomplete: off;
+        -webkit-spellcheck: false;
+        spellcheck: false;
+      }
+      /* 입력 필드 포커스 최적화 */
+      input:focus, textarea:focus {
+        outline: none;
+        border-color: #3B82F6;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+      }
+      /* 자동완성 스타일 제거 */
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+        -webkit-text-fill-color: #000 !important;
+      }
+      /* 모바일 터치 최적화 */
+      * {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      /* 텍스트 입력 필드만 선택 가능 */
+      input, textarea {
+        -webkit-user-select: text;
+        -khtml-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
       }
     </style>
     """
@@ -802,6 +848,7 @@ def main(page: ft.Page):
                     try:
                         print(f"맛집검색 질문: {query}")
                         print(f"타겟 언어: {target_lang}")
+                        print(f"전달할 target_lang: {target_lang}")
                         
                         # 맛집검색 시스템 사용
                         result = search_restaurants(query, GEMINI_API_KEY)
@@ -838,6 +885,7 @@ def main(page: ft.Page):
                     try:
                         print(f"외국인 권리구제 RAG 질문: {query}")
                         print(f"타겟 언어: {target_lang}")
+                        print(f"전달할 target_lang: {target_lang}")
                         
                         # 쓰레기 처리 관련 질문인지 확인
                         from rag_utils import is_waste_related_query
@@ -885,6 +933,7 @@ def main(page: ft.Page):
                     try:
                         print(f"다문화 가족 RAG 질문: {query}")
                         print(f"타겟 언어: {target_lang}")
+                        print(f"전달할 target_lang: {target_lang}")
                         if vector_db_multicultural is None:
                             print("다문화가족 벡터DB가 None입니다.")
                             return "죄송합니다. RAG 기능이 현재 사용할 수 없습니다. (다문화가족 벡터DB가 로드되지 않았습니다.)"
