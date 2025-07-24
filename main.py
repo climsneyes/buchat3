@@ -964,12 +964,12 @@ def main(page: ft.Page):
                 
                 def simulate_qr_scan():
                     time.sleep(3)
-                    # 실제 Firebase에 존재하는 방 ID들로 변경
+                    # 일반 사용자 채팅방 ID들만 사용 (RAG 방 제외)
                     test_data = random.choice([
-                        "rag_korean_guide_e23cf48c-b4bf-4109-89b5-5d52f6fff650",  # 다문화가족 RAG (실제 존재)
-                        "foreign_worker_rights_rag",  # 외국인 권리구제 RAG
-                        "restaurant_search_rag",  # 맛집검색 RAG
-                        "persistent_test_room"  # 영속적 테스트 방
+                        "persistent_test_room",  # 영속적 테스트 방
+                        "user_room_123",  # 일반 사용자 방
+                        "chat_room_456",  # 채팅방
+                        "test_room_789"  # 테스트 방
                     ])
                     print(f"시뮬레이션 QR코드 데이터: {test_data}")
                     callback(test_data)
@@ -1058,10 +1058,38 @@ def main(page: ft.Page):
         print(f"room_id 타입: {type(room_id)}")
         print(f"room_id 길이: {len(room_id) if room_id else 0}")
         
-        # RAG 채팅방인지 확인 (공용 RAG_ROOM_ID로 들어오면, 사용자별로 리다이렉트)
+        # RAG 방 ID 목록 (QR코드 스캔으로 입장 차단)
+        rag_room_ids = [
+            "rag_korean_guide",  # 다문화가족 RAG
+            "foreign_worker_rights_rag",  # 외국인 권리구제 RAG
+            "restaurant_search_rag"  # 맛집검색 RAG
+        ]
+        
+        # RAG 방인지 확인 (QR코드 스캔으로 RAG 방 입장 차단)
         print(f"RAG_ROOM_ID: {RAG_ROOM_ID}")
         print(f"room_id.startswith(RAG_ROOM_ID): {room_id.startswith(RAG_ROOM_ID) if room_id else False}")
         
+        # RAG 방인지 확인
+        is_rag_room = (room_id == RAG_ROOM_ID or 
+                       room_id.startswith(RAG_ROOM_ID) or
+                       room_id in rag_room_ids or
+                       "rag_korean_guide" in room_id)
+        
+        if is_rag_room:
+            print(f"RAG 방 QR코드 스캔 차단: {room_id}")
+            page.snack_bar = ft.SnackBar(
+                content=ft.Text("RAG 채팅방은 QR코드로 입장할 수 없습니다. 메인 화면에서 직접 선택해주세요."),
+                action="확인"
+            )
+            page.snack_bar.open = True
+            page.update()
+            print(f"RAG 방 차단 메시지 표시 완료")
+            print(f"go_home 호출 시작")
+            go_home(lang)
+            print(f"go_home 호출 완료")
+            return
+        
+        # 기존 RAG 방 처리 로직 (QR코드가 아닌 직접 접근 시에만)
         if room_id == RAG_ROOM_ID or room_id.startswith(RAG_ROOM_ID):
             print(f"RAG 채팅방으로 인식됨")
             user_id = page.session.get("user_id")
