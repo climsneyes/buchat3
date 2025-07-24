@@ -45,8 +45,24 @@ from restaurant_search_system import search_restaurants
 
 IS_SERVER = os.environ.get("CLOUDTYPE") == "1"  # Cloudtype 환경변수 등으로 구분
 
-# Cloudtype 배포 주소를 반드시 실제 주소로 바꿔주세요!
-BASE_URL = "https://port-0-buchat-m0t1itev3f2879ad.sel4.cloudtype.app"
+# Cloudtype 배포 주소를 동적으로 설정
+def get_base_url():
+    """실제 배포된 URL을 동적으로 가져오는 함수"""
+    # 환경변수에서 URL 가져오기
+    env_url = os.getenv("BASE_URL")
+    if env_url:
+        return env_url
+    
+    # Cloudtype 환경변수 확인
+    cloudtype_url = os.getenv("CLOUDTYPE_URL")
+    if cloudtype_url:
+        return cloudtype_url
+    
+    # 기본값 (개발 환경)
+    return "https://port-0-buchat-m0t1itev3f2879ad.sel4.cloudtype.app"
+
+BASE_URL = get_base_url()
+print(f"사용 중인 BASE_URL: {BASE_URL}")
 
 # RAG 채팅방 상수
 RAG_ROOM_ID = "rag_korean_guide"
@@ -510,6 +526,11 @@ def main(page: ft.Page):
                 page.update()
         # QR코드에 전체 URL이 들어가도록 수정 (영속적 채팅방 정보 포함)
         qr_data = f"{BASE_URL}/join_room/{room_id}"
+        print(f"=== QR코드 생성 디버그 ===")
+        print(f"생성된 QR코드 URL: {qr_data}")
+        print(f"BASE_URL: {BASE_URL}")
+        print(f"room_id: {room_id}")
+        
         qr = qrcode.QRCode(version=1, box_size=10, border=5)
         qr.add_data(qr_data)
         qr.make(fit=True)
@@ -825,29 +846,72 @@ def main(page: ft.Page):
             qr_text = e.data  # JS에서 전달된 QR코드 텍스트
             print(f"=== JavaScript에서 QR코드 데이터 수신 ===")
             print(f"받은 qr_text: {qr_text}")
+            print(f"qr_text 타입: {type(qr_text)}")
+            print(f"qr_text 길이: {len(qr_text) if qr_text else 0}")
+            
             # QR코드에서 방 ID 추출
-            if "/join_room/" in qr_text:
+            room_id = None
+            if qr_text and "/join_room/" in qr_text:
                 room_id = qr_text.split("/join_room/")[-1].split("/")[0]
                 print(f"URL에서 추출된 room_id: {room_id}")
-            else:
-                room_id = qr_text
+            elif qr_text:
+                room_id = qr_text.strip()
                 print(f"직접 추출된 room_id: {room_id}")
+            else:
+                print("qr_text가 비어있거나 None입니다.")
+            
             if room_id:
                 print(f"최종 추출된 room_id: {room_id}")
+                print(f"go_chat_from_list 호출 시작")
                 go_chat_from_list(room_id)
+            else:
+                print("QR코드에서 room_id를 추출할 수 없습니다.")
+                # 사용자에게 오류 메시지 표시
+                page.snack_bar = ft.SnackBar(
+                    content=ft.Text("올바르지 않은 QR코드입니다."),
+                    action="확인"
+                )
+                page.snack_bar.open = True
+                page.update()
 
         def on_manual_input(e):
             manual_room_id = manual_input_field.value.strip()
             if manual_room_id:
-                print(f"수동 입력된 room_id: {manual_room_id}")
+                print(f"=== 수동 입력 처리 ===")
+                print(f"수동 입력된 데이터: {manual_room_id}")
+                print(f"입력 데이터 타입: {type(manual_room_id)}")
+                print(f"입력 데이터 길이: {len(manual_room_id)}")
+                
                 # URL에서 방 ID 추출
+                room_id = None
                 if "/join_room/" in manual_room_id:
                     room_id = manual_room_id.split("/join_room/")[-1].split("/")[0]
                     print(f"URL에서 추출된 room_id: {room_id}")
                 else:
                     room_id = manual_room_id
                     print(f"직접 사용된 room_id: {room_id}")
-                go_chat_from_list(room_id)
+                
+                if room_id:
+                    print(f"최종 사용할 room_id: {room_id}")
+                    go_chat_from_list(room_id)
+                else:
+                    print("수동 입력에서 room_id를 추출할 수 없습니다.")
+                    # 사용자에게 오류 메시지 표시
+                    page.snack_bar = ft.SnackBar(
+                        content=ft.Text("올바르지 않은 입력입니다."),
+                        action="확인"
+                    )
+                    page.snack_bar.open = True
+                    page.update()
+            else:
+                print("수동 입력이 비어있습니다.")
+                # 사용자에게 안내
+                page.snack_bar = ft.SnackBar(
+                    content=ft.Text("QR코드 내용을 입력해주세요."),
+                    action="확인"
+                )
+                page.snack_bar.open = True
+                page.update()
 
         # 다국어 텍스트 사전
         FIND_BY_QR_TEXTS = {
