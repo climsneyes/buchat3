@@ -964,11 +964,12 @@ def main(page: ft.Page):
                 
                 def simulate_qr_scan():
                     time.sleep(3)
+                    # 실제 Firebase에 존재하는 방 ID들로 변경
                     test_data = random.choice([
-                        "room_12345678",
-                        "rag_korean_guide_test",
-                        "foreign_worker_rights_rag",
-                        "restaurant_search_rag"
+                        "rag_korean_guide_e23cf48c-b4bf-4109-89b5-5d52f6fff650",  # 다문화가족 RAG (실제 존재)
+                        "foreign_worker_rights_rag",  # 외국인 권리구제 RAG
+                        "restaurant_search_rag",  # 맛집검색 RAG
+                        "persistent_test_room"  # 영속적 테스트 방
                     ])
                     print(f"시뮬레이션 QR코드 데이터: {test_data}")
                     callback(test_data)
@@ -999,8 +1000,8 @@ def main(page: ft.Page):
                     callback("")
             
             print(f"이벤트 리스너 등록 시작")
-            page.on_event("qrScanned", on_qr_scanned)
-            print(f"이벤트 리스너 등록 완료")
+            # page.on_event는 Flet에서 지원하지 않으므로 제거
+            print(f"이벤트 리스너 등록 완료 (시뮬레이션 방식에서는 불필요)")
             
         except Exception as e:
             print(f"QR코드 스캔 오류: {e}")
