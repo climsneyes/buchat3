@@ -489,13 +489,9 @@ def main(page: ft.Page):
                 page.overlay.pop()
                 page.update()
         
-        # 로컬 환경에서는 localhost:8000 사용, 서버 환경에서는 BASE_URL 사용
-        if IS_SERVER:
-            qr_data = f"{BASE_URL}/chat/{room_id}"
-        else:
-            qr_data = f"http://localhost:8000/chat/{room_id}"
-        
-        print(f"QR 코드 데이터: {qr_data}")
+        # QR 코드에 방 ID만 넣어서 간단하게 처리
+        qr_data = room_id
+        print(f"QR 코드 데이터 (방 ID): {qr_data}")
         
         qr = qrcode.QRCode(version=1, box_size=10, border=5)
         qr.add_data(qr_data)
@@ -565,6 +561,13 @@ def main(page: ft.Page):
                     width=350
                 ),
                 persistent_info if is_persistent else ft.Container(),
+                ft.Text(
+                    "📱 QR 코드를 스캔한 후, 방 ID를 입력하는 페이지로 이동합니다.",
+                    size=12,
+                    color=ft.Colors.BLUE_600,
+                    text_align="center",
+                    max_lines=3
+                ),
                 ft.ElevatedButton(texts["close"], on_click=close_dialog, width=300)
             ], tight=True, spacing=15, horizontal_alignment=ft.CrossAxisAlignment.CENTER),
             width=350,
@@ -1116,6 +1119,37 @@ def main(page: ft.Page):
                 )
             )
             page.go("/test")
+        elif page.route == "/enter_room_id":
+            # QR 코드 스캔 후 방 ID 입력 페이지
+            def on_room_id_submit(e=None):
+                room_id = room_id_field.value.strip()
+                if room_id:
+                    print(f"방 ID 입력됨: {room_id}")
+                    go_chat_from_list(room_id)
+            
+            room_id_field = ft.TextField(
+                label="방 ID를 입력하세요",
+                hint_text="QR 코드에서 스캔한 방 ID",
+                width=300,
+                on_submit=on_room_id_submit
+            )
+            
+            page.views.clear()
+            page.views.append(
+                ft.View(
+                    "/enter_room_id",
+                    controls=[
+                        ft.Text("방 ID 입력", size=20, weight=ft.FontWeight.BOLD),
+                        ft.Text("QR 코드에서 스캔한 방 ID를 입력하세요", size=14),
+                        room_id_field,
+                        ft.ElevatedButton("입장", on_click=on_room_id_submit, width=300),
+                        ft.ElevatedButton("홈으로", on_click=lambda e: go_home(lang), width=300),
+                    ],
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                    vertical_alignment=ft.MainAxisAlignment.CENTER
+                )
+            )
+            page.go("/enter_room_id")
         elif page.route.startswith("/join_room/"):
             room_id = parts[2]
             print(f"QR 코드로 채팅방 참여 시도: {room_id}")
