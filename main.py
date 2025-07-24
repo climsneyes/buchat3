@@ -964,12 +964,12 @@ def main(page: ft.Page):
                 
                 def simulate_qr_scan():
                     time.sleep(3)
-                    # 일반 사용자 채팅방 ID들만 사용 (RAG 방 제외)
+                    # 실제 Firebase에 존재하는 일반 사용자 채팅방 ID들만 사용 (RAG 방 제외)
                     test_data = random.choice([
-                        "persistent_test_room",  # 영속적 테스트 방
-                        "user_room_123",  # 일반 사용자 방
-                        "chat_room_456",  # 채팅방
-                        "test_room_789"  # 테스트 방
+                        "03558704",  # 실제 존재하는 방
+                        "f8ae1de0",  # 실제 존재하는 방
+                        "persistent_0e12de26",  # 실제 존재하는 영속적 방
+                        "persistent_f2da8888"  # 실제 존재하는 영속적 방
                     ])
                     print(f"시뮬레이션 QR코드 데이터: {test_data}")
                     callback(test_data)
