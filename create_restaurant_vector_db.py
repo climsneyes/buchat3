@@ -120,7 +120,8 @@ def normalize_restaurant_data(busan_food: Dict, taxi_ranking: Dict) -> List[Dict
                         if closed:
                             search_text_parts.append(f"휴무일: {closed}")
                         
-                        # 검색용 텍스트 조합
+                        # 지역 정보를 강조하여 검색용 텍스트 조합
+                        search_text_parts.insert(0, f"지역: {district}")
                         search_text = " ".join(search_text_parts)
                         
                         normalized_item = {
@@ -195,7 +196,8 @@ def normalize_restaurant_data(busan_food: Dict, taxi_ranking: Dict) -> List[Dict
                 if reason:
                     search_text_parts.append(f"추천이유: {reason}")
                 
-                # 검색용 텍스트 조합
+                # 지역 정보를 강조하여 검색용 텍스트 조합
+                search_text_parts.insert(0, f"지역: {district}")
                 search_text = " ".join(search_text_parts)
                 
                 normalized_item = {

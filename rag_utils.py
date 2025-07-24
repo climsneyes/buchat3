@@ -324,7 +324,7 @@ BUSAN_DISTRICTS = [
 WASTE_KEYWORDS = [
     "쓰레기", "폐기물", "배출", "종량제", "봉투", "가격", "요일", "시간",
     "음식물쓰레기", "재활용", "대형폐기물", "소형폐가전", "특수폐기물", "형광등", "건전지",
-    "의약품", "수거", "업체", "신고", "수수료", "전용용기", "분리배출",
+    "의약품", "수거", "업체", "수수료", "전용용기", "분리배출",
     "침대", "소파", "장롱", "가구", "가전", "버리", "폐기", "수거",
     "정화조", "청소", "대형폐기물", "소형폐가전", "폐가전", "폐가구",
     
@@ -365,7 +365,10 @@ WASTE_KEYWORDS = [
     "화분", "화분용기", "화분받침대", "화분받침", "화분받침대", "화분받침", "화분받침대", "화분받침",
     "개집", "강아지집", "강아지용집", "강아지용개집", "강아지용개집", "강아지용개집", "강아지용개집",
     "고양이타워", "고양이집", "고양이용집", "고양이용타워", "고양이용타워", "고양이용타워", "고양이용타워",
-    "천막", "천막용", "천막용품", "천막용구", "천막용도구", "천막용장치", "천막용기구", "천막용품"
+    "천막", "천막용", "천막용품", "천막용구", "천막용도구", "천막용장치", "천막용기구", "천막용품",
+    
+    # 쓰레기 처리 관련 구체적 키워드 (신고 제거)
+    "쓰레기신고", "폐기물신고", "대형폐기물신고", "쓰레기수거신고", "폐기물수거신고"
 ]
 
 # 언어별 오류 메시지
@@ -707,7 +710,7 @@ def get_foreign_worker_prompt_template(target_lang):
 
 # 4. Gemini 기반 RAG 답변 생성 함수
 def answer_with_rag(query, vector_db, gemini_api_key, model=None, target_lang=None, conversation_context=None):
-    model = "models/gemini-1.5-flash"
+    model = "models/gemini-2.0-flash-lite"
     print(f"  - Gemini RAG 답변 생성 시작")
     print(f"  - 전달받은 target_lang: {target_lang}")
     lang = detect_language(query)
@@ -776,7 +779,7 @@ def answer_with_rag(query, vector_db, gemini_api_key, model=None, target_lang=No
                 prompt = multicultural_prompt_template.format(context=context, query=combined_query)
                 
                 genai.configure(api_key=gemini_api_key)
-                model = genai.GenerativeModel("gemini-1.5-flash")
+                model = genai.GenerativeModel("gemini-2.0-flash-lite")
                 response = model.generate_content(prompt, generation_config={"max_output_tokens": 1000, "temperature": 0.1})
                 answer = response.text.strip()
                 return answer
@@ -860,7 +863,7 @@ def answer_with_rag(query, vector_db, gemini_api_key, model=None, target_lang=No
     prompt = multicultural_prompt_template.format(context=context, query=query)
     
     genai.configure(api_key=gemini_api_key)
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.0-flash-lite")
     response = model.generate_content(prompt, generation_config={"max_output_tokens": 1000, "temperature": 0.1})
     answer = response.text.strip()
     return answer
@@ -949,7 +952,7 @@ def get_district_contact_info(district):
 """)
 
 def answer_with_rag_foreign_worker(query, vector_db, gemini_api_key, model=None, target_lang=None, conversation_context=None):
-    model = "models/gemini-1.5-flash"
+    model = "models/gemini-2.0-flash-lite"
     print(f"  - Gemini 외국인 근로자 RAG 답변 생성 시작")
     print(f"  - 전달받은 target_lang: {target_lang}")
     lang = detect_language(query)
@@ -1018,7 +1021,7 @@ def answer_with_rag_foreign_worker(query, vector_db, gemini_api_key, model=None,
                 prompt = foreign_worker_prompt_template.format(context=context, query=combined_query)
                 
                 genai.configure(api_key=gemini_api_key)
-                model = genai.GenerativeModel("gemini-1.5-flash")
+                model = genai.GenerativeModel("gemini-2.0-flash-lite")
                 response = model.generate_content(prompt, generation_config={"max_output_tokens": 1000, "temperature": 0.1})
                 answer = response.text.strip()
                 return answer
@@ -1102,7 +1105,7 @@ def answer_with_rag_foreign_worker(query, vector_db, gemini_api_key, model=None,
     prompt = foreign_worker_prompt_template.format(context=context, query=query)
     
     genai.configure(api_key=gemini_api_key)
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.0-flash-lite")
     response = model.generate_content(prompt, generation_config={"max_output_tokens": 1000, "temperature": 0.1})
     answer = response.text.strip()
     return answer
