@@ -860,12 +860,26 @@ def main(page: ft.Page):
                 )
             else:
                 print(f"오류: ID가 {room_id}인 방을 찾을 수 없습니다.")
-                # 방을 찾을 수 없으면 홈으로 리다이렉트
-                go_home(lang)
+                # 방을 찾을 수 없으면 사용자에게 알리고 방 찾기 페이지로 이동
+                page.snack_bar = ft.SnackBar(
+                    content=ft.Text(f"방 ID '{room_id}'를 찾을 수 없습니다. 올바른 ID인지 확인해주세요."),
+                    action="확인",
+                    duration=5000
+                )
+                page.snack_bar.open = True
+                page.update()
+                go_room_list(lang)
         except Exception as e:
             print(f"Firebase에서 방 정보 가져오기 실패: {e}")
-            # 오류 발생 시 홈으로 리다이렉트
-            go_home(lang)
+            # 오류 발생 시 사용자에게 알리고 방 찾기 페이지로 이동
+            page.snack_bar = ft.SnackBar(
+                content=ft.Text(f"네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요."),
+                action="확인",
+                duration=5000
+            )
+            page.snack_bar.open = True
+            page.update()
+            go_room_list(lang)
 
     def go_chat(user_lang, target_lang, room_id, room_title="채팅방", is_rag=False, is_foreign_worker_rag=False, is_restaurant_search_rag=False):
         def after_nickname(nickname):
@@ -1089,9 +1103,12 @@ def main(page: ft.Page):
         # 채팅방 진입 (is_restaurant_search_rag=True로 설정)
         go_chat(lang, lang, room_id, room_title, is_rag=False, is_foreign_worker_rag=False, is_restaurant_search_rag=True)
 
-    # --- 라우팅 처리 ---
+        # --- 라우팅 처리 ---
     def route_change(route):
+        nonlocal lang  # lang 변수를 수정할 수 있도록 함
         print(f"Route: {page.route}")
+        print(f"현재 lang: {lang}")
+        print(f"세션 정보: nickname={page.session.get('nickname')}, user_id={page.session.get('user_id')}")
         parts = page.route.split('/')
         
         if page.route == "/":
@@ -1100,21 +1117,31 @@ def main(page: ft.Page):
             go_home(lang)
         elif page.route == "/create_room":
             go_create(lang)
-
-
         elif page.route.startswith("/join_room/"):
             room_id = parts[2]
             print(f"QR 코드로 채팅방 참여 시도: {room_id}")
+            # 언어가 초기화되지 않았으면 기본값으로 설정
+            if not lang:
+                lang = "ko"
+                print(f"언어가 초기화되지 않아 기본값(ko)으로 설정")
             # QR코드로 참여 시, Firebase에서 방 정보를 가져옵니다.
             go_chat_from_list(room_id)
         elif page.route.startswith("/chat/"):
             # 직접 채팅방 URL로 접근한 경우
             room_id = parts[2]
             print(f"직접 채팅방 접근: {room_id}")
+            # 언어가 초기화되지 않았으면 기본값으로 설정
+            if not lang:
+                lang = "ko"
+                print(f"언어가 초기화되지 않아 기본값(ko)으로 설정")
             go_chat_from_list(room_id)
         else:
             # 알 수 없는 라우트는 홈으로 리다이렉트
             print(f"알 수 없는 라우트: {page.route}, 홈으로 리다이렉트")
+            # 언어가 초기화되지 않았으면 기본값으로 설정
+            if not lang:
+                lang = "ko"
+                print(f"언어가 초기화되지 않아 기본값(ko)으로 설정")
             go_home(lang)
         page.update()
 
