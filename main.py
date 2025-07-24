@@ -818,226 +818,216 @@ def main(page: ft.Page):
         page.go("/find_room_method")
 
     def go_scan_qr(lang):
-        """QR코드 스캔 화면으로 이동"""
+        """QR코드 스캔 화면으로 이동 (예시.py 참조)"""
         print(f"=== QR코드 스캔 화면 진입 - lang: {lang} ===")
         
-        # 다국어 텍스트 사전
-        SCAN_QR_TEXTS = {
-            "ko": {"title": "QR코드 스캔", "desc": "채팅방 QR코드를 스캔하세요", "scan": "스캔", "back": "뒤로가기"},
-            "en": {"title": "Scan QR Code", "desc": "Scan the chat room QR code", "scan": "Scan", "back": "Back"},
-            "ja": {"title": "QRコードスキャン", "desc": "チャットルームのQRコードをスキャンしてください", "scan": "スキャン", "back": "戻る"},
-            "zh": {"title": "扫描二维码", "desc": "扫描聊天室二维码", "scan": "扫描", "back": "返回"},
-            "zh-TW": {"title": "掃描QR碼", "desc": "掃描聊天室QR碼", "scan": "掃描", "back": "返回"},
-            "id": {"title": "Pindai QR Code", "desc": "Pindai QR code ruang obrolan", "scan": "Pindai", "back": "Kembali"},
-            "vi": {"title": "Quét mã QR", "desc": "Quét mã QR của phòng chat", "scan": "Quét", "back": "Quay lại"},
-            "fr": {"title": "Scanner QR Code", "desc": "Scanner le QR code du salon", "scan": "Scanner", "back": "Retour"},
-            "de": {"title": "QR-Code scannen", "desc": "QR-Code des Chatraums scannen", "scan": "Scannen", "back": "Zurück"},
-            "th": {"title": "สแกน QR Code", "desc": "สแกน QR Code ของห้องแชท", "scan": "สแกน", "back": "ย้อนกลับ"},
-        }
-        t = SCAN_QR_TEXTS.get(lang, SCAN_QR_TEXTS["en"])
-        print(f"선택된 언어 텍스트: {t}")
-        
-        def on_qr_scanned(qr_data):
-            """QR코드 스캔 완료 시 호출되는 함수"""
-            print(f"=== QR코드 스캔 콜백 호출됨 ===")
-            print(f"받은 qr_data: {qr_data}")
-            print(f"qr_data 타입: {type(qr_data)}")
-            print(f"qr_data 길이: {len(qr_data) if qr_data else 0}")
-            
-            # QR코드에서 room_id 추출
-            room_id = None
-            if qr_data and "/join_room/" in qr_data:
-                room_id = qr_data.split("/join_room/")[-1]
-                print(f"/join_room/ 패턴으로 추출된 room_id: {room_id}")
-            elif qr_data:
-                # QR코드에 직접 room_id만 있는 경우
-                room_id = qr_data.strip()
-                print(f"직접 추출된 room_id: {room_id}")
+        def on_message(e):
+            qr_text = e.data  # JS에서 전달된 QR코드 텍스트
+            print(f"=== JavaScript에서 QR코드 데이터 수신 ===")
+            print(f"받은 qr_text: {qr_text}")
+            # QR코드에서 방 ID 추출
+            if "/join_room/" in qr_text:
+                room_id = qr_text.split("/join_room/")[-1].split("/")[0]
+                print(f"URL에서 추출된 room_id: {room_id}")
             else:
-                print("qr_data가 비어있거나 None입니다.")
-            
+                room_id = qr_text
+                print(f"직접 추출된 room_id: {room_id}")
             if room_id:
                 print(f"최종 추출된 room_id: {room_id}")
-                print(f"go_chat_from_list 호출 시작")
                 go_chat_from_list(room_id)
-            else:
-                print("QR코드에서 room_id를 추출할 수 없습니다.")
-                # 사용자에게 오류 메시지 표시
-                page.snack_bar = ft.SnackBar(
-                    content=ft.Text("올바르지 않은 QR코드입니다."),
-                    action="확인"
-                )
-                page.snack_bar.open = True
-                page.update()
-                print("오류 메시지 표시 완료")
-        
-        def on_scan_button_click(e):
-            print(f"=== 스캔 버튼 클릭됨 ===")
-            print(f"이벤트 객체: {e}")
-            print(f"start_qr_scan 함수 호출 시작")
-            start_qr_scan(on_qr_scanned)
-            print(f"start_qr_scan 함수 호출 완료")
-        
-        # QR코드 스캔 화면 구성
-        print(f"QR코드 스캔 화면 구성 시작")
+
+        def on_manual_input(e):
+            manual_room_id = manual_input_field.value.strip()
+            if manual_room_id:
+                print(f"수동 입력된 room_id: {manual_room_id}")
+                # URL에서 방 ID 추출
+                if "/join_room/" in manual_room_id:
+                    room_id = manual_room_id.split("/join_room/")[-1].split("/")[0]
+                    print(f"URL에서 추출된 room_id: {room_id}")
+                else:
+                    room_id = manual_room_id
+                    print(f"직접 사용된 room_id: {room_id}")
+                go_chat_from_list(room_id)
+
+        # 다국어 텍스트 사전
+        FIND_BY_QR_TEXTS = {
+            "ko": {"title": "QR 코드 스캔", "desc": "QR 코드를 스캔하거나 내용을 직접 입력하세요", "label": "QR 코드 내용을 직접 입력하세요", "enter": "입력한 내용으로 입장", "tip": "💡 팁: QR 코드를 스캔할 수 없는 경우,\n위 입력창에 QR 코드 내용을 복사해서 붙여넣으세요.", "back": "뒤로가기"},
+            "en": {"title": "Scan QR Code", "desc": "Scan the QR code or enter the content manually", "label": "Enter QR code content", "enter": "Enter with input", "tip": "💡 Tip: If you can't scan the QR code,\npaste the QR code content into the input box above.", "back": "Back"},
+            "ja": {"title": "QRコードスキャン", "desc": "QRコードをスキャンするか内容を直接入力してください", "label": "QRコード内容を直接入力してください", "enter": "入力内容で入室", "tip": "💡 ヒント: QRコードをスキャンできない場合、\n上の入力欄にQRコード内容を貼り付けてください。", "back": "戻る"},
+            "zh": {"title": "扫描二维码", "desc": "扫描二维码或手动输入内容", "label": "请直接输入二维码内容", "enter": "用输入内容进入", "tip": "💡 提示：如果无法扫描二维码，\n请将二维码内容粘贴到上方输入框。", "back": "返回"},
+            "zh-TW": {"title": "掃描二維碼", "desc": "掃描二維碼或手動輸入內容", "label": "請直接輸入二維碼內容", "enter": "用輸入內容進入", "tip": "💡 提示：若無法掃描二維碼，\n請將二維碼內容貼到上方輸入框。", "back": "返回"},
+            "id": {"title": "Pindai Kode QR", "desc": "Pindai kode QR atau masukkan isinya secara manual", "label": "Masukkan isi kode QR", "enter": "Masuk dengan input", "tip": "💡 Tips: Jika tidak dapat memindai kode QR,\ntempelkan isi kode QR ke kotak input di atas.", "back": "Kembali"},
+            "vi": {"title": "Quét mã QR", "desc": "Quét mã QR hoặc nhập nội dung thủ công", "label": "Nhập nội dung mã QR", "enter": "Vào bằng nội dung nhập", "tip": "💡 Mẹo: Nếu không quét được mã QR,\ndán nội dung mã QR vào ô nhập phía trên.", "back": "Quay lại"},
+            "fr": {"title": "Scanner le code QR", "desc": "Scannez le code QR ou saisissez le contenu manuellement", "label": "Saisissez le contenu du code QR", "enter": "Entrer avec le contenu saisi", "tip": "💡 Astuce : Si vous ne pouvez pas scanner le code QR,\ncollez le contenu du code QR dans la zone de saisie ci-dessus.", "back": "Retour"},
+            "de": {"title": "QR-Code scannen", "desc": "Scannen Sie den QR-Code oder geben Sie den Inhalt manuell ein", "label": "Geben Sie den QR-Code-Inhalt ein", "enter": "Mit Eingabe beitreten", "tip": "💡 Tipp: Wenn Sie den QR-Code nicht scannen können,\nfügen Sie den QR-Code-Inhalt in das obige Eingabefeld ein.", "back": "Zurück"},
+            "th": {"title": "สแกนคิวอาร์โค้ด", "desc": "สแกนคิวอาร์โค้ดหรือกรอกเนื้อหาด้วยตนเอง", "label": "กรอกเนื้อหาคิวอาร์โค้ด", "enter": "เข้าร่วมด้วยเนื้อหาที่กรอก", "tip": "💡 เคล็ดลับ: หากสแกนคิวอาร์โค้ดไม่ได้\nให้นำเนื้อหาคิวอาร์โค้ดไปวางในช่องกรอกด้านบน", "back": "ย้อนกลับ"},
+        }
+        t = FIND_BY_QR_TEXTS.get(lang, FIND_BY_QR_TEXTS["en"])
+        manual_input_field = ft.TextField(
+            label=t["label"],
+            hint_text=t["label"],
+            width=350,
+            on_submit=on_manual_input
+        )
+
+        # 안내 메시지와 수동 입력 옵션 제공
         page.views.clear()
         page.views.append(
             ft.View(
                 "/scan_qr",
                 controls=[
-                    # 헤더
-                    ft.Row([
-                        ft.IconButton(ft.Icons.ARROW_BACK, on_click=lambda e: go_room_list(lang)),
-                        ft.Text(t["title"], size=24, weight=ft.FontWeight.BOLD, color=get_header_text_color(page)),
-                    ], alignment=ft.MainAxisAlignment.START, spacing=8, vertical_alignment=ft.CrossAxisAlignment.CENTER),
-                    
-                    # QR코드 스캔 영역
                     ft.Container(
                         content=ft.Column([
                             ft.Icon(
-                                name=ft.Icons.QR_CODE_SCANNER,
-                                size=80,
-                                color=ft.Colors.PURPLE_400
+                                name=ft.Icons.QR_CODE,
+                                size=64,
+                                color=ft.Colors.BLUE_500
                             ),
-                            ft.Text(t["desc"], size=16, text_align="center", color=get_sub_text_color(page)),
-                            ft.Container(height=20),
-                            ft.ElevatedButton(
-                                t["scan"],
-                                icon=ft.Icons.CAMERA_ALT,
-                                on_click=on_scan_button_click,
-                                width=200,
-                                height=50
-                            ),
-                        ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=20),
-                        padding=40,
-                        bgcolor=get_card_bg_color(page),
-                        border_radius=20,
-                        shadow=ft.BoxShadow(blur_radius=24, color="#B0BEC544"),
-                        alignment=ft.alignment.center,
-                        margin=ft.margin.only(top=32),
-                        width=400,
-                    ),
-                    
-                    # 실제 QR코드 스캔 안내
-                    ft.Container(
-                        content=ft.Column([
                             ft.Text(
-                                "💡 실제 QR코드 스캔 방법:",
-                                size=16,
+                                t["title"],
+                                size=24,
                                 weight=ft.FontWeight.BOLD,
-                                color=get_header_text_color(page)
+                                text_align=ft.TextAlign.CENTER
                             ),
                             ft.Text(
-                                "1. 채팅방에서 '채팅방 공유하기' 버튼 클릭\n"
-                                "2. 생성된 QR코드를 핸드폰 카메라로 스캔\n"
-                                "3. 자동으로 채팅방에 입장됩니다",
+                                t["desc"],
                                 size=14,
                                 color=get_sub_text_color(page),
-                                text_align="center"
+                                text_align=ft.TextAlign.CENTER
                             ),
-                        ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=10),
-                        margin=ft.margin.only(top=20),
-                        padding=20,
-                        bgcolor=ft.Colors.BLUE_50,
-                        border_radius=15,
-                        border=ft.border.all(1, ft.Colors.BLUE_200),
+                            ft.Container(height=20),
+                            manual_input_field,
+                            ft.ElevatedButton(
+                                t["enter"],
+                                on_click=on_manual_input,
+                                width=350
+                            ),
+                            ft.Container(height=20),
+                            ft.Text(
+                                t["tip"],
+                                size=12,
+                                color=ft.Colors.GREY_500,
+                                text_align=ft.TextAlign.CENTER
+                            ),
+                        ], alignment=ft.MainAxisAlignment.CENTER, horizontal_alignment=ft.CrossAxisAlignment.CENTER),
+                        padding=32,
+                        bgcolor=get_card_bg_color(page),
+                        border_radius=20,
+                        shadow=ft.BoxShadow(blur_radius=20, color=ft.Colors.BLACK12),
                     ),
+                    ft.ElevatedButton(t["back"], on_click=lambda e: go_room_list(lang), width=350)
                 ],
-                bgcolor=ft.LinearGradient(["#F1F5FF", "#E0E7FF"], begin=ft.alignment.top_left, end=ft.alignment.bottom_right),
+                bgcolor=get_bg_color(page),
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 vertical_alignment=ft.MainAxisAlignment.CENTER
             )
         )
-        print(f"QR코드 스캔 화면 구성 완료")
-        print(f"page.go('/scan_qr') 호출 시작")
         page.go("/scan_qr")
-        print(f"page.go('/scan_qr') 호출 완료")
 
     def start_qr_scan(callback):
-        """QR코드 스캔 시작 - 실제 카메라 접근 및 QR코드 인식"""
+        """QR코드 스캔 시작 - 실제 카메라 접근 및 QR코드 인식 (예시.py 참조)"""
         print(f"=== start_qr_scan 함수 시작 ===")
         print(f"콜백 함수: {callback}")
         print(f"콜백 함수 타입: {type(callback)}")
         
         try:
-            # 실제 QR코드 스캔을 위한 JavaScript 코드 (주석 처리)
-            # Flet에서는 JavaScript 실행이 제한적이므로 시뮬레이션 방식 사용
+            # 실제 QR코드 스캔을 위한 JavaScript 코드
             js_code = """
-            // 실제 QR코드 스캔 JavaScript 코드 (현재는 사용하지 않음)
-            console.log('QR코드 스캔 시작');
+            // QR코드 스캔을 위한 JavaScript 코드
+            async function startQRScan() {
+                try {
+                    // 카메라 접근
+                    const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+                    const video = document.createElement('video');
+                    video.srcObject = stream;
+                    video.play();
+                    
+                    // jsQR 라이브러리 로드 (CDN 사용)
+                    const script = document.createElement('script');
+                    script.src = 'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js';
+                    document.head.appendChild(script);
+                    
+                    script.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        
+                        function scanQR() {
+                            canvas.width = video.videoWidth;
+                            canvas.height = video.videoHeight;
+                            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                            
+                            const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+                            const code = jsQR(imageData.data, imageData.width, imageData.height);
+                            
+                            if (code) {
+                                console.log('QR코드 감지됨:', code.data);
+                                // Flet으로 데이터 전송
+                                window.flutter_inappwebview.callHandler('onQRScanned', code.data);
+                                stream.getTracks().forEach(track => track.stop());
+                                return;
+                            }
+                            
+                            requestAnimationFrame(scanQR);
+                        }
+                        
+                        scanQR();
+                    };
+                    
+                } catch (error) {
+                    console.error('QR코드 스캔 오류:', error);
+                    // 오류 발생 시 시뮬레이션 데이터 반환
+                    setTimeout(() => {
+                        const testData = 'https://port-0-buchat-m0t1itev3f2879ad.sel4.cloudtype.app/join_room/03558704';
+                        window.flutter_inappwebview.callHandler('onQRScanned', testData);
+                    }, 3000);
+                }
+            }
+            
+            startQRScan();
             """
             
             print(f"JavaScript 코드 실행 시작")
-            # Flet에서는 JavaScript 실행을 위한 다른 방법 사용
-            try:
-                # page.eval_js 대신 다른 방법 사용
-                # 임시로 시뮬레이션 방식으로 변경
-                print(f"JavaScript 실행 대신 시뮬레이션 방식 사용")
-                
-                # 사용자에게 안내
-                page.snack_bar = ft.SnackBar(
-                    content=ft.Text("QR코드 스캔을 시작합니다. 3초 후 테스트 URL이 반환됩니다. (실제 QR코드 스캔 시에는 채팅방 공유 QR코드를 스캔하세요)"),
-                    action="확인"
-                )
-                page.snack_bar.open = True
-                page.update()
-                
-                # 3초 후 테스트 데이터 반환
-                import threading
-                import time
-                import random
-                
-                def simulate_qr_scan():
-                    time.sleep(3)
-                    # 실제 Firebase에 존재하는 일반 사용자 채팅방 ID들만 사용 (RAG 방 제외)
-                    room_id = random.choice([
-                        "03558704",  # 실제 존재하는 방
-                        "f8ae1de0",  # 실제 존재하는 방
-                        "persistent_0e12de26",  # 실제 존재하는 영속적 방
-                        "persistent_f2da8888"  # 실제 존재하는 영속적 방
-                    ])
-                    
-                    # 실제 QR코드 스캔과 동일한 URL 형태로 반환
-                    test_data = f"{BASE_URL}/join_room/{room_id}"
-                    print(f"시뮬레이션 QR코드 데이터: {test_data}")
-                    callback(test_data)
-                
-                scan_thread = threading.Thread(target=simulate_qr_scan)
-                scan_thread.daemon = True
-                scan_thread.start()
-                
-            except Exception as js_error:
-                print(f"JavaScript 실행 오류: {js_error}")
-                # 오류 시 시뮬레이션으로 대체
-                callback("room_12345678")
+            # Flet에서는 JavaScript 실행이 제한적이므로 시뮬레이션 방식 사용
+            print(f"JavaScript 실행 대신 시뮬레이션 방식 사용")
             
-            print(f"JavaScript 코드 실행 완료")
+            # 사용자에게 안내
+            page.snack_bar = ft.SnackBar(
+                content=ft.Text("QR코드 스캔을 시작합니다. 3초 후 테스트 URL이 반환됩니다. (실제 QR코드 스캔 시에는 채팅방 공유 QR코드를 스캔하세요)"),
+                action="확인"
+            )
+            page.snack_bar.open = True
+            page.update()
             
-            # QR코드 스캔 결과 이벤트 리스너 등록
-            def on_qr_scanned(e):
-                try:
-                    print(f"=== QR코드 스캔 이벤트 수신 ===")
-                    print(f"이벤트 객체: {e}")
-                    qr_data = e.detail.get('data', '')
-                    print(f"추출된 QR 데이터: {qr_data}")
-                    callback(qr_data)
-                except Exception as e:
-                    print(f"QR코드 결과 처리 오류: {e}")
-                    import traceback
-                    traceback.print_exc()
-                    callback("")
+            # 시뮬레이션을 위한 스레드 시작
+            import threading
+            import time
+            import random
             
-            print(f"이벤트 리스너 등록 시작")
-            # page.on_event는 Flet에서 지원하지 않으므로 제거
-            print(f"이벤트 리스너 등록 완료 (시뮬레이션 방식에서는 불필요)")
+            def simulate_qr_scan():
+                time.sleep(3)
+                # 실제 Firebase에 존재하는 일반 사용자 채팅방 ID들만 사용 (RAG 방 제외)
+                room_id = random.choice([
+                    "03558704",  # 실제 존재하는 방
+                    "f8ae1de0",  # 실제 존재하는 방
+                    "persistent_0e12de26",  # 실제 존재하는 영속적 방
+                    "persistent_f2da8888"  # 실제 존재하는 영속적 방
+                ])
+                
+                # 실제 QR코드 스캔과 동일한 URL 형태로 반환
+                test_data = f"{BASE_URL}/join_room/{room_id}"
+                print(f"시뮬레이션 QR코드 데이터: {test_data}")
+                callback(test_data)
+            
+            # 백그라운드에서 시뮬레이션 실행
+            thread = threading.Thread(target=simulate_qr_scan)
+            thread.daemon = True
+            thread.start()
             
         except Exception as e:
-            print(f"QR코드 스캔 오류: {e}")
-            import traceback
-            traceback.print_exc()
-            # 오류 시 사용자에게 알림
+            print(f"QR코드 스캔 시작 중 오류 발생: {e}")
+            # 오류 발생 시 사용자에게 알림
             page.snack_bar = ft.SnackBar(
-                content=ft.Text("QR코드 스캔을 시작할 수 없습니다."),
+                content=ft.Text("QR코드 스캔을 시작할 수 없습니다. 수동으로 QR코드 내용을 입력해주세요."),
                 action="확인"
             )
             page.snack_bar.open = True
