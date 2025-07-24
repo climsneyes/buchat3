@@ -819,6 +819,8 @@ def main(page: ft.Page):
 
     def go_scan_qr(lang):
         """QR코드 스캔 화면으로 이동"""
+        print(f"=== QR코드 스캔 화면 진입 - lang: {lang} ===")
+        
         # 다국어 텍스트 사전
         SCAN_QR_TEXTS = {
             "ko": {"title": "QR코드 스캔", "desc": "채팅방 QR코드를 스캔하세요", "scan": "스캔", "back": "뒤로가기"},
@@ -833,21 +835,30 @@ def main(page: ft.Page):
             "th": {"title": "สแกน QR Code", "desc": "สแกน QR Code ของห้องแชท", "scan": "สแกน", "back": "ย้อนกลับ"},
         }
         t = SCAN_QR_TEXTS.get(lang, SCAN_QR_TEXTS["en"])
+        print(f"선택된 언어 텍스트: {t}")
         
         def on_qr_scanned(qr_data):
             """QR코드 스캔 완료 시 호출되는 함수"""
-            print(f"QR코드 스캔 결과: {qr_data}")
+            print(f"=== QR코드 스캔 콜백 호출됨 ===")
+            print(f"받은 qr_data: {qr_data}")
+            print(f"qr_data 타입: {type(qr_data)}")
+            print(f"qr_data 길이: {len(qr_data) if qr_data else 0}")
             
             # QR코드에서 room_id 추출
             room_id = None
             if qr_data and "/join_room/" in qr_data:
                 room_id = qr_data.split("/join_room/")[-1]
+                print(f"/join_room/ 패턴으로 추출된 room_id: {room_id}")
             elif qr_data:
                 # QR코드에 직접 room_id만 있는 경우
                 room_id = qr_data.strip()
+                print(f"직접 추출된 room_id: {room_id}")
+            else:
+                print("qr_data가 비어있거나 None입니다.")
             
             if room_id:
-                print(f"추출된 room_id: {room_id}")
+                print(f"최종 추출된 room_id: {room_id}")
+                print(f"go_chat_from_list 호출 시작")
                 go_chat_from_list(room_id)
             else:
                 print("QR코드에서 room_id를 추출할 수 없습니다.")
@@ -858,8 +869,17 @@ def main(page: ft.Page):
                 )
                 page.snack_bar.open = True
                 page.update()
+                print("오류 메시지 표시 완료")
+        
+        def on_scan_button_click(e):
+            print(f"=== 스캔 버튼 클릭됨 ===")
+            print(f"이벤트 객체: {e}")
+            print(f"start_qr_scan 함수 호출 시작")
+            start_qr_scan(on_qr_scanned)
+            print(f"start_qr_scan 함수 호출 완료")
         
         # QR코드 스캔 화면 구성
+        print(f"QR코드 스캔 화면 구성 시작")
         page.views.clear()
         page.views.append(
             ft.View(
@@ -884,7 +904,7 @@ def main(page: ft.Page):
                             ft.ElevatedButton(
                                 t["scan"],
                                 icon=ft.Icons.CAMERA_ALT,
-                                on_click=lambda e: start_qr_scan(on_qr_scanned),
+                                on_click=on_scan_button_click,
                                 width=200,
                                 height=50
                             ),
@@ -903,10 +923,17 @@ def main(page: ft.Page):
                 vertical_alignment=ft.MainAxisAlignment.CENTER
             )
         )
+        print(f"QR코드 스캔 화면 구성 완료")
+        print(f"page.go('/scan_qr') 호출 시작")
         page.go("/scan_qr")
+        print(f"page.go('/scan_qr') 호출 완료")
 
     def start_qr_scan(callback):
         """QR코드 스캔 시작 - 간단한 시뮬레이션"""
+        print(f"=== start_qr_scan 함수 시작 ===")
+        print(f"콜백 함수: {callback}")
+        print(f"콜백 함수 타입: {type(callback)}")
+        
         try:
             # 간단한 QR코드 스캔 시뮬레이션
             # 실제 구현에서는 카메라 접근이 필요하지만, 
@@ -919,33 +946,46 @@ def main(page: ft.Page):
                 "foreign_worker_rights_rag",
                 "restaurant_search_rag"
             ]
+            print(f"테스트 QR코드 데이터: {test_qr_data}")
             
             # 사용자에게 QR코드 스캔 시뮬레이션 안내
+            print(f"스낵바 표시 시작")
             page.snack_bar = ft.SnackBar(
                 content=ft.Text("QR코드 스캔 시뮬레이션을 시작합니다. 3초 후 테스트 데이터가 반환됩니다."),
                 action="확인"
             )
             page.snack_bar.open = True
             page.update()
+            print(f"스낵바 표시 완료")
             
             # 3초 후 랜덤 테스트 데이터 반환
             import random
             import time
             
             def simulate_qr_scan():
+                print(f"=== simulate_qr_scan 함수 시작 ===")
+                print(f"3초 대기 시작")
                 time.sleep(3)
+                print(f"3초 대기 완료")
+                
                 random_data = random.choice(test_qr_data)
-                print(f"QR코드 스캔 시뮬레이션 결과: {random_data}")
+                print(f"선택된 랜덤 데이터: {random_data}")
+                print(f"콜백 함수 호출 시작")
                 callback(random_data)
+                print(f"콜백 함수 호출 완료")
             
             # 별도 스레드에서 실행
             import threading
+            print(f"스레드 생성 시작")
             scan_thread = threading.Thread(target=simulate_qr_scan)
             scan_thread.daemon = True
             scan_thread.start()
+            print(f"스레드 시작 완료")
             
         except Exception as e:
             print(f"QR코드 스캔 오류: {e}")
+            import traceback
+            traceback.print_exc()
             # 오류 시 사용자에게 알림
             page.snack_bar = ft.SnackBar(
                 content=ft.Text("QR코드 스캔을 시작할 수 없습니다."),
@@ -992,20 +1032,32 @@ def main(page: ft.Page):
         page.go("/find_by_id")
 
     def go_chat_from_list(room_id):
-        print(f"QR 코드로 채팅방 접근 시도: {room_id}")
+        print(f"=== go_chat_from_list 함수 시작 ===")
+        print(f"받은 room_id: {room_id}")
+        print(f"room_id 타입: {type(room_id)}")
+        print(f"room_id 길이: {len(room_id) if room_id else 0}")
         
         # RAG 채팅방인지 확인 (공용 RAG_ROOM_ID로 들어오면, 사용자별로 리다이렉트)
+        print(f"RAG_ROOM_ID: {RAG_ROOM_ID}")
+        print(f"room_id.startswith(RAG_ROOM_ID): {room_id.startswith(RAG_ROOM_ID) if room_id else False}")
+        
         if room_id == RAG_ROOM_ID or room_id.startswith(RAG_ROOM_ID):
+            print(f"RAG 채팅방으로 인식됨")
             user_id = page.session.get("user_id")
+            print(f"현재 user_id: {user_id}")
             if not user_id:
                 user_id = str(uuid.uuid4())
                 page.session.set("user_id", user_id)
+                print(f"새로 생성된 user_id: {user_id}")
             user_rag_room_id = f"{RAG_ROOM_ID}_{user_id}"
-            print(f"RAG 채팅방으로 리다이렉트: {user_rag_room_id}")
+            print(f"생성된 user_rag_room_id: {user_rag_room_id}")
+            print(f"go_chat 호출 시작 (RAG)")
             go_chat(lang, lang, user_rag_room_id, RAG_ROOM_TITLE, is_rag=True)
+            print(f"go_chat 호출 완료 (RAG)")
             return
         
         # Firebase 사용 가능 여부 확인
+        print(f"FIREBASE_AVAILABLE: {FIREBASE_AVAILABLE}")
         if not FIREBASE_AVAILABLE:
             print(f"Firebase가 사용 불가능하여 방 정보를 가져올 수 없습니다: {room_id}")
             # 사용자에게 오류 메시지 표시
@@ -1015,14 +1067,22 @@ def main(page: ft.Page):
             )
             page.snack_bar.open = True
             page.update()
+            print(f"Firebase 오류 메시지 표시 완료")
+            print(f"go_home 호출 시작")
             go_home(lang)
+            print(f"go_home 호출 완료")
             return
         
         try:
+            print(f"Firebase에서 방 정보 조회 시작")
             room_ref = db.reference(f'/rooms/{room_id}')
+            print(f"Firebase 참조 생성: {room_ref}")
             room_data = room_ref.get()
+            print(f"Firebase에서 가져온 room_data: {room_data}")
+            
             if room_data:
                 print(f"방 정보 찾음: {room_data}")
+                print(f"go_chat 호출 시작 (일반 채팅방)")
                 go_chat(
                     user_lang=room_data.get('user_lang', 'ko'),
                     target_lang=room_data.get('target_lang', 'en'),
@@ -1030,6 +1090,7 @@ def main(page: ft.Page):
                     room_title=room_data.get('title', '채팅방'),
                     is_rag=room_data.get('is_rag', False)
                 )
+                print(f"go_chat 호출 완료 (일반 채팅방)")
             else:
                 print(f"오류: ID가 {room_id}인 방을 찾을 수 없습니다.")
                 # 사용자에게 오류 메시지 표시
@@ -1039,9 +1100,14 @@ def main(page: ft.Page):
                 )
                 page.snack_bar.open = True
                 page.update()
+                print(f"채팅방 없음 오류 메시지 표시 완료")
+                print(f"go_home 호출 시작")
                 go_home(lang)
+                print(f"go_home 호출 완료")
         except Exception as e:
             print(f"Firebase에서 방 정보 가져오기 실패: {e}")
+            import traceback
+            traceback.print_exc()
             # 사용자에게 오류 메시지 표시
             page.snack_bar = ft.SnackBar(
                 content=ft.Text("채팅방 정보를 가져오는 중 오류가 발생했습니다."),
@@ -1049,7 +1115,10 @@ def main(page: ft.Page):
             )
             page.snack_bar.open = True
             page.update()
+            print(f"Firebase 예외 오류 메시지 표시 완료")
+            print(f"go_home 호출 시작")
             go_home(lang)
+            print(f"go_home 호출 완료")
 
     def go_chat(user_lang, target_lang, room_id, room_title="채팅방", is_rag=False, is_foreign_worker_rag=False, is_restaurant_search_rag=False):
         def after_nickname(nickname):
