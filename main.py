@@ -525,7 +525,8 @@ def main(page: ft.Page):
                 page.overlay.pop()
                 page.update()
         # QR코드에 전체 URL이 들어가도록 수정 (영속적 채팅방 정보 포함)
-        qr_data = f"{BASE_URL}/join_room/{room_id}"
+        # 실제 채팅방 URL로 직접 접속하도록 수정
+        qr_data = f"{BASE_URL}/chat/{room_id}"
         print(f"=== QR코드 생성 디버그 ===")
         print(f"생성된 QR코드 URL: {qr_data}")
         print(f"BASE_URL: {BASE_URL}")
@@ -853,7 +854,10 @@ def main(page: ft.Page):
             room_id = None
             if qr_text and "/join_room/" in qr_text:
                 room_id = qr_text.split("/join_room/")[-1].split("/")[0]
-                print(f"URL에서 추출된 room_id: {room_id}")
+                print(f"/join_room/ URL에서 추출된 room_id: {room_id}")
+            elif qr_text and "/chat/" in qr_text:
+                room_id = qr_text.split("/chat/")[-1].split("/")[0]
+                print(f"/chat/ URL에서 추출된 room_id: {room_id}")
             elif qr_text:
                 room_id = qr_text.strip()
                 print(f"직접 추출된 room_id: {room_id}")
@@ -886,7 +890,10 @@ def main(page: ft.Page):
                 room_id = None
                 if "/join_room/" in manual_room_id:
                     room_id = manual_room_id.split("/join_room/")[-1].split("/")[0]
-                    print(f"URL에서 추출된 room_id: {room_id}")
+                    print(f"/join_room/ URL에서 추출된 room_id: {room_id}")
+                elif "/chat/" in manual_room_id:
+                    room_id = manual_room_id.split("/chat/")[-1].split("/")[0]
+                    print(f"/chat/ URL에서 추출된 room_id: {room_id}")
                 else:
                     room_id = manual_room_id
                     print(f"직접 사용된 room_id: {room_id}")
@@ -1489,6 +1496,10 @@ def main(page: ft.Page):
         elif page.route.startswith("/join_room/"):
             room_id = parts[2]
             # QR코드로 참여 시, Firebase에서 방 정보를 가져옵니다.
+            go_chat_from_list(room_id)
+        elif page.route.startswith("/chat/"):
+            room_id = parts[2]
+            # 직접 채팅방 URL로 접속 시, Firebase에서 방 정보를 가져옵니다.
             go_chat_from_list(room_id)
         # 다른 라우트 핸들링...
         page.update()
