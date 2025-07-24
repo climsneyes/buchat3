@@ -917,6 +917,31 @@ def main(page: ft.Page):
                         margin=ft.margin.only(top=32),
                         width=400,
                     ),
+                    
+                    # 실제 QR코드 스캔 안내
+                    ft.Container(
+                        content=ft.Column([
+                            ft.Text(
+                                "💡 실제 QR코드 스캔 방법:",
+                                size=16,
+                                weight=ft.FontWeight.BOLD,
+                                color=get_header_text_color(page)
+                            ),
+                            ft.Text(
+                                "1. 채팅방에서 '채팅방 공유하기' 버튼 클릭\n"
+                                "2. 생성된 QR코드를 핸드폰 카메라로 스캔\n"
+                                "3. 자동으로 채팅방에 입장됩니다",
+                                size=14,
+                                color=get_sub_text_color(page),
+                                text_align="center"
+                            ),
+                        ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=10),
+                        margin=ft.margin.only(top=20),
+                        padding=20,
+                        bgcolor=ft.Colors.BLUE_50,
+                        border_radius=15,
+                        border=ft.border.all(1, ft.Colors.BLUE_200),
+                    ),
                 ],
                 bgcolor=ft.LinearGradient(["#F1F5FF", "#E0E7FF"], begin=ft.alignment.top_left, end=ft.alignment.bottom_right),
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
@@ -951,7 +976,7 @@ def main(page: ft.Page):
                 
                 # 사용자에게 안내
                 page.snack_bar = ft.SnackBar(
-                    content=ft.Text("QR코드 스캔을 시작합니다. 3초 후 테스트 데이터가 반환됩니다."),
+                    content=ft.Text("QR코드 스캔을 시작합니다. 3초 후 테스트 URL이 반환됩니다. (실제 QR코드 스캔 시에는 채팅방 공유 QR코드를 스캔하세요)"),
                     action="확인"
                 )
                 page.snack_bar.open = True
@@ -965,12 +990,15 @@ def main(page: ft.Page):
                 def simulate_qr_scan():
                     time.sleep(3)
                     # 실제 Firebase에 존재하는 일반 사용자 채팅방 ID들만 사용 (RAG 방 제외)
-                    test_data = random.choice([
+                    room_id = random.choice([
                         "03558704",  # 실제 존재하는 방
                         "f8ae1de0",  # 실제 존재하는 방
                         "persistent_0e12de26",  # 실제 존재하는 영속적 방
                         "persistent_f2da8888"  # 실제 존재하는 영속적 방
                     ])
+                    
+                    # 실제 QR코드 스캔과 동일한 URL 형태로 반환
+                    test_data = f"{BASE_URL}/join_room/{room_id}"
                     print(f"시뮬레이션 QR코드 데이터: {test_data}")
                     callback(test_data)
                 
