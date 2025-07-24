@@ -488,8 +488,15 @@ def main(page: ft.Page):
             if page.overlay:
                 page.overlay.pop()
                 page.update()
-        # QR코드에 전체 URL이 들어가도록 수정 (영속적 채팅방 정보 포함)
-        qr_data = f"{BASE_URL}/join_room/{room_id}"
+        
+        # 로컬 환경에서는 localhost:8000 사용, 서버 환경에서는 BASE_URL 사용
+        if IS_SERVER:
+            qr_data = f"{BASE_URL}/chat/{room_id}"
+        else:
+            qr_data = f"http://localhost:8000/chat/{room_id}"
+        
+        print(f"QR 코드 데이터: {qr_data}")
+        
         qr = qrcode.QRCode(version=1, box_size=10, border=5)
         qr.add_data(qr_data)
         qr.make(fit=True)
@@ -1090,6 +1097,25 @@ def main(page: ft.Page):
             go_home(lang)
         elif page.route == "/create_room":
             go_create(lang)
+        elif page.route == "/test":
+            # 디버깅용 테스트 페이지
+            page.views.clear()
+            page.views.append(
+                ft.View(
+                    "/test",
+                    controls=[
+                        ft.Text("QR 코드 테스트 페이지", size=20, weight=ft.FontWeight.BOLD),
+                        ft.Text(f"현재 라우트: {page.route}"),
+                        ft.Text(f"세션 닉네임: {page.session.get('nickname', '없음')}"),
+                        ft.Text(f"세션 사용자 ID: {page.session.get('user_id', '없음')}"),
+                        ft.ElevatedButton("홈으로", on_click=lambda e: go_home(lang)),
+                        ft.ElevatedButton("테스트 채팅방", on_click=lambda e: go_chat_from_list("test_room")),
+                    ],
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                    vertical_alignment=ft.MainAxisAlignment.CENTER
+                )
+            )
+            page.go("/test")
         elif page.route.startswith("/join_room/"):
             room_id = parts[2]
             print(f"QR 코드로 채팅방 참여 시도: {room_id}")
@@ -1099,7 +1125,13 @@ def main(page: ft.Page):
             # 직접 채팅방 URL로 접근한 경우
             room_id = parts[2]
             print(f"직접 채팅방 접근: {room_id}")
-            go_chat_from_list(room_id)
+            # 닉네임이 없으면 닉네임 입력 화면으로, 있으면 바로 채팅방으로
+            if not page.session.get("nickname"):
+                print("닉네임이 없어서 닉네임 입력 화면으로 이동")
+                go_chat_from_list(room_id)
+            else:
+                print("닉네임이 있어서 바로 채팅방으로 이동")
+                go_chat_from_list(room_id)
         else:
             # 알 수 없는 라우트는 홈으로 리다이렉트
             print(f"알 수 없는 라우트: {page.route}, 홈으로 리다이렉트")
