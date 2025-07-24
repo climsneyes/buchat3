@@ -811,6 +811,8 @@ def main(page: ft.Page):
         page.go("/find_by_id")
 
     def go_chat_from_list(room_id):
+        print(f"채팅방 참여 시도: {room_id}")
+        
         # RAG 채팅방인지 확인 (공용 RAG_ROOM_ID로 들어오면, 사용자별로 리다이렉트)
         if room_id == RAG_ROOM_ID or room_id.startswith(RAG_ROOM_ID):
             user_id = page.session.get("user_id")
@@ -818,13 +820,27 @@ def main(page: ft.Page):
                 user_id = str(uuid.uuid4())
                 page.session.set("user_id", user_id)
             user_rag_room_id = f"{RAG_ROOM_ID}_{user_id}"
+            print(f"RAG 채팅방 참여 - 사용자별 방 ID: {user_rag_room_id}")
             go_chat(lang, lang, user_rag_room_id, RAG_ROOM_TITLE, is_rag=True)
+            return
+        
+        # 외국인 근로자 권리구제 RAG 채팅방인지 확인
+        if room_id == "foreign_worker_rights_rag":
+            print(f"외국인 근로자 권리구제 RAG 채팅방 참여")
+            go_chat(lang, lang, room_id, "외국인 근로자 권리구제", is_rag=False, is_foreign_worker_rag=True)
+            return
+        
+        # 맛집검색 RAG 채팅방인지 확인
+        if room_id == "restaurant_search_rag":
+            print(f"맛집검색 RAG 채팅방 참여")
+            go_chat(lang, lang, room_id, "맛집검색", is_rag=False, is_foreign_worker_rag=False, is_restaurant_search_rag=True)
             return
         
         try:
             room_ref = db.reference(f'/rooms/{room_id}')
             room_data = room_ref.get()
             if room_data:
+                print(f"Firebase에서 방 정보 찾음: {room_data.get('title', '채팅방')}")
                 go_chat(
                     user_lang=room_data.get('user_lang', 'ko'),
                     target_lang=room_data.get('target_lang', 'en'),
@@ -834,8 +850,12 @@ def main(page: ft.Page):
                 )
             else:
                 print(f"오류: ID가 {room_id}인 방을 찾을 수 없습니다.")
+                # 방을 찾을 수 없으면 홈으로 리다이렉트
+                go_home(lang)
         except Exception as e:
             print(f"Firebase에서 방 정보 가져오기 실패: {e}")
+            # 오류 발생 시 홈으로 리다이렉트
+            go_home(lang)
 
     def go_chat(user_lang, target_lang, room_id, room_title="채팅방", is_rag=False, is_foreign_worker_rag=False, is_restaurant_search_rag=False):
         def after_nickname(nickname):
@@ -1072,9 +1092,18 @@ def main(page: ft.Page):
             go_create(lang)
         elif page.route.startswith("/join_room/"):
             room_id = parts[2]
+            print(f"QR 코드로 채팅방 참여 시도: {room_id}")
             # QR코드로 참여 시, Firebase에서 방 정보를 가져옵니다.
             go_chat_from_list(room_id)
-        # 다른 라우트 핸들링...
+        elif page.route.startswith("/chat/"):
+            # 직접 채팅방 URL로 접근한 경우
+            room_id = parts[2]
+            print(f"직접 채팅방 접근: {room_id}")
+            go_chat_from_list(room_id)
+        else:
+            # 알 수 없는 라우트는 홈으로 리다이렉트
+            print(f"알 수 없는 라우트: {page.route}, 홈으로 리다이렉트")
+            go_home(lang)
         page.update()
 
     page.on_route_change = route_change
