@@ -489,12 +489,9 @@ def main(page: ft.Page):
                 page.overlay.pop()
                 page.update()
         
-        # QR 코드에 직접 앱 URL을 넣어서 간단하게 처리 (원래 방식)
-        if IS_SERVER:
-            qr_data = f"{BASE_URL}/join_room/{room_id}"
-        else:
-            qr_data = f"http://localhost:8000/join_room/{room_id}"
-        print(f"QR 코드 데이터: {qr_data}")
+        # QR 코드는 항상 실제 배포된 서버 URL을 사용 (모바일에서 접근하기 위해)
+        qr_data = f"{BASE_URL}/join_room/{room_id}"
+        print(f"QR 코드 데이터 (항상 배포 서버): {qr_data}")
         
         qr = qrcode.QRCode(version=1, box_size=10, border=5)
         qr.add_data(qr_data)
