@@ -1390,7 +1390,9 @@ def main(page: ft.Page):
                     on_share=on_share_clicked,
                     firebase_available=FIREBASE_AVAILABLE
                 ))
-            page.go(f"/chat/{room_id}")
+            # 라우팅 중복 방지를 위해 직접 페이지 업데이트
+            print(f"채팅방 페이지 설정 완료 - room_id: {room_id}")
+            page.update()
         def on_share_clicked(e):
             print(f"--- DEBUG: 공유 버튼 클릭됨 ---")
             show_qr_dialog(room_id, room_title)
@@ -1499,7 +1501,14 @@ def main(page: ft.Page):
             go_chat_from_list(room_id)
         elif page.route.startswith("/chat/"):
             room_id = parts[2]
+            print(f"=== /chat/ 경로 라우팅 처리 ===")
+            print(f"추출된 room_id: {room_id}")
             # 직접 채팅방 URL로 접속 시, Firebase에서 방 정보를 가져옵니다.
+            # 중복 호출 방지를 위해 현재 페이지가 이미 채팅방인지 확인
+            current_route = page.route
+            if current_route == f"/chat/{room_id}":
+                print(f"이미 해당 채팅방 페이지에 있음: {current_route}")
+                return
             go_chat_from_list(room_id)
         # 다른 라우트 핸들링...
         page.update()
