@@ -489,12 +489,12 @@ def main(page: ft.Page):
                 page.overlay.pop()
                 page.update()
         
-        # QR 코드에 실제 웹 URL을 넣되, 방 ID를 URL 파라미터로 전달
+        # QR 코드에 직접 앱 URL을 넣어서 간단하게 처리 (원래 방식)
         if IS_SERVER:
             qr_data = f"{BASE_URL}/join_room/{room_id}"
         else:
             qr_data = f"http://localhost:8000/join_room/{room_id}"
-        print(f"QR 코드 데이터 (웹 URL): {qr_data}")
+        print(f"QR 코드 데이터: {qr_data}")
         
         qr = qrcode.QRCode(version=1, box_size=10, border=5)
         qr.add_data(qr_data)
@@ -825,8 +825,6 @@ def main(page: ft.Page):
 
     def go_chat_from_list(room_id):
         print(f"채팅방 참여 시도: {room_id}")
-        print(f"현재 언어: {lang}")
-        print(f"Firebase 사용 가능: {FIREBASE_AVAILABLE}")
         
         # RAG 채팅방인지 확인 (공용 RAG_ROOM_ID로 들어오면, 사용자별로 리다이렉트)
         if room_id == RAG_ROOM_ID or room_id.startswith(RAG_ROOM_ID):
@@ -852,12 +850,10 @@ def main(page: ft.Page):
             return
         
         try:
-            print(f"Firebase에서 방 정보 조회 시도: /rooms/{room_id}")
             room_ref = db.reference(f'/rooms/{room_id}')
             room_data = room_ref.get()
             if room_data:
                 print(f"Firebase에서 방 정보 찾음: {room_data.get('title', '채팅방')}")
-                print(f"방 데이터: {room_data}")
                 go_chat(
                     user_lang=room_data.get('user_lang', 'ko'),
                     target_lang=room_data.get('target_lang', 'en'),
@@ -871,8 +867,6 @@ def main(page: ft.Page):
                 go_home(lang)
         except Exception as e:
             print(f"Firebase에서 방 정보 가져오기 실패: {e}")
-            import traceback
-            traceback.print_exc()
             # 오류 발생 시 홈으로 리다이렉트
             go_home(lang)
 
@@ -1109,74 +1103,18 @@ def main(page: ft.Page):
             go_home(lang)
         elif page.route == "/create_room":
             go_create(lang)
-        elif page.route == "/test":
-            # 디버깅용 테스트 페이지
-            page.views.clear()
-            page.views.append(
-                ft.View(
-                    "/test",
-                    controls=[
-                        ft.Text("QR 코드 테스트 페이지", size=20, weight=ft.FontWeight.BOLD),
-                        ft.Text(f"현재 라우트: {page.route}"),
-                        ft.Text(f"세션 닉네임: {page.session.get('nickname', '없음')}"),
-                        ft.Text(f"세션 사용자 ID: {page.session.get('user_id', '없음')}"),
-                        ft.ElevatedButton("홈으로", on_click=lambda e: go_home(lang)),
-                        ft.ElevatedButton("테스트 채팅방", on_click=lambda e: go_chat_from_list("test_room")),
-                    ],
-                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                    vertical_alignment=ft.MainAxisAlignment.CENTER
-                )
-            )
-            page.go("/test")
-        elif page.route == "/enter_room_id":
-            # QR 코드 스캔 후 방 ID 입력 페이지
-            def on_room_id_submit(e=None):
-                room_id = room_id_field.value.strip()
-                if room_id:
-                    print(f"방 ID 입력됨: {room_id}")
-                    go_chat_from_list(room_id)
-            
-            room_id_field = ft.TextField(
-                label="방 ID를 입력하세요",
-                hint_text="QR 코드에서 스캔한 방 ID",
-                width=300,
-                on_submit=on_room_id_submit
-            )
-            
-            page.views.clear()
-            page.views.append(
-                ft.View(
-                    "/enter_room_id",
-                    controls=[
-                        ft.Text("방 ID 입력", size=20, weight=ft.FontWeight.BOLD),
-                        ft.Text("QR 코드에서 스캔한 방 ID를 입력하세요", size=14),
-                        room_id_field,
-                        ft.ElevatedButton("입장", on_click=on_room_id_submit, width=300),
-                        ft.ElevatedButton("홈으로", on_click=lambda e: go_home(lang), width=300),
-                    ],
-                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                    vertical_alignment=ft.MainAxisAlignment.CENTER
-                )
-            )
-            page.go("/enter_room_id")
+
+
         elif page.route.startswith("/join_room/"):
             room_id = parts[2]
             print(f"QR 코드로 채팅방 참여 시도: {room_id}")
-            print(f"현재 페이지 라우트: {page.route}")
-            print(f"세션 닉네임: {page.session.get('nickname', '없음')}")
             # QR코드로 참여 시, Firebase에서 방 정보를 가져옵니다.
             go_chat_from_list(room_id)
         elif page.route.startswith("/chat/"):
             # 직접 채팅방 URL로 접근한 경우
             room_id = parts[2]
             print(f"직접 채팅방 접근: {room_id}")
-            # 닉네임이 없으면 닉네임 입력 화면으로, 있으면 바로 채팅방으로
-            if not page.session.get("nickname"):
-                print("닉네임이 없어서 닉네임 입력 화면으로 이동")
-                go_chat_from_list(room_id)
-            else:
-                print("닉네임이 있어서 바로 채팅방으로 이동")
-                go_chat_from_list(room_id)
+            go_chat_from_list(room_id)
         else:
             # 알 수 없는 라우트는 홈으로 리다이렉트
             print(f"알 수 없는 라우트: {page.route}, 홈으로 리다이렉트")
