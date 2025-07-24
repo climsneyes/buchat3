@@ -525,8 +525,8 @@ def main(page: ft.Page):
                 page.overlay.pop()
                 page.update()
         # QR코드에 전체 URL이 들어가도록 수정 (영속적 채팅방 정보 포함)
-        # 실제 채팅방 URL로 직접 접속하도록 수정
-        qr_data = f"{BASE_URL}/chat/{room_id}"
+        # buchat2와 호환성을 위해 /join_room/ 경로 사용
+        qr_data = f"{BASE_URL}/join_room/{room_id}"
         print(f"=== QR코드 생성 디버그 ===")
         print(f"생성된 QR코드 URL: {qr_data}")
         print(f"BASE_URL: {BASE_URL}")
@@ -1084,7 +1084,7 @@ def main(page: ft.Page):
                     "persistent_f2da8888"  # 실제 존재하는 영속적 방
                 ])
                 
-                # 실제 QR코드 스캔과 동일한 URL 형태로 반환
+                # 실제 QR코드 스캔과 동일한 URL 형태로 반환 (/join_room/ 경로 사용)
                 test_data = f"{BASE_URL}/join_room/{room_id}"
                 print(f"시뮬레이션 QR코드 데이터: {test_data}")
                 callback(test_data)
@@ -1497,7 +1497,14 @@ def main(page: ft.Page):
             go_scan_qr(lang)
         elif page.route.startswith("/join_room/"):
             room_id = parts[2]
+            print(f"=== /join_room/ 경로 라우팅 처리 ===")
+            print(f"추출된 room_id: {room_id}")
             # QR코드로 참여 시, Firebase에서 방 정보를 가져옵니다.
+            # 중복 호출 방지를 위해 현재 페이지가 이미 채팅방인지 확인
+            current_route = page.route
+            if current_route == f"/join_room/{room_id}":
+                print(f"이미 해당 채팅방 페이지에 있음: {current_route}")
+                return
             go_chat_from_list(room_id)
         elif page.route.startswith("/chat/"):
             room_id = parts[2]
