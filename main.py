@@ -906,57 +906,53 @@ def main(page: ft.Page):
         page.go("/scan_qr")
 
     def start_qr_scan(callback):
-        """QR코드 스캔 시작 (실제 구현은 브라우저 API 사용)"""
+        """QR코드 스캔 시작 - 간단한 시뮬레이션"""
         try:
-            # 브라우저에서 QR코드 스캔 API 사용
-            import asyncio
-            import json
+            # 간단한 QR코드 스캔 시뮬레이션
+            # 실제 구현에서는 카메라 접근이 필요하지만, 
+            # 현재 환경에서는 시뮬레이션으로 대체
             
-            async def scan_qr():
-                # HTML5 QR코드 스캔을 위한 JavaScript 실행
-                js_code = """
-                if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
-                    .then(function(stream) {
-                        // 카메라 스트림을 사용하여 QR코드 스캔
-                        // 실제 구현에서는 HTML5 QR코드 라이브러리 사용
-                        console.log("QR코드 스캔 시작");
-                        // 임시로 테스트용 QR코드 데이터 반환
-                        setTimeout(() => {
-                            window.qrScanResult = "test_room_id";
-                            window.dispatchEvent(new CustomEvent('qrScanned', { 
-                                detail: { data: window.qrScanResult } 
-                            }));
-                        }, 2000);
-                    })
-                    .catch(function(err) {
-                        console.error("카메라 접근 오류:", err);
-                        alert("카메라에 접근할 수 없습니다.");
-                    });
-                } else {
-                    alert("이 브라우저는 카메라를 지원하지 않습니다.");
-                }
-                """
-                
-                # JavaScript 실행
-                page.eval_js(js_code)
-                
-                # QR코드 스캔 결과 대기
-                def on_qr_result(e):
-                    qr_data = e.data
-                    print(f"QR코드 스캔 결과: {qr_data}")
-                    callback(qr_data)
-                
-                # 이벤트 리스너 등록
-                page.on_event("qrScanned", on_qr_result)
+            # 테스트용 QR코드 데이터들
+            test_qr_data = [
+                "room_12345678",
+                "rag_korean_guide_test", 
+                "foreign_worker_rights_rag",
+                "restaurant_search_rag"
+            ]
             
-            # 비동기 실행
-            asyncio.create_task(scan_qr())
+            # 사용자에게 QR코드 스캔 시뮬레이션 안내
+            page.snack_bar = ft.SnackBar(
+                content=ft.Text("QR코드 스캔 시뮬레이션을 시작합니다. 3초 후 테스트 데이터가 반환됩니다."),
+                action="확인"
+            )
+            page.snack_bar.open = True
+            page.update()
+            
+            # 3초 후 랜덤 테스트 데이터 반환
+            import random
+            import time
+            
+            def simulate_qr_scan():
+                time.sleep(3)
+                random_data = random.choice(test_qr_data)
+                print(f"QR코드 스캔 시뮬레이션 결과: {random_data}")
+                callback(random_data)
+            
+            # 별도 스레드에서 실행
+            import threading
+            scan_thread = threading.Thread(target=simulate_qr_scan)
+            scan_thread.daemon = True
+            scan_thread.start()
             
         except Exception as e:
             print(f"QR코드 스캔 오류: {e}")
-            # 오류 시 테스트용 데이터로 시뮬레이션
-            callback("test_room_id")
+            # 오류 시 사용자에게 알림
+            page.snack_bar = ft.SnackBar(
+                content=ft.Text("QR코드 스캔을 시작할 수 없습니다."),
+                action="확인"
+            )
+            page.snack_bar.open = True
+            page.update()
 
     def go_find_by_id(lang):
         def on_submit(e=None):
